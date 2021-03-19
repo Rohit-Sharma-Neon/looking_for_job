@@ -28,9 +28,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               isSwitched = value;
               isSwitched
                   ? BlocProvider.of<ThemeBloc>(context)
-                      .dispatch(ThemeChanged(theme: AppTheme.values[0]))
+                      .dispatch(ThemeChanged(theme: AppTheme.values[1]))
                   : BlocProvider.of<ThemeBloc>(context)
-                      .dispatch(ThemeChanged(theme: AppTheme.values[1]));
+                      .dispatch(ThemeChanged(theme: AppTheme.values[0]));
             },
           ),
           MaterialButton(
