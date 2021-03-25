@@ -10,9 +10,12 @@ void main() {
   runApp(MyApp());
 }
 
+TextTheme textTheme;
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(context) {
+    textTheme = Theme.of(context).textTheme;
     return ScreenUtilInit(
       designSize: Size(360, 690),
       allowFontScaling: false,

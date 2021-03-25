@@ -42,35 +42,27 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return SliderMenuContainer(
-      drawerIconColor: Colors.transparent,
-      drawerIconSize: 0,
-      appBarColor: bgScaffoldColor,
-      appBarHeight: 0,
-      // appBarColor: Colors.white,
-      key: _key,
-      sliderMenuOpenSize: 280,
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+    return Scaffold(
+      drawer: Drawer(
+
       ),
-      sliderMenu: MenuWidget(
-        drawerKey: _key,
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColorLight,
       ),
-      sliderMain: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             /*Switch(
-                  value: isSwitched,
-                  onChanged: (value) {
-                    isSwitched = value;
-                    isSwitched
-                        ? BlocProvider.of<ThemeBloc>(context)
-                            .dispatch(ThemeChanged(theme: AppTheme.values[1]))
-                        : BlocProvider.of<ThemeBloc>(context)
-                            .dispatch(ThemeChanged(theme: AppTheme.values[0]));
-                  },
-                ),*/
+                    value: isSwitched,
+                    onChanged: (value) {
+                      isSwitched = value;
+                      isSwitched
+                          ? BlocProvider.of<ThemeBloc>(context)
+                              .dispatch(ThemeChanged(theme: AppTheme.values[1]))
+                          : BlocProvider.of<ThemeBloc>(context)
+                              .dispatch(ThemeChanged(theme: AppTheme.values[0]));
+                    },
+                  ),*/
             Container(
               alignment: Alignment.center,
               width: double.infinity,
@@ -134,50 +126,50 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
               ),
             ),
             /*Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: scaffoldHorizontalPadding.w),
-                  alignment: Alignment.topLeft,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 50.h,
-                      ),
-                      Text(
-                        weFound_Jobs,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 35.nsp,
+                    padding: EdgeInsets.symmetric(
+                        horizontal: scaffoldHorizontalPadding.w),
+                    alignment: Alignment.topLeft,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 50.h,
                         ),
-                      ),
-                      RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: home,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                              ),
-                            ),
-                            WidgetSpan(
-                              alignment: PlaceholderAlignment.middle,
-                              child: Icon(Icons.arrow_right_outlined),
-                            ),
-                            TextSpan(
-                              text: allCategories,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          weFound_Jobs,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 35.nsp,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ),*/
+                        RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: home,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                ),
+                              ),
+                              WidgetSpan(
+                                alignment: PlaceholderAlignment.middle,
+                                child: Icon(Icons.arrow_right_outlined),
+                              ),
+                              TextSpan(
+                                text: allCategories,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),*/
             SizedBox(
               height: 20,
             ),
@@ -231,11 +223,11 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                                     color: Colors.grey,
                                   )),
                               /*prefixIcon: Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 10, right: 10),
-                                    child: Image.asset(
-                                        "assets/images/ic_search.png"),
-                                  ),*/
+                                      padding: const EdgeInsets.only(
+                                          left: 10, right: 10),
+                                      child: Image.asset(
+                                          "assets/images/ic_search.png"),
+                                    ),*/
                               prefixIconConstraints:
                               BoxConstraints(minHeight: 20, maxHeight: 22)
                             //Icon(Icons.search, color: Color(0xff767676)),
@@ -297,11 +289,11 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                                   ),
                                 ),
                                 /*prefixIcon: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 10, right: 10),
-                                      child: Image.asset(
-                                          "assets/images/ic_search.png"),
-                                    ),*/
+                                        padding: const EdgeInsets.only(
+                                            left: 10, right: 10),
+                                        child: Image.asset(
+                                            "assets/images/ic_search.png"),
+                                      ),*/
                                 prefixIconConstraints:
                                 BoxConstraints(minHeight: 20, maxHeight: 22)
                               //Icon(Icons.search, color: Color(0xff767676)),

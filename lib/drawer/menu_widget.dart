@@ -38,7 +38,7 @@ class MenuWidget extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(6)),
             child: ListTile(
-              tileColor: lightPrimaryAppColor,
+              tileColor: primaryColorLight,
               contentPadding: EdgeInsets.only(left: 15.w,top: 0,bottom: 0),
               // dense: true,
               onTap: () => drawerKey.currentState.closeDrawer(),

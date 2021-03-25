@@ -36,6 +36,7 @@ dependencies:
   flutter_slider_drawer: ^1.2.1
   flutter_typeahead: ^2.0.0
   custom_radio_grouped_button: ^1.0.6+1
+  google_fonts: ^1.1.2
 
 dev_dependencies:
   flutter_test:

@@ -4,7 +4,7 @@ import 'dart:ui';
 // Light Theme
 Color themeColor = const Color(0xFF286472);
 Color textColor  = const Color(0xFF207F9E);
-Color lightPrimaryAppColor = const Color(0xFF1492E5);
+Color primaryColorLight = const Color(0xFF1492E5);
 Color lightPrimaryTextColor = const Color(0xFF000000);
 Color lightPrimaryColor = const Color(0xFFffffff);
 Color stickBg  = const Color(0xFFf2f2f2);

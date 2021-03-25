@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../main.dart';
 import '../colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,24 +14,24 @@ enum AppTheme {
 
 final appThemeData = {
   AppTheme.LightTheme: ThemeData(
+
     brightness: Brightness.light,
-    primaryColor: Colors.blue,
-    accentColor: Colors.blue,
+    primaryColorLight: primaryColorLight,
+    accentColor: primaryColorLight,
     primarySwatch: Colors.blue,
+    /// SCAFFOLD BACKGROUND COLOR
+    scaffoldBackgroundColor: Colors.white,
 
     /// CARD THEME
     cardTheme: CardTheme(
       color: Colors.white,
     ),
 
-    cupertinoOverrideTheme: CupertinoThemeData(
-      textTheme: CupertinoTextThemeData(
-          dateTimePickerTextStyle: TextStyle(color: Colors.black, fontSize: 14),
-          pickerTextStyle: TextStyle(color: Colors.black, fontSize: 14)),
-    ),
-
     /// TEXT THEME
-    textTheme: TextTheme(
+    textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+      headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryTSL),
+    ),
+    /*textTheme: TextTheme(
       bodyText1: TextStyles._primaryTSL,
       headline1: TextStyles._headingTSL,
       subtitle1: TextStyles._hintOrLabelTSL,
@@ -41,11 +43,8 @@ final appThemeData = {
       headline4: TextStyles._subscriptionTSL,
       headline5: TextStyles._subscription1TSL,
       headline6: TextStyles._bottomRadioTSL,
-    ),
+    ),*/
     // fontFamily: "Oswald",
-
-    /// SCAFFOLD BACKGROUND COLOR
-    scaffoldBackgroundColor: Colors.white,
 
     /// APP BAR THEME
     appBarTheme: AppBarTheme(
@@ -62,14 +61,24 @@ final appThemeData = {
       primaryVariant: Color(0xFF286472),
       secondaryVariant: Color(0xFF286472),
     ),
-
-    bottomAppBarColor: Colors.white,
-
     /// Icon Theme
     iconTheme: IconThemeData(
       color: Colors.black,
     ),
   ),
+
+
+
+
+
+  ///  Dark Theme
+  ///  Dark Theme
+  ///  Dark Theme
+
+
+
+
+
   AppTheme.DarkTheme: ThemeData(
     /// CARD THEME
     cardTheme: CardTheme(
@@ -83,7 +92,10 @@ final appThemeData = {
     ),
 
     /// TEXT THEME
-    textTheme: TextTheme(
+    textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+      bodyText1: GoogleFonts.concertOne(textStyle: TextStyles._primaryTSL),
+    ),
+    /*TextTheme(
       bodyText1: TextStyles._primaryTSD,
       headline1: TextStyles._headingTSD,
       subtitle1: TextStyles._hintOrLabelTSD,
@@ -95,7 +107,7 @@ final appThemeData = {
       headline4: TextStyles._subscriptionTSD,
       headline5: TextStyles._subscription1TSD,
       headline6: TextStyles._bottomRadioTSD,
-    ),
+    ),*/
     // fontFamily: "Oswald",
 
     /// SCAFFOLD BACKGROUND COLOR
@@ -135,7 +147,8 @@ final appThemeData = {
 
 class TextStyles {
   /// Text Styles For Light Theme
-  static final TextStyle _primaryTSL = TextStyle(fontSize: 14.nsp);
+  static final TextStyle _primaryTSL =
+      TextStyle(fontSize: 24.nsp, fontWeight: FontWeight.bold,color: Colors.black);
   static final TextStyle _bottomNavigationBarTSL = TextStyle(fontSize: 14.nsp);
   static final TextStyle _hintOrLabelTSL =
       TextStyle(fontSize: 14.nsp, color: Colors.grey);

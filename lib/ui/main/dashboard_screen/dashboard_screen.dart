@@ -13,22 +13,23 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Responsive(
-        /// Mobile :-
-        mobile: DashBoardMobileComponent(),
+        body: Responsive(
+          /// Mobile :-
+          mobile: DashBoardMobileComponent(),
 
-        /// Tablet :-
-        tablet: Container(
-          height: double.infinity,
-          color: Colors.red,
-        ),
+          /// Tablet :-
+          tablet: Container(
+            height: double.infinity,
+            color: Colors.red,
+          ),
 
-        /// Desktop :-
-        desktop: Container(
-          height: double.infinity,
-          color: Colors.green,
+          /// Desktop :-
+          desktop: Container(
+            height: double.infinity,
+            color: Colors.green,
+          ),
         ),
-      )),
+      ),
     );
   }
 }
