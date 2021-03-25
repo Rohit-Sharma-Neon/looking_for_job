@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil_init.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
+import 'constants/custom_routes.dart';
 import 'constants/theme/theme_bloc.dart';
 import 'constants/theme/theme_state.dart';
 
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Looking for job',
+                initialRoute: '/',
+                routes: customRoutes,
                 theme: state.themeData,
-                home: DashBoardScreen(),
               );
             },
           ),
