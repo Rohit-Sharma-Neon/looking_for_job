@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/responsive/responsive.dart';
+
+import 'components/dashboard_mobile.dart';
+
+class DashBoardScreen extends StatefulWidget {
+  @override
+  _DashBoardScreenState createState() => _DashBoardScreenState();
+}
+
+class _DashBoardScreenState extends State<DashBoardScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+          body: Responsive(
+          mobile: DashBoardMobileComponent(),
+          tablet: Container(
+          height: double.infinity,
+          color: Colors.red,
+        ),
+          desktop: Container(
+          height: double.infinity,
+          color: Colors.green,
+        ),
+      )),
+    );
+  }
+}
