@@ -1,0 +1,1 @@
+const String appLogoWithName = "assets/images/lookingForJobLogo.png";

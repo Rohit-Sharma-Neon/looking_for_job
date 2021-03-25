@@ -22,5 +22,6 @@ const double btnTextSizeBig = 20;
 const double forgotPasswordSizeBig = 17;
 const double textFormField = 18;
 const double buttonTextSize = 18;
+const double scaffoldHorizontalPadding = 15;
 
 //const double textSize = ;

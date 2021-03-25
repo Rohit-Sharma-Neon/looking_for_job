@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 enum AppTheme {
   LightTheme,
@@ -13,7 +13,9 @@ enum AppTheme {
 final appThemeData = {
   AppTheme.LightTheme: ThemeData(
     brightness: Brightness.light,
-    primaryColor: Colors.green,
+    primaryColor: Colors.blue,
+    accentColor: Colors.blue,
+    primarySwatch: Colors.blue,
 
     /// CARD THEME
     cardTheme: CardTheme(

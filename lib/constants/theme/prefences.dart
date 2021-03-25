@@ -9,7 +9,7 @@ class PreferencePage extends StatelessWidget {
   const PreferencePage({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Preferences'),

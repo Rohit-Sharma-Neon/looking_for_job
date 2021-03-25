@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 // Light Theme
-Color themeColor =const Color(0xFF286472);
+Color themeColor = const Color(0xFF286472);
 Color textColor  = const Color(0xFF207F9E);
-Color lightPrimaryAppColor = const Color(0xFF5B4DBC);
+Color lightPrimaryAppColor = const Color(0xFF1492E5);
 Color lightPrimaryTextColor = const Color(0xFF000000);
 Color lightPrimaryColor = const Color(0xFFffffff);
 Color stickBg  = const Color(0xFFf2f2f2);
 Color lightSecondaryColor = Colors.deepOrangeAccent;
+Color primaryDarkColor = Color(0xFF2A2A2A);
+
+Color bgScaffoldColor = Color(0xFFF8F8F8);
 
 Color darkAppBarColor = const Color(0xFF000000);
 Color lightAppBarColor = const Color(0xFFffffff);

@@ -14,12 +14,17 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     return SafeArea(
       child: Scaffold(
           body: Responsive(
-          mobile: DashBoardMobileComponent(),
-          tablet: Container(
+        /// Mobile :-
+        mobile: DashBoardMobileComponent(),
+
+        /// Tablet :-
+        tablet: Container(
           height: double.infinity,
           color: Colors.red,
         ),
-          desktop: Container(
+
+        /// Desktop :-
+        desktop: Container(
           height: double.infinity,
           color: Colors.green,
         ),
