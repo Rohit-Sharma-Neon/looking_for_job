@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:looking_for_job_2/ui/onboarding/signin/signin_screen.dart';
+import 'package:lookingforjob/ui/onboarding/signin/signin_screen.dart';
 
 var customRoutes = <String, WidgetBuilder>{
   '/': (context) => SignInScreen(),
