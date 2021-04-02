@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 
@@ -164,9 +165,12 @@ class _LoginDesktopComponentState extends State<LoginDesktopComponent> {
                     textColor: Color(0xFFffffff),
                     child: Text("Login"),
                     onPressed: () {
-                      if (_formKey.currentState.validate()) {
-                        _formKey.currentState.save();
-                      }
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => DashBoardScreen()),
+                        ModalRoute.withName('/'),
+                      );
                     },
                   ),
                 ),

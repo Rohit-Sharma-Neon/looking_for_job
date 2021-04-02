@@ -7,7 +7,7 @@ import 'app_theme.dart';
 @immutable
 abstract class ThemeEvent extends Equatable {
   // Passing class fields in a list to the Equatable super class
-  ThemeEvent([List props = const []]) : super(props);
+  ThemeEvent([List props = const []]) : super();
 }
 
 class ThemeChanged extends ThemeEvent {
@@ -16,4 +16,8 @@ class ThemeChanged extends ThemeEvent {
   ThemeChanged({
     @required this.theme,
   }) : super([theme]);
+
+  @override
+  // TODO: implement props
+  List<Object> get props => throw UnimplementedError();
 }

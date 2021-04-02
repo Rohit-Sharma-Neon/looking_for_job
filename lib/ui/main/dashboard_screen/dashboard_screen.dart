@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/responsive/responsive.dart';
+import 'package:lookingforjob_flutter/ui/main/dashboard_screen/components/dashboard_desktop.dart';
 
 import 'components/dashboard_mobile.dart';
 
@@ -24,10 +25,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           ),
 
           /// Desktop :-
-          desktop: Container(
-            height: double.infinity,
-            color: Colors.green,
-          ),
+          desktop: DashBoardDesktopComponent(),
         ),
       ),
     );

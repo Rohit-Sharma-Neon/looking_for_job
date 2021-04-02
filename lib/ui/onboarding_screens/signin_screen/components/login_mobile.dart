@@ -48,8 +48,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Welcome Back!",
-                    style: Theme.of(context).textTheme.headline1
-                    //TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold), //Theme.of(context).textTheme.headline1
                     ),
                 SizedBox(height: 10.h),
                 TextField(

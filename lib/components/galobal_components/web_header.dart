@@ -1,0 +1,81 @@
+import 'package:country_code_picker/country_code_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:lookingforjob_flutter/constants/image_helper.dart';
+import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/widgets/custom_drop_down.dart';
+
+Widget webHeader() {
+  GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
+      GlobalKey<SliderMenuContainerState>();
+
+  String _selectedValue;
+
+  return Container(
+    alignment: Alignment.center,
+    width: double.infinity,
+    height: 50.h,
+    decoration: BoxDecoration(
+      color: Colors.white,
+      boxShadow: [
+        BoxShadow(
+          color: Colors.grey.withOpacity(0.3),
+          blurRadius: 5,
+          offset: Offset(0, 3),
+        ),
+      ],
+    ),
+    child: Row(
+      children: [
+        SizedBox(width: 10.w),
+        Image.asset(
+          appLogoWithName,
+          width: 70.w,
+        ),
+        SizedBox(width: 10.w),
+        CountryCodePicker(
+          searchDecoration: InputDecoration(
+            hintText: search,
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey, width: 0.8),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey, width: 0.8),
+            ),
+          ),
+          onChanged: print,
+          initialSelection: 'IN',
+          showCountryOnly: true,
+          showOnlyCountryWhenClosed: false,
+          alignLeft: false,
+        ),
+        Spacer(),
+        CustomDropdown<String>(
+          padding: EdgeInsets.symmetric(vertical: 5.h),
+          height: double.infinity,
+          items: ['A', 'B', 'C'],
+          onChanged: (val) => _selectedValue = val,
+          center: true,
+        ),
+        SizedBox(width: 5.w),
+        InkWell(
+          onTap: () => _sliderMenuContainerStateKey.currentState.openDrawer(),
+          child: Container(
+            margin: EdgeInsets.symmetric(vertical: 5.h),
+            height: double.infinity,
+            padding: EdgeInsets.all(8.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(4),
+              ),
+              border: Border.all(color: Colors.grey, width: 0.5),
+            ),
+            child: Icon(Icons.menu),
+          ),
+        ),
+        SizedBox(width: 10.w),
+      ],
+    ),
+  );
+}

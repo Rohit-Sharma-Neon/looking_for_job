@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class ForgotMobileComponent extends StatefulWidget {
   @override
@@ -11,9 +12,11 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColorLight,
-      ),
+      appBar: !kIsWeb
+          ? AppBar(
+              backgroundColor: Theme.of(context).primaryColorLight,
+            )
+          : null,
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 30.h),
         child: Column(
@@ -47,9 +50,9 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
                 children: [
                   Text(
                     "Forgot Password?",
-                    style: Theme.of(context).textTheme.headline1
+                    style: TextStyle(
+                        fontSize: 25.nsp, fontWeight: FontWeight.bold),
                     //TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold),
-                    ,
                   ),
                   SizedBox(height: 10.h),
                   TextField(
