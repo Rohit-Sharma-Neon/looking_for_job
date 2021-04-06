@@ -42,7 +42,7 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  webHeader(),
+                  webHeader(_sliderMenuContainerStateKey),
                   Container(
                       margin: EdgeInsets.only(bottom: 10.h),
                       decoration: BoxDecoration(

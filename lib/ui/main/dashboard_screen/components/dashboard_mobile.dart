@@ -64,7 +64,7 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                             .dispatch(ThemeChanged(theme: AppTheme.values[0]));
                   },
                 ),*/
-            webHeader(),
+            webHeader(_sliderMenuContainerStateKey),
             Container(
               color: Colors.grey,
               width: double.infinity,

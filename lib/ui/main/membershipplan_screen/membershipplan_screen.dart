@@ -42,7 +42,7 @@ class _MembershipPlanScreenState extends State<MembershipPlanScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                webHeader(),
+                webHeader(_sliderMenuContainerStateKey),
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 90.h, horizontal: 30.w),
                   margin: EdgeInsets.only(top: 100.h),

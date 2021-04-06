@@ -123,7 +123,7 @@ class _ResubmitJobsScreenState extends State<ResubmitJobsScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                webHeader(),
+                webHeader(_sliderMenuContainerStateKey),
                 SizedBox(height: 45.h),
                 InkWell(
                   onTap: () {

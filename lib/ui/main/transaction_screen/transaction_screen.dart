@@ -45,7 +45,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                webHeader(),
+                webHeader(_sliderMenuContainerStateKey),
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 30.w),
                   margin: EdgeInsets.only(top: 100.h),

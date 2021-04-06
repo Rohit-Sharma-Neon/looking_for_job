@@ -41,7 +41,7 @@ class _ProfilePublicViewState extends State<ProfilePublicView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                webHeader(),
+                webHeader(_sliderMenuContainerStateKey),
                 SizedBox(height: 45.h),
                 Container(
                   padding: EdgeInsets.symmetric(
