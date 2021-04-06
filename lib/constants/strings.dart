@@ -19,6 +19,6 @@ const String jobCategories = "Job Categories";
 const String informationTechnology = "Information Technology";
 const String management = "Management";
 const String architectureAndEngineer = "Architecture and Engineer";
-
+String dropdownValue="Select Company";
 
 //const String  = "";
