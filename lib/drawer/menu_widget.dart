@@ -83,7 +83,12 @@ class DrawerList {
   static List<String> drawerData = [
     browseJobs,
     companies,
-    login,
-    register,
+    dashboard,
+    myCompanies,
+    myJobs,
+    pendingJobs,
+    membership,
+    transactions,
+    logout,
   ];
 }
