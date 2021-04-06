@@ -68,7 +68,83 @@ Widget drawerItem(GlobalKey<SliderMenuContainerState> drawerKey) {
           switch (index) {
             case 1:
               {
-                Navigator.pushNamed(context, '/companies_screen');
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/companies_screen',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 2:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/employer_dahboard',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 3:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/mycompanies_screen',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 4:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/myjobs_screen',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 5:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/pendingjobs_screen',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 6:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/membershipplan_screen',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 7:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/transaction_screen',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 8:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/signIn1',
+                      (Route<dynamic> route) => false,
+                );
+                break;
+              }
+            case 9:
+              {
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/postajob_screen',
+                      (Route<dynamic> route) => false,
+                );
                 break;
               }
           }
