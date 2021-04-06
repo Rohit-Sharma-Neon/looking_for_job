@@ -1,4 +1,4 @@
-import 'package:country_code_picker/country_code_picker.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -8,13 +8,10 @@ import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/custom_text_form_ta.dart';
-import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
 import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
-import 'package:lookingforjob_flutter/widgets/custom_drop_down.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class DashBoardMobileComponent extends StatefulWidget {
   @override
