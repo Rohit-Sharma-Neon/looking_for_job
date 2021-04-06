@@ -33,8 +33,8 @@ class PreferencePage extends StatelessWidget {
               onTap: () {
                 // This will make the Bloc output a new ThemeState,
                 // which will rebuild the UI because of the BlocBuilder in main.dart
-                /*BlocProvider.of<ThemeBloc>(context)
-                    .dispatch(ThemeChanged(theme: itemAppTheme));*/
+                // BlocProvider.of<ThemeBloc>(context)
+                //     .dispatch(ThemeChanged(theme: itemAppTheme));
               },
             ),
           );
