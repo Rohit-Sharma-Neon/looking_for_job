@@ -16,11 +16,13 @@ const double textSize10 = 10;
 const double textSize8 = 8;
 const double textSize6 = 6;
 const double textSize4 = 4;
+
 const double btnTextSizeSmall = 17;
 const double btnTextSizeBig = 20;
 const double forgotPasswordSizeBig = 17;
 const double textFormField = 18;
 const double buttonTextSize = 18;
 const double scaffoldHorizontalPadding = 15;
+const double primaryRoundButtonAndTextField = 5;
 
 //const double textSize = ;

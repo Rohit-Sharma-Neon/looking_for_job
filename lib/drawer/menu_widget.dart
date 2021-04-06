@@ -39,7 +39,7 @@ class MenuWidget extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(6)),
             child: ListTile(
               tileColor: primaryColorLight,
-              contentPadding: EdgeInsets.only(left: 15.w,top: 0,bottom: 0),
+              contentPadding: EdgeInsets.only(left: 15.w, top: 0, bottom: 0),
               // dense: true,
               onTap: () => drawerKey.currentState.closeDrawer(),
               title: Text(
@@ -63,7 +63,16 @@ Widget drawerItem(GlobalKey<SliderMenuContainerState> drawerKey) {
       return ListTile(
         contentPadding: EdgeInsets.only(left: 15.w),
         // dense: true,
-        onTap: () => drawerKey.currentState.closeDrawer(),
+        onTap: () {
+          drawerKey.currentState.closeDrawer();
+          switch (index) {
+            case 1:
+              {
+                Navigator.pushNamed(context, '/companies_screen');
+                break;
+              }
+          }
+        },
         title: Text(
           DrawerList.drawerData[index],
           style: TextStyle(color: Colors.white),

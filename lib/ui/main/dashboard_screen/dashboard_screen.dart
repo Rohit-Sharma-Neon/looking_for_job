@@ -17,7 +17,6 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         body: Responsive(
           /// Mobile :-
           mobile: DashBoardMobileComponent(),
-
           /// Tablet :-
           tablet: Container(
             height: double.infinity,

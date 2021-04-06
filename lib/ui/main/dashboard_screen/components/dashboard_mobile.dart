@@ -26,7 +26,7 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
   String title = "";
 
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
 
   final TextEditingController _typeAheadController = TextEditingController();
 
@@ -71,16 +71,35 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
               child: Column(
                 children: [
-                  Text(
-                    findAJob,
-                    style: TextStyle(fontSize: 36.nsp,color: Colors.white)
-                  ),
+                  SizedBox(height: 20.h),
+                  Text(findAJob,
+                      style: TextStyle(fontSize: 36.nsp, color: Colors.white)),
                   Text(
                     simpleFastAndEfficient,
-                    style: TextStyle(fontSize: 28.nsp, color: Colors.white),
+                    style: TextStyle(fontSize: 22.nsp, color: Colors.white),
                   ),
-                  CustomTextFormTA(),
-                  CustomTextFormTA(),
+                  SizedBox(height: 20.h),
+                  CustomTextFormTA(
+                    hintText: "Job title",
+                  ),
+                  CustomTextFormTA(
+                    hintText: "Location",
+                  ),
+                  SizedBox(height: 18.h),
+                  MaterialButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(primaryRoundButtonAndTextField),
+                    ),
+                    minWidth: double.infinity,
+                    onPressed: () {},
+                    height: 50.h,
+                    child: Text(
+                      search,
+                      style: TextStyle(fontSize: 20.nsp, color: Colors.white,fontWeight: FontWeight.w400),
+                    ),
+                    color: primaryColorLight,
+                  ),
+                  SizedBox(height: 20.h),
                 ],
               ),
             ),
@@ -89,7 +108,7 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
             ),
             Text(
               jobCategories,
-              style: TextStyle(fontSize: 26.nsp),
+              style: TextStyle(fontSize: 24.nsp),
             ),
             SizedBox(
               height: 10.h,

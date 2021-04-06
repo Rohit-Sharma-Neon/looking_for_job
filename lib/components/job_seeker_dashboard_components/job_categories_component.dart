@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/constants/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Widget jobCategoriesComponent(){
-
+Widget jobCategoriesComponent() {
   List<String> jobsList = [
     "Food",
     "Transport",
@@ -14,14 +15,14 @@ Widget jobCategoriesComponent(){
     "Salary"
   ];
 
-  return  ListView.builder(
+  return ListView.builder(
     physics: NeverScrollableScrollPhysics(),
     shrinkWrap: true,
     itemCount: jobsList.length,
     itemBuilder: (
-        BuildContext context,
-        int index,
-        ) {
+      BuildContext context,
+      int index,
+    ) {
       return Container(
         decoration: BoxDecoration(
           border: Border(
@@ -38,7 +39,11 @@ Widget jobCategoriesComponent(){
             jobsList[index],
             style: TextStyle(color: Colors.black),
           ),
-          trailing: Icon(Icons.navigate_next),
+          trailing: Icon(
+            Icons.navigate_next,
+            color: primaryColorLight,
+            size: 25.h,
+          ),
         ),
       );
     },
