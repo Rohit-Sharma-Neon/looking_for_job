@@ -10,7 +10,7 @@ import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershippl
 import 'package:lookingforjob_flutter/ui/main/mycompanies_screen/mycompanies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/postajob/postajob.dart';
+import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/transaction_screen/transaction_screen.dart';
@@ -22,7 +22,8 @@ var customRoutes = <String, WidgetBuilder>{
   '/': (context) => EmployerDashboard(),
   // OnBoardings
   '/signIn1': (context) => LoginPage(),
-  // '/login_dialogbox': (context) => LoginDialogBox(),
+  // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
+
   '/dashboard_screen': (context) => DashBoardScreen(),
   '/profilepublicview_screen': (context) => ProfilePublicView(),
   '/membershipplan_screen': (context) => MembershipPlanScreen(),

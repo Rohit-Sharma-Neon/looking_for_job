@@ -9,7 +9,7 @@ class CustomTextFormTA extends StatelessWidget {
   final TextEditingController _typeAheadController = TextEditingController();
   final String hintText;
 
-  final List<String> jobsList = [
+/*  final List<String> _jobsList = [
     "Food",
     "Transport",
     "Personal",
@@ -18,7 +18,7 @@ class CustomTextFormTA extends StatelessWidget {
     "Rent",
     "Movie",
     "Salary",
-  ];
+  ];*/
 
    CustomTextFormTA({this.hintText = ""});
 
@@ -64,8 +64,6 @@ class CustomTextFormTA extends StatelessWidget {
                                         child: Image.asset(
                                             "assets/images/ic_search.png"),
                                       ),*/
-                prefixIconConstraints:
-                BoxConstraints(minHeight: 20, maxHeight: 22)
               //Icon(Icons.search, color: Color(0xff767676)),
             ),
             onChanged: (value) {}),

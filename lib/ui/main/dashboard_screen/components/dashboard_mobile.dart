@@ -72,8 +72,13 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
               child: Column(
                 children: [
                   SizedBox(height: 20.h),
-                  Text(findAJob,
-                      style: TextStyle(fontSize: 36.nsp, color: Colors.white)),
+                  Text(
+                    findAJob,
+                    style: TextStyle(
+                      fontSize: 36.nsp,
+                      color: Colors.white,
+                    ),
+                  ),
                   Text(
                     simpleFastAndEfficient,
                     style: TextStyle(fontSize: 22.nsp, color: Colors.white),
@@ -88,67 +93,27 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                   SizedBox(height: 18.h),
                   MaterialButton(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(primaryRoundButtonAndTextField),
+                      borderRadius:
+                          BorderRadius.circular(primaryRoundButtonAndTextField),
                     ),
                     minWidth: double.infinity,
                     onPressed: () {},
                     height: 50.h,
                     child: Text(
                       search,
-                      style: TextStyle(fontSize: 20.nsp, color: Colors.white,fontWeight: FontWeight.w400),
+                      style: TextStyle(
+                          fontSize: 20.nsp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400),
                     ),
                     color: primaryColorLight,
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 50.h),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Text(
-              jobCategories,
-              style: TextStyle(fontSize: 24.nsp),
-            ),
-            SizedBox(
-              height: 10.h,
             ),
             jobCategoriesComponent(),
-            Container(
-              alignment: Alignment.topLeft,
-              width: double.infinity,
-              padding:
-                  EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding),
-              margin: EdgeInsets.only(top: 20.h),
-              color: Colors.white,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Latest Jobs",
-                    style: TextStyle(
-                      fontSize: 26.nsp,
-                    ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: "Browse All Jobs",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14.nsp,
-                      ),
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.arrow_forward),
-                        ),
-                      ],
-                    ),
-                  ),
-                  latestJobsComponent(),
-                ],
-              ),
-            ),
+            latestJobsComponent(),
             kIsWeb ? bottomWebBanner() : Container(),
           ],
         ),

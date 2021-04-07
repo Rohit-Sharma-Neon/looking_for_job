@@ -551,7 +551,6 @@ class _JobDescriptionState extends State<JobDescription> {
                                           ),
                                         ],
                                       ),
-
                                       SizedBox(height: 10.h),
                                       Row(
                                         children: [
@@ -588,11 +587,11 @@ class _JobDescriptionState extends State<JobDescription> {
                                   // ),
 
                                   SizedBox(height: 30.h),
-
                                   SizedBox(
-                                    height: 300.h,
-                                    width: 320.w,
+                                    width: 310.w,
                                     child: ListView.builder(
+                                      physics: NeverScrollableScrollPhysics(),
+                                      shrinkWrap: true,
                                       itemCount: 5,
                                       itemBuilder: (BuildContext context, int index) {
                                         return Container(

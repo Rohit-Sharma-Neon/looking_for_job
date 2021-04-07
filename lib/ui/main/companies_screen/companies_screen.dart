@@ -50,12 +50,13 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                         horizontal: scaffoldHorizontalPadding.w),
                     width: double.infinity,
                     decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[300]),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 5,
-                          blurRadius: 3,
-                          offset: Offset(0, 0), // changes position of shadow
+                          spreadRadius: 1,
+                          blurRadius: 0,
+                          offset: Offset(0, 1), // changes position of shadow
                         ),
                       ],
                       borderRadius: BorderRadius.circular(5),
@@ -101,7 +102,7 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey.withOpacity(0.1),
-                                  spreadRadius: 5,
+                                  spreadRadius: 4,
                                   blurRadius: 1,
                                   offset: Offset(
                                       0, 2), // changes position of shadow
