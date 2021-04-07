@@ -14,11 +14,11 @@ enum AppTheme {
 
 final appThemeData = {
   AppTheme.LightTheme: ThemeData(
-
     brightness: Brightness.light,
     primaryColorLight: primaryColorLight,
     accentColor: primaryColorLight,
     primarySwatch: Colors.blue,
+
     /// SCAFFOLD BACKGROUND COLOR
     scaffoldBackgroundColor: Colors.white,
 
@@ -29,7 +29,9 @@ final appThemeData = {
 
     /// TEXT THEME
     textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
-      headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryTSL),
+      headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingSmall),
+      headline2: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingMedium),
+      headline3: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingBig),
     ),
     /*textTheme: TextTheme(
       bodyText1: TextStyles._primaryTSL,
@@ -61,23 +63,16 @@ final appThemeData = {
       primaryVariant: Color(0xFF286472),
       secondaryVariant: Color(0xFF286472),
     ),
+
     /// Icon Theme
     iconTheme: IconThemeData(
       color: Colors.black,
     ),
   ),
 
-
-
-
-
   ///  Dark Theme
   ///  Dark Theme
   ///  Dark Theme
-
-
-
-
 
   AppTheme.DarkTheme: ThemeData(
     /// CARD THEME
@@ -93,8 +88,14 @@ final appThemeData = {
 
     /// TEXT THEME
     textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
-      bodyText1: GoogleFonts.concertOne(textStyle: TextStyles._primaryTSL),
+      headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingSmall),
+      headline2: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingMedium),
+      headline3: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingBig),
     ),
+    /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+      bodyText1:
+          GoogleFonts.concertOne(textStyle: TextStyles._primaryHeadingSmall),
+    ),*/
     /*TextTheme(
       bodyText1: TextStyles._primaryTSD,
       headline1: TextStyles._headingTSD,
@@ -147,8 +148,12 @@ final appThemeData = {
 
 class TextStyles {
   /// Text Styles For Light Theme
-  static final TextStyle _primaryTSL =
-      TextStyle(fontSize: 24.nsp, fontWeight: FontWeight.bold,color: Colors.black);
+  static final TextStyle _primaryHeadingSmall = TextStyle(
+      fontSize: 24.nsp, fontWeight: FontWeight.bold, color: Colors.black);
+  static final TextStyle _primaryHeadingMedium = TextStyle(
+      fontSize: 28.nsp, fontWeight: FontWeight.bold, color: Colors.black);
+  static final TextStyle _primaryHeadingBig = TextStyle(
+      fontSize: 32.nsp, fontWeight: FontWeight.bold, color: Colors.black);
   static final TextStyle _bottomNavigationBarTSL = TextStyle(fontSize: 14.nsp);
   static final TextStyle _hintOrLabelTSL =
       TextStyle(fontSize: 14.nsp, color: Colors.grey);

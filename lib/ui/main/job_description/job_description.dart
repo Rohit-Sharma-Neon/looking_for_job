@@ -463,10 +463,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                             )),
                                         SizedBox(height: 10.h),
 
-                                        RaisedButton(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 100.w,
-                                              vertical: 10.h),
+                                        MaterialButton(
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(5.0),
@@ -478,9 +475,7 @@ class _JobDescriptionState extends State<JobDescription> {
 
                                         ),
 
-                                        RaisedButton(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 94.w, vertical: 10.h),
+                                        MaterialButton(
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(5.0),
@@ -596,6 +591,7 @@ class _JobDescriptionState extends State<JobDescription> {
 
                                   SizedBox(
                                     height: 300.h,
+                                    width: 320.w,
                                     child: ListView.builder(
                                       itemCount: 5,
                                       itemBuilder: (BuildContext context, int index) {
@@ -605,9 +601,11 @@ class _JobDescriptionState extends State<JobDescription> {
                                           decoration: BoxDecoration(
                                               border: Border.all(color: Colors.grey.shade200)),
                                           child: Column(
+                                            mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
                                               Row(
+                                                mainAxisSize: MainAxisSize.min,
                                                 children: [
                                                   Expanded(
                                                     flex: 4,
@@ -636,6 +634,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                                 ],
                                               ),
                                               Row(
+                                                mainAxisSize: MainAxisSize.min,
                                                 children: [
                                                   Icon(Icons.add_location),
                                                   Text(

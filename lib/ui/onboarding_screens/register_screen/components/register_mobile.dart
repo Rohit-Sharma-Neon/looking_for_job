@@ -1,5 +1,5 @@
-import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
-import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
+// import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
+// import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,7 +48,7 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                 ),
                 SizedBox(height: 10.h),
                 SizedBox(height: 20),
-                CustomRadioButton(
+                /*CustomRadioButton(
                   defaultSelected: "Job Seeker",
                   width: 140.w,
                   height: 40.h,
@@ -72,8 +72,7 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                     print(value);
                   },
                   selectedColor: Theme.of(context).primaryColor,
-                ),
-
+                ),*/
                 Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
