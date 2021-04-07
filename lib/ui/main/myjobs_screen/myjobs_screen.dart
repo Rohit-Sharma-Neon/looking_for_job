@@ -157,7 +157,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                             TextSpan(
                               style:
                               TextStyle(color: Colors.white, fontSize: 18.nsp),
-                              text: "Dashboard Navigation",
+                              text: dashboardNavigation,
                             ),
                           ],
                         ),
@@ -313,8 +313,8 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                   // ),
                   SizedBox(height: 20.h),
                   Container(
-                    height: 50.h,
-                    width: 320.w,
+                    height: 60.h,
+                    width: 330.w,
                     decoration: BoxDecoration(
                       color: Color(0xFFEFF7FD),
                       borderRadius: BorderRadius.only(
@@ -331,12 +331,13 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                             color: Colors.black,
                           ),
                         ],
-                        color: Color(0xFFF9F9F9),
+                        color: Color(0xFFFFFFFF),
                       ),
                       alignment: Alignment.centerLeft,
                       child: RichText(
                         text: TextSpan(
                           children: [
+                            WidgetSpan(child: SizedBox(width: 10.w)),
                             WidgetSpan(
                               child: Icon(
                                 Icons.shopping_bag,
@@ -362,7 +363,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 25.w),
                     height: 230.h,
-                    width: 320.w,
+                    width: 330.w,
                     decoration: BoxDecoration(
                       boxShadow: [
                         new BoxShadow(
@@ -383,9 +384,9 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                             decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.1),
-                                  spreadRadius: 5,
-                                  blurRadius: 3,
+                                  color: Colors.grey.withOpacity(0.2),
+                                  spreadRadius: 2,
+                                  blurRadius: 1,
                                   offset:
                                   Offset(0, 0), // changes position of shadow
                                 ),
@@ -412,7 +413,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                                 ],
                               ),
                             )),
-                        SizedBox(height: 5.h),
+                        SizedBox(height: 15.h),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -438,7 +439,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
-                                                "jobs",
+                                                jobs,
                                                 style: TextStyle(
                                                   fontSize: 18.nsp,
                                                   color: Colors.white,
@@ -446,7 +447,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                                               ),
                                               SizedBox(width: 180.w),
                                               Text(
-                                                "Status",
+                                                status,
                                                 style: TextStyle(
                                                   fontSize: 18.nsp,
                                                   color: Colors.white,
@@ -454,7 +455,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                                               ),
                                               SizedBox(width: 100.w),
                                               Text(
-                                                "Actions",
+                                                actions,
                                                 style: TextStyle(
                                                   fontSize: 18.nsp,
                                                   color: Colors.white,
@@ -465,7 +466,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                                           color: Colors.blue,
                                         ),
                                         SizedBox(height: 10.h),
-                                        Text("No active jobs found"),
+                                        Text(noActiveJobsFound),
                                       ],
                                     ),
                                   ],
