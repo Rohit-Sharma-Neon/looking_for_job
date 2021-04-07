@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomTextFormTA extends StatefulWidget {
+import 'sizes.dart';
 
-  @override
-  _CustomTextFormTAState createState() => _CustomTextFormTAState();
-}
+class CustomTextFormTA extends StatelessWidget {
 
-class _CustomTextFormTAState extends State<CustomTextFormTA> {
   final TextEditingController _typeAheadController = TextEditingController();
+  final String hintText;
 
-  List<String> jobsList = [
+  final List<String> jobsList = [
     "Food",
     "Transport",
     "Personal",
@@ -18,19 +17,21 @@ class _CustomTextFormTAState extends State<CustomTextFormTA> {
     "Medical",
     "Rent",
     "Movie",
-    "Salary"
+    "Salary",
   ];
+
+   CustomTextFormTA({this.hintText = ""});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 18.h),
       alignment: Alignment.center,
-      height: 45,
+      height: 50.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
-          Radius.circular(10),
+          Radius.circular(primaryRoundButtonAndTextField),
         ),
       ),
       child: TypeAheadField(
@@ -40,12 +41,14 @@ class _CustomTextFormTAState extends State<CustomTextFormTA> {
             autofocus: false,
             style: TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
             decoration: InputDecoration(
+              isDense: true,
+              contentPadding: EdgeInsets.only(left: 12.w,top: 12.h),
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 errorBorder: InputBorder.none,
                 disabledBorder: InputBorder.none,
-                hintText: "Search",
+                hintText: hintText,
                 hintStyle: TextStyle(
                   color: Color(0xff767676),
                 ),
@@ -75,12 +78,10 @@ class _CustomTextFormTAState extends State<CustomTextFormTA> {
           );
         },
         onSuggestionSelected: (suggestion) {
-          setState(() {
             _typeAheadController.text = suggestion;
             // userPhone = suggestion.mobile;
             // userName = suggestion.name;
             // userStatus = suggestion.status;
-          });
         },
       ),
     );

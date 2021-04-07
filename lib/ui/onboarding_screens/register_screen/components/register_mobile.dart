@@ -1,11 +1,13 @@
 // import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
 // import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
+import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
+import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
-class RegisterMobileComponent extends StatefulWidget {
+class  RegisterMobileComponent extends StatefulWidget {
   @override
   _RegisterMobileComponentState createState() =>
       _RegisterMobileComponentState();
@@ -14,6 +16,7 @@ class RegisterMobileComponent extends StatefulWidget {
 class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
   final _formKey = GlobalKey<FormState>();
   bool _rememberMeFlag = false, checkedValue = false;
+  bool isEmployer = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +51,7 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                 ),
                 SizedBox(height: 10.h),
                 SizedBox(height: 20),
-                /*CustomRadioButton(
+                CustomRadioButton(
                   defaultSelected: "Job Seeker",
                   width: 140.w,
                   height: 40.h,
@@ -65,14 +68,19 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                     'Employer',
                   ],
                   buttonTextStyle: ButtonTextStyle(
-                      selectedColor: Colors.white,
-                      unSelectedColor: Colors.black,
-                      textStyle: TextStyle(fontSize: 15.nsp)),
+                    selectedColor: Colors.white,
+                    unSelectedColor: Colors.black,
+                    textStyle: TextStyle(fontSize: 15.nsp),
+                  ),
                   radioButtonValue: (value) {
-                    print(value);
+                    if (value == "Employer") {
+                      isEmployer = true;
+                    } else {
+                      isEmployer = false;
+                    }
                   },
                   selectedColor: Theme.of(context).primaryColor,
-                ),*/
+                ),
                 Padding(
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
@@ -121,7 +129,9 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.h,),
+                SizedBox(
+                  height: 10.h,
+                ),
                 RichText(
                   text: TextSpan(
                     children: [
@@ -141,7 +151,8 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                             Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (BuildContext context) => LoginPage()),
+                                  builder: (BuildContext context) =>
+                                      LoginPage()),
                               ModalRoute.withName('/'),
                             );
                           },
@@ -149,9 +160,12 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10.h,),
+                SizedBox(
+                  height: 10.h,
+                ),
                 CheckboxListTile(
-                  title: Text("By clicking on “Register” button you are agree to ourTerms & Condition"),
+                  title: Text(
+                      "By clicking on “Register” button you are agree to ourTerms & Condition"),
                   value: checkedValue,
                   onChanged: (newValue) {
                     setState(() {
@@ -199,9 +213,14 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                   textColor: Color(0xFFffffff),
                   child: Text("Register"),
                   onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      _formKey.currentState.save();
-                    }
+                    // if (_formKey.currentState.validate()) {
+                    //   _formKey.currentState.save();
+                      isEmployer
+                          ? Navigator.pushNamedAndRemoveUntil(
+                              context, '/employer_dahboard', (route) => false)
+                          : Navigator.pushNamedAndRemoveUntil(
+                              context, '/dashboard_screen', (route) => false);
+                    // }
                   },
                 ),
 

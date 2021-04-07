@@ -124,7 +124,7 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                webHeader(),
+                webHeader(_sliderMenuContainerStateKey),
                 SizedBox(height: 45.h),
                 InkWell(
                   onTap: () {

@@ -6,9 +6,10 @@ import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/widgets/custom_drop_down.dart';
 
-Widget webHeader() {
-  GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-      GlobalKey<SliderMenuContainerState>();
+Widget webHeader(
+  GlobalKey<SliderMenuContainerState> sliderMenuContainerStateKey,
+) {
+  // sliderMenuContainerStateKey = GlobalKey<SliderMenuContainerState>();
 
   String _selectedValue;
 
@@ -60,7 +61,7 @@ Widget webHeader() {
         ),
         SizedBox(width: 5.w),
         InkWell(
-          onTap: () => _sliderMenuContainerStateKey.currentState.openDrawer(),
+          onTap: () => sliderMenuContainerStateKey.currentState.openDrawer(),
           child: Container(
             margin: EdgeInsets.symmetric(vertical: 5.h),
             height: double.infinity,

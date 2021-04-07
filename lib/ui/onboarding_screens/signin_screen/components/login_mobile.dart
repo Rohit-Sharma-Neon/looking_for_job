@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
-import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 
@@ -125,7 +125,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                          builder: (BuildContext context) => DashBoardScreen()),
+                          builder: (BuildContext context) => EmployerDashboard()),
                       ModalRoute.withName('/'),
                     );
                   },

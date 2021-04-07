@@ -1,4 +1,4 @@
-import 'package:country_code_picker/country_code_picker.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -8,13 +8,10 @@ import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/custom_text_form_ta.dart';
-import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
 import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
-import 'package:lookingforjob_flutter/widgets/custom_drop_down.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 class DashBoardMobileComponent extends StatefulWidget {
   @override
@@ -29,7 +26,7 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
   String title = "";
 
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
 
   final TextEditingController _typeAheadController = TextEditingController();
 
@@ -67,72 +64,47 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                             .dispatch(ThemeChanged(theme: AppTheme.values[0]));
                   },
                 ),*/
-            webHeader(),
+            webHeader(_sliderMenuContainerStateKey),
             Container(
               color: Colors.grey,
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
               child: Column(
                 children: [
-                  Text(
-                    findAJob,
-                    style: TextStyle(fontSize: 36.nsp,color: Colors.white)
-                  ),
+                  SizedBox(height: 20.h),
+                  Text(findAJob,
+                      style: TextStyle(fontSize: 36.nsp, color: Colors.white)),
                   Text(
                     simpleFastAndEfficient,
-                    style: TextStyle(fontSize: 28.nsp, color: Colors.white),
+                    style: TextStyle(fontSize: 22.nsp, color: Colors.white),
                   ),
-                  CustomTextFormTA(),
-                  CustomTextFormTA(),
+                  SizedBox(height: 20.h),
+                  CustomTextFormTA(
+                    hintText: "Job title",
+                  ),
+                  CustomTextFormTA(
+                    hintText: "Location",
+                  ),
+                  SizedBox(height: 18.h),
+                  MaterialButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(primaryRoundButtonAndTextField),
+                    ),
+                    minWidth: double.infinity,
+                    onPressed: () {},
+                    height: 50.h,
+                    child: Text(
+                      search,
+                      style: TextStyle(fontSize: 20.nsp, color: Colors.white,fontWeight: FontWeight.w400),
+                    ),
+                    color: primaryColorLight,
+                  ),
+                  SizedBox(height: 20.h),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Text(
-              jobCategories,
-              style: TextStyle(fontSize: 26.nsp),
-            ),
-            SizedBox(
-              height: 10.h,
             ),
             jobCategoriesComponent(),
-            Container(
-              alignment: Alignment.topLeft,
-              width: double.infinity,
-              padding:
-                  EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding),
-              margin: EdgeInsets.only(top: 20.h),
-              color: Colors.white,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Latest Jobs",
-                    style: TextStyle(
-                      fontSize: 26.nsp,
-                    ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: "Browse All Jobs",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14.nsp,
-                      ),
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.arrow_forward),
-                        ),
-                      ],
-                    ),
-                  ),
-                  latestJobsComponent(),
-                ],
-              ),
-            ),
+            latestJobsComponent(),
             kIsWeb ? bottomWebBanner() : Container(),
           ],
         ),
