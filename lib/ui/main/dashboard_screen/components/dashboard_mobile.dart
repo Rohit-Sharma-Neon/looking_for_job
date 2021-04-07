@@ -103,52 +103,8 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 40.h,
-            ),
-            Text(
-              jobCategories,
-              style: TextStyle(fontSize: 24.nsp),
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
             jobCategoriesComponent(),
-            Container(
-              alignment: Alignment.topLeft,
-              width: double.infinity,
-              padding:
-                  EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding),
-              margin: EdgeInsets.only(top: 20.h),
-              color: Colors.white,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Latest Jobs",
-                    style: TextStyle(
-                      fontSize: 26.nsp,
-                    ),
-                  ),
-                  RichText(
-                    text: TextSpan(
-                      text: "Browse All Jobs",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14.nsp,
-                      ),
-                      children: [
-                        WidgetSpan(
-                          child: Icon(Icons.arrow_forward),
-                        ),
-                      ],
-                    ),
-                  ),
-                  latestJobsComponent(),
-                ],
-              ),
-            ),
+            latestJobsComponent(),
             kIsWeb ? bottomWebBanner() : Container(),
           ],
         ),
