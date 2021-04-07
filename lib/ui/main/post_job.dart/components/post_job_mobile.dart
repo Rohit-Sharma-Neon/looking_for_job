@@ -66,10 +66,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.3),
-                          spreadRadius: 0.5,
-                          blurRadius: 1,
-                          offset: Offset(0, 2), // changes position of shadow
+                          color: Colors.grey.withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 0,
+                          offset: Offset(0, 1), // changes position of shadow
                         ),
                       ],
                       borderRadius: BorderRadius.circular(5)),
@@ -134,11 +134,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                       color: Colors.white,
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.grey.withOpacity(0.3),
-                                          spreadRadius: 0.5,
-                                          blurRadius: 1,
+                                          color: Colors.grey.withOpacity(0.1),
+                                          spreadRadius: 1,
+                                          blurRadius: 0,
                                           offset: Offset(0,
-                                              2), // changes position of shadow
+                                              1), // changes position of shadow
                                         ),
                                       ]),
                                   child: DropdownButtonHideUnderline(
@@ -182,7 +182,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               RichText(
                                 text: TextSpan(children: [
                                   TextSpan(
-                                      text: "Company Description",
+                                      text: "Company Name",
                                       style: TextStyle(
                                           fontSize: textSize20.nsp,
                                           color: Colors.black)),
@@ -207,11 +207,12 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.3),
-                                        spreadRadius: 0.5,
-                                        blurRadius: 1,
-                                        offset: Offset(0, 2),
-                                      )
+                                        color: Colors.grey.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 0,
+                                        offset: Offset(
+                                            0, 1), // changes position of shadow
+                                      ),
                                     ]),
                                 child: Padding(
                                   padding: EdgeInsets.only(left: 15.w),
@@ -283,9 +284,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   autofocus: false,
                                   maxLines: 10,
                                   decoration: InputDecoration(
+                                      fillColor: Colors.white,
+                                      filled: true,
                                       border: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                              color: Colors.grey[350])))),
+                                              color: Colors.grey[200])))),
                               SizedBox(
                                 height: 60.h,
                               )
@@ -343,22 +346,29 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                         height: 20.h,
                       ),
                       Center(
-                        child: ElevatedButton.icon(
-                          icon: Icon(
-                            Icons.check_circle_outline,
-                            color: Colors.white,
-                            size: 30.h,
+                        child: ButtonTheme(
+                          height: 50.h,
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints.tightFor(height: 50),
+                            child: ElevatedButton.icon(
+                              icon: Icon(
+                                Icons.check_circle_outline,
+                                color: Colors.white,
+                                size: 30.h,
+                              ),
+                              label: Text(
+                                'Choose Category',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              onPressed: () {
+                                print('Pressed');
+                              },
+                              style: (ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Color(0xff198EDC)))),
+                            ),
                           ),
-                          label: Text(
-                            'Choose Category',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onPressed: () {
-                            print('Pressed');
-                          },
-                          style: (ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Color(0xff198EDC)))),
                         ),
                       ),
                       Padding(
@@ -396,10 +406,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 1,
-                                      offset: Offset(0, 2),
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 1),
                                     )
                                   ]),
                               child: Padding(
@@ -422,19 +432,32 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             ButtonTheme(
                               height: 50.h,
                               minWidth: 300.w,
-                              child: OutlineButton(
-                                onPressed: () {},
-                                splashColor: primaryColorLight,
-                                borderSide: BorderSide(
-                                  color: primaryColorLight,
-                                ),
-                                shape: ContinuousRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)),
-                                child: Text(
-                                  "Upload Image",
-                                  style: TextStyle(
-                                    fontSize: textSize20.nsp,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color:
+                                            primaryColorLight.withOpacity(0.2),
+                                        spreadRadius: 1,
+                                        blurRadius: 2,
+                                        offset: Offset(0, 1),
+                                      )
+                                    ]),
+                                child: OutlineButton(
+                                  onPressed: () {},
+                                  splashColor: primaryColorLight,
+                                  borderSide: BorderSide(
                                     color: primaryColorLight,
+                                  ),
+                                  shape: ContinuousRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Text(
+                                    "Upload Image",
+                                    style: TextStyle(
+                                      fontSize: textSize20.nsp,
+                                      color: primaryColorLight,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -502,12 +525,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.3),
-                                        spreadRadius: 0.5,
-                                        blurRadius: 1,
-                                        offset: Offset(
-                                            0, 2), // changes position of shadow
-                                      ),
+                                        color: Colors.grey.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 0,
+                                        offset: Offset(0, 1),
+                                      )
                                     ]),
                                 child: DropdownButtonHideUnderline(
                                   child: DropdownButton(
@@ -574,10 +596,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 1,
-                                      offset: Offset(0, 2),
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 1),
                                     )
                                   ]),
                               child: Padding(
@@ -605,10 +627,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 1,
-                                      offset: Offset(0, 2),
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 1),
                                     )
                                   ]),
                               child: Padding(
@@ -634,12 +656,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.3),
-                                        spreadRadius: 0.5,
-                                        blurRadius: 1,
-                                        offset: Offset(
-                                            0, 2), // changes position of shadow
-                                      ),
+                                        color: Colors.grey.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 0,
+                                        offset: Offset(0, 1),
+                                      )
                                     ]),
                                 child: DropdownButtonHideUnderline(
                                   child: DropdownButton(
@@ -719,12 +740,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 1,
-                                      offset: Offset(
-                                          0, 2), // changes position of shadow
-                                    ),
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 1),
+                                    )
                                   ]),
                               child: Row(
                                 children: [
@@ -797,12 +817,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     color: Colors.white,
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.3),
-                                        spreadRadius: 0.5,
-                                        blurRadius: 1,
-                                        offset: Offset(
-                                            0, 2), // changes position of shadow
-                                      ),
+                                        color: Colors.grey.withOpacity(0.1),
+                                        spreadRadius: 1,
+                                        blurRadius: 0,
+                                        offset: Offset(0, 1),
+                                      )
                                     ]),
                                 child: DropdownButtonHideUnderline(
                                   child: DropdownButton(
@@ -869,10 +888,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 1,
-                                      offset: Offset(0, 2),
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 1),
                                     )
                                   ]),
                               child: Padding(
@@ -917,10 +936,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.grey.withOpacity(0.3),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 1,
-                                      offset: Offset(0, 2),
+                                      color: Colors.grey.withOpacity(0.1),
+                                      spreadRadius: 1,
+                                      blurRadius: 0,
+                                      offset: Offset(0, 1),
                                     )
                                   ]),
                               child: Padding(
@@ -941,29 +960,49 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     color: Colors.grey[800])),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        height: 50.h,
                       )
                     ],
                   ),
                 ),
-                SizedBox(height: 40.h,),
-                ElevatedButton.icon(
-                  icon: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                    size: 30.h,
-                  ),
-                  label: Text(
-                    'Post a Job',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    print('Pressed');
-                  },
-                  style: (ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Color(0xff198EDC)))),
+                SizedBox(
+                  height: 30.h,
                 ),
-                SizedBox(height: 40.h,)
+                Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                      color: primaryColorLight.withOpacity(0.3),
+                      spreadRadius: 2,
+                      blurRadius: 1,
+                      offset: Offset(0, 1),
+                    )
+                  ]),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints.tightFor(height: 50),
+                    child: ElevatedButton.icon(
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                        size: 30.h,
+                      ),
+                      label: Text(
+                        'Post a Job',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        print('Pressed');
+                      },
+                      style: (ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xff198EDC)))),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 40.h,
+                )
               ],
             ),
           ),

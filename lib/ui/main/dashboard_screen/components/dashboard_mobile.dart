@@ -72,8 +72,13 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
               child: Column(
                 children: [
                   SizedBox(height: 20.h),
-                  Text(findAJob,
-                      style: TextStyle(fontSize: 36.nsp, color: Colors.white)),
+                  Text(
+                    findAJob,
+                    style: TextStyle(
+                      fontSize: 36.nsp,
+                      color: Colors.white,
+                    ),
+                  ),
                   Text(
                     simpleFastAndEfficient,
                     style: TextStyle(fontSize: 22.nsp, color: Colors.white),
@@ -88,18 +93,22 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                   SizedBox(height: 18.h),
                   MaterialButton(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(primaryRoundButtonAndTextField),
+                      borderRadius:
+                          BorderRadius.circular(primaryRoundButtonAndTextField),
                     ),
                     minWidth: double.infinity,
                     onPressed: () {},
                     height: 50.h,
                     child: Text(
                       search,
-                      style: TextStyle(fontSize: 20.nsp, color: Colors.white,fontWeight: FontWeight.w400),
+                      style: TextStyle(
+                          fontSize: 20.nsp,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400),
                     ),
                     color: primaryColorLight,
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 50.h),
                 ],
               ),
             ),

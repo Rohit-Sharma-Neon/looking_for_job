@@ -18,7 +18,8 @@ Widget jobCategoriesComponent() {
   ];
 
   return Container(
-    padding: EdgeInsets.only(top: 60.h,bottom: 20.h),
+    color: Color(0xffF9F9F9),
+    padding: EdgeInsets.only(top: 75.h, bottom: 20.h),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -27,7 +28,7 @@ Widget jobCategoriesComponent() {
           style: TextStyle(fontSize: 24.nsp),
         ),
         SizedBox(
-          height: 10.h,
+          height: 25.h,
         ),
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),
@@ -37,17 +38,12 @@ Widget jobCategoriesComponent() {
             BuildContext context,
             int index,
           ) {
-            return Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.grey,
-                    width: 0.4,
-                  ),
+            return Column(children: [
+              ListTile(
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: scaffoldHorizontalPadding + 10.w,
                 ),
-              ),
-              child: ListTile(
-                contentPadding: EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding+10.w),
+                visualDensity: VisualDensity( vertical: -4.w),
                 onTap: () {},
                 leading: Icon(Icons.opacity),
                 title: Text(
@@ -60,9 +56,18 @@ Widget jobCategoriesComponent() {
                   size: 25.h,
                 ),
               ),
-            );
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Divider(
+                  color: Colors.grey[300],
+                ),
+              ),
+            ]);
           },
         ),
+        SizedBox(
+          height: 15.h,
+        )
       ],
     ),
   );
