@@ -23,7 +23,7 @@ const String management = "Management";
 const String architectureAndEngineer = "Architecture and Engineer";
 String dropdownValue="Select Company";
 // EmployerDashboard
-const String logintime = "You last logged in at: 26 Mar 2021";
+const String youLastLogged_ = "You last logged in at: 26 Mar 2021";
 const String timming0603 = "06:03";
 const String num0 = "0";
 const String free = "Free";

@@ -80,8 +80,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: scaffoldHorizontalPadding + 10.w),
-                        child: RichText(
-                            text: TextSpan(children: [
+                        child: Text.rich(TextSpan(children: [
                           WidgetSpan(
                               child: Icon(
                             Icons.blur_linear_outlined,
@@ -107,19 +106,21 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               SizedBox(
                                 height: 20.h,
                               ),
-                              RichText(
-                                text: TextSpan(children: [
-                                  TextSpan(
-                                      text: "Company",
-                                      style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: Colors.black)),
-                                  TextSpan(
-                                      text: " *",
-                                      style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: Colors.black)),
-                                ]),
+                              Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                        text: "Post a Job",
+                                        style: TextStyle(
+                                            fontSize: textSize20.nsp,
+                                            color: Colors.black)),
+                                    TextSpan(
+                                        text: " *",
+                                        style: TextStyle(
+                                            fontSize: textSize20.nsp,
+                                            color: Colors.black)),
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: 20.h,
@@ -146,7 +147,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                       isDense: false,
                                       hint: _dropDownValue == null
                                           ? Text(
-                                              '     Select Company',
+                                              'Select Company',
                                               style: TextStyle(
                                                   fontSize: textSize18.nsp),
                                             )
