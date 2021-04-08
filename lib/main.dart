@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       allowFontScaling: false,
       builder: () {
         return BlocProvider(
-          builder: (context) => ThemeBloc(),
+          create: (context) => ThemeBloc(ThemeState()),
           child: BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
               return MaterialApp(
