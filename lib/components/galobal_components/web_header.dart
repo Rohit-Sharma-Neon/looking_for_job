@@ -32,9 +32,9 @@ Widget webHeader(
         SizedBox(width: 10.w),
         Image.asset(
           appLogoWithName,
-          width: 70.w,
+          width: 90.w,
         ),
-        SizedBox(width: 10.w),
+        SizedBox(width: 5.w),
         CountryCodePicker(
           searchDecoration: InputDecoration(
             hintText: search,

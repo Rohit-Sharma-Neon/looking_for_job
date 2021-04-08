@@ -19,7 +19,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => PostJobMobileComponent(),
+  '/': (context) => EmployerDashboard(),
   // OnBoardings
   '/signIn1': (context) => LoginPage(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),

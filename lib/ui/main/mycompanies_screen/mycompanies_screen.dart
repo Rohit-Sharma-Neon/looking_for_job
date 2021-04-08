@@ -104,7 +104,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFF8F8F8),
+        backgroundColor: Color(0xFFFFFFFF),
         body: SliderMenuContainer(
           drawerIconColor: Colors.transparent,
           drawerIconSize: 0,
@@ -141,7 +141,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                     key: _key,
                     decoration: BoxDecoration(
                       color: Color(0xFFF5C6373),
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(7),
                     ),
                     child: RichText(
                       text: TextSpan(
@@ -329,8 +329,8 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                 // ),
                 SizedBox(height: 20.h),
                 Container(
-                  height: 50.h,
-                  width: 320.w,
+                  height: 60.h,
+                  width: 330.w,
                   decoration: BoxDecoration(
                     color: Color(0xFFEFF7FD),
                     borderRadius: BorderRadius.only(
@@ -347,12 +347,13 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                           color: Colors.black,
                         ),
                       ],
-                      color: Color(0xFFF9F9F9),
+                      color: Color(0xFFFFFFFF),
                     ),
                     alignment: Alignment.centerLeft,
                     child: RichText(
                       text: TextSpan(
                         children: [
+                          WidgetSpan(child: SizedBox(width: 10.w)),
                           WidgetSpan(
                             child: Icon(
                               Icons.roofing,
@@ -378,7 +379,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
                   height: 250.h,
-                  width: 320.w,
+                  width: 330.w,
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(
@@ -399,9 +400,9 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                           decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.grey.withOpacity(0.1),
-                                spreadRadius: 5,
-                                blurRadius: 3,
+                                color: Colors.grey.withOpacity(0.2),
+                                spreadRadius: 2,
+                                blurRadius: 1,
                                 offset:
                                 Offset(0, 0), // changes position of shadow
                               ),
@@ -434,7 +435,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           MaterialButton(
-                            height: 35.h,
+                            height: 45.h,
                             minWidth: 160.w,
                             shape: RoundedRectangleBorder(
                                 borderRadius: new BorderRadius.circular(5)),
@@ -508,6 +509,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                     ],
                   ),
                 ),
+
               ],
             ),
           ),
