@@ -1,3 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'colors.dart';
+
 const double textSize36 = 36;
 const double textSize30 = 30;
 const double textSize28 = 28;
@@ -24,5 +29,16 @@ const double textFormField = 18;
 const double buttonTextSize = 18;
 const double scaffoldHorizontalPadding = 15;
 const double primaryRoundButtonAndTextField = 5;
+const double subHeadingTS = 15;
+
+/// Post A Job Constants
+TextStyle postAJobSubHeadingTextStyle = TextStyle(
+  fontSize: 18.nsp,
+  color: primaryTextColorLightTheme,
+);
+TextStyle dropDownTextStyle = TextStyle(
+  fontSize: 18.nsp,
+  color: Colors.grey[600],
+);
 
 //const double textSize = ;

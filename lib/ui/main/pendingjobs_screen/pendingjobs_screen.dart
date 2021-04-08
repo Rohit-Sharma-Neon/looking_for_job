@@ -280,8 +280,8 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                 // ),
                 SizedBox(height: 20.h),
                 Container(
-                  height: 50.h,
-                  width: 320.w,
+                  height: 60.h,
+                  width: 330.w,
                   decoration: BoxDecoration(
                     color: Color(0xFFEFF7FD),
                     borderRadius: BorderRadius.only(
@@ -298,12 +298,13 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                           color: Colors.black,
                         ),
                       ],
-                      color: Color(0xFFF9F9F9),
+                      color: Color(0xFFFFFFFF),
                     ),
                     alignment: Alignment.centerLeft,
                     child: RichText(
                       text: TextSpan(
                         children: [
+                          WidgetSpan(child: SizedBox(width: 10.w)),
                           WidgetSpan(
                             child: Icon(
                               Icons.access_time,
@@ -329,7 +330,7 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
                   height: 220.h,
-                  width: 320.w,
+                  width: 330.w,
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(

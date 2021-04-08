@@ -61,7 +61,27 @@ const String createNewCompany = "Create New Company";
 const String name = "Name";
 const String actions= "Actions";
 const String noExpiredJobsFound = "No expired jobs found";
-// const String bookmarkOrShare = "Bookmark or Share";
+const String status = "Status";
+const String noActiveJobsFound = "No active jobs found";
+// const String myJobs = "My Jobs";
+// const String myJobs = "My Jobs";
+// const String myJobs = "My Jobs";
+// const String myJobs = "My Jobs";
+// const String myJobs = "My Jobs";
+// const String myJobs = "My Jobs";
+// const String myJobs = "My Jobs";
+//
+// const String myJobs = "My Jobs";
 
 
-//const String  = "";
+// // Post a Job
+// const String companyInformation = "Comapany Information";
+// const String company = "Comapany";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";
+// const String companyInformation = "Comapany Information";

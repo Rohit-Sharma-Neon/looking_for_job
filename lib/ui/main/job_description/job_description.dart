@@ -606,28 +606,22 @@ class _JobDescriptionState extends State<JobDescription> {
                                               Row(
                                                 mainAxisSize: MainAxisSize.min,
                                                 children: [
-                                                  Expanded(
-                                                    flex: 4,
-                                                    child: Text(
-                                                      "Sports Officer cum Warden",
-                                                      style: TextStyle(
-                                                          color: Colors.blue, fontSize: 20),
-                                                    ),
+                                                  Text(
+                                                    "Sports Officer cum Warden",
+                                                    style: TextStyle(
+                                                        color: Colors.blue, fontSize: 20),
                                                   ),
                                                   SizedBox(
                                                     width: 10,
                                                   ),
-                                                  Expanded(
-                                                    flex: 2,
-                                                    child: OutlineButton(
-                                                      borderSide: BorderSide(
-                                                        color: Colors.blue,
-                                                      ),
-                                                      onPressed: () {},
-                                                      child: Text(
-                                                        "Full Time",
-                                                        style: TextStyle(color: Colors.blue),
-                                                      ),
+                                                  OutlineButton(
+                                                    borderSide: BorderSide(
+                                                      color: Colors.blue,
+                                                    ),
+                                                    onPressed: () {},
+                                                    child: Text(
+                                                      "Full Time",
+                                                      style: TextStyle(color: Colors.blue),
                                                     ),
                                                   ),
                                                 ],
