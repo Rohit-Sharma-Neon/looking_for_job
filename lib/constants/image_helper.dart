@@ -9,4 +9,4 @@ const String profile = "assets/images/profile.png";
 const String profileicon = "assets/images/profileicon.png";
 const String profilelogo = "assets/images/profilelogo.jpg";
 const String profileicons = "assets/images/profileicons.jpg";
-// const String gmaillogos = "assets/images/gmaillogos.png";
+const String menu = "assets/images/menu.png";
