@@ -30,7 +30,11 @@ class MyApp extends StatelessWidget {
                 title: 'Looking for job',
                 initialRoute: '/',
                 routes: customRoutes,
-                theme: state.themeData,
+                theme: ThemeData(
+                  fontFamily: "Nunito",
+                  primarySwatch: Colors.blue,
+                  visualDensity: VisualDensity.adaptivePlatformDensity,
+                ),
               );
             },
           ),

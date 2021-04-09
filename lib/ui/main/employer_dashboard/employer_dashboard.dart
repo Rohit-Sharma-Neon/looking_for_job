@@ -5,6 +5,7 @@ import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 
+
 import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
 import '../../../drawer/menu_widget.dart';
@@ -87,7 +88,9 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
           width: buttonSize.width,
           child: Material(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15.w,),
+              margin: EdgeInsets.symmetric(
+                horizontal: 15.w,
+              ),
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 25.h),
               color: Colors.white,
               child: Column(
@@ -201,8 +204,8 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                             color: Color(0xFF333333),
                             borderRadius: BorderRadius.circular(7),
                           ),
-                          child: RichText(
-                            text: TextSpan(
+                          child: Text.rich(
+                            TextSpan(
                               children: [
                                 WidgetSpan(child: SizedBox(width: 10.w)),
                                 WidgetSpan(
@@ -214,8 +217,10 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 ),
                                 WidgetSpan(child: SizedBox(width: 15.w)),
                                 TextSpan(
-                                  style:
-                                  TextStyle(color: Colors.white, fontSize: 18.nsp),
+                                  style: TextStyle(
+                                      color: Color(0xFFFFFFFF),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 18.nsp),
                                   text: dashboardNavigation,
                                 ),
                               ],
@@ -245,29 +250,48 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                         child: Column(
                           children: [
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                IconButton(
-                                  icon:
-                                      Image.asset(pinterestlogo, height: 100.h),
-                                  onPressed: () {},
-                                ),
+                                Container(
+                                    decoration: BoxDecoration(
+                                        border: Border.all(color: Colors.grey[350]),
+                                        color: Colors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.0),
+                                            spreadRadius: 0.5,
+                                            blurRadius: 1,
+                                            offset:
+                                            Offset(0, 1), // changes position of shadow
+                                          ),
+                                        ],
+                                        borderRadius: BorderRadius.circular(5)),
+                                    child: Image.asset(profile, height: 60.h)),
+                                SizedBox(width: 15),
                                 Column(
                                   children: [
                                     Text(
                                       jaspreet,
                                       style: TextStyle(
+                                          color: Color(0xFF333333),
                                           fontWeight: FontWeight.w500,
-                                          fontSize: textSize24),
+                                          fontSize: textSize26),
                                     ),
                                     Text(
-                                      logintime,
-                                      style: TextStyle(fontSize: textSize14),
+                                      youLastLogged_,
+                                      style: TextStyle(
+                                          color: Color(0xFF666666),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: textSize14),
                                     ),
                                     SizedBox(height: 10.h),
                                     Text(
                                       timming0603,
-                                      style: TextStyle(fontSize: textSize14),
+                                      style: TextStyle(
+                                          color: Color(0xFF666666),
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: textSize14),
                                     ),
                                   ],
                                 )
@@ -287,20 +311,24 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                         Text(
                                           num0,
                                           style: TextStyle(
-                                              fontSize: textSize16,
-                                              fontWeight: FontWeight.bold),
+                                            color: Color(0xFF666666),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: textSize20,
+                                          ),
                                         ),
                                         SizedBox(height: 5.h),
                                         Row(
                                           children: [
                                             Icon(
-                                              Icons.shop_outlined,
-                                              color: Color(0xFF0691CE),
+                                              Icons.shopping_bag,
+                                              color: Color(0xFF198EDC),
                                             ),
                                             SizedBox(width: 5.w),
                                             Text(
                                               jobs,
                                               style: TextStyle(
+                                                  color: Color(0xFF666666),
+                                                  fontWeight: FontWeight.w400,
                                                   fontSize: textSize16),
                                             ),
                                           ],
@@ -317,20 +345,24 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                           Text(
                                             free,
                                             style: TextStyle(
-                                                fontSize: textSize16,
-                                                fontWeight: FontWeight.bold),
+                                              color: Color(0xFF666666),
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: textSize20,
+                                            ),
                                           ),
                                           SizedBox(height: 5.h),
                                           Row(
                                             children: [
                                               Icon(
-                                                Icons.shop_outlined,
-                                                color: Color(0xFF0691CE),
+                                                Icons.pages_outlined,
+                                                color: Color(0xFF198EDC),
                                               ),
                                               SizedBox(width: 5.w),
                                               Text(
                                                 membership,
                                                 style: TextStyle(
+                                                    color: Color(0xFF666666),
+                                                    fontWeight: FontWeight.w400,
                                                     fontSize: textSize16),
                                               ),
                                             ],
@@ -380,14 +412,14 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                               SizedBox(
                                 width: 20.w,
                               ),
-                              RichText(
-                                text: TextSpan(
+                              Text.rich(
+                                TextSpan(
                                   children: [
                                     WidgetSpan(
                                       child: Icon(
                                         Icons.person,
                                         size: 28.nsp,
-                                        color: Colors.blue,
+                                        color: Color(0xFF198EDC),
                                       ),
                                     ),
                                     WidgetSpan(
@@ -396,9 +428,9 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     )),
                                     TextSpan(
                                       style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.nsp,
-                                          fontWeight: FontWeight.w400),
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: textSize16),
                                       text: "Account Details",
                                     ),
                                   ],
@@ -411,7 +443,6 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
 
                       Container(
                         padding: EdgeInsets.symmetric(
-                            vertical: 15.h,
                             horizontal: scaffoldHorizontalPadding.w),
                         width: 330.w,
                         decoration: BoxDecoration(
@@ -423,7 +454,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 spreadRadius: 0.5,
                                 blurRadius: 1,
                                 offset:
-                                    Offset(0, 2), // changes position of shadow
+                                    Offset(0, 1), // changes position of shadow
                               ),
                             ],
                             borderRadius: BorderRadius.circular(0)),
@@ -435,27 +466,29 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 SizedBox(
                                   height: 30.h,
                                 ),
-                                RichText(
-                                  text: TextSpan(children: [
+                                Text.rich(
+                                  TextSpan(children: [
                                     TextSpan(
                                         text: "Name",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                     TextSpan(
-                                        text: " *",
+                                        text: "*",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                   ]),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 320.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -475,12 +508,12 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       Container(
                                         height: 50.h,
                                         width: 50.w,
-                                        color: Colors.grey[200],
+                                        color: Color(0xFFF8F8F8),
                                         child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Icon(
                                               Icons.person_outline,
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                             )),
                                       ),
                                       // VerticalDivider(),
@@ -498,29 +531,31 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
-                                RichText(
-                                  text: TextSpan(children: [
+                                Text.rich(
+                                  TextSpan(children: [
                                     TextSpan(
-                                        text: " User Name",
+                                        text: "User Name",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                     TextSpan(
-                                        text: " *",
+                                        text: "*",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                   ]),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -540,12 +575,12 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       Container(
                                         height: 50.h,
                                         width: 50.w,
-                                        color: Colors.grey[200],
+                                        color: Color(0xFFF8F8F8),
                                         child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Icon(
                                               Icons.person_outline,
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                             )),
                                       ),
                                       // VerticalDivider(),
@@ -563,29 +598,31 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
-                                RichText(
-                                  text: TextSpan(children: [
+                                Text.rich(
+                                  TextSpan(children: [
                                     TextSpan(
                                         text: "Email Address",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                     TextSpan(
-                                        text: " *",
+                                        text: "*",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                   ]),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -605,12 +642,12 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       Container(
                                         height: 50.h,
                                         width: 50.w,
-                                        color: Colors.grey[200],
+                                        color: Color(0xFFF8F8F8),
                                         child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Icon(
                                               Icons.email_outlined,
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                             )),
                                       ),
                                       // VerticalDivider(),
@@ -628,29 +665,31 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
-                                RichText(
-                                  text: TextSpan(children: [
+                                Text.rich(
+                                  TextSpan(children: [
                                     TextSpan(
                                         text: "Phone Number",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                     TextSpan(
-                                        text: " *",
+                                        text: "*",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                   ]),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -670,12 +709,12 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       Container(
                                         height: 50.h,
                                         width: 50.w,
-                                        color: Colors.grey[200],
+                                        color: Color(0xFFF8F8F8),
                                         child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Icon(
                                               Icons.phone_outlined,
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                             )),
                                       ),
                                       // VerticalDivider(),
@@ -693,16 +732,17 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text(
                                   "Avatar",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
-                                    fontWeight: FontWeight.w400,
+                                    fontSize: textSize16,
+                                    color: Color(0xFF333333),
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                SizedBox(height: 20.h),
+                                SizedBox(height: 10.h),
                                 Container(
                                   decoration: BoxDecoration(
                                     color: Color(0xffFFFFFF),
@@ -722,7 +762,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     ],
                                   ),
                                   child: ButtonTheme(
-                                    height: 50.h,
+                                    height: 40.h,
                                     minWidth: 350.w,
                                     child: OutlineButton(
                                       onPressed: () {},
@@ -736,8 +776,8 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       child: Text(
                                         "Upload Avatar",
                                         style: TextStyle(
-                                          fontSize: 18.nsp,
-                                          fontWeight: FontWeight.w500,
+                                          fontSize: textSize16,
+                                          fontWeight: FontWeight.w600,
                                           color: Color(0xff198EDC),
                                         ),
                                       ),
@@ -749,16 +789,20 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 ),
                                 Text("Use 150x150px image for perfect look.",
                                     style: TextStyle(
-                                        fontSize: textSize16.nsp,
-                                        color: Colors.grey)),
+                                      fontSize: textSize14,
+                                      color: Color(0xFF888888),
+                                      fontWeight: FontWeight.w400,
+                                    )),
                                 SizedBox(
-                                  height: 40.h,
+                                  height: 30.h,
                                 ),
                                 Text(
                                   "Gender",
                                   style: TextStyle(
-                                      fontSize: 18.nsp,
-                                      fontWeight: FontWeight.w400),
+                                    fontSize: textSize16,
+                                    color: Color(0xFF333333),
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                                 SizedBox(
                                   width: 50.w,
@@ -809,27 +853,22 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 SizedBox(
                                   height: 20.h,
                                 ),
-                                RichText(
-                                  text: TextSpan(children: [
+                                Text.rich(
+                                  TextSpan(children: [
                                     TextSpan(
                                         text: "City",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
-                                    TextSpan(
-                                        text: " *",
-                                        style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                   ]),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                    height: 50.h,
+                                    height: 45.h,
                                     width: 350.w,
                                     decoration: BoxDecoration(
                                         border:
@@ -848,10 +887,17 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       child: DropdownButton(
                                         isDense: false,
                                         hint: _cityValue == null
-                                            ? Text(
-                                                '    Select City',
-                                                style: TextStyle(
-                                                    fontSize: textSize18.nsp),
+                                            ? Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 15.h),
+                                                child: Text(
+                                                  'Select City',
+                                                  style: TextStyle(
+                                                    fontSize: textSize16,
+                                                    color: Color(0xFF808080),
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
                                               )
                                             : Text(
                                                 _cityValue,
@@ -887,30 +933,31 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       ),
                                     )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
-                                RichText(
-                                  text: TextSpan(children: [
+                                Text.rich(
+                                  TextSpan(children: [
                                     TextSpan(
                                         text: "Address",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                     TextSpan(
-                                        text: " *",
+                                        text: "*",
                                         style: TextStyle(
-                                            fontSize: 18.nsp,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black)),
+                                          fontSize: textSize16,
+                                          color: Color(0xFF333333),
+                                          fontWeight: FontWeight.w600,
+                                        )),
                                   ]),
                                 ),
-                                SizedBox(height: 20.h),
+                                SizedBox(height: 10.h),
                                 TextField(
                                   autofocus: false,
                                   maxLines: 5,
                                   decoration: InputDecoration(
-                                    hintText: "Address",
                                     border: OutlineInputBorder(
                                       borderSide:
                                           BorderSide(color: Colors.grey[350]),
@@ -918,18 +965,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("About Me",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
-                                SizedBox(height: 20.h),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
+                                SizedBox(height: 10.h),
                                 TextField(
                                   autofocus: false,
                                   maxLines: 10,
                                   decoration: InputDecoration(
-                                    hintText: "Description",
                                     border: OutlineInputBorder(
                                       borderSide:
                                           BorderSide(color: Colors.grey[350]),
@@ -937,17 +985,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("Website",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -990,17 +1040,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("Facebook",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -1022,10 +1074,10 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                         width: 50.w,
                                         color: Colors.grey[200],
                                         child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(14.0),
                                             child: Image.asset(
                                               "assets/images/facebooklogo.png",
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                               height: 20,
                                             )),
                                       ),
@@ -1044,17 +1096,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("Instagram",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -1076,10 +1130,10 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                         width: 50.w,
                                         color: Colors.grey[200],
                                         child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(16.0),
                                             child: Image.asset(
                                               "assets/images/intagram.png",
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                               height: 15,
                                             )),
                                       ),
@@ -1098,17 +1152,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("Twitter",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -1126,14 +1182,14 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        height: 50.h,
+                                        height: 45.h,
                                         width: 50.w,
                                         color: Colors.grey[200],
                                         child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(16.0),
                                             child: Image.asset(
                                               "assets/images/twitter.png",
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                               height: 15,
                                             )),
                                       ),
@@ -1152,17 +1208,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("LinkedIn",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -1180,14 +1238,14 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        height: 50.h,
+                                        height: 45.h,
                                         width: 50.w,
                                         color: Colors.grey[200],
                                         child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(16.0),
                                             child: Image.asset(
                                               "assets/images/linkedin.png",
-                                              color: Colors.grey[600],
+                                              color: Color(0xFFA0A0A0),
                                               height: 20,
                                             )),
                                       ),
@@ -1206,17 +1264,19 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 30.h,
                                 ),
                                 Text("YouTube",
                                     style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        fontWeight: FontWeight.w400)),
+                                      fontSize: textSize16,
+                                      color: Color(0xFF333333),
+                                      fontWeight: FontWeight.w600,
+                                    )),
                                 SizedBox(
-                                  height: 20.h,
+                                  height: 10.h,
                                 ),
                                 Container(
-                                  height: 50.h,
+                                  height: 45.h,
                                   width: 350.w,
                                   decoration: BoxDecoration(
                                       border:
@@ -1234,14 +1294,14 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        height: 50.h,
+                                        height: 45.h,
                                         width: 50.w,
                                         color: Colors.grey[200],
                                         child: Padding(
-                                          padding: const EdgeInsets.all(0.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Image.asset(
                                             "assets/images/youtubelogo.png",
-                                            color: Colors.grey[600],
+                                            color: Color(0xFFA0A0A0),
                                             height: 30.h,
                                           ),
                                         ),
@@ -1276,8 +1336,10 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     child: Text(
                                       "Save Changes",
                                       style: TextStyle(
-                                          fontSize: 18.nsp,
-                                          color: Colors.white),
+                                        fontSize: textSize16,
+                                        color: Color(0xFFFFFFFF),
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -1287,8 +1349,9 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                               ]),
                         ),
                       ),
+
                       SizedBox(
-                        height: 100.h,
+                        height: 50.h,
                       ),
 
                       Container(
@@ -1325,14 +1388,14 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                               SizedBox(
                                 width: 20.w,
                               ),
-                              RichText(
-                                text: TextSpan(
+                              Text.rich(
+                                TextSpan(
                                   children: [
                                     WidgetSpan(
                                       child: Icon(
                                         Icons.lock,
                                         size: 28.nsp,
-                                        color: Colors.blue,
+                                        color: Color(0xff198EDC),
                                       ),
                                     ),
                                     WidgetSpan(
@@ -1341,8 +1404,10 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                     )),
                                     TextSpan(
                                       style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18.nsp),
+                                        fontSize: textSize16,
+                                        color: Color(0xFF333333),
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                       text: "Password",
                                     ),
                                   ],
@@ -1377,19 +1442,21 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: 50.h,
+                                height: 20.h,
                               ),
                               Text(
                                 "New Password",
                                 style: TextStyle(
-                                    fontSize: 18.nsp,
-                                    fontWeight: FontWeight.w400),
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                               SizedBox(
-                                height: 20.h,
+                                height: 10.h,
                               ),
                               Container(
-                                height: 50.h,
+                                height: 45.h,
                                 width: 350.w,
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.grey[300]),
@@ -1418,14 +1485,16 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                               Text(
                                 " Reapeat New Password",
                                 style: TextStyle(
-                                    fontSize: 18.nsp,
-                                    fontWeight: FontWeight.w400),
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                               SizedBox(
-                                height: 20.h,
+                                height: 10.h,
                               ),
                               Container(
-                                height: 50.h,
+                                height: 45.h,
                                 width: 350.w,
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.grey[300]),
@@ -1464,8 +1533,9 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   child: Text(
                                     "Update",
                                     style: TextStyle(
-                                      fontSize: 18.nsp,
-                                      color: Colors.white,
+                                      fontSize: textSize16,
+                                      color: Color(0xFFFFFFFF),
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                 ),
@@ -1765,7 +1835,7 @@ class CustomListTile extends StatelessWidget {
       ),
       trailing: Icon(
         trailingIcon,
-        color: Color(0xFF0691CE),
+        color: Color(0xff198EDC),
       ),
     );
   }
