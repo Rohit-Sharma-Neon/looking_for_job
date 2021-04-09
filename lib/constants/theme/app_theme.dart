@@ -28,13 +28,13 @@ final appThemeData = {
     ),
 
     /// TEXT THEME
-    /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+    textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
       headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingSmall),
       headline2: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingMedium),
       headline3: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingBig),
-    ),*/
-    textTheme: TextTheme(
-      // bodyText1: TextStyles._primaryTSL,
+    ),
+    /*textTheme: TextTheme(
+      bodyText1: TextStyles._primaryTSL,
       headline1: TextStyles._headingTSL,
       subtitle1: TextStyles._hintOrLabelTSL,
       caption: TextStyles._subtilelTSL,
@@ -45,9 +45,8 @@ final appThemeData = {
       headline4: TextStyles._subscriptionTSL,
       headline5: TextStyles._subscription1TSL,
       headline6: TextStyles._bottomRadioTSL,
-    ),
-
-    fontFamily: "Nunito",
+    ),*/
+    // fontFamily: "Oswald",
 
     /// APP BAR THEME
     appBarTheme: AppBarTheme(
@@ -88,16 +87,16 @@ final appThemeData = {
     ),
 
     /// TEXT THEME
-    /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+    textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
       headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingSmall),
       headline2: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingMedium),
       headline3: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingBig),
-    ),*/
+    ),
     /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
       bodyText1:
           GoogleFonts.concertOne(textStyle: TextStyles._primaryHeadingSmall),
     ),*/
-    textTheme: TextTheme(
+    /*TextTheme(
       bodyText1: TextStyles._primaryTSD,
       headline1: TextStyles._headingTSD,
       subtitle1: TextStyles._hintOrLabelTSD,
@@ -109,8 +108,8 @@ final appThemeData = {
       headline4: TextStyles._subscriptionTSD,
       headline5: TextStyles._subscription1TSD,
       headline6: TextStyles._bottomRadioTSD,
-    ),
-     fontFamily: "Nunito",
+    ),*/
+    // fontFamily: "Oswald",
 
     /// SCAFFOLD BACKGROUND COLOR
     scaffoldBackgroundColor: heavyDark,

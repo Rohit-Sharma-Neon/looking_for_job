@@ -35,7 +35,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                 SizedBox(height: 100.h),
                 Text(
                   "Post a Job",
-                  style: TextStyle(fontSize: 35.nsp),
+                  style: TextStyle(fontSize: 35.nsp,fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 10),
                 RichText(
