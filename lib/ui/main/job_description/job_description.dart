@@ -212,7 +212,6 @@ class _JobDescriptionState extends State<JobDescription> {
                               ),
                               SizedBox(width: 10.w),
                               Column(
-
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("Date Posted",
@@ -462,7 +461,6 @@ class _JobDescriptionState extends State<JobDescription> {
                                               color: Colors.black,
                                             )),
                                         SizedBox(height: 10.h),
-
                                         MaterialButton(
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -472,9 +470,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                           textColor: Color(0xFFffffff),
                                           child: Text("Apply Now"),
                                           onPressed: () {},
-
                                         ),
-
                                         MaterialButton(
                                           shape: RoundedRectangleBorder(
                                             borderRadius:
@@ -501,27 +497,28 @@ class _JobDescriptionState extends State<JobDescription> {
                                     spacing: 2,
                                     children: <Widget>[
                                       IconButton(
-                                        icon: Image.asset(whatsapplogo,height: 100.h),
+                                        icon: Image.asset(whatsapplogo,
+                                            height: 100.h),
                                         onPressed: () {},
                                       ),
-
                                       IconButton(
-                                        icon: Image.asset(facebooklogo,height: 100.h),
+                                        icon: Image.asset(facebooklogo,
+                                            height: 100.h),
                                         onPressed: () {},
                                       ),
-
                                       IconButton(
-                                        icon: Image.asset(gmaillogos,height: 100.h),
+                                        icon: Image.asset(gmaillogos,
+                                            height: 100.h),
                                         onPressed: () {},
                                       ),
-
                                       IconButton(
-                                        icon: Image.asset(pinterestlogo,height: 100.h),
+                                        icon: Image.asset(pinterestlogo,
+                                            height: 100.h),
                                         onPressed: () {},
                                       ),
-
                                       IconButton(
-                                        icon: Image.asset(twitterlogo,height: 100.h),
+                                        icon: Image.asset(twitterlogo,
+                                            height: 100.h),
                                         onPressed: () {},
                                       ),
                                     ],
@@ -537,45 +534,50 @@ class _JobDescriptionState extends State<JobDescription> {
                                   SizedBox(height: 10.h),
 
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
-                                          Icon(Icons.shop_outlined, size: 22, color: Color(0xFF0691CE)),
+                                          Icon(Icons.shop_outlined,
+                                              size: 22,
+                                              color: Color(0xFF0691CE)),
                                           SizedBox(width: 10.w),
                                           Text("More jobs by AP-GROUP",
                                               style: TextStyle(
                                                 fontSize: 16.nsp,
                                                 color: Colors.black,
-                                              )
-                                          ),
+                                              )),
                                         ],
                                       ),
                                       SizedBox(height: 10.h),
                                       Row(
                                         children: [
-                                          Icon(Icons.perm_contact_cal_rounded, size: 22, color: Color(0xFF0691CE)),
+                                          Icon(Icons.perm_contact_cal_rounded,
+                                              size: 22,
+                                              color: Color(0xFF0691CE)),
                                           SizedBox(width: 10.w),
                                           Text("More jobs by Akash Panchal",
                                               style: TextStyle(
                                                 fontSize: 16.nsp,
                                                 color: Colors.black,
-                                              )
-                                          ),
+                                              )),
                                         ],
                                       ),
-
                                       SizedBox(height: 10.h),
                                       Row(
                                         children: [
-                                          Icon(Icons.error, size: 22, color: Color(0xFF0691CE),),
+                                          Icon(
+                                            Icons.error,
+                                            size: 22,
+                                            color: Color(0xFF0691CE),
+                                          ),
                                           SizedBox(width: 10.w),
                                           Text("Report this job",
                                               style: TextStyle(
                                                 fontSize: 16.nsp,
                                                 color: Colors.black,
-                                              )
-                                          ),
+                                              )),
                                         ],
                                       ),
                                     ],
@@ -587,67 +589,109 @@ class _JobDescriptionState extends State<JobDescription> {
                                   // ),
 
                                   SizedBox(height: 30.h),
-                                  SizedBox(
-                                    width: 310.w,
+                                  Expanded(
                                     child: ListView.builder(
+                                      itemCount: 5,
                                       physics: NeverScrollableScrollPhysics(),
                                       shrinkWrap: true,
-                                      itemCount: 5,
-                                      itemBuilder: (BuildContext context, int index) {
-                                        return Container(
-                                          padding:
-                                          EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                                          decoration: BoxDecoration(
-                                              border: Border.all(color: Colors.grey.shade200)),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Expanded(
-                                                    flex: 4,
-                                                    child: Text(
-                                                      "Sports Officer cum Warden",
-                                                      style: TextStyle(
-                                                          color: Colors.blue, fontSize: 20),
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return InkWell(
+                                          onTap: () => Navigator.pushNamed(
+                                              context, '/job_description'),
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 10.w, vertical: 15.h),
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.grey.shade200),
+                                            ),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Expanded(
+                                                      flex: 4,
+                                                      child: Text(
+                                                        "Sports Officer cum Warden",
+                                                        style: TextStyle(
+                                                            color: Colors.blue,
+                                                            fontSize: 20.nsp),
+                                                      ),
                                                     ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  Expanded(
-                                                    flex: 2,
-                                                    child: OutlineButton(
+                                                    SizedBox(
+                                                      width: 10,
+                                                    ),
+                                                    OutlineButton(
                                                       borderSide: BorderSide(
                                                         color: Colors.blue,
                                                       ),
                                                       onPressed: () {},
                                                       child: Text(
                                                         "Full Time",
-                                                        style: TextStyle(color: Colors.blue),
+                                                        style: TextStyle(
+                                                            color: Colors.blue,
+                                                            fontSize: 16.nsp),
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Icon(Icons.add_location),
-                                                  Text(
-                                                    "Anand International College of Engineering",
-                                                  ),
-                                                ],
-                                              ),
-                                              Row(
-                                                children: [
-                                                  Icon(Icons.add_location),
-                                                  Text("Jaipur"),
-                                                ],
-                                              ),
-                                            ],
+                                                  ],
+                                                ),
+                                                // Row(
+                                                //   children: [
+                                                //     Icon(Icons.add_location,color: Colors.grey[600],),
+                                                //     Text(
+                                                //       "Anand International College of Engineering",style: TextStyle(color: Colors.grey[600],fontSize: 16.nsp),
+                                                //     ),
+
+                                                //   ],
+                                                // ),
+                                                SizedBox(
+                                                  height: 7.h,
+                                                ),
+                                                RichText(
+                                                  text: TextSpan(children: [
+                                                    WidgetSpan(
+                                                      child: Icon(
+                                                        Icons.add_location,
+                                                        color: Colors.grey[600],
+                                                        size: 20.h,
+                                                      ),
+                                                    ),
+                                                    TextSpan(
+                                                      text:
+                                                          "Anand International College of Engineering",
+                                                      style: TextStyle(
+                                                        color: Colors.grey[600],
+                                                        fontSize: 18.nsp,
+                                                      ),
+                                                    )
+                                                  ]),
+                                                ),
+                                                SizedBox(
+                                                  height: 7.h,
+                                                ),
+                                                RichText(
+                                                  text: TextSpan(children: [
+                                                    WidgetSpan(
+                                                      child: Icon(
+                                                        Icons.add_location,
+                                                        color: Colors.grey[600],
+                                                        size: 20.h,
+                                                      ),
+                                                    ),
+                                                    TextSpan(
+                                                      text: "Jaipur",
+                                                      style: TextStyle(
+                                                        color: Colors.grey[600],
+                                                        fontSize: 18.nsp,
+                                                      ),
+                                                    )
+                                                  ]),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         );
                                       },

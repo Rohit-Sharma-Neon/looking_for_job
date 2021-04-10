@@ -32,10 +32,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 100.h),
+                /*SizedBox(height: 100.h),
                 Text(
                   "Post a Job",
-                  style: TextStyle(fontSize: 35.nsp,fontWeight: FontWeight.w500),
+                  style:
+                      TextStyle(fontSize: 35.nsp, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(height: 10),
                 RichText(
@@ -54,7 +55,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                       ),
                     ],
                   ),
-                ),
+                ),*/
                 SizedBox(
                   height: 60.h,
                 ),
@@ -62,17 +63,18 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                   // height: 800,
                   // width: 350,
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey[350]),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 1,
-                          blurRadius: 0,
-                          offset: Offset(0, 1), // changes position of shadow
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(5)),
+                    border: Border.all(color: Colors.grey[350]),
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 0,
+                        offset: Offset(0, 1), // changes position of shadow
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(5),
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -80,19 +82,32 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                       Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: scaffoldHorizontalPadding + 10.w),
-                        child: Text.rich(TextSpan(children: [
-                          WidgetSpan(
-                              child: Icon(
-                            Icons.blur_linear_outlined,
-                            size: 30.h,
-                            color: primaryColorLight,
-                          )),
-                          TextSpan(
-                              text: "     Company Information",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  color: Colors.black))
-                        ])),
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              WidgetSpan(
+                                child: Icon(
+                                  Icons.blur_linear_outlined,
+                                  size: 30.h,
+                                  color: primaryColorLight,
+                                ),
+                              ),
+                              WidgetSpan(
+                                ///// should be in center
+                                child: SizedBox(
+                                  width: 10,
+                                ),
+                              ),
+                              TextSpan(
+                                text: "Company Information",
+                                style: postAJobSubHeadingTextStyle,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
                       ),
                       Divider(
                         color: Colors.grey[350],
@@ -104,23 +119,19 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(
-                                height: 20.h,
+                                height: 30.h,
                               ),
-                              Text.rich(
-                                TextSpan(
-                                  children: [
-                                    TextSpan(
-                                        text: "Post a Job",
-                                        style: TextStyle(
-                                            fontSize: textSize20.nsp,
-                                            color: Colors.black)),
-                                    TextSpan(
-                                        text: " *",
-                                        style: TextStyle(
-                                            fontSize: textSize20.nsp,
-                                            color: Colors.black)),
-                                  ],
-                                ),
+                              RichText(
+                                text: TextSpan(children: [
+                                  TextSpan(
+                                      text: "Company",
+                                      style: postAJobSubHeadingTextStyle),
+                                  TextSpan(
+                                      text: " *",
+                                      style: TextStyle(
+                                          fontSize: textSize20.nsp,
+                                          color: Colors.black)),
+                                ]),
                               ),
                               SizedBox(
                                 height: 20.h,
@@ -146,19 +157,24 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     child: DropdownButton(
                                       isDense: false,
                                       hint: _dropDownValue == null
-                                          ? Text(
-                                              'Select Company',
-                                              style: TextStyle(
-                                                  fontSize: textSize18.nsp),
+                                          ? Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20),
+                                              child: Text(
+                                                'Select Company',
+                                                style:dropDownTextStyle
+                                              ),
                                             )
                                           : Text(
                                               _dropDownValue,
                                               style: TextStyle(
-                                                  color: Colors.black),
+                                                  color: Colors.grey[600]),
                                             ),
                                       isExpanded: true,
                                       iconSize: 30.0,
-                                      style: TextStyle(color: Colors.black),
+                                      iconEnabledColor: Colors.grey,
+                                      style: TextStyle(color: Colors.grey[600]),
                                       items: [
                                         '[+] New Company',
                                         "[+] New Company"
@@ -179,14 +195,12 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                       },
                                     ),
                                   )),
-                              SizedBox(height: 20.h),
+                              SizedBox(height: 30.h),
                               RichText(
                                 text: TextSpan(children: [
                                   TextSpan(
                                       text: "Company Name",
-                                      style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: Colors.black)),
+                                      style: postAJobSubHeadingTextStyle),
                                   TextSpan(
                                       text: " *",
                                       style: TextStyle(
@@ -225,52 +239,61 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                 ),
                               ),
                               SizedBox(
-                                height: 20.h,
+                                height: 30.h,
                               ),
                               Text(
                                 "Logo",
-                                style: TextStyle(
-                                    fontSize: textSize20.nsp,
-                                    fontWeight: FontWeight.w500),
+                                style:postAJobSubHeadingTextStyle,
                               ),
                               SizedBox(height: 20.h),
                               ButtonTheme(
                                 height: 50.h,
                                 minWidth: 300.w,
-                                child: OutlineButton(
-                                  onPressed: () {},
-                                  splashColor: primaryColorLight,
-                                  borderSide: BorderSide(
-                                    color: primaryColorLight,
-                                  ),
-                                  shape: ContinuousRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Text(
-                                    "Upload Logo",
-                                    style: TextStyle(
-                                      fontSize: textSize20.nsp,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: primaryColorLight
+                                              .withOpacity(0.2),
+                                          spreadRadius: 1,
+                                          blurRadius: 2,
+                                          offset: Offset(0, 1),
+                                        )
+                                      ]),
+                                  child: OutlineButton(
+                                    onPressed: () {},
+                                    splashColor: primaryColorLight,
+                                    borderSide: BorderSide(
                                       color: primaryColorLight,
+                                    ),
+                                    shape: ContinuousRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
+                                    child: Text(
+                                      "Upload Logo",
+                                      style: TextStyle(
+                                        fontSize: textSize18.nsp,
+                                        color: primaryColorLight,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                               SizedBox(
-                                height: 20.h,
+                                height: 30.h,
                               ),
                               Text("Use 200x200px size for better view.",
-                                  style: TextStyle(
-                                      fontSize: textSize14.nsp,
-                                      color: Colors.grey)),
+                                  style:TextStyle(  fontSize: textSize16.nsp,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey)),
                               SizedBox(
-                                height: 20.h,
+                                height: 50.h,
                               ),
                               RichText(
                                 text: TextSpan(children: [
                                   TextSpan(
                                       text: "Company Description",
-                                      style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: Colors.black)),
+                                      style: postAJobSubHeadingTextStyle),
                                   TextSpan(
                                       text: " *",
                                       style: TextStyle(
@@ -332,9 +355,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                           )),
                           TextSpan(
                               text: "   Job Detail",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  color: Colors.black))
+                              style: postAJobSubHeadingTextStyle)
                         ])),
                       ),
                       SizedBox(
@@ -344,7 +365,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                         color: Colors.grey[350],
                       ),
                       SizedBox(
-                        height: 20.h,
+                        height: 30.h,
                       ),
                       Center(
                         child: ButtonTheme(
@@ -359,7 +380,9 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               ),
                               label: Text(
                                 'Choose Category',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500),
                               ),
                               onPressed: () {
                                 print('Pressed');
@@ -378,14 +401,12 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 30.h),
                             RichText(
                               text: TextSpan(children: [
                                 TextSpan(
                                     text: "Title",
-                                    style: TextStyle(
-                                        fontSize: textSize20.nsp,
-                                        color: Colors.black)),
+                                    style: postAJobSubHeadingTextStyle),
                                 TextSpan(
                                     text: " *",
                                     style: TextStyle(
@@ -422,12 +443,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20.h),
+                            SizedBox(height: 30.h),
                             Text(
                               "Image",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  fontWeight: FontWeight.w500),
+                              style: postAJobSubHeadingTextStyle
                             ),
                             SizedBox(height: 20.h),
                             ButtonTheme(
@@ -456,7 +475,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: Text(
                                     "Upload Image",
                                     style: TextStyle(
-                                      fontSize: textSize20.nsp,
+                                      fontSize: textSize18.nsp,
                                       color: primaryColorLight,
                                     ),
                                   ),
@@ -464,22 +483,21 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               ),
                             ),
                             SizedBox(
-                              height: 20.h,
+                              height: 30.h,
                             ),
                             Text("Use 200x200px size for better view.",
                                 style: TextStyle(
-                                    fontSize: textSize14.nsp,
+                                    fontSize: textSize16.nsp,
+                                    fontWeight: FontWeight.w400,
                                     color: Colors.grey)),
                             SizedBox(
-                              height: 20.h,
+                              height: 50.h,
                             ),
                             RichText(
                               text: TextSpan(children: [
                                 TextSpan(
                                     text: "Description",
-                                    style: TextStyle(
-                                        fontSize: textSize20.nsp,
-                                        color: Colors.black)),
+                                    style: postAJobSubHeadingTextStyle),
                                 TextSpan(
                                     text: " *",
                                     style: TextStyle(
@@ -498,15 +516,13 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         borderSide: BorderSide(
                                             color: Colors.grey[350])))),
                             SizedBox(
-                              height: 20.h,
+                              height: 30.h,
                             ),
                             RichText(
                               text: TextSpan(children: [
                                 TextSpan(
                                     text: "Job Type",
-                                    style: TextStyle(
-                                        fontSize: textSize20.nsp,
-                                        color: Colors.black)),
+                                    style: postAJobSubHeadingTextStyle),
                                 TextSpan(
                                     text: " *",
                                     style: TextStyle(
@@ -536,19 +552,29 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: DropdownButton(
                                     isDense: false,
                                     hint: _jobTypeValue == null
-                                        ? Text(
-                                            '    Full Time',
-                                            style: TextStyle(
-                                                fontSize: textSize18.nsp),
+                                        ? Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 20),
+                                            child: Text(
+                                              'Full Time',
+                                              style: TextStyle(
+                                                  fontSize: textSize18.nsp,
+                                                  fontWeight: FontWeight.w400
+                                              ),
+                                            ),
                                           )
                                         : Text(
                                             _jobTypeValue,
-                                            style:
-                                                TextStyle(color: Colors.black),
+                                            style: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontWeight: FontWeight.w500),
                                           ),
                                     isExpanded: true,
                                     iconSize: 30.0,
-                                    style: TextStyle(color: Colors.black),
+                                    iconEnabledColor: Colors.grey,
+                                    style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontWeight: FontWeight.w500),
                                     items: [
                                       ' Full Time',
                                       " Part Time",
@@ -575,13 +601,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   ),
                                 )),
                             SizedBox(
-                              height: 20.h,
+                              height: 30.h,
                             ),
                             Text(
                               "Salary",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  fontWeight: FontWeight.w500),
+                              style: postAJobSubHeadingTextStyle
                             ),
                             SizedBox(
                               height: 20.h,
@@ -610,6 +634,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       hintText: "Min",
+                                      hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                       suffixIcon: Icon(Icons.attach_money),
                                     )),
                               ),
@@ -641,6 +667,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       hintText: "Max",
+                                      hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                       suffixIcon: Icon(Icons.attach_money),
                                     )),
                               ),
@@ -667,10 +695,13 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: DropdownButton(
                                     isDense: false,
                                     hint: _perHourValue == null
-                                        ? Text(
-                                            '    Per Hour',
-                                            style: TextStyle(
-                                                fontSize: textSize18.nsp),
+                                        ? Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 20),
+                                            child: Text(
+                                              'Per Hour',
+                                              style: dropDownTextStyle
+                                            ),
                                           )
                                         : Text(
                                             _perHourValue,
@@ -679,7 +710,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           ),
                                     isExpanded: true,
                                     iconSize: 30.0,
-                                    style: TextStyle(color: Colors.black),
+                                    iconEnabledColor: Colors.grey,
+                                    style: TextStyle(color: Colors.grey[600]),
                                     items: [
                                       ' Per Hour',
                                       " per Day",
@@ -706,28 +738,32 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             SizedBox(
                               height: 10.h,
                             ),
-                            Transform.scale(
-                              scale: 1.2,
-                              child: CheckboxListTile(
-                                controlAffinity:
-                                    ListTileControlAffinity.leading,
-                                title: Text('Negotiable'),
-                                value: _checkboxListTile,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _checkboxListTile = !_checkboxListTile;
-                                  });
-                                },
-                              ),
+                            Row(
+                              children: [
+                                Transform.scale(
+                                  scale: 1.3,
+                                  child: Checkbox(
+                                    value: _checkboxListTile,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _checkboxListTile = !_checkboxListTile;
+                                      });
+                                    },
+                                  ),
+                                ),
+                                Text("Negotiable",
+                                    style: TextStyle(
+                                        fontSize: textSize16.nsp,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.grey[600]))
+                              ],
                             ),
                             SizedBox(
-                              height: 10.h,
+                              height: 40.h,
                             ),
                             Text(
                               "Phone Number",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  fontWeight: FontWeight.w500),
+                              style: postAJobSubHeadingTextStyle
                             ),
                             SizedBox(
                               height: 20.h,
@@ -775,30 +811,49 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               ),
                             ),
                             SizedBox(height: 10.h),
-                            Transform.scale(
-                              scale: 1.2,
-                              child: CheckboxListTile(
-                                controlAffinity:
-                                    ListTileControlAffinity.leading,
-                                title: Text('Hide for users'),
-                                value: _hideCheckBox,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _hideCheckBox = !_hideCheckBox;
-                                  });
-                                },
-                              ),
+                            // Transform.scale(
+                            //   scale: 1.2,
+                            //   child: CheckboxListTile(
+                            //     controlAffinity:
+                            //         ListTileControlAffinity.leading,
+                            //     title: Text('Hide for users'),
+                            //     value: _hideCheckBox,
+                            //     onChanged: (value) {
+                            //       setState(() {
+                            //         _hideCheckBox = !_hideCheckBox;
+                            //       });
+                            //     },
+                            //   ),
+                            // ),
+                            Row(
+                              children: [
+                                Transform.scale(
+                                  scale: 1.3,
+                                  child: Checkbox(
+                                    value: _hideCheckBox,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _hideCheckBox = !_hideCheckBox;
+                                      });
+                                    },
+                                  ),
+                                ),
+                                Text("Hide from Users",
+                                    style: TextStyle(
+                                        fontSize: textSize16.nsp,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.grey[600]))
+                              ],
                             ),
+
                             SizedBox(
-                              height: 20.h,
+                              height: 50.h,
                             ),
                             RichText(
                               text: TextSpan(children: [
                                 TextSpan(
                                     text: "City",
-                                    style: TextStyle(
-                                        fontSize: textSize20.nsp,
-                                        color: Colors.black)),
+                                    style: postAJobSubHeadingTextStyle),
                                 TextSpan(
                                     text: " *",
                                     style: TextStyle(
@@ -828,19 +883,28 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: DropdownButton(
                                     isDense: false,
                                     hint: _cityValue == null
-                                        ? Text(
-                                            '    Select City',
-                                            style: TextStyle(
-                                                fontSize: textSize18.nsp),
+                                        ? Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 20),
+                                            child: Text(
+                                              'Select City',
+                                              style: TextStyle(
+                                                  fontSize: textSize18.nsp,
+                                                fontWeight: FontWeight.w400
+                                                 ),
+                                            ),
                                           )
                                         : Text(
                                             _cityValue,
-                                            style:
-                                                TextStyle(color: Colors.black),
+                                            style: TextStyle(
+                                                color: Colors.grey[600]),
                                           ),
                                     isExpanded: true,
                                     iconSize: 30.0,
-                                    style: TextStyle(color: Colors.black),
+                                    iconEnabledColor: Colors.grey,
+                                    style: TextStyle(
+                                        color: Colors.grey[600],
+                                        fontWeight: FontWeight.w500),
                                     items: [
                                       ' Banglearu',
                                       " punjab",
@@ -867,13 +931,11 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   ),
                                 )),
                             SizedBox(
-                              height: 20.h,
+                              height: 30.h,
                             ),
                             Text(
                               "Application Url",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  fontWeight: FontWeight.w500),
+                              style:postAJobSubHeadingTextStyle
                             ),
                             SizedBox(
                               height: 20.h,
@@ -902,26 +964,27 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     decoration: InputDecoration(
                                       border: InputBorder.none,
                                       hintText: "http://",
+                                      hintStyle: TextStyle(
+                                          fontWeight: FontWeight.w500),
                                       suffixIcon: Icon(Icons.link),
                                     )),
                               ),
                             ),
                             SizedBox(
-                              height: 20.h,
+                              height: 10.h,
                             ),
                             Text(
                                 "Candidates  will follow this URL address to apply for the job.",
                                 style: TextStyle(
                                     fontSize: textSize14.nsp,
-                                    color: Colors.grey[800])),
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey[600])),
                             SizedBox(
-                              height: 20.h,
+                              height: 40.h,
                             ),
                             Text(
                               "Tags",
-                              style: TextStyle(
-                                  fontSize: textSize20.nsp,
-                                  fontWeight: FontWeight.w500),
+                              style: postAJobSubHeadingTextStyle
                             ),
                             SizedBox(
                               height: 20.h,
@@ -958,7 +1021,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             Text("Enter the separated by commas ",
                                 style: TextStyle(
                                     fontSize: textSize14.nsp,
-                                    color: Colors.grey[800])),
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.grey[600])),
                           ],
                         ),
                       ),
@@ -971,34 +1035,25 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                 SizedBox(
                   height: 30.h,
                 ),
-                Container(
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                      color: primaryColorLight.withOpacity(0.3),
-                      spreadRadius: 2,
-                      blurRadius: 1,
-                      offset: Offset(0, 1),
-                    )
-                  ]),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints.tightFor(height: 50),
-                    child: ElevatedButton.icon(
-                      icon: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 30.h,
-                      ),
-                      label: Text(
-                        'Post a Job',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {
-                        print('Pressed');
-                      },
-                      style: (ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xff198EDC)))),
+                ConstrainedBox(
+                  constraints: BoxConstraints.tightFor(height: 50),
+                  child: ElevatedButton.icon(
+                    icon: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                      size: 30.h,
                     ),
+                    label: Text(
+                      'Post a Job',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w500),
+                    ),
+                    onPressed: () {
+                      print('Pressed');
+                    },
+                    style: (ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color(0xff198EDC)))),
                   ),
                 ),
                 SizedBox(

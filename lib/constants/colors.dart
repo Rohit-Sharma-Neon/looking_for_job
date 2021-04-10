@@ -5,7 +5,7 @@ import 'dart:ui';
 Color themeColor = const Color(0xFF286472);
 Color textColor  = const Color(0xFF207F9E);
 Color primaryColorLight = const Color(0xFF1492E5);//1492E5
-Color lightPrimaryTextColor = const Color(0xFF000000);
+Color primaryTextColorLightTheme = const Color(0xFF333333);
 Color lightPrimaryColor = const Color(0xFFffffff);
 Color stickBg  = const Color(0xFFf2f2f2);
 Color lightSecondaryColor = Colors.deepOrangeAccent;
