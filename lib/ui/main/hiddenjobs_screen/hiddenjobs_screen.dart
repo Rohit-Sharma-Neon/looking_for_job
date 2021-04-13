@@ -143,21 +143,19 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                       color: Color(0xFFF5C6373),
                       borderRadius: BorderRadius.circular(4),
                     ),
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                          WidgetSpan(child: SizedBox(width: 10.w)),
+                    child: Text.rich(
+                      TextSpan(
+                        children:[
                           WidgetSpan(
-                            child: Icon(
-                              Icons.menu,
-                              size: 18.nsp,
-                              color: Colors.white,
-                            ),
-                          ),
+                              child: Image(
+                                  height: 15,
+                                  image: AssetImage('assets/images/menu.png'))),
                           WidgetSpan(child: SizedBox(width: 15.w)),
                           TextSpan(
-                            style:
-                            TextStyle(color: Colors.white, fontSize: 18.nsp),
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.nsp),
                             text: dashboardNavigation,
                           ),
                         ],

@@ -1,13 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:fluttericon/zocial_icons.dart';
 
 import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
 import '../../../drawer/menu_widget.dart';
-
 
 class MyCompaniesScreen extends StatefulWidget {
   @override
@@ -58,8 +60,10 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
           width: buttonSize.width,
           child: Material(
             child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15.w,),
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 25.h),
+              margin: EdgeInsets.symmetric(
+                horizontal: 15.w,
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +102,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
   }
 
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +128,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 webHeader(_sliderMenuContainerStateKey),
-                SizedBox(height: 45.h),
+                SizedBox(height: 15.h),
                 InkWell(
                   onTap: () {
                     if (isDashboardNavigationOpen) {
@@ -140,24 +144,22 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                     width: double.infinity,
                     key: _key,
                     decoration: BoxDecoration(
-                      color: Color(0xFFF5C6373),
+                      color: Color(0xFF333333),
                       borderRadius: BorderRadius.circular(7),
                     ),
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                          WidgetSpan(child: SizedBox(width: 10.w)),
+                    child: Text.rich(
+                      TextSpan(
+                        children:[
                           WidgetSpan(
-                            child: Icon(
-                              Icons.menu,
-                              size: 18.nsp,
-                              color: Colors.white,
-                            ),
-                          ),
+                              child: Image(
+                                height: 15,
+                                  image: AssetImage('assets/images/menu.png'))),
                           WidgetSpan(child: SizedBox(width: 15.w)),
                           TextSpan(
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 18.nsp),
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.nsp),
                             text: dashboardNavigation,
                           ),
                         ],
@@ -327,7 +329,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                 //     ],
                 //   ),
                 // ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 25.h),
                 Container(
                   height: 60.h,
                   width: 330.w,
@@ -344,30 +346,33 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                     decoration: BoxDecoration(
                       boxShadow: [
                         new BoxShadow(
-                          color: Colors.black,
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          color: Color(0xFFE4E4E4),
                         ),
                       ],
                       color: Color(0xFFFFFFFF),
                     ),
                     alignment: Alignment.centerLeft,
-                    child: RichText(
-                      text: TextSpan(
+                    child: Text.rich(
+                      TextSpan(
                         children: [
                           WidgetSpan(child: SizedBox(width: 10.w)),
                           WidgetSpan(
                             child: Icon(
-                              Icons.roofing,
-                              size: 28.nsp,
-                              color: Colors.blue,
+                              FontAwesome.cube,
+                              color: Color(0xFF198EDC),
                             ),
                           ),
                           WidgetSpan(
                               child: SizedBox(
-                                width: 10,
-                              )),
+                            width: 10,
+                          )),
                           TextSpan(
                             style: TextStyle(
-                                color: Colors.black, fontSize: 18.nsp),
+                                color: Color(0xFF333333),
+                                fontWeight: FontWeight.w600,
+                                fontSize: textSize18),
                             text: myCompanies,
                           ),
                         ],
@@ -383,8 +388,9 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 0.0,
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        color: Color(0xFFE4E4E4),
                       ),
                     ],
                     color: Colors.white,
@@ -393,8 +399,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                     //     bottomRight: Radius.circular(5)),
                   ),
                   child: Column(
-                    mainAxisAlignment:
-                    MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                           decoration: BoxDecoration(
@@ -404,20 +409,20 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                                 spreadRadius: 2,
                                 blurRadius: 1,
                                 offset:
-                                Offset(0, 0), // changes position of shadow
+                                    Offset(0, 0), // changes position of shadow
                               ),
                             ],
                             borderRadius: BorderRadius.circular(5),
                             color: Colors.white,
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(15.w),
+                            padding: EdgeInsets.all(10.w),
                             child: Row(
                               children: <Widget>[
                                 Expanded(
                                   child: TextField(
                                     decoration: InputDecoration.collapsed(
-                                      hintText: ' Search...',
+                                      hintText: 'Search...',
                                     ),
                                     onChanged: (value) {},
                                   ),
@@ -443,11 +448,11 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                             child: Text(
                               createNewCompany,
                               style: TextStyle(
-                                fontSize: 18.nsp,
-                                color: Colors.white,
-                              ),
+                                  color: Color(0xFFFFFFFF),
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: textSize18),
                             ),
-                            color: Colors.blue,
+                            color: Color(0xFF198EDC),
                           ),
                           SizedBox(
                             height: 110.h,
@@ -460,14 +465,18 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SizedBox(height: 10.h),
-                                      MaterialButton(
+                                      Container(
+                                        padding: EdgeInsets.only(
+                                            left: 20.w, right: 20.w),
                                         height: 60.h,
-                                        minWidth: 250.w,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: new BorderRadius.circular(5)),
-                                        onPressed: () {},
+                                        width: 430.w,
+                                        // minWidth: 250.w,
+                                        // shape: RoundedRectangleBorder(
+                                        //     borderRadius: new BorderRadius.circular(5)),
+                                        // onPressed: () {},
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Text(
                                               name,
@@ -476,7 +485,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                                                 color: Colors.white,
                                               ),
                                             ),
-                                            SizedBox(width: 180.w),
+                                            SizedBox(width: 140.w),
                                             Text(
                                               jobs,
                                               style: TextStyle(
@@ -484,7 +493,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                                                 color: Colors.white,
                                               ),
                                             ),
-                                            SizedBox(width: 100.w),
+                                            SizedBox(width: 80.w),
                                             Text(
                                               actions,
                                               style: TextStyle(
@@ -494,7 +503,7 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                                             ),
                                           ],
                                         ),
-                                        color: Colors.blue,
+                                        color: Color(0xFF198EDC),
                                       ),
                                       SizedBox(height: 10.h),
                                       Text(noExpiredJobsFound),
@@ -509,7 +518,6 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                     ],
                   ),
                 ),
-
               ],
             ),
           ),

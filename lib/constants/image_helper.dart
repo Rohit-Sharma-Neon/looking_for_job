@@ -10,3 +10,4 @@ const String profileicon = "assets/images/profileicon.png";
 const String profilelogo = "assets/images/profilelogo.jpg";
 const String profileicons = "assets/images/profileicons.jpg";
 const String menu = "assets/images/menu.png";
+const String blackmenu = "assets/images/blackmenu.png";

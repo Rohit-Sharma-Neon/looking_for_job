@@ -91,7 +91,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
               margin: EdgeInsets.symmetric(
                 horizontal: 15.w,
               ),
-              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 25.h),
+              padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
               color: Colors.white,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,7 +185,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                       webHeader(_sliderMenuContainerStateKey),
-                      SizedBox(height: 45.h),
+                      SizedBox(height: 15.h),
                       InkWell(
                         onTap: () {
                           if (isDashboardNavigationOpen) {
@@ -206,15 +206,11 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                           ),
                           child: Text.rich(
                             TextSpan(
-                              children: [
-                                WidgetSpan(child: SizedBox(width: 10.w)),
+                              children:[
                                 WidgetSpan(
-                                  child: Icon(
-                                    Icons.menu,
-                                    size: 18.nsp,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                    child: Image(
+                                        height: 15,
+                                        image: AssetImage('assets/images/menu.png'))),
                                 WidgetSpan(child: SizedBox(width: 15.w)),
                                 TextSpan(
                                   style: TextStyle(
