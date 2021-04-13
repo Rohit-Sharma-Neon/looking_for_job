@@ -44,23 +44,23 @@ class _MembershipPlanScreenState extends State<MembershipPlanScreen> {
               children: [
                 webHeader(_sliderMenuContainerStateKey),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 90.h, horizontal: 30.w),
-                  margin: EdgeInsets.only(top: 100.h),
-                  height: 220.h,
+                  padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 30.w),
+                  margin: EdgeInsets.only(top: 40.h),
+                  height: 600.h,
                   width: 400.w,
                   decoration: BoxDecoration(
                     color: Color(0xFFFFFFFF),
                     borderRadius: BorderRadius.circular(0),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
+                        color: Colors.grey.withOpacity(0.0),
                         spreadRadius: 1,
                         blurRadius: 1,
                         offset: Offset(0, 0),
                       )
                     ],
                   ),
-                  child: Text(allPlans, style: TextStyle(fontSize: textSize20.nsp)),
+                  child: Text(allPlans, style: TextStyle(color: Color(0xFF333333), fontSize: textSize20.nsp, fontWeight: FontWeight.w500)),
                 ),
               ],
             ),

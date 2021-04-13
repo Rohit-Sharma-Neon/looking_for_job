@@ -8,17 +8,14 @@ import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
 import '../../../drawer/menu_widget.dart';
 
-
-
 class TransactionScreen extends StatefulWidget {
   @override
   _TransactionScreenState createState() => _TransactionScreenState();
 }
 
 class _TransactionScreenState extends State<TransactionScreen> {
-
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
 
   String dropdownValue = 'One';
 
@@ -35,7 +32,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
           key: _sliderMenuContainerStateKey,
           sliderMenuOpenSize: 280,
           title: Text(
-            "title",
+            title,
             style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
           ),
           sliderMenu: MenuWidget(
@@ -47,9 +44,10 @@ class _TransactionScreenState extends State<TransactionScreen> {
               children: [
                 webHeader(_sliderMenuContainerStateKey),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 50.h, horizontal: 30.w),
-                  margin: EdgeInsets.only(top: 100.h),
-                  height: 410.h,
+                  padding:
+                      EdgeInsets.symmetric(vertical: 50.h, horizontal: 20.w),
+                  margin: EdgeInsets.only(top: 40.h),
+                  height: 600.h,
                   width: 400.w,
                   decoration: BoxDecoration(
                     color: Color(0xFFFFFFFF),
@@ -64,97 +62,175 @@ class _TransactionScreenState extends State<TransactionScreen> {
                     ],
                   ),
                   child: Column(
+
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("All Transactions", style: TextStyle(fontSize: 22.nsp),),
+                          Text(
+                            allTransactions,
+                            style: TextStyle(
+                              fontSize: textSize20.nsp,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0xFF333333),
+                            ),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 30.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Display", style: TextStyle(fontSize: 18.nsp),),
-                          SizedBox(width: 10.w),
-                          DropdownButton<String>(
-                            value: dropdownValue,
-                            icon: const Icon(Icons.arrow_drop_down_outlined),
-                            iconSize: 24.nsp,
-                            elevation: 16,
-                            style: const TextStyle(color: Colors.black),
-                            underline: Container(
-                              height: 1.h,
-                              color: Colors.black,
+                          Text(
+                            display,
+                            style: TextStyle(
+                              fontSize: textSize16.nsp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF333333),
                             ),
-                            onChanged: (String newValue) {
-                              setState(() {
-                                dropdownValue = newValue;
-                              });
-                            },
-                            items: <String>['One', 'Two', 'Free', 'Four']
-                                .map<DropdownMenuItem<String>>((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
+                          ),
+                          SizedBox(width: 10.w),
+                          Container(
+                            margin: const EdgeInsets.all(5.0),
+                            padding: EdgeInsets.only(left: 5.w, right: 5.w),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                                border: Border.all(color: Color(0xFFE0E0E0))),
+                            child: DropdownButton<String>(
+                              value: dropdownValue,
+                              icon: const Icon(Icons.keyboard_arrow_down),
+                              iconSize: 18.nsp,
+                              elevation: 16,
+                              style: const TextStyle(color: Color(0xFF333333)),
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  dropdownValue = newValue;
+                                });
+                              },
+                              items: <String>[
+                                'One',
+                                'Two',
+                                'Free',
+                                'Four'
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
                           )
                         ],
                       ),
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 15.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Search", style: TextStyle(fontSize: 16.nsp),),
+                          Text(
+                            search,
+                            style: TextStyle(
+                              fontSize: textSize16.nsp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF333333),
+                            ),
+                          ),
                           SizedBox(width: 10.w),
                           Expanded(
                             child: Container(
                               height: 40.h,
                               child: TextField(
-                                cursorColor: Colors.black,
+                                  cursorColor: Colors.black,
                                   decoration: InputDecoration(
                                       enabledBorder: const OutlineInputBorder(
-                                        borderSide: const BorderSide(color: Colors.grey, width: 0.0),
+                                        borderSide: const BorderSide(
+                                            color: Colors.grey, width: 0.0),
                                       ),
-                                      contentPadding:EdgeInsets.fromLTRB(10.w, 10.h, 10.w, 10.h),
-                                      border: OutlineInputBorder()
-                                  )
-                              ),
+                                      contentPadding: EdgeInsets.fromLTRB(
+                                          10.w, 10.h, 10.w, 10.h),
+                                      border: OutlineInputBorder())),
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 15.h),
+                      SizedBox(height: 20.h),
                       Container(
-                        height: 65.h,
+                        height: 55.h,
                         width: 400.w,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Color(0xFF198EDC),
                           borderRadius: BorderRadius.circular(0),
-                          boxShadow: [
-                          ],
+                          boxShadow: [],
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text("Job Title", style: TextStyle(color: Colors.white, fontSize: 16.nsp),),
-                            Text("Amount", style: TextStyle(color: Colors.white, fontSize: 16.nsp),),
-                            Text("Premium", style: TextStyle(color: Colors.white, fontSize: 16.nsp),),
+                            Text(
+                              jobTitle,
+                              style: TextStyle(
+                                fontSize: textSize16.nsp,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            Text(
+                              amount,
+                              style: TextStyle(
+                                fontSize: textSize16.nsp,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ),
+                            Text(
+                              premium,
+                              style: TextStyle(
+                                fontSize: textSize16.nsp,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ),
                           ],
                         ),
                       ),
-                      SizedBox(height: 10.h),
-                      Text("No result found.", style: TextStyle(fontSize: 16.nsp),),
-                      SizedBox(height: 25.h),
-                      Text("No result found.", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.nsp),),
-                      SizedBox(height: 12.h),
+                      SizedBox(height: 15.h),
+                      Text(
+                        noresultfound,
+                        style: TextStyle(
+                          fontSize: textSize16.nsp,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF666666),
+                        ),
+                      ),
+                      SizedBox(height: 60.h),
+                      Text(
+                        noresultfound,
+                        style: TextStyle(
+                          fontSize: textSize16.nsp,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF333333),
+                        ),
+                      ),
+                      SizedBox(height: 30.h),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text("Previous", style: TextStyle(fontSize: 16.nsp),),
+                          Text(
+                            previous,
+                            style: TextStyle(
+                              fontSize: textSize16.nsp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF666666),
+                            ),
+                          ),
                           SizedBox(width: 15.w),
-                          Text("Next", style: TextStyle(fontSize: 16.nsp),),
+                          Text(
+                            next,
+                            style: TextStyle(
+                              fontSize: textSize16.nsp,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF666666),
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -168,4 +244,3 @@ class _TransactionScreenState extends State<TransactionScreen> {
     );
   }
 }
-

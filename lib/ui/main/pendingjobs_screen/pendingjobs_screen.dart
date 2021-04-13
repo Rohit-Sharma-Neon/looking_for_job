@@ -125,7 +125,7 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 webHeader(_sliderMenuContainerStateKey),
-                SizedBox(height: 45.h),
+                SizedBox(height: 15.h),
                 InkWell(
                   onTap: () {
                     if (isDashboardNavigationOpen) {
@@ -141,24 +141,22 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                     width: double.infinity,
                     key: _key,
                     decoration: BoxDecoration(
-                      color: Color(0xFFF5C6373),
-                      borderRadius: BorderRadius.circular(4),
+                      color: Color(0xFF333333),
+                      borderRadius: BorderRadius.circular(7),
                     ),
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                          WidgetSpan(child: SizedBox(width: 10.w)),
+                    child: Text.rich(
+                      TextSpan(
+                        children:[
                           WidgetSpan(
-                            child: Icon(
-                              Icons.menu,
-                              size: 18.nsp,
-                              color: Colors.white,
-                            ),
-                          ),
+                              child: Image(
+                                  height: 15,
+                                  image: AssetImage('assets/images/menu.png'))),
                           WidgetSpan(child: SizedBox(width: 15.w)),
                           TextSpan(
-                            style:
-                            TextStyle(color: Colors.white, fontSize: 18.nsp),
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.nsp),
                             text: dashboardNavigation,
                           ),
                         ],
@@ -295,14 +293,16 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                     decoration: BoxDecoration(
                       boxShadow: [
                         new BoxShadow(
-                          color: Colors.black,
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          color: Color(0xFFE4E4E4),
                         ),
                       ],
                       color: Color(0xFFFFFFFF),
                     ),
                     alignment: Alignment.centerLeft,
-                    child: RichText(
-                      text: TextSpan(
+                    child: Text.rich(
+                      TextSpan(
                         children: [
                           WidgetSpan(child: SizedBox(width: 10.w)),
                           WidgetSpan(
@@ -329,13 +329,14 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
 
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  height: 220.h,
+                  height: 200.h,
                   width: 330.w,
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 0.0,
+                        spreadRadius: 2,
+                        blurRadius: 2,
+                        color: Color(0xFFE4E4E4),
                       ),
                     ],
                     color: Colors.white,
@@ -363,7 +364,7 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                           ),
                           ),
                       SizedBox(
-                        height: 100.h,
+                        height: 110.h,
                         child: Scrollbar(
                           child: ListView(
                             shrinkWrap: true,
@@ -372,33 +373,35 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                               Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  MaterialButton(
+                                  Container(
+                                    padding: EdgeInsets.only(left: 20.w, right: 20.w),
                                     height: 60.h,
-                                    minWidth: 250.w,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: new BorderRadius.circular(5)),
-                                    onPressed: () {},
+                                    width: 430.w,
+                                    // minWidth: 250.w,
+                                    // shape: RoundedRectangleBorder(
+                                    //     borderRadius: new BorderRadius.circular(5)),
+                                    // onPressed: () {},
                                     child: Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "jobs",
+                                          jobs,
                                           style: TextStyle(
                                             fontSize: 18.nsp,
                                             color: Colors.white,
                                           ),
                                         ),
-                                        SizedBox(width: 180.w),
+                                        SizedBox(width: 140.w),
                                         Text(
-                                          "Status",
+                                          status,
                                           style: TextStyle(
                                             fontSize: 18.nsp,
                                             color: Colors.white,
                                           ),
                                         ),
-                                        SizedBox(width: 100.w),
+                                        SizedBox(width: 80.w),
                                         Text(
-                                          "Actions",
+                                          actions,
                                           style: TextStyle(
                                             fontSize: 18.nsp,
                                             color: Colors.white,
@@ -406,16 +409,16 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
                                         ),
                                       ],
                                     ),
-                                    color: Colors.blue,
+                                    color: Color(0xFF198EDC),
                                   ),
                                   SizedBox(height: 10.h),
-                                  Text("No pending jobs found."),
+                                  Text(noActiveJobsFound),
                                 ],
                               ),
                             ],
                           ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
@@ -517,3 +520,7 @@ class DashBoardNavigationList {
     ),
   ];
 }
+
+
+
+
