@@ -48,99 +48,101 @@ Widget latestJobsComponent() {
         SizedBox(
           height: 40.h,
         ),
-        ListView.builder(
-          itemCount: 5,
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () => Navigator.pushNamed(context, '/job_description'),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade200),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 4,
-                          child: Text(
-                            "Sports Officer cum Warden",
-                            style:
-                                TextStyle(color: Colors.blue, fontSize: 20.nsp),
+        Expanded(
+                  child: ListView.builder(
+            itemCount: 5,
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () => Navigator.pushNamed(context, '/job_description'),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey.shade200),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 4,
+                            child: Text(
+                              "Sports Officer cum Warden",
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 20.nsp),
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        OutlineButton(
-                          borderSide: BorderSide(
-                            color: Colors.blue,
+                          SizedBox(
+                            width: 10,
                           ),
-                          onPressed: () {},
-                          child: Text(
-                            "Full Time",
-                            style: TextStyle(
-                                color: Colors.blue, fontSize: 16.nsp),
+                          OutlineButton(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                            ),
+                            onPressed: () {},
+                            child: Text(
+                              "Full Time",
+                              style: TextStyle(
+                                  color: Colors.blue, fontSize: 16.nsp),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    // Row(
-                    //   children: [
-                    //     Icon(Icons.add_location,color: Colors.grey[600],),
-                    //     Text(
-                    //       "Anand International College of Engineering",style: TextStyle(color: Colors.grey[600],fontSize: 16.nsp),
-                    //     ),
+                        ],
+                      ),
+                      // Row(
+                      //   children: [
+                      //     Icon(Icons.add_location,color: Colors.grey[600],),
+                      //     Text(
+                      //       "Anand International College of Engineering",style: TextStyle(color: Colors.grey[600],fontSize: 16.nsp),
+                      //     ),
 
-                    //   ],
-                    // ),
-                    SizedBox(height: 7.h,),
-                    RichText(
-                      text: TextSpan(children: [
-                        WidgetSpan(
-                          child: Icon(
-                            Icons.add_location,
-                            color: Colors.grey[600],
-                            size: 20.h,
+                      //   ],
+                      // ),
+                      SizedBox(height: 7.h,),
+                      RichText(
+                        text: TextSpan(children: [
+                          WidgetSpan(
+                            child: Icon(
+                              Icons.add_location,
+                              color: Colors.grey[600],
+                              size: 20.h,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text: "Anand International College of Engineering",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 18.nsp,
+                          TextSpan(
+                            text: "Anand International College of Engineering",
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 18.nsp,
+                            ),
+                          )
+                        ]),
+                      ),
+                      SizedBox(height: 7.h,),
+                      RichText(
+                        text: TextSpan(children: [
+                          WidgetSpan(
+                            child: Icon(
+                              Icons.add_location,
+                              color: Colors.grey[600],
+                              size: 20.h,
+                            ),
                           ),
-                        )
-                      ]),
-                    ),
-                    SizedBox(height: 7.h,),
-                    RichText(
-                      text: TextSpan(children: [
-                        WidgetSpan(
-                          child: Icon(
-                            Icons.add_location,
-                            color: Colors.grey[600],
-                            size: 20.h,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "Jaipur",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 18.nsp,
-                          ),
-                        )
-                      ]),
-                    ),
-                  ],
+                          TextSpan(
+                            text: "Jaipur",
+                            style: TextStyle(
+                              color: Colors.grey[600],
+                              fontSize: 18.nsp,
+                            ),
+                          )
+                        ]),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
         SizedBox(
           height: 30.h,
