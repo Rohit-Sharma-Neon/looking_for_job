@@ -37,7 +37,8 @@ class MenuWidget extends StatelessWidget {
           drawerItem(drawerKey),
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(6)),
-            child: ListTile(
+            child:
+            ListTile(
               tileColor: primaryColorLight,
               contentPadding: EdgeInsets.only(left: 15.w, top: 0, bottom: 0),
               // dense: true,
@@ -52,117 +53,119 @@ class MenuWidget extends StatelessWidget {
       ),
     );
   }
+
+  Widget drawerItem(GlobalKey<SliderMenuContainerState> drawerKey) {
+    return ListView.separated(
+      padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      itemCount: DrawerList.drawerData.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          contentPadding: EdgeInsets.only(left: 15.w),
+          // dense: true,
+          onTap: () {
+            drawerKey.currentState.closeDrawer();
+            switch (index) {
+              case 1:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/companies_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 2:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/employer_dahboard',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 3:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/mycompanies_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 4:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/myjobs_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 5:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/pendingjobs_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 6:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/membershipplan_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 7:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/transaction_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 8:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/signIn1',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 9:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/postajob_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+            }
+          },
+          title: Text(
+            DrawerList.drawerData[index],
+            style: TextStyle(color: Colors.white),
+          ),
+        );
+      },
+      separatorBuilder: (context, index) {
+        return Divider(
+          height: 0,
+          color: Colors.grey.shade600,
+        );
+      },
+    );
+  }
 }
 
-Widget drawerItem(GlobalKey<SliderMenuContainerState> drawerKey) {
-  return ListView.separated(
-    padding: EdgeInsets.zero,
-    shrinkWrap: true,
-    itemCount: DrawerList.drawerData.length,
-    itemBuilder: (context, index) {
-      return ListTile(
-        contentPadding: EdgeInsets.only(left: 15.w),
-        // dense: true,
-        onTap: () {
-          drawerKey.currentState.closeDrawer();
-          switch (index) {
-            case 1:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/companies_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 2:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/employer_dahboard',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 3:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/mycompanies_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 4:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/myjobs_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 5:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/pendingjobs_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 6:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/membershipplan_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 7:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/transaction_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 8:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/signIn1',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-            case 9:
-              {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/postajob_screen',
-                      (Route<dynamic> route) => false,
-                );
-                break;
-              }
-          }
-        },
-        title: Text(
-          DrawerList.drawerData[index],
-          style: TextStyle(color: Colors.white),
-        ),
-      );
-    },
-    separatorBuilder: (context, index) {
-      return Divider(
-        height: 0,
-        color: Colors.grey.shade600,
-      );
-    },
-  );
-}
+
 
 class DrawerList {
   static List<String> drawerData = [
