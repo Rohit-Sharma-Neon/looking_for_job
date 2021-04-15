@@ -63,7 +63,7 @@ Widget webHeader(
         InkWell(
           onTap: () => sliderMenuContainerStateKey.currentState.openDrawer(),
           child: Container(
-            margin: EdgeInsets.symmetric(vertical: 5.h),
+            margin: EdgeInsets.symmetric(vertical: 6.h),
             height: double.infinity,
             padding: EdgeInsets.all(8.h),
             decoration: BoxDecoration(
@@ -73,8 +73,8 @@ Widget webHeader(
               border: Border.all(color: Colors.grey, width: 0.5),
             ),
             child: Image(
-                height: 10.h,
-                width: 25.w,
+                height: 5.h,
+                width: 20.w,
                 image: AssetImage('assets/images/blackmenu.png')),
           ),
         ),

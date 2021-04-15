@@ -43,7 +43,7 @@ Widget jobCategoriesComponent() {
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: scaffoldHorizontalPadding + 10.w,
                 ),
-                visualDensity: VisualDensity( vertical: -4.w),
+                visualDensity: VisualDensity(vertical: -2.w),
                 onTap: () {},
                 leading: Icon(Icons.opacity),
                 title: Text(
