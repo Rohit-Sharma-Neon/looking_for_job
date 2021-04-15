@@ -202,6 +202,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 ),
                 ButtonTheme(
                   height: 50,
+                  // ignore: deprecated_member_use
                   child: RaisedButton(
                     color: Color(0xff198EDC),
                     onPressed: () {

@@ -71,3 +71,13 @@ const String premium = "Premium";
 const String noresultfound = "No result found.";
 const String previous = "Previous";
 const String next = "Next";
+const String myResumes = "My Resumes";
+const String file = "File";
+const String names = "Name";
+const String addnewresume = "Add New Resume";
+
+
+
+
+
+

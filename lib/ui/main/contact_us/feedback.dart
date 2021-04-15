@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/colors.dart';
 
 class FeedbackScreen extends StatefulWidget {
   @override
@@ -178,21 +180,27 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   ),
                 ),
                 SizedBox(height: 30.h,),
-                ButtonTheme(
-                  height: 50,
-                  child: RaisedButton(
-                    color: Color(0xff198EDC),
-                    onPressed: () {
-                      print('Pressed');
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Text(
-                      "Submit",
-                      style: TextStyle(color: Colors.white,fontSize: 16),
-                    ),
-                  ),
+                // ButtonTheme(
+                //   height: 50,
+                //   child: RaisedButton(
+                //     color: Color(0xff198EDC),
+                //     onPressed: () {
+                //       print('Pressed');
+                //     },
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(5.0),
+                //     ),
+                //     child: Text(
+                //       "Submit",
+                //       style: TextStyle(color: Colors.white,fontSize: 16),
+                //     ),
+                //   ),
+                // ),
+                MyButton(
+                  text: "Submit",
+                  width: 100.w,
+                  height: 50.h,
+                  // color: primaryColorLight,
                 ),
                 SizedBox(height: 100.h,)
           ]),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 
 class JobDescription extends StatefulWidget {
@@ -83,16 +84,20 @@ class _JobDescriptionState extends State<JobDescription> {
                     SizedBox(height: 30.h),
                     SizedBox(
                       width: double.infinity,
-                      child: RaisedButton(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 1.w, vertical: 10.h),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        color: Color(0xFF0691CE),
-                        textColor: Color(0xFFffffff),
-                        child: Text("Apply Now"),
-                        onPressed: () {},
+                       // child: RaisedButton(
+                      //   padding: EdgeInsets.symmetric(
+                      //       horizontal: 1.w, vertical: 10.h),
+                      //   shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(5.0),
+                      //   ),
+                      //   color: Color(0xFF0691CE),
+                      //   textColor: Color(0xFFffffff),
+                      //   child: Text("Apply Now"),
+                      //   onPressed: () {},
+                      // ),
+                      child: MyButton(
+                        text: "Apply Now",
+                        width: 80.w,
                       ),
                     ),
                   ],

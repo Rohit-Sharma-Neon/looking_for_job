@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/ui/main/%20my_resume/add_new_resume.dart';
+import 'package:lookingforjob_flutter/ui/main/%20my_resume/my_resume_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
@@ -18,8 +21,11 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_scre
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
+
+
+
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => ProfilePublicView(),
+  '/': (context) => FeedbackScreen(),
   // OnBoardings
   '/signIn1': (context) => LoginPage(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
@@ -43,6 +49,14 @@ var customRoutes = <String, WidgetBuilder>{
   '/job_description': (context) => JobDescription(),
   '/employer_dahboard': (context) => EmployerDashboard(),
   '/companies_screen': (context) => CompaniesScreen(),
+  '/my_resume_screen': (context) => MyResumeScreen(),
+  '/add_new_resume': (context) => AddNewResume(),
+  '/feedback': (context) => FeedbackScreen(),
+
+
+
+
+
 
 
 
