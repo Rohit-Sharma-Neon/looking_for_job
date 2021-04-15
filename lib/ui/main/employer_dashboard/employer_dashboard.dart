@@ -5,7 +5,6 @@ import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 
-
 import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
 import '../../../drawer/menu_widget.dart';
@@ -195,28 +194,33 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                           }
                         },
                         child: Container(
-                          padding: EdgeInsets.all(15.h),
+                          padding: EdgeInsets.all(12.h),
                           margin: EdgeInsets.symmetric(
                               horizontal: scaffoldHorizontalPadding.w),
                           width: double.infinity,
                           key: _key,
                           decoration: BoxDecoration(
                             color: Color(0xFF333333),
-                            borderRadius: BorderRadius.circular(7),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           child: Text.rich(
                             TextSpan(
-                              children:[
+                              children: [
                                 WidgetSpan(
+                                    alignment: PlaceholderAlignment.baseline,
+                                    baseline: TextBaseline.alphabetic,
                                     child: Image(
-                                        height: 15,
-                                        image: AssetImage('assets/images/menu.png'))),
+                                      height: 15,
+                                      width: 20.w,
+                                      image:
+                                          AssetImage('assets/images/menu.png'),
+                                    )),
                                 WidgetSpan(child: SizedBox(width: 15.w)),
                                 TextSpan(
                                   style: TextStyle(
                                       color: Color(0xFFFFFFFF),
                                       fontWeight: FontWeight.w600,
-                                      fontSize: 18.nsp),
+                                      fontSize: 16.nsp),
                                   text: dashboardNavigation,
                                 ),
                               ],
@@ -251,15 +255,16 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                               children: [
                                 Container(
                                     decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[350]),
+                                        border:
+                                            Border.all(color: Colors.grey[350]),
                                         color: Colors.white,
                                         boxShadow: [
                                           BoxShadow(
                                             color: Colors.grey.withOpacity(0.0),
                                             spreadRadius: 0.5,
                                             blurRadius: 1,
-                                            offset:
-                                            Offset(0, 1), // changes position of shadow
+                                            offset: Offset(0,
+                                                1), // changes position of shadow
                                           ),
                                         ],
                                         borderRadius: BorderRadius.circular(5)),
