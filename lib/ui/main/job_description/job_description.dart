@@ -304,406 +304,435 @@ class _JobDescriptionState extends State<JobDescription> {
                             ],
                           ),
                           SizedBox(height: 30.h),
-                          Row(
+                          Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Text("Job Description",
+                                  style: TextStyle(
+                                    fontSize: 26.nsp,
+                                    color: Colors.black,
+                                  )),
+                              SizedBox(height: 20.h),
+                              Text(
+                                  "AP-GROUP is hiring iOS developers with upto 1 years of experience. What do we need? Check below:",
+                                  style: TextStyle(
+                                    fontSize: 18.nsp,
+                                    color: Color(0xFF666666),
+                                  )),
+                              SizedBox(height: 20.h),
+                              Text(
+                                  "- Skills & knowledgeable candidate.\n- Join Immediate bases..",
+                                  style: TextStyle(
+                                    fontSize: 18.nsp,
+                                    color: Color(0xFF666666),
+                                  )),
+                              SizedBox(height: 20.h),
+                              Text("Why you should choose AP-GROUP?",
+                                  style: TextStyle(
+                                    fontSize: 18.nsp,
+                                    color: Color(0xFF666666),
+                                  )),
+                              SizedBox(height: 20.h),
+                              Text(
+                                  "- 5 Days Working.\n- Big & enterprise projects to work.\n- Increase & develop your skills 100%\n  with advanced technology & concepts.\n- Free work environment, productive and quality.\n- Always mapn  candidates.",
+                                  style: TextStyle(
+                                    fontSize: 18.nsp,
+                                    color: Color(0xFF666666),
+                                  )),
+                              SizedBox(height: 20.h),
+                              Text(
+                                  "To know more share your latest CV on\n the jobs.apgroup@@gmail.com &\n careers@ap-group.in",
+                                  style: TextStyle(
+                                    fontSize: 18.nsp,
+                                    color: Color(0xFF666666),
+                                  )),
+                              SizedBox(height: 30.h),
+                              Text("Tags",
+                                  style: TextStyle(
+                                    fontSize: 26.nsp,
+                                    color: Colors.black,
+                                  )),
+                              SizedBox(height: 20.h),
+                              Row(
                                 children: [
-                                  Text("Job Description",
-                                      style: TextStyle(
-                                        fontSize: 26.nsp,
-                                        color: Colors.black,
-                                      )),
-                                  SizedBox(height: 20.h),
-                                  Text(
-                                      "AP-GROUP is hiring iOS developers with\nupto 1 years of experience. What do we\nneed? Check below:",
-                                      style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        color: Color(0xFF666666),
-                                      )),
-                                  SizedBox(height: 20.h),
-                                  Text(
-                                      "- Skills & knowledgeable candidate.\n- Join Immediate bases..",
-                                      style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        color: Color(0xFF666666),
-                                      )),
-                                  SizedBox(height: 20.h),
-                                  Text("Why you should choose AP-GROUP?",
-                                      style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        color: Color(0xFF666666),
-                                      )),
-                                  SizedBox(height: 20.h),
-                                  Text(
-                                      "- 5 Days Working.\n- Big & enterprise projects to work.\n- Increase & develop your skills 100%\n  with advanced technology & concepts.\n- Free work environment, productive and\n  quality.\n- Always motivate for good work.\n- Great allowances for the right\n  candidates.",
-                                      style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        color: Color(0xFF666666),
-                                      )),
-                                  SizedBox(height: 20.h),
-                                  Text(
-                                      "To know more share your latest CV on\n the jobs.apgroup@@gmail.com &\n careers@ap-group.in",
-                                      style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        color: Color(0xFF666666),
-                                      )),
-                                  SizedBox(height: 30.h),
-                                  Text("Tags",
-                                      style: TextStyle(
-                                        fontSize: 26.nsp,
-                                        color: Colors.black,
-                                      )),
-                                  SizedBox(height: 20.h),
-                                  Row(
-                                    children: [
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          height: 25.h,
-                                          width: 130.w,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFEFF7FD),
-                                            borderRadius:
-                                                BorderRadius.circular(5),
-                                          ),
-                                          child: Text(" #iOSDeveloper",
-                                              style: TextStyle(
-                                                fontSize: 18.nsp,
-                                                color: Color(0xFF0691CE),
-                                              )),
-                                        ),
-                                      ),
-                                      SizedBox(width: 10.w),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: Container(
-                                          height: 25.h,
-                                          width: 90.w,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFFEFF7FD),
-                                            borderRadius:
-                                                BorderRadius.circular(5),
-                                          ),
-                                          child: Text(" #iOSJobs",
-                                              style: TextStyle(
-                                                fontSize: 18.nsp,
-                                                color: Color(0xFF0691CE),
-                                              )),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-
-                                  SizedBox(height: 30.h),
-                                  Text("Location",
-                                      style: TextStyle(
-                                        fontSize: 26.nsp,
-                                        color: Colors.black,
-                                      )),
-                                  SizedBox(height: 10.h),
-                                  Text("Map here...",
-                                      style: TextStyle(
-                                        fontSize: 18.nsp,
-                                        color: Colors.black,
-                                      )),
-
-                                  SizedBox(height: 30.h),
-                                  Container(
-                                    height: 40.h,
-                                    width: 320.w,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFEFF7FD),
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          topRight: Radius.circular(10)),
-                                    ),
+                                  InkWell(
+                                    onTap: () {},
                                     child: Container(
-                                      height: 200.h,
-                                      width: 320.w,
+                                      height: 25.h,
+                                      width: 130.w,
                                       decoration: BoxDecoration(
-                                        boxShadow: [
-                                          new BoxShadow(
-                                            color: Colors.black,
-                                          ),
-                                        ],
-                                        color: Color(0xFFF9F9F9),
-                                        // borderRadius: BorderRadius.only(
-                                        //     topLeft: Radius.circular(10),
-                                        //     topRight: Radius.circular(10)),
+                                        color: Color(0xFFEFF7FD),
+                                        borderRadius: BorderRadius.circular(5),
                                       ),
-                                      alignment: Alignment.center,
-                                      child: Text("Company Details",
+                                      child: Text(" #iOSDeveloper",
                                           style: TextStyle(
-                                            fontSize: 20.nsp,
-                                            color: Colors.black,
+                                            fontSize: 18.nsp,
+                                            color: Color(0xFF0691CE),
                                           )),
                                     ),
                                   ),
-
-                                  Container(
-                                    height: 180.h,
-                                    width: 320.w,
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        new BoxShadow(
-                                          color: Colors.black,
-                                          blurRadius: 0.0,
-                                        ),
-                                      ],
-                                      color: Colors.white,
-                                      // borderRadius: BorderRadius.only(
-                                      //     bottomLeft: Radius.circular(5),
-                                      //     bottomRight: Radius.circular(5)),
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text("AP-GROUP",
-                                            style: TextStyle(
-                                              fontSize: 24.nsp,
-                                              color: Colors.black,
-                                            )),
-                                        SizedBox(height: 10.h),
-                                        MaterialButton(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          color: Color(0xFF0691CE),
-                                          textColor: Color(0xFFffffff),
-                                          child: Text("Apply Now"),
-                                          onPressed: () {},
-                                        ),
-                                        MaterialButton(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(5.0),
-                                          ),
-                                          color: Color(0xFF0691CE),
-                                          textColor: Color(0xFFffffff),
-                                          child: Text("Login to chat"),
-                                          onPressed: () {},
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-
-                                  SizedBox(height: 30.h),
-                                  Text("Bookmark or Share",
-                                      style: TextStyle(
-                                        fontSize: 26.nsp,
-                                        color: Colors.black,
-                                      )),
-
-                                  SizedBox(height: 10.h),
-                                  Wrap(
-                                    spacing: 2,
-                                    children: <Widget>[
-                                      IconButton(
-                                        icon: Image.asset(whatsapplogo,
-                                            height: 100.h),
-                                        onPressed: () {},
+                                  SizedBox(width: 10.w),
+                                  InkWell(
+                                    onTap: () {},
+                                    child: Container(
+                                      height: 25.h,
+                                      width: 90.w,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFEFF7FD),
+                                        borderRadius: BorderRadius.circular(5),
                                       ),
-                                      IconButton(
-                                        icon: Image.asset(facebooklogo,
-                                            height: 100.h),
-                                        onPressed: () {},
-                                      ),
-                                      IconButton(
-                                        icon: Image.asset(gmaillogos,
-                                            height: 100.h),
-                                        onPressed: () {},
-                                      ),
-                                      IconButton(
-                                        icon: Image.asset(pinterestlogo,
-                                            height: 100.h),
-                                        onPressed: () {},
-                                      ),
-                                      IconButton(
-                                        icon: Image.asset(twitterlogo,
-                                            height: 100.h),
-                                        onPressed: () {},
-                                      ),
-                                    ],
-                                  ),
-                                  SizedBox(height: 30.h),
-
-                                  Text("More Info",
-                                      style: TextStyle(
-                                        fontSize: 24.nsp,
-                                        color: Colors.black,
-                                      )),
-
-                                  SizedBox(height: 10.h),
-
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(Icons.shop_outlined,
-                                              size: 22,
-                                              color: Color(0xFF0691CE)),
-                                          SizedBox(width: 10.w),
-                                          Text("More jobs by AP-GROUP",
-                                              style: TextStyle(
-                                                fontSize: 16.nsp,
-                                                color: Colors.black,
-                                              )),
-                                        ],
-                                      ),
-                                      SizedBox(height: 10.h),
-                                      Row(
-                                        children: [
-                                          Icon(Icons.perm_contact_cal_rounded,
-                                              size: 22,
-                                              color: Color(0xFF0691CE)),
-                                          SizedBox(width: 10.w),
-                                          Text("More jobs by Akash Panchal",
-                                              style: TextStyle(
-                                                fontSize: 16.nsp,
-                                                color: Colors.black,
-                                              )),
-                                        ],
-                                      ),
-                                      SizedBox(height: 10.h),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.error,
-                                            size: 22,
+                                      child: Text(" #iOSJobs",
+                                          style: TextStyle(
+                                            fontSize: 18.nsp,
                                             color: Color(0xFF0691CE),
-                                          ),
-                                          SizedBox(width: 10.w),
-                                          Text("Report this job",
-                                              style: TextStyle(
-                                                fontSize: 16.nsp,
-                                                color: Colors.black,
-                                              )),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-
-                                  // ListTile(
-                                  //   trailing: Icon(Icons.account_balance,size: 5,),
-                                  //   title: Text("More jobs by AP-GROUP"),
-                                  // ),
-
-                                  SizedBox(height: 30.h),
-                                  Expanded(
-                                    child: ListView.builder(
-                                      itemCount: 5,
-                                      physics: NeverScrollableScrollPhysics(),
-                                      shrinkWrap: true,
-                                      itemBuilder:
-                                          (BuildContext context, int index) {
-                                        return InkWell(
-                                          onTap: () => Navigator.pushNamed(
-                                              context, '/job_description'),
-                                          child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 10.w, vertical: 15.h),
-                                            decoration: BoxDecoration(
-                                              border: Border.all(
-                                                  color: Colors.grey.shade200),
-                                            ),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  children: [
-                                                    Expanded(
-                                                      flex: 4,
-                                                      child: Text(
-                                                        "Sports Officer cum Warden",
-                                                        style: TextStyle(
-                                                            color: Colors.blue,
-                                                            fontSize: 20.nsp),
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    OutlineButton(
-                                                      borderSide: BorderSide(
-                                                        color: Colors.blue,
-                                                      ),
-                                                      onPressed: () {},
-                                                      child: Text(
-                                                        "Full Time",
-                                                        style: TextStyle(
-                                                            color: Colors.blue,
-                                                            fontSize: 16.nsp),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                // Row(
-                                                //   children: [
-                                                //     Icon(Icons.add_location,color: Colors.grey[600],),
-                                                //     Text(
-                                                //       "Anand International College of Engineering",style: TextStyle(color: Colors.grey[600],fontSize: 16.nsp),
-                                                //     ),
-
-                                                //   ],
-                                                // ),
-                                                SizedBox(
-                                                  height: 7.h,
-                                                ),
-                                                RichText(
-                                                  text: TextSpan(children: [
-                                                    WidgetSpan(
-                                                      child: Icon(
-                                                        Icons.add_location,
-                                                        color: Colors.grey[600],
-                                                        size: 20.h,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text:
-                                                          "Anand International College of Engineering",
-                                                      style: TextStyle(
-                                                        color: Colors.grey[600],
-                                                        fontSize: 18.nsp,
-                                                      ),
-                                                    )
-                                                  ]),
-                                                ),
-                                                SizedBox(
-                                                  height: 7.h,
-                                                ),
-                                                RichText(
-                                                  text: TextSpan(children: [
-                                                    WidgetSpan(
-                                                      child: Icon(
-                                                        Icons.add_location,
-                                                        color: Colors.grey[600],
-                                                        size: 20.h,
-                                                      ),
-                                                    ),
-                                                    TextSpan(
-                                                      text: "Jaipur",
-                                                      style: TextStyle(
-                                                        color: Colors.grey[600],
-                                                        fontSize: 18.nsp,
-                                                      ),
-                                                    )
-                                                  ]),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        );
-                                      },
+                                          )),
                                     ),
                                   ),
                                 ],
                               ),
+
+                              SizedBox(height: 30.h),
+                              Text("Location",
+                                  style: TextStyle(
+                                    fontSize: 26.nsp,
+                                    color: Colors.black,
+                                  )),
+                              SizedBox(height: 10.h),
+                              Text("Map here...",
+                                  style: TextStyle(
+                                    fontSize: 18.nsp,
+                                    color: Colors.black,
+                                  )),
+
+                              SizedBox(height: 30.h),
+                              Container(
+                                height: 40.h,
+                                width: 320.w,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFEFF7FD),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                ),
+                                child: Container(
+                                  height: 200.h,
+                                  width: 320.w,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      new BoxShadow(
+                                        color: Colors.black,
+                                      ),
+                                    ],
+                                    color: Color(0xFFF9F9F9),
+                                    // borderRadius: BorderRadius.only(
+                                    //     topLeft: Radius.circular(10),
+                                    //     topRight: Radius.circular(10)),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Text("Company Details",
+                                      style: TextStyle(
+                                        fontSize: 20.nsp,
+                                        color: Colors.black,
+                                      )),
+                                ),
+                              ),
+
+                              Container(
+                                height: 180.h,
+                                width: 320.w,
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    new BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 0.0,
+                                    ),
+                                  ],
+                                  color: Colors.white,
+                                  // borderRadius: BorderRadius.only(
+                                  //     bottomLeft: Radius.circular(5),
+                                  //     bottomRight: Radius.circular(5)),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("AP-GROUP",
+                                        style: TextStyle(
+                                          fontSize: 24.nsp,
+                                          color: Colors.black,
+                                        )),
+                                    SizedBox(height: 10.h),
+                                    MaterialButton(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      color: Color(0xFF0691CE),
+                                      textColor: Color(0xFFffffff),
+                                      child: Text("Apply Now"),
+                                      onPressed: () {},
+                                    ),
+                                    MaterialButton(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      color: Color(0xFF0691CE),
+                                      textColor: Color(0xFFffffff),
+                                      child: Text("Login to chat"),
+                                      onPressed: () {},
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              SizedBox(height: 30.h),
+                              Text("Bookmark or Share",
+                                  style: TextStyle(
+                                    fontSize: 26.nsp,
+                                    color: Colors.black,
+                                  )),
+
+                              SizedBox(height: 10.h),
+
+                              InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  width: 200.w,
+                                  height: 50.h,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFF414141),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          child: Align(
+                                        child: Text(
+                                          "Save this job",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 16),
+                                        ),
+                                      )),
+                                      Container(
+                                        width: 50.w,
+                                        height: 50.h,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFF4A4A4A),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
+                                        ),
+                                        child: Icon(
+                                          Icons.favorite,
+                                          color: Colors.white,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+
+                              SizedBox(height: 10.h),
+                              Wrap(
+                                spacing: 2,
+                                children: <Widget>[
+                                  IconButton(
+                                    icon: Image.asset(whatsapplogo,
+                                        height: 100.h),
+                                    onPressed: () {},
+                                  ),
+                                  IconButton(
+                                    icon: Image.asset(facebooklogo,
+                                        height: 100.h),
+                                    onPressed: () {},
+                                  ),
+                                  IconButton(
+                                    icon:
+                                        Image.asset(gmaillogos, height: 100.h),
+                                    onPressed: () {},
+                                  ),
+                                  IconButton(
+                                    icon: Image.asset(pinterestlogo,
+                                        height: 100.h),
+                                    onPressed: () {},
+                                  ),
+                                  IconButton(
+                                    icon:
+                                        Image.asset(twitterlogo, height: 100.h),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 30.h),
+
+                              Text("More Info",
+                                  style: TextStyle(
+                                    fontSize: 24.nsp,
+                                    color: Colors.black,
+                                  )),
+
+                              SizedBox(height: 10.h),
+
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(Icons.shop_outlined,
+                                          size: 22, color: Color(0xFF0691CE)),
+                                      SizedBox(width: 10.w),
+                                      Text("More jobs by AP-GROUP",
+                                          style: TextStyle(
+                                            fontSize: 16.nsp,
+                                            color: Colors.black,
+                                          )),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.h),
+                                  Row(
+                                    children: [
+                                      Icon(Icons.perm_contact_cal_rounded,
+                                          size: 22, color: Color(0xFF0691CE)),
+                                      SizedBox(width: 10.w),
+                                      Text("More jobs by Akash Panchal",
+                                          style: TextStyle(
+                                            fontSize: 16.nsp,
+                                            color: Colors.black,
+                                          )),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.h),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.error,
+                                        size: 22,
+                                        color: Color(0xFF0691CE),
+                                      ),
+                                      SizedBox(width: 10.w),
+                                      Text("Report this job",
+                                          style: TextStyle(
+                                            fontSize: 16.nsp,
+                                            color: Colors.black,
+                                          )),
+                                    ],
+                                  ),
+                                ],
+                              ),
+
+                              // ListTile(
+                              //   trailing: Icon(Icons.account_balance,size: 5,),
+                              //   title: Text("More jobs by AP-GROUP"),
+                              // ),
+
+                              SizedBox(height: 30.h),
+                              // ListView.builder(
+                              //   itemCount: 5,
+                              //   physics: NeverScrollableScrollPhysics(),
+                              //   shrinkWrap: true,
+                              //   itemBuilder:
+                              //       (BuildContext context, int index) {
+                              //     return InkWell(
+                              //       onTap: () => Navigator.pushNamed(
+                              //           context, '/job_description'),
+                              //       child: Container(
+                              //         padding: EdgeInsets.symmetric(
+                              //             horizontal: 10.w, vertical: 15.h),
+                              //         decoration: BoxDecoration(
+                              //           border: Border.all(
+                              //               color: Colors.grey.shade200),
+                              //         ),
+                              //         child: Column(
+                              //           crossAxisAlignment:
+                              //               CrossAxisAlignment.start,
+                              //           children: [
+                              //             Row(
+                              //               children: [
+                              //                 Expanded(
+                              //                   flex: 4,
+                              //                   child: Text(
+                              //                     "Sports Officer cum Warden",
+                              //                     style: TextStyle(
+                              //                         color: Colors.blue,
+                              //                         fontSize: 20.nsp),
+                              //                   ),
+                              //                 ),
+                              //                 SizedBox(
+                              //                   width: 10,
+                              //                 ),
+                              //                 OutlineButton(
+                              //                   borderSide: BorderSide(
+                              //                     color: Colors.blue,
+                              //                   ),
+                              //                   onPressed: () {},
+                              //                   child: Text(
+                              //                     "Full Time",
+                              //                     style: TextStyle(
+                              //                         color: Colors.blue,
+                              //                         fontSize: 16.nsp),
+                              //                   ),
+                              //                 ),
+                              //               ],
+                              //             ),
+                              //             // Row(
+                              //             //   children: [
+                              //             //     Icon(Icons.add_location,color: Colors.grey[600],),
+                              //             //     Text(
+                              //             //       "Anand International College of Engineering",style: TextStyle(color: Colors.grey[600],fontSize: 16.nsp),
+                              //             //     ),
+                              //
+                              //             //   ],
+                              //             // ),
+                              //             SizedBox(
+                              //               height: 7.h,
+                              //             ),
+                              //             RichText(
+                              //               text: TextSpan(children: [
+                              //                 WidgetSpan(
+                              //                   child: Icon(
+                              //                     Icons.add_location,
+                              //                     color: Colors.grey[600],
+                              //                     size: 20.h,
+                              //                   ),
+                              //                 ),
+                              //                 TextSpan(
+                              //                   text:
+                              //                       "Anand International College of Engineering",
+                              //                   style: TextStyle(
+                              //                     color: Colors.grey[600],
+                              //                     fontSize: 18.nsp,
+                              //                   ),
+                              //                 )
+                              //               ]),
+                              //             ),
+                              //             SizedBox(
+                              //               height: 7.h,
+                              //             ),
+                              //             RichText(
+                              //               text: TextSpan(children: [
+                              //                 WidgetSpan(
+                              //                   child: Icon(
+                              //                     Icons.add_location,
+                              //                     color: Colors.grey[600],
+                              //                     size: 20.h,
+                              //                   ),
+                              //                 ),
+                              //                 TextSpan(
+                              //                   text: "Jaipur",
+                              //                   style: TextStyle(
+                              //                     color: Colors.grey[600],
+                              //                     fontSize: 18.nsp,
+                              //                   ),
+                              //                 )
+                              //               ]),
+                              //             ),
+                              //           ],
+                              //         ),
+                              //       ),
+                              //     );
+                              //   },
+                              // ),
                             ],
                           ),
                         ]),

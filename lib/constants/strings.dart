@@ -81,3 +81,27 @@ const String addnewresume = "Add New Resume";
 
 
 
+
+// FavoritejobScreen in Jobseeker Screens
+
+const String myResumes = "My Resumes";
+const String favouriteJobs = "Favourite Jobs";
+const String jobAlert = "Job Alert";
+const String myExperiences = "My Experiences";
+const String myExperiencess = "My Experiences -";
+const String appliedJobs = "Applied Jobs";
+const String noFavouriteJobsFound = "No favourite jobs found.";
+const String addNewExperiences = "Add New Experiences";
+const String noDataFound = "No data found.";
+const String title1 = "Title";
+const String company = "Company";
+const String city = "City";
+const String description = "Description";
+const String startDate = "Start Date";
+const String endDate = "End Date";
+const String currentlyWorking = "Currently Working?";
+const String save = "Save";
+const String yes = "Yes";
+const String no = "No";
+const String nojobsFound = "No jobs found.";
+

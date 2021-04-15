@@ -13,43 +13,45 @@ class MenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: primaryDarkColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            color: Color(0xff262626),
-            alignment: Alignment.center,
-            width: double.infinity,
-            height: 40.h,
-            child: Text(
-              menu,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Colors.white,
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              color: Color(0xff262626),
+              alignment: Alignment.center,
+              width: double.infinity,
+              height: 40.h,
+              child: Text(
+                menu,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                ),
               ),
             ),
-          ),
-          Divider(
-            height: 1,
-            color: Colors.grey.shade700,
-          ),
-          drawerItem(drawerKey),
-          ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(6)),
-            child:
-            ListTile(
-              tileColor: primaryColorLight,
-              contentPadding: EdgeInsets.only(left: 15.w, top: 0, bottom: 0),
-              // dense: true,
-              onTap: () => drawerKey.currentState.closeDrawer(),
-              title: Text(
-                postAJob,
-                style: TextStyle(color: Colors.white),
+            Divider(
+              height: 1,
+              color: Colors.grey.shade700,
+            ),
+            drawerItem(drawerKey),
+            ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(6)),
+              child:
+              ListTile(
+                tileColor: primaryColorLight,
+                contentPadding: EdgeInsets.only(left: 15.w, top: 0, bottom: 0),
+                // dense: true,
+                onTap: () => drawerKey.currentState.closeDrawer(),
+                title: Text(
+                  postAJob,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -58,6 +60,7 @@ class MenuWidget extends StatelessWidget {
     return ListView.separated(
       padding: EdgeInsets.zero,
       shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
       itemCount: DrawerList.drawerData.length,
       itemBuilder: (context, index) {
         return ListTile(
@@ -147,6 +150,16 @@ class MenuWidget extends StatelessWidget {
                   );
                   break;
                 }
+              case 10:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/favoritejob_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+
             }
           },
           title: Text(
@@ -177,6 +190,10 @@ class DrawerList {
     pendingJobs,
     membership,
     transactions,
+    myResumes,
+    appliedJobs,
+    favouriteJobs,
+    jobAlert,
     logout,
   ];
 }

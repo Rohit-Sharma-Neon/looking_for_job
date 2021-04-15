@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
+import 'file:///E:/FlutterProject/lookingforjob_flutter/lib/ui/main/browsejob_screen/components/browsejob_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/main/expiredjobs_screen/expiredjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
+import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/mycompanies_screen/mycompanies_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/myexperience_screen/myexperience_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
@@ -19,7 +24,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => ProfilePublicView(),
+  '/': (context) => BrowseJobScreen(),
   // OnBoardings
   '/signIn1': (context) => LoginPage(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
@@ -54,5 +59,13 @@ var customRoutes = <String, WidgetBuilder>{
 
 
 
+
+
+  //job seeker Screens
+  '/favoritejob_screen': (context) => FavoriteJobScreen(),
+  '/myexperience_screen': (context) => MyExperienceScreen(),
+  '/addnewexperience_screen': (context) => AddNewExperience(),
+  '/appliedjob_screen': (context) => AppliedJobScreen(),
+  '/jobalert_screen': (context) => JobAlertScreen(),
 
 };
