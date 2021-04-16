@@ -415,7 +415,7 @@ class DashBoardNavigationList {
   static List<Widget> myJobsList = [
     CustomListTile(
       leadingIcon: Icons.attach_file,
-      title: myResumes,
+      title: "myResumes",
       trailingIcon: Icons.attractions,
     ),
     // CustomListTile(
