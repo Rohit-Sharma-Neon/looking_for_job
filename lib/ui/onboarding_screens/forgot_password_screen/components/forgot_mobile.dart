@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -80,7 +80,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
                     //   child: Text("Request Password"),
                     //   onPressed: () {},
                     // ),
-                    MyButton(
+                    PrimaryButton(
                       text: "Request Password",
                       width: double.infinity.w,
                       height: 40.h,

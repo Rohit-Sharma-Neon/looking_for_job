@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:fluttericon/zocial_icons.dart';
@@ -439,20 +440,26 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          MaterialButton(
+                          // MaterialButton(
+                          //   height: 45.h,
+                          //   minWidth: 160.w,
+                          //   shape: RoundedRectangleBorder(
+                          //       borderRadius: new BorderRadius.circular(5)),
+                          //   onPressed: () {},
+                          //   child: Text(
+                          //     createNewCompany,
+                          //     style: TextStyle(
+                          //         color: Color(0xFFFFFFFF),
+                          //         fontWeight: FontWeight.w600,
+                          //         fontSize: textSize18),
+                          //   ),
+                          //   color: Color(0xFF198EDC),
+                          // ),
+                          PrimaryButton(
+                            text: createNewCompany,
                             height: 45.h,
-                            minWidth: 160.w,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(5)),
-                            onPressed: () {},
-                            child: Text(
-                              createNewCompany,
-                              style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: textSize18),
-                            ),
-                            color: Color(0xFF198EDC),
+                            width: 160.w,
+
                           ),
                           SizedBox(
                             height: 110.h,

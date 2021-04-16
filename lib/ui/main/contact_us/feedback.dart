@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 
 class FeedbackScreen extends StatefulWidget {
@@ -196,7 +196,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 //     ),
                 //   ),
                 // ),
-                MyButton(
+                PrimaryButton(
                   text: "Submit",
                   width: 100.w,
                   height: 50.h,

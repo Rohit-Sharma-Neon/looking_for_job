@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -781,7 +781,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           //     ),
           //   ),
           // ),
-          MyButton(
+          PrimaryButton(
             text: "Save Changes",
             height: 50.h,
             width: 130.w,
@@ -892,7 +892,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   //     ),
                   //   ),
                   // ),
-                  MyButton(
+                  PrimaryButton(
                     text: "Update",
                     height: 50.h,
                     width: 100,
@@ -1158,7 +1158,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   //     ),
                   //   ),
                   // ),
-                  MyButton(
+                  PrimaryButton(
                     text: "Advance Search",
                     height: 50.h,
                     width: 150.w,

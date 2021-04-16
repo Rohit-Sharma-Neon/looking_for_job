@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 
 class ContactUsScreen extends StatefulWidget {
   @override
@@ -218,7 +218,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 //     ),
                 //   ),
                 // ),
-                MyButton(
+                PrimaryButton(
                   height: 50.h,
                   width: 150.w,
                   text: ("Pressed"),

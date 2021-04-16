@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/components/galobal_components/web_header.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -105,518 +105,491 @@ GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
 class _MyResumeScreenState extends State<MyResumeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SliderMenuContainer(
-        drawerIconColor: Colors.transparent,
-        drawerIconSize: 0,
-        appBarColor: bgScaffoldColor,
-        appBarHeight: 0,
+    return SafeArea(
+      child: Scaffold(
+        body: SliderMenuContainer(
+          drawerIconColor: Colors.transparent,
+          drawerIconSize: 0,
+          appBarColor: bgScaffoldColor,
+          appBarHeight: 0,
 // appBarColor: Colors.white,
-        key: _sliderMenuContainerStateKey,
-        sliderMenuOpenSize: 280,
-        title: Text(
-          "title",
-          style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
-        ),
-        sliderMenu: MenuWidget(
-          drawerKey: _sliderMenuContainerStateKey,
-        ),
-        sliderMain: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              webHeader(_sliderMenuContainerStateKey),
-              SizedBox(height: 15.h),
-              InkWell(
-                onTap: () {
-                  if (isDashboardNavigationOpen) {
-                    closeDashboardNavigationMenu();
-                  } else {
-                    openDashboardNavigationMenu();
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.all(15.h),
-                  margin: EdgeInsets.symmetric(
-                      horizontal: scaffoldHorizontalPadding.w),
-                  width: double.infinity,
-                  key: _key,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF333333),
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        WidgetSpan(
-                            child: Image(
-                                height: 15,
-                                image: AssetImage('assets/images/menu.png'))),
-                        WidgetSpan(child: SizedBox(width: 15.w)),
-                        TextSpan(
-                          style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18.nsp),
-                          text: dashboardNavigation,
-                        ),
-                      ],
+          key: _sliderMenuContainerStateKey,
+          sliderMenuOpenSize: 280,
+          title: Text(
+            "title",
+            style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+          ),
+          sliderMenu: MenuWidget(
+            drawerKey: _sliderMenuContainerStateKey,
+          ),
+          sliderMain: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                webHeader(_sliderMenuContainerStateKey),
+                SizedBox(height: 15.h),
+                InkWell(
+                  onTap: () {
+                    if (isDashboardNavigationOpen) {
+                      closeDashboardNavigationMenu();
+                    } else {
+                      openDashboardNavigationMenu();
+                    }
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(15.h),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: scaffoldHorizontalPadding.w),
+                    width: double.infinity,
+                    key: _key,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF333333),
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          WidgetSpan(
+                              child: Image(
+                                  height: 15,
+                                  image: AssetImage('assets/images/menu.png'))),
+                          WidgetSpan(child: SizedBox(width: 15.w)),
+                          TextSpan(
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.nsp),
+                            text: dashboardNavigation,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              // Container(
-              //   padding: EdgeInsets.all(15.h),
-              //   margin: EdgeInsets.symmetric(
-              //       horizontal: scaffoldHorizontalPadding.w, vertical: 25.h),
-              //   height: 320.h,
-              //   width: 400.w,
-              //   decoration: BoxDecoration(
-              //     color: Color(0xFFFFFFFF),
-              //     borderRadius: BorderRadius.circular(0),
-              //     boxShadow: [
-              //       BoxShadow(
-              //         color: Colors.grey.withOpacity(0.2),
-              //         spreadRadius: 1,
-              //         blurRadius: 1,
-              //         offset: Offset(0, 0),
-              //       )
-              //     ],
-              //   ),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       RichText(
-              //         text: TextSpan(
-              //           children: [
-              //             WidgetSpan(
-              //               child: Icon(
-              //                 Icons.shopping_bag,
-              //                 size: 28.nsp,
-              //                 color: Colors.blue,
-              //               ),
-              //             ),
-              //             WidgetSpan(
-              //                 child: SizedBox(
-              //                   width: 10,
-              //                 )),
-              //             TextSpan(
-              //               style: TextStyle(
-              //                   color: Colors.black, fontSize: 18.nsp),
-              //               text: "My Jobs",
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //       Divider(
-              //         color: Colors.black,
-              //         height: 25.h,
-              //       ),
-              //       SizedBox(height: 10.h),
-              //       Container(
-              //           margin: EdgeInsets.only(bottom: 10.h),
-              //           decoration: BoxDecoration(
-              //             boxShadow: [
-              //               BoxShadow(
-              //                 color: Colors.grey.withOpacity(0.1),
-              //                 spreadRadius: 5,
-              //                 blurRadius: 3,
-              //                 offset:
-              //                 Offset(0, 0), // changes position of shadow
-              //               ),
-              //             ],
-              //             borderRadius: BorderRadius.circular(5),
-              //             color: Colors.white,
-              //           ),
-              //           child: Padding(
-              //             padding: EdgeInsets.all(10.w),
-              //             child: Row(
-              //               children: <Widget>[
-              //                 Expanded(
-              //                   child: TextField(
-              //                     decoration: InputDecoration.collapsed(
-              //                       hintText: ' Search...',
-              //                     ),
-              //                     onChanged: (value) {},
-              //                   ),
-              //                 ),
-              //                 InkWell(
-              //                   child: Icon(Icons.search, color: Colors.grey),
-              //                   onTap: () {},
-              //                 )
-              //               ],
-              //             ),
-              //           )),
-              //       SizedBox(height: 5.h),
-              //       Column(
-              //         mainAxisSize: MainAxisSize.min,
-              //         crossAxisAlignment: CrossAxisAlignment.end,
-              //         children: [
-              //           SizedBox(
-              //             height: 100.h,
-              //             child: Scrollbar(
-              //               child: ListView(
-              //                 shrinkWrap: true,
-              //                 scrollDirection: Axis.horizontal,
-              //                 children: [
-              //                   Column(
-              //                     mainAxisSize: MainAxisSize.min,
-              //                     children: [
-              //                       SizedBox(height: 5.h),
-              //                       MaterialButton(
-              //                         height: 50.h,
-              //                         minWidth: 250.w,
-              //                         shape: RoundedRectangleBorder(
-              //                             borderRadius: new BorderRadius.circular(5)),
-              //                         onPressed: () {},
-              //                         child: Row(
-              //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //                           children: [
-              //                             Text(
-              //                               "jobs",
-              //                               style: TextStyle(
-              //                                 fontSize: 18.nsp,
-              //                                 color: Colors.white,
-              //                               ),
-              //                             ),
-              //                             SizedBox(width: 180.w),
-              //                             Text(
-              //                               "Status",
-              //                               style: TextStyle(
-              //                                 fontSize: 18.nsp,
-              //                                 color: Colors.white,
-              //                               ),
-              //                             ),
-              //                             SizedBox(width: 100.w),
-              //                             Text(
-              //                               "Actions",
-              //                               style: TextStyle(
-              //                                 fontSize: 18.nsp,
-              //                                 color: Colors.white,
-              //                               ),
-              //                             ),
-              //                           ],
-              //                         ),
-              //                         color: Colors.blue,
-              //                       ),
-              //                       SizedBox(height: 10.h),
-              //                       Text("No active jobs found."),
-              //                     ],
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //           )
-              //         ],
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              SizedBox(height: 20.h),
-              Container(
-                height: 60.h,
-                width: 330.w,
-                decoration: BoxDecoration(
-                  color: Color(0xFFEFF7FD),
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
+                // Container(
+                //   padding: EdgeInsets.all(15.h),
+                //   margin: EdgeInsets.symmetric(
+                //       horizontal: scaffoldHorizontalPadding.w, vertical: 25.h),
+                //   height: 320.h,
+                //   width: 400.w,
+                //   decoration: BoxDecoration(
+                //     color: Color(0xFFFFFFFF),
+                //     borderRadius: BorderRadius.circular(0),
+                //     boxShadow: [
+                //       BoxShadow(
+                //         color: Colors.grey.withOpacity(0.2),
+                //         spreadRadius: 1,
+                //         blurRadius: 1,
+                //         offset: Offset(0, 0),
+                //       )
+                //     ],
+                //   ),
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       RichText(
+                //         text: TextSpan(
+                //           children: [
+                //             WidgetSpan(
+                //               child: Icon(
+                //                 Icons.shopping_bag,
+                //                 size: 28.nsp,
+                //                 color: Colors.blue,
+                //               ),
+                //             ),
+                //             WidgetSpan(
+                //                 child: SizedBox(
+                //                   width: 10,
+                //                 )),
+                //             TextSpan(
+                //               style: TextStyle(
+                //                   color: Colors.black, fontSize: 18.nsp),
+                //               text: "My Jobs",
+                //             ),
+                //           ],
+                //         ),
+                //       ),
+                //       Divider(
+                //         color: Colors.black,
+                //         height: 25.h,
+                //       ),
+                //       SizedBox(height: 10.h),
+                //       Container(
+                //           margin: EdgeInsets.only(bottom: 10.h),
+                //           decoration: BoxDecoration(
+                //             boxShadow: [
+                //               BoxShadow(
+                //                 color: Colors.grey.withOpacity(0.1),
+                //                 spreadRadius: 5,
+                //                 blurRadius: 3,
+                //                 offset:
+                //                 Offset(0, 0), // changes position of shadow
+                //               ),
+                //             ],
+                //             borderRadius: BorderRadius.circular(5),
+                //             color: Colors.white,
+                //           ),
+                //           child: Padding(
+                //             padding: EdgeInsets.all(10.w),
+                //             child: Row(
+                //               children: <Widget>[
+                //                 Expanded(
+                //                   child: TextField(
+                //                     decoration: InputDecoration.collapsed(
+                //                       hintText: ' Search...',
+                //                     ),
+                //                     onChanged: (value) {},
+                //                   ),
+                //                 ),
+                //                 InkWell(
+                //                   child: Icon(Icons.search, color: Colors.grey),
+                //                   onTap: () {},
+                //                 )
+                //               ],
+                //             ),
+                //           )),
+                //       SizedBox(height: 5.h),
+                //       Column(
+                //         mainAxisSize: MainAxisSize.min,
+                //         crossAxisAlignment: CrossAxisAlignment.end,
+                //         children: [
+                //           SizedBox(
+                //             height: 100.h,
+                //             child: Scrollbar(
+                //               child: ListView(
+                //                 shrinkWrap: true,
+                //                 scrollDirection: Axis.horizontal,
+                //                 children: [
+                //                   Column(
+                //                     mainAxisSize: MainAxisSize.min,
+                //                     children: [
+                //                       SizedBox(height: 5.h),
+                //                       MaterialButton(
+                //                         height: 50.h,
+                //                         minWidth: 250.w,
+                //                         shape: RoundedRectangleBorder(
+                //                             borderRadius: new BorderRadius.circular(5)),
+                //                         onPressed: () {},
+                //                         child: Row(
+                //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //                           children: [
+                //                             Text(
+                //                               "jobs",
+                //                               style: TextStyle(
+                //                                 fontSize: 18.nsp,
+                //                                 color: Colors.white,
+                //                               ),
+                //                             ),
+                //                             SizedBox(width: 180.w),
+                //                             Text(
+                //                               "Status",
+                //                               style: TextStyle(
+                //                                 fontSize: 18.nsp,
+                //                                 color: Colors.white,
+                //                               ),
+                //                             ),
+                //                             SizedBox(width: 100.w),
+                //                             Text(
+                //                               "Actions",
+                //                               style: TextStyle(
+                //                                 fontSize: 18.nsp,
+                //                                 color: Colors.white,
+                //                               ),
+                //                             ),
+                //                           ],
+                //                         ),
+                //                         color: Colors.blue,
+                //                       ),
+                //                       SizedBox(height: 10.h),
+                //                       Text("No active jobs found."),
+                //                     ],
+                //                   ),
+                //                 ],
+                //               ),
+                //             ),
+                //           )
+                //         ],
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                SizedBox(height: 20.h),
+                Container(
+                  height: 60.h,
+                  width: 330.w,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEFF7FD),
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15.w),
+                    height: 200.h,
+                    width: 320.w,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        new BoxShadow(
+                          spreadRadius: 2,
+                          blurRadius: 2,
+                          color: Color(0xFFE4E4E4),
+                        ),
+                      ],
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    alignment: Alignment.centerLeft,
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          WidgetSpan(child: SizedBox(width: 10.w)),
+                          WidgetSpan(
+                            child: Icon(
+                              Icons.attachment_rounded,
+                              size: 28.nsp,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          WidgetSpan(
+                              child: SizedBox(
+                            width: 10,
+                          )),
+                          TextSpan(
+                            style: TextStyle(
+                                color: Color(0xFF333333),
+                                fontWeight: FontWeight.w600,
+                                fontSize: textSize18),
+                            text: myResumes,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15.w),
-                  height: 200.h,
-                  width: 320.w,
+
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 25.w),
+                  // height: 230.h,
+                  width: 330.w,
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(
-                        spreadRadius: 2,
-                        blurRadius: 2,
+                        spreadRadius: 1,
+                        blurRadius: 1,
                         color: Color(0xFFE4E4E4),
                       ),
                     ],
-                    color: Color(0xFFFFFFFF),
+                    color: Colors.white,
+                    // borderRadius: BorderRadius.only(
+                    //     bottomLeft: Radius.circular(5),
+                    //     bottomRight: Radius.circular(5)),
                   ),
-                  alignment: Alignment.centerLeft,
-                  child: Text.rich(
-                    TextSpan(
-                      children: [
-                        WidgetSpan(child: SizedBox(width: 10.w)),
-                        WidgetSpan(
-                          child: Icon(
-                            Icons.attachment_rounded,
-                            size: 28.nsp,
-                            color: Colors.blue,
-                          ),
-                        ),
-                        WidgetSpan(
-                            child: SizedBox(
-                          width: 10,
-                        )),
-                        TextSpan(
-                          style: TextStyle(
-                              color: Color(0xFF333333),
-                              fontWeight: FontWeight.w600,
-                              fontSize: textSize18),
-                          text: myResumes,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                // height: 230.h,
-                width: 330.w,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    new BoxShadow(
-                      spreadRadius: 1,
-                      blurRadius: 1,
-                      color: Color(0xFFE4E4E4),
-                    ),
-                  ],
-                  color: Colors.white,
-                  // borderRadius: BorderRadius.only(
-                  //     bottomLeft: Radius.circular(5),
-                  //     bottomRight: Radius.circular(5)),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.2),
-                              spreadRadius: 0.5,
-                              blurRadius: 0.5,
-                              offset:
-                                  Offset(0, 0), // changes position of shadow
-                            ),
-                          ],
-                          border: Border.all(color: Colors.grey[300]),
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(10.w),
-                          child: Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: TextField(
-                                  decoration: InputDecoration.collapsed(
-                                    hintText: 'Search...',
-                                  ),
-                                  onChanged: (value) {},
-                                ),
-                              ),
-                              InkWell(
-                                child: Icon(Icons.search, color: Colors.grey),
-                                onTap: () {},
-                              )
-                            ],
-                          ),
-                        )),
-                    SizedBox(height: 10.h),
-                    Padding(
-                      padding: EdgeInsets.only(left: 115.w),
-                      // child: ButtonTheme(
-                      //   height: 50,
-                      //   child: RaisedButton(
-                      //     color: Color(0xff198EDC),
-                      //     onPressed: () {
-                      //       Navigator.push(context,  MaterialPageRoute(builder: (context) => AddNewResume()),);
-                      //     },
-                      //     shape: RoundedRectangleBorder(
-                      //       borderRadius: BorderRadius.circular(5.0),
-                      //     ),
-                      //     child: Text(
-                      //       "Add New Resume",
-                      //       style: TextStyle(color: Colors.white),
-                      //     ),
-                      //   ),
-                      // ),
-                      child: MyButton(
-                        text: "Add New Resume",
-                        width: 250.w,
-                        height: 50.h,
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewResume()), );
-                        },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 20.h,
                       ),
-                    ),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          height: 910.h,
-                          child: Scrollbar(
-                            child: ListView(
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(height: 10.h),
-                                    Container(
-                                      padding: EdgeInsets.only(
-                                          left: 20.w, right: 20.w),
-                                      height: 60.h,
-                                      width: 430.w,
-                                      // minWidth: 250.w,
-                                      // shape: RoundedRectangleBorder(
-                                      //     borderRadius: new BorderRadius.circular(5)),
-                                      // onPressed: () {},
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Text(
-                                            file,
-                                            style: TextStyle(
-                                              fontSize: 18.nsp,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          SizedBox(width: 140.w),
-                                          Text(
-                                            names,
-                                            style: TextStyle(
-                                              fontSize: 18.nsp,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          SizedBox(width: 80.w),
-                                          Text(
-                                            actions,
-                                            style: TextStyle(
-                                              fontSize: 18.nsp,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      color: Color(0xFF198EDC),
+                      Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.2),
+                                spreadRadius: 0.5,
+                                blurRadius: 0.5,
+                                offset:
+                                    Offset(0, 0), // changes position of shadow
+                              ),
+                            ],
+                            border: Border.all(color: Colors.grey[300]),
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.white,
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(10.w),
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: TextField(
+                                    decoration: InputDecoration.collapsed(
+                                      hintText: 'Search...',
                                     ),
-                                    SizedBox(height: 10.h),
-                                    SizedBox(
-                                      height: 800.h,
-                                      width: 450.w,
-                                      child: ListView.builder(
-                                          physics:
-                                              NeverScrollableScrollPhysics(),
-                                          shrinkWrap: true,
-                                          itemCount: 3,
-                                          itemBuilder: (context, index) {
-                                            return Container(
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 20.w,
-                                                        bottom: 30.h,top: 40.h),
-                                                    // child: ButtonTheme(
-                                                    //   height: 50,
-                                                    //   // ignore: deprecated_member_use
-                                                    //   child: RaisedButton(
-                                                    //     color:
-                                                    //         Color(0xff198EDC),
-                                                    //     onPressed: () {
-                                                    //       print('Pressed');
-                                                    //     },
-                                                    //     shape:
-                                                    //         RoundedRectangleBorder(
-                                                    //       borderRadius:
-                                                    //           BorderRadius
-                                                    //               .circular(
-                                                    //                   5.0),
-                                                    //     ),
-                                                    //     child: Text(
-                                                    //       "Download",
-                                                    //       style: TextStyle(
-                                                    //           color:
-                                                    //               Colors.white),
-                                                    //     ),
-                                                    //   ),
-                                                    // ),
-                                                    child:MyButton(
+                                    onChanged: (value) {},
+                                  ),
+                                ),
+                                InkWell(
+                                  child: Icon(Icons.search, color: Colors.grey),
+                                  onTap: () {},
+                                )
+                              ],
+                            ),
+                          )),
+                      SizedBox(height: 10.h),
+                      Padding(
+                        padding: EdgeInsets.only(left: 115.w),
+                        // child: ButtonTheme(
+                        //   height: 50,
+                        //   child: RaisedButton(
+                        //     color: Color(0xff198EDC),
+                        //     onPressed: () {
+                        //       Navigator.push(context,  MaterialPageRoute(builder: (context) => AddNewResume()),);
+                        //     },
+                        //     shape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(5.0),
+                        //     ),
+                        //     child: Text(
+                        //       "Add New Resume",
+                        //       style: TextStyle(color: Colors.white),
+                        //     ),
+                        //   ),
+                        // ),
+                        child: PrimaryButton(
+                          text: "Add New Resume",
+                          width: 250.w,
+                          height: 50.h,
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewResume()), );
+                          },
+                        ),
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            height: 910.h,
+                            child: Scrollbar(
+                              child: ListView(
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(height: 10.h),
+                                      Container(
+                                        padding: EdgeInsets.only(
+                                            left: 20.w, right: 20.w),
+                                        height: 60.h,
+                                        width: 430.w,
+                                        // minWidth: 250.w,
+                                        // shape: RoundedRectangleBorder(
+                                        //     borderRadius: new BorderRadius.circular(5)),
+                                        // onPressed: () {},
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(
+                                              file,
+                                              style: TextStyle(
+                                                fontSize: 18.nsp,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            SizedBox(width: 140.w),
+                                            Text(
+                                              names,
+                                              style: TextStyle(
+                                                fontSize: 18.nsp,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                            SizedBox(width: 80.w),
+                                            Text(
+                                              actions,
+                                              style: TextStyle(
+                                                fontSize: 18.nsp,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        color: Color(0xFF198EDC),
+                                      ),
+                                      SizedBox(height: 10.h),
+                                      SizedBox(
+                                        height: 800.h,
+                                        width: 450.w,
+                                        child: ListView.builder(
+                                            physics:
+                                                NeverScrollableScrollPhysics(),
+                                            shrinkWrap: true,
+                                            itemCount: 3,
+                                            itemBuilder: (context, index) {
+                                              return Container(
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  mainAxisSize: MainAxisSize.min,
+                                                  children: [
+                                                    PrimaryButton(
                                                       text: "Download",
                                                       width: 100.w,
                                                       height: 50.h,
                                                       // color: primaryColorLight,
-                                                    )
-                                                  ),
-                                                  // SizedBox(width: 60.w,),
-                                                  Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 80.w,
-                                                        top: 10.h),
-                                                    child: Text(
-                                                      "Flutter lib",
-                                                      style: TextStyle(
-                                                          fontSize: textSize18,
-                                                          color:
-                                                              Colors.grey[600]),
                                                     ),
-                                                  ),
-                                                  Column(
-                                                    mainAxisAlignment: MainAxisAlignment.start,
-                                                    children: [
-                                                      Padding(
-                                                        padding: EdgeInsets.only(left: 100.w,top: 5.h),
-                                                        child: Container(
-                                                          height: 30.h,
-                                                          width: 30.w,
-                                                          decoration: BoxDecoration(
-                                                            borderRadius: BorderRadius.circular(5),
-                                                            color: Colors.grey[300]
-                                                          ),
-                                                          child:Icon(Icons.app_registration,color: Colors.grey[800],)
-                                                        ),
+                                                    // SizedBox(width: 60.w,),
+                                                    Padding(
+                                                      padding: EdgeInsets.only(
+                                                          left: 80.w,
+                                                          top: 10.h),
+                                                      child: Text(
+                                                        "Flutter lib",
+                                                        style: TextStyle(
+                                                            fontSize: textSize18,
+                                                            color:
+                                                                Colors.grey[600]),
                                                       ),
-                                                      Padding(
-                                                        padding: EdgeInsets.only(left: 100.w,top: 10.h),
-                                                        child: Container(
+                                                    ),
+                                                    Column(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        Padding(
+                                                          padding: EdgeInsets.only(left: 100.w,top: 5.h),
+                                                          child: Container(
                                                             height: 30.h,
                                                             width: 30.w,
                                                             decoration: BoxDecoration(
-                                                                borderRadius: BorderRadius.circular(5),
-                                                                color: Colors.grey[300]
+                                                              borderRadius: BorderRadius.circular(5),
+                                                              color: Colors.grey[300]
                                                             ),
-                                                            child:Icon(Icons.delete,color: Colors.grey[600],)
+                                                            child:Icon(Icons.app_registration,color: Colors.grey[800],)
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ],
-                                                  )
-                                                ],
-                                              ),
-                                            );
-                                          }),
-                                    )
-                                  ],
-                                ),
-                              ],
+                                                        Padding(
+                                                          padding: EdgeInsets.only(left: 100.w,top: 10.h),
+                                                          child: Container(
+                                                              height: 30.h,
+                                                              width: 30.w,
+                                                              decoration: BoxDecoration(
+                                                                  borderRadius: BorderRadius.circular(5),
+                                                                  color: Colors.grey[300]
+                                                              ),
+                                                              child:Icon(Icons.delete,color: Colors.grey[600],)
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    )
+                                                  ],
+                                                ),
+                                              );
+                                            }),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

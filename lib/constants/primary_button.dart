@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 
-class MyButton extends StatelessWidget {
+class PrimaryButton extends StatelessWidget {
   final String text;
   final double width;
   final double height;
   final void Function() onPressed;
   // final Color color;
 
-  const MyButton({Key key, this.text, this.width, this.height, this.onPressed,  })
+  const PrimaryButton({Key key, @required this.text, this.width, this.height, this.onPressed,  })
       : super(key: key);
 
   @override

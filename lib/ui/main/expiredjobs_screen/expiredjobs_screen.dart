@@ -371,33 +371,38 @@ class _ExpiredJobsScreenState extends State<ExpiredJobsScreen> {
                               Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  MaterialButton(
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                        left: 20.w, right: 20.w),
                                     height: 60.h,
-                                    minWidth: 250.w,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: new BorderRadius.circular(5)),
-                                    onPressed: () {},
+                                    width: 430.w,
+                                    // minWidth: 250.w,
+                                    // shape: RoundedRectangleBorder(
+                                    //     borderRadius: new BorderRadius.circular(5)),
+                                    // onPressed: () {},
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Text(
-                                          "jobs",
+                                          "Job",
                                           style: TextStyle(
                                             fontSize: 18.nsp,
                                             color: Colors.white,
                                           ),
                                         ),
-                                        SizedBox(width: 180.w),
+                                        SizedBox(width: 140.w),
                                         Text(
-                                          "Status",
+                                          status,
                                           style: TextStyle(
                                             fontSize: 18.nsp,
                                             color: Colors.white,
                                           ),
                                         ),
-                                        SizedBox(width: 100.w),
+                                        SizedBox(width: 80.w),
                                         Text(
-                                          "Actions",
+                                          actions,
                                           style: TextStyle(
                                             fontSize: 18.nsp,
                                             color: Colors.white,
@@ -405,7 +410,7 @@ class _ExpiredJobsScreenState extends State<ExpiredJobsScreen> {
                                         ),
                                       ],
                                     ),
-                                    color: Colors.blue,
+                                    color: Color(0xFF198EDC),
                                   ),
                                   SizedBox(height: 10.h),
                                   Text("No expired jobs found."),

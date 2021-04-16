@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
@@ -151,7 +151,6 @@ class _AddNewResumeState extends State<AddNewResume> {
                                         offset: Offset(0, 1),
                                       )
                                     ]),
-                                // ignore: deprecated_member_use
                                 child: OutlineButton(
                                   onPressed: () {},
                                   splashColor: primaryColorLight,
@@ -168,8 +167,10 @@ class _AddNewResumeState extends State<AddNewResume> {
                                     ),
                                   ),
                                 ),
+
+                                )
                               ),
-                            ),
+
                             SizedBox(height: 20.h),
                             Text(
                               "only pdf,doc,rtx,ppt,jpeg,jpg,bmp,png file type allowed ",
@@ -179,7 +180,7 @@ class _AddNewResumeState extends State<AddNewResume> {
                             SizedBox(
                               height: 30.h,
                             ),
-                            MyButton(
+                            PrimaryButton(
                               text: "Save",
                               width: 100.w,
                               height: 50.h,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
@@ -744,7 +744,7 @@ class _AddNewExperienceState extends State<AddNewExperience> {
                                   //     ),
                                   //   ),
                                   // ),
-                                  MyButton(
+                                  PrimaryButton(
                                     height: 50.h,
                                     width: 100.w,
                                     text: save,
