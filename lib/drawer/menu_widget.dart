@@ -69,6 +69,15 @@ class MenuWidget extends StatelessWidget {
           onTap: () {
             drawerKey.currentState.closeDrawer();
             switch (index) {
+              case 0:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/browsejob_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
               case 1:
                 {
                   Navigator.pushNamedAndRemoveUntil(
@@ -136,7 +145,7 @@ class MenuWidget extends StatelessWidget {
                 {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
-                    '/signIn1',
+                    '/my_resume_screen',
                         (Route<dynamic> route) => false,
                   );
                   break;
@@ -145,7 +154,7 @@ class MenuWidget extends StatelessWidget {
                 {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
-                    '/postajob_screen',
+                    '/appliedjob_screen',
                         (Route<dynamic> route) => false,
                   );
                   break;
@@ -155,6 +164,33 @@ class MenuWidget extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
                     '/favoritejob_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 11:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/jobalert_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 12:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/signIn1',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 13:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/postajob_screen',
                         (Route<dynamic> route) => false,
                   );
                   break;

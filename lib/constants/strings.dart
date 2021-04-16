@@ -22,6 +22,7 @@ const String informationTechnology = "Information Technology";
 const String management = "Management";
 const String architectureAndEngineer = "Architecture and Engineer";
 String dropdownValue="Select Company";
+
 // EmployerDashboard
 const String youLastLogged_ = "You last logged in at: 26 Mar 2021";
 const String timming0603 = "06:03";
@@ -71,16 +72,6 @@ const String premium = "Premium";
 const String noresultfound = "No result found.";
 const String previous = "Previous";
 const String next = "Next";
-const String myResumes = "My Resumes";
-const String file = "File";
-const String names = "Name";
-const String addnewresume = "Add New Resume";
-
-
-
-
-
-
 
 // FavoritejobScreen in Jobseeker Screens
 
@@ -104,4 +95,7 @@ const String save = "Save";
 const String yes = "Yes";
 const String no = "No";
 const String nojobsFound = "No jobs found.";
+const String male = "Male";
+const String feMale = "Female";
+const String other = "Other";
 

@@ -481,7 +481,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            file,
+                                            "file",
                                             style: TextStyle(
                                               fontSize: 18.nsp,
                                               color: Colors.white,
@@ -489,7 +489,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                           ),
                                           SizedBox(width: 140.w),
                                           Text(
-                                            names,
+                                            "names",
                                             style: TextStyle(
                                               fontSize: 18.nsp,
                                               color: Colors.white,
