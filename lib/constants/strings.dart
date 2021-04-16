@@ -75,7 +75,7 @@ const String next = "Next";
 
 // FavoritejobScreen in Jobseeker Screens
 
-const String myResumes = "My Resumes";
+const String myresumes = "My Resumes";
 const String favouriteJobs = "Favourite Jobs";
 const String jobAlert = "Job Alert";
 const String myExperiences = "My Experiences";

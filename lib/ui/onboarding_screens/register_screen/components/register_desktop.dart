@@ -2,15 +2,16 @@
 // import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 class RegisterDesktopComponent extends StatefulWidget {
   @override
-  _RegisterDesktopComponentState createState() => _RegisterDesktopComponentState();
+  _RegisterDesktopComponentState createState() =>
+      _RegisterDesktopComponentState();
 }
 
 class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
-
   final _formKey = GlobalKey<FormState>();
   bool _rememberMeFlag = false;
 
@@ -47,8 +48,8 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
               children: [
                 Text(
                   "Let's create your account!",
-                  style: TextStyle(
-                      fontSize: 25.nsp, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 5.h),
                 Row(
@@ -105,7 +106,7 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
 
                 Padding(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                   child: TextField(
                     decoration: InputDecoration(
                       icon: Icon(
@@ -118,7 +119,7 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
 
                 Padding(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                   child: TextField(
                     decoration: InputDecoration(
                       icon: Icon(
@@ -131,7 +132,7 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
 
                 Padding(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                   child: TextField(
                     decoration: InputDecoration(
                       icon: Icon(Icons.email),
@@ -142,7 +143,7 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
 
                 Padding(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
@@ -154,7 +155,7 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
 
                 Padding(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                   child: Row(
                     children: <Widget>[
                       new GestureDetector(
@@ -182,21 +183,31 @@ class _RegisterDesktopComponentState extends State<RegisterDesktopComponent> {
 
                 Padding(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-                  child: RaisedButton(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 140.w, vertical: 12.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    color: Color(0xFF1492E5),
-                    textColor: Color(0xFFffffff),
-                    child: Text("Register"),
+                      EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
+                  // child: RaisedButton(
+                  //   padding: EdgeInsets.symmetric(
+                  //       horizontal: 140.w, vertical: 12.h),
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(5.0),
+                  //   ),
+                  //   color: Color(0xFF1492E5),
+                  //   textColor: Color(0xFFffffff),
+                  //   child: Text("Register"),
+                  //   onPressed: () {
+                  //     if (_formKey.currentState.validate()) {
+                  //       _formKey.currentState.save();
+                  //     }
+                  //   },
+                  // ),
+                  child: MyButton(
+                    height: 50.h,
+                    width: 200.w,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
                       }
                     },
+                    text: ("Register"),
                   ),
                 ),
 

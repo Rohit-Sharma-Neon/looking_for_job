@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 
@@ -385,26 +386,32 @@ class _JobAlertScreenState extends State<JobAlertScreen> {
                       SizedBox(
                         height: 12.h,
                       ),
-                      ButtonTheme(
-                        height: 50,
-                        child: RaisedButton(
-                          color: Color(0xff198EDC),
-                          onPressed: () {
-                            print('Pressed');
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          child: Text(
-                            "Save Changes",
-                            style: TextStyle(
-                              fontSize: textSize16,
-                              color: Color(0xFFFFFFFF),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ),
+                      // ButtonTheme(
+                      //   height: 50,
+                      //   child: RaisedButton(
+                      //     color: Color(0xff198EDC),
+                      //     onPressed: () {
+                      //       print('Pressed');
+                      //     },
+                      //     shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(5.0),
+                      //     ),
+                      //     child: Text(
+                      //       "Save Changes",
+                      //       style: TextStyle(
+                      //         fontSize: textSize16,
+                      //         color: Color(0xFFFFFFFF),
+                      //         fontWeight: FontWeight.w600,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                      MyButton(text: ("Save Changes"),
+                      height: 50,
+                      width: 120.w ,
+                      onPressed: (){
+                        print('Pressed');
+                      },)
                     ],
                   ),
                 ),

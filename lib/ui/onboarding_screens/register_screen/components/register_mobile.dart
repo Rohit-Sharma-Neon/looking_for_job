@@ -5,6 +5,7 @@ import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 class  RegisterMobileComponent extends StatefulWidget {
@@ -203,26 +204,39 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                   ),
                 ),*/
                 SizedBox(height: 20.h),
-                MaterialButton(
-                  height: 40.h,
-                  minWidth: double.infinity,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                  color: Color(0xFF1492E5),
-                  textColor: Color(0xFFffffff),
-                  child: Text("Register"),
-                  onPressed: () {
-                    // if (_formKey.currentState.validate()) {
-                    //   _formKey.currentState.save();
-                      isEmployer
-                          ? Navigator.pushNamedAndRemoveUntil(
-                              context, '/employer_dahboard', (route) => false)
-                          : Navigator.pushNamedAndRemoveUntil(
-                              context, '/dashboard_screen', (route) => false);
-                    // }
-                  },
-                ),
+                // MaterialButton(
+                //   height: 40.h,
+                //   minWidth: double.infinity,
+                //   shape: RoundedRectangleBorder(
+                //     borderRadius: BorderRadius.circular(5.0),
+                //   ),
+                //   color: Color(0xFF1492E5),
+                //   textColor: Color(0xFFffffff),
+                //   child: Text("Register"),
+                //   onPressed: () {
+                //     // if (_formKey.currentState.validate()) {
+                //     //   _formKey.currentState.save();
+                //       isEmployer
+                //           ? Navigator.pushNamedAndRemoveUntil(
+                //               context, '/employer_dahboard', (route) => false)
+                //           : Navigator.pushNamedAndRemoveUntil(
+                //               context, '/dashboard_screen', (route) => false);
+                //     // }
+                //   },
+                // ),
+                MyButton(
+                  text: "Register",
+                  height: 50.h,
+                  width: 150.w,
+                  onPressed:(){
+                    isEmployer
+                        ? Navigator.pushNamedAndRemoveUntil(
+                        context, '/employer_dahboard', (route) => false)
+                        : Navigator.pushNamedAndRemoveUntil(
+                        context, '/dashboard_screen', (route) => false);
+                  } ,
+
+                )
 
                 // Padding(
                 //   padding: const EdgeInsets.all(10.0),

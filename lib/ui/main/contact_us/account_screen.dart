@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -764,21 +765,29 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 30.h,
           ),
-          ButtonTheme(
-            height: 50,
-            child: RaisedButton(
-              color: Color(0xff198EDC),
-              onPressed: () {
-                print('Pressed');
-              },
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(5.0),
-              ),
-              child: Text(
-                "Save Changes",
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              ),
-            ),
+          // ButtonTheme(
+          //   height: 50,
+          //   child: RaisedButton(
+          //     color: Color(0xff198EDC),
+          //     onPressed: () {
+          //       print('Pressed');
+          //     },
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(5.0),
+          //     ),
+          //     child: Text(
+          //       "Save Changes",
+          //       style: TextStyle(color: Colors.white, fontSize: 16),
+          //     ),
+          //   ),
+          // ),
+          MyButton(
+            text: "Save Changes",
+            height: 50.h,
+            width: 130.w,
+            onPressed: (){
+              print("Pressed");
+            },
           ),
           SizedBox(
             height: 100.h,
@@ -867,21 +876,29 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   SizedBox(
                     height: 30.h,
                   ),
-                  ButtonTheme(
-                    height: 50,
-                    child: RaisedButton(
-                      color: Color(0xff198EDC),
-                      onPressed: () {
-                        print('Pressed');
-                      },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Text(
-                        "Update",
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
+                  // ButtonTheme(
+                  //   height: 50,
+                  //   child: RaisedButton(
+                  //     color: Color(0xff198EDC),
+                  //     onPressed: () {
+                  //       print('Pressed');
+                  //     },
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(5.0),
+                  //     ),
+                  //     child: Text(
+                  //       "Update",
+                  //       style: TextStyle(color: Colors.white, fontSize: 16),
+                  //     ),
+                  //   ),
+                  // ),
+                  MyButton(
+                    text: "Update",
+                    height: 50.h,
+                    width: 100,
+                    onPressed: () {
+                      print("Pressed");
+                    },
                   ),
                   SizedBox(
                     height: 100.h,
@@ -1124,23 +1141,31 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   SizedBox(
                     height: 30.h,
                   ),
-                  ButtonTheme(
-                    height: 50,
-                    minWidth: 350.w,
-                    child: RaisedButton(
-                      color: Color(0xff198EDC),
-                      onPressed: () {
-                        print('Pressed');
-                      },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                      ),
-                      child: Text(
-                        "Advance Search",
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ),
-                  ),
+                  // ButtonTheme(
+                  //   height: 50,
+                  //   minWidth: 350.w,
+                  //   child: RaisedButton(
+                  //     color: Color(0xff198EDC),
+                  //     onPressed: () {
+                  //       print('Pressed');
+                  //     },
+                  //     shape: RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.circular(5.0),
+                  //     ),
+                  //     child: Text(
+                  //       "Advance Search",
+                  //       style: TextStyle(color: Colors.white, fontSize: 16),
+                  //     ),
+                  //   ),
+                  // ),
+                  MyButton(
+                    text: "Advance Search",
+                    height: 50.h,
+                    width: 150.w,
+                    onPressed: () {
+                      print('Pressed');
+                    },
+                  )
                 ],
               ),
             ),

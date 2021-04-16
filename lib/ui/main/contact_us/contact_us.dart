@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 
 class ContactUsScreen extends StatefulWidget {
   @override
@@ -200,22 +201,30 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 SizedBox(
                   height: 25.h,
                 ),
-                ButtonTheme(
-                  height: 50,
-                  // ignore: deprecated_member_use
-                  child: RaisedButton(
-                    color: Color(0xff198EDC),
-                    onPressed: () {
-                      print('Pressed');
-                    },
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Text(
-                      "Send Message",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
+                // ButtonTheme(
+                //   height: 50,
+                //   // ignore: deprecated_member_use
+                //   child: RaisedButton(
+                //     color: Color(0xff198EDC),
+                //     onPressed: () {
+                //       print('Pressed');
+                //     },
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(5.0),
+                //     ),
+                //     child: Text(
+                //       "Send Message",
+                //       style: TextStyle(color: Colors.white),
+                //     ),
+                //   ),
+                // ),
+                MyButton(
+                  height: 50.h,
+                  width: 150.w,
+                  text: ("Pressed"),
+                  onPressed: (){
+
+                  },
                 ),
                 SizedBox(
                   height: 20.h,
