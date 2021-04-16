@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 
 class ForgotDesktopComponent extends StatefulWidget {
   @override
@@ -7,7 +8,6 @@ class ForgotDesktopComponent extends StatefulWidget {
 }
 
 class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
-
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -17,7 +17,7 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
         child: Column(
           children: [
             Container(
-              height: 200.h,
+              // height: 200.h,
               width: 400.w,
               color: Color(0xFFF8F8F8),
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 70.h),
@@ -25,17 +25,15 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   RichText(
-                    text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "Forgot Password?",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 32.nsp,
-                            ),
-                          ),
-                        ]
-                    ),
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: "Forgot Password?",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 32.nsp,
+                        ),
+                      ),
+                    ]),
                   ),
                   RichText(
                     textAlign: TextAlign.center,
@@ -71,10 +69,12 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text("Forgot Password?",
-                      style: TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold)),
+                      style: TextStyle(
+                          fontSize: 25.nsp, fontWeight: FontWeight.bold)),
                   SizedBox(height: 5.h),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
                     child: TextField(
                       decoration: InputDecoration(
                         icon: Icon(
@@ -84,25 +84,32 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                       ),
                     ),
                   ),
-
                   SizedBox(height: 15),
-
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: RaisedButton(
-                      padding: EdgeInsets.only(left: 95.w, right: 95.w),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0)),
-                      color: Color(0xFF0691CE),
-                      textColor: Color(0xFFffffff),
-                      child: Text("Request Password"),
-                      onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          _formKey.currentState.save();
-                        }
-                      },
-                    ),
-                  ),
+                      padding: EdgeInsets.symmetric(horizontal: 30.w),
+                      // child: RaisedButton(
+                      //   padding: EdgeInsets.only(left: 95.w, right: 95.w),
+                      //   shape: RoundedRectangleBorder(
+                      //       borderRadius: BorderRadius.circular(5.0)),
+                      //   color: Color(0xFF0691CE),
+                      //   textColor: Color(0xFFffffff),
+                      //   child: Text("Request Password"),
+                      //   onPressed: () {
+                      //     if (_formKey.currentState.validate()) {
+                      //       _formKey.currentState.save();
+                      //     }
+                      //   },
+                      // ),
+                      child: MyButton(
+                        text: "Request Password",
+                        height: 50.h,
+                        width: 200.w,
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            _formKey.currentState.save();
+                          }
+                        },
+                      )),
                 ],
               ),
             ),

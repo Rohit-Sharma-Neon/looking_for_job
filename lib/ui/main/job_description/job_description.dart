@@ -82,24 +82,30 @@ class _JobDescriptionState extends State<JobDescription> {
                       ),
                     ),
                     SizedBox(height: 30.h),
-                    SizedBox(
+                    // SizedBox(
+                    //   width: double.infinity,
+                    //    // child: RaisedButton(
+                    //   //   padding: EdgeInsets.symmetric(
+                    //   //       horizontal: 1.w, vertical: 10.h),
+                    //   //   shape: RoundedRectangleBorder(
+                    //   //     borderRadius: BorderRadius.circular(5.0),
+                    //   //   ),
+                    //   //   color: Color(0xFF0691CE),
+                    //   //   textColor: Color(0xFFffffff),
+                    //   //   child: Text("Apply Now"),
+                    //   //   onPressed: () {},
+                    //   // ),
+                    //
+                    //   ),
+                    //
+                    MyButton(
+                      text: ("Apply Now "),
                       width: double.infinity,
-                       // child: RaisedButton(
-                      //   padding: EdgeInsets.symmetric(
-                      //       horizontal: 1.w, vertical: 10.h),
-                      //   shape: RoundedRectangleBorder(
-                      //     borderRadius: BorderRadius.circular(5.0),
-                      //   ),
-                      //   color: Color(0xFF0691CE),
-                      //   textColor: Color(0xFFffffff),
-                      //   child: Text("Apply Now"),
-                      //   onPressed: () {},
-                      // ),
-                      child: MyButton(
-                        text: "Apply Now",
-                        width: 80.w,
-                      ),
-                    ),
+                      height: 50.h,
+                      onPressed: (){
+
+                      },
+                    )
                   ],
                 ),
               ),

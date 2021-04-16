@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
@@ -157,20 +158,33 @@ class _LoginDesktopComponentState extends State<LoginDesktopComponent> {
 
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                  child: RaisedButton(
-                    padding: EdgeInsets.symmetric(horizontal: 140.w, vertical: 12.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),),
-                    color: Color(0xFF0691CE),
-                    textColor: Color(0xFFffffff),
-                    child: Text("Login"),
-                    onPressed: () {
+                  // child: RaisedButton(
+                  //   padding: EdgeInsets.symmetric(horizontal: 140.w, vertical: 12.h),
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius: BorderRadius.circular(5.0),),
+                  //   color: Color(0xFF0691CE),
+                  //   textColor: Color(0xFFffffff),
+                  //   child: Text("Login"),
+                  //   onPressed: () {
+                  //     Navigator.pushAndRemoveUntil(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (BuildContext context) => DashBoardScreen()),
+                  //       ModalRoute.withName('/'),
+                  //     );
+                  //   },
+                  // ),
+                  child: MyButton(
+                    text: ("Login"),
+                    height: 50.h,
+                    width: 100.w,
+                    onPressed: (){
                       Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => DashBoardScreen()),
-                        ModalRoute.withName('/'),
-                      );
+                              context,
+                                 MaterialPageRoute(
+                                     builder: (BuildContext context) => DashBoardScreen()),
+                                 ModalRoute.withName('/'),
+                               );
                     },
                   ),
                 ),

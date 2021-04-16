@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/ui/main/%20my_resume/add_new_resume.dart';
+import 'package:lookingforjob_flutter/ui/main/%20my_resume/my_resume_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.dart';
+import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
-import 'file:///E:/FlutterProject/lookingforjob_flutter/lib/ui/main/browsejob_screen/components/browsejob_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
@@ -24,7 +28,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => BrowseJobScreen(),
+  '/': (context) => LoginPage(),
   // OnBoardings
   '/signIn1': (context) => LoginPage(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
