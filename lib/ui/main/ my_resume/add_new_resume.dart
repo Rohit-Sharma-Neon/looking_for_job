@@ -25,7 +25,7 @@ class _AddNewResumeState extends State<AddNewResume> {
                 height: 50.h,
               ),
               Text(
-                addnewresume,
+                "addnewresume",
                 style: TextStyle(fontSize: textSize24),
               ),
               SizedBox(
@@ -74,7 +74,7 @@ class _AddNewResumeState extends State<AddNewResume> {
                                     color: Color(0xFF333333),
                                     fontWeight: FontWeight.w600,
                                     fontSize: textSize18),
-                                text: addnewresume,
+                                text: "addnewresume",
                               ),
                             ],
                           ),
