@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 
 class ForgotDesktopComponent extends StatefulWidget {
   @override
@@ -100,7 +100,7 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                       //     }
                       //   },
                       // ),
-                      child: MyButton(
+                      child: PrimaryButton(
                         text: "Request Password",
                         height: 50.h,
                         width: 200.w,

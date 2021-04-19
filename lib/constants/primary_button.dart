@@ -1,17 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 
-class MyButton extends StatelessWidget {
+class PrimaryButton extends StatelessWidget {
   final String text;
   final double width;
   final double height;
   final void Function() onPressed;
-
-  const MyButton({@required this.text, this.width, this.height, this.onPressed});
   // final Color color;
+
+  const PrimaryButton({Key key, @required this.text, this.width, this.height, this.onPressed,  })
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,9 @@ class MyButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(cornersRadiusLowest),
           ),
         ),
-        onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: textSize16.sp),
+          style: TextStyle(color: Colors.white, fontSize: textSize16.nsp),
         ),
       ),
     );

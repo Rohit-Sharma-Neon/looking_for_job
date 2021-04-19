@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
@@ -174,7 +174,7 @@ class _LoginDesktopComponentState extends State<LoginDesktopComponent> {
                   //     );
                   //   },
                   // ),
-                  child: MyButton(
+                  child: PrimaryButton(
                     text: ("Login"),
                     height: 50.h,
                     width: 100.w,

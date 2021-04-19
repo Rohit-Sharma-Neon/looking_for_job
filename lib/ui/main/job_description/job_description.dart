@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 
 class JobDescription extends StatefulWidget {
@@ -98,7 +98,7 @@ class _JobDescriptionState extends State<JobDescription> {
                     //
                     //   ),
                     //
-                    MyButton(
+                    PrimaryButton(
                       text: ("Apply Now "),
                       width: double.infinity,
                       height: 50.h,

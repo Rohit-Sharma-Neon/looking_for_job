@@ -6,6 +6,7 @@ import 'package:lookingforjob_flutter/components/galobal_components/web_header.d
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/bottom_web_banner.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/job_categories_component.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/custom_text_form_ta.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
@@ -91,22 +92,28 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                     hintText: "Location",
                   ),
                   SizedBox(height: 18.h),
-                  MaterialButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(primaryRoundButtonAndTextField),
-                    ),
-                    minWidth: double.infinity,
-                    onPressed: () {},
+                  // MaterialButton(
+                  //   shape: RoundedRectangleBorder(
+                  //     borderRadius:
+                  //         BorderRadius.circular(primaryRoundButtonAndTextField),
+                  //   ),
+                  //   minWidth: double.infinity,
+                  //   onPressed: () {},
+                  //   height: 50.h,
+                  //   child: Text(
+                  //     search,
+                  //     style: TextStyle(
+                  //         fontSize: 20.nsp,
+                  //         color: Colors.white,
+                  //         fontWeight: FontWeight.w400),
+                  //   ),
+                  //   color: primaryColorLight,
+                  // ),
+                  PrimaryButton(
                     height: 50.h,
-                    child: Text(
-                      search,
-                      style: TextStyle(
-                          fontSize: 20.nsp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    color: primaryColorLight,
+                    width:double.infinity,
+                      text:search,
+
                   ),
                   SizedBox(height: 50.h),
                 ],
