@@ -72,6 +72,9 @@ const String premium = "Premium";
 const String noresultfound = "No result found.";
 const String previous = "Previous";
 const String next = "Next";
+const String file = "File";
+
+
 
 // FavoritejobScreen in Jobseeker Screens
 

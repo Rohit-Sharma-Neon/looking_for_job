@@ -359,7 +359,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                 color: Color(0xFF333333),
                                 fontWeight: FontWeight.w600,
                                 fontSize: textSize18),
-                            text: myResumes,
+                            text: myresumes,
                           ),
                         ],
                       ),
@@ -490,7 +490,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                             ),
                                             SizedBox(width: 140.w),
                                             Text(
-                                              names,
+                                              name,
                                               style: TextStyle(
                                                 fontSize: 18.nsp,
                                                 color: Colors.white,

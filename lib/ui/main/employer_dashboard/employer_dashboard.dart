@@ -6,6 +6,7 @@ import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 
@@ -248,7 +249,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 vertical: 25.h,
                                 horizontal: scaffoldHorizontalPadding.w),
                             margin: EdgeInsets.only(top: 30.h),
-                            height: 200.h,
+                            // height: 200.h,
                             width: 330.w,
                             decoration: BoxDecoration(
                               color: Color(0xFFFFFFFF),
@@ -741,47 +742,53 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                       ),
                                     ),
                                     SizedBox(height: 10.h),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Color(0xffFFFFFF),
-                                        borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(10),
-                                            topRight: Radius.circular(10),
-                                            bottomLeft: Radius.circular(10),
-                                            bottomRight: Radius.circular(10)),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.blue.withOpacity(0.1),
-                                            spreadRadius: 2,
-                                            blurRadius: 7,
-                                            offset: Offset(
-                                                0,
-                                                3), // changes position of shadow
-                                          ),
-                                        ],
-                                      ),
-                                      child: ButtonTheme(
-                                        height: 40.h,
-                                        minWidth: 350.w,
-                                        child: OutlineButton(
-                                          onPressed: () {},
-                                          splashColor: Color(0xff198EDC),
-                                          borderSide: BorderSide(
-                                            color: Color(0xff198EDC),
-                                          ),
-                                          shape: ContinuousRectangleBorder(
-                                              borderRadius:
-                                              BorderRadius.circular(5)),
-                                          child: Text(
-                                            "Upload Avatar",
-                                            style: TextStyle(
-                                              fontSize: textSize16,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xff198EDC),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
+                                    // Container(
+                                    //   decoration: BoxDecoration(
+                                    //     color: Color(0xffFFFFFF),
+                                    //     borderRadius: BorderRadius.only(
+                                    //         topLeft: Radius.circular(10),
+                                    //         topRight: Radius.circular(10),
+                                    //         bottomLeft: Radius.circular(10),
+                                    //         bottomRight: Radius.circular(10)),
+                                    //     boxShadow: [
+                                    //       BoxShadow(
+                                    //         color: Colors.blue.withOpacity(0.1),
+                                    //         spreadRadius: 2,
+                                    //         blurRadius: 7,
+                                    //         offset: Offset(
+                                    //             0,
+                                    //             3), // changes position of shadow
+                                    //       ),
+                                    //     ],
+                                    //   ),
+                                    //   child: ButtonTheme(
+                                    //     height: 40.h,
+                                    //     minWidth: 350.w,
+                                    //     child: OutlineButton(
+                                    //       onPressed: () {},
+                                    //       splashColor: Color(0xff198EDC),
+                                    //       borderSide: BorderSide(
+                                    //         color: Color(0xff198EDC),
+                                    //       ),
+                                    //       shape: ContinuousRectangleBorder(
+                                    //           borderRadius:
+                                    //           BorderRadius.circular(5)),
+                                    //       child: Text(
+                                    //         "Upload Avatar",
+                                    //         style: TextStyle(
+                                    //           fontSize: textSize16,
+                                    //           fontWeight: FontWeight.w600,
+                                    //           color: Color(0xff198EDC),
+                                    //         ),
+                                    //       ),
+                                    //     ),
+                                    //   ),
+                                    // ),
+                                    PrimaryOutlinedButton(
+                                      text:"Upload Avatar",
+                                      height: primaryButtonHeight,
+                                      width: 350.w,
+                                      onPressed: (){},
                                     ),
                                     SizedBox(
                                       height: 20.h,

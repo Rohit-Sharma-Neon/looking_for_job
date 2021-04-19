@@ -30,6 +30,7 @@ const double buttonTextSize = 18;
 const double scaffoldHorizontalPadding = 15;
 const double primaryRoundButtonAndTextField = 5;
 const double subHeadingTS = 15;
+ double primaryButtonHeight = 50.h;
 
 /// Post A Job Constants
 TextStyle postAJobSubHeadingTextStyle = TextStyle(

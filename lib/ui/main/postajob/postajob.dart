@@ -4,6 +4,7 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 
 import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
@@ -252,25 +253,30 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         fontWeight: FontWeight.w500),
                                   ),
                                   SizedBox(height: 20.h),
-                                  ButtonTheme(
-                                    height: 50.h,
-                                    minWidth: 300.w,
-                                    child: OutlineButton(
-                                      onPressed: () {},
-                                      splashColor: primaryColorLight,
-                                      borderSide: BorderSide(
-                                        color: primaryColorLight,
-                                      ),
-                                      shape: ContinuousRectangleBorder(
-                                          borderRadius: BorderRadius.circular(5)),
-                                      child: Text(
-                                        "Upload Logo",
-                                        style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: primaryColorLight,
-                                        ),
-                                      ),
-                                    ),
+                                  // ButtonTheme(
+                                  //   height: 50.h,
+                                  //   minWidth: 300.w,
+                                  //   child: OutlineButton(
+                                  //     onPressed: () {},
+                                  //     splashColor: primaryColorLight,
+                                  //     borderSide: BorderSide(
+                                  //       color: primaryColorLight,
+                                  //     ),
+                                  //     shape: ContinuousRectangleBorder(
+                                  //         borderRadius: BorderRadius.circular(5)),
+                                  //     child: Text(
+                                  //       "Upload Logo",
+                                  //       style: TextStyle(
+                                  //         fontSize: textSize20.nsp,
+                                  //         color: primaryColorLight,
+                                  //       ),
+                                  //     ),
+                                  //   ),
+                                  // ),
+                                  PrimaryOutlinedButton(
+                                    height: primaryButtonHeight,
+                                    width: 300.w,
+                                    text: "Upload Logo",
                                   ),
                                   SizedBox(
                                     height: 20.h,
@@ -439,25 +445,31 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                       fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(height: 20.h),
-                                ButtonTheme(
-                                  height: 50.h,
-                                  minWidth: 300.w,
-                                  child: OutlineButton(
-                                    onPressed: () {},
-                                    splashColor: primaryColorLight,
-                                    borderSide: BorderSide(
-                                      color: primaryColorLight,
-                                    ),
-                                    shape: ContinuousRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    child: Text(
-                                      "Upload Image",
-                                      style: TextStyle(
-                                        fontSize: textSize20.nsp,
-                                        color: primaryColorLight,
-                                      ),
-                                    ),
-                                  ),
+                                // ButtonTheme(
+                                //   height: 50.h,
+                                //   minWidth: 300.w,
+                                //   child: OutlineButton(
+                                //     onPressed: () {},
+                                //     splashColor: primaryColorLight,
+                                //     borderSide: BorderSide(
+                                //       color: primaryColorLight,
+                                //     ),
+                                //     shape: ContinuousRectangleBorder(
+                                //         borderRadius: BorderRadius.circular(5)),
+                                //     child: Text(
+                                //       "Upload Image",
+                                //       style: TextStyle(
+                                //         fontSize: textSize20.nsp,
+                                //         color: primaryColorLight,
+                                //       ),
+                                //     ),
+                                //   ),
+                                // ),
+                                PrimaryOutlinedButton(
+                                  text:"Upload Image",
+                                  height: primaryButtonHeight,
+                                  width: 300.w,
+
                                 ),
                                 SizedBox(
                                   height: 20.h,

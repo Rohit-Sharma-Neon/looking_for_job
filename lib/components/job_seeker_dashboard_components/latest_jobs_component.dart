@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 Widget latestJobsComponent(){
 
@@ -35,15 +38,20 @@ Widget latestJobsComponent(){
                   ),
                   Expanded(
                     flex: 2,
-                    child: OutlineButton(
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "Full Time",
-                        style: TextStyle(color: Colors.blue),
-                      ),
+                    // child: OutlineButton(
+                    //   borderSide: BorderSide(
+                    //     color: Colors.blue,
+                    //   ),
+                    //   onPressed: () {},
+                    //   child: Text(
+                    //     "Full Time",
+                    //     style: TextStyle(color: Colors.blue),
+                    //   ),
+                    // ),
+                    child: PrimaryOutlinedButton(
+                      height:40.h ,
+                      width:100.w ,
+                      text: "Full Time",
                     ),
                   ),
                 ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -246,38 +247,43 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                 style:postAJobSubHeadingTextStyle,
                               ),
                               SizedBox(height: 20.h),
-                              ButtonTheme(
-                                height: 50.h,
-                                minWidth: 300.w,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: primaryColorLight
-                                              .withOpacity(0.2),
-                                          spreadRadius: 1,
-                                          blurRadius: 2,
-                                          offset: Offset(0, 1),
-                                        )
-                                      ]),
-                                  child: OutlineButton(
-                                    onPressed: () {},
-                                    splashColor: primaryColorLight,
-                                    borderSide: BorderSide(
-                                      color: primaryColorLight,
-                                    ),
-                                    shape: ContinuousRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5)),
-                                    child: Text(
-                                      "Upload Logo",
-                                      style: TextStyle(
-                                        fontSize: textSize18.nsp,
-                                        color: primaryColorLight,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              // ButtonTheme(
+                              //   height: 50.h,
+                              //   minWidth: 300.w,
+                              //   child: Container(
+                              //     decoration: BoxDecoration(
+                              //         color: Colors.white,
+                              //         boxShadow: [
+                              //           BoxShadow(
+                              //             color: primaryColorLight
+                              //                 .withOpacity(0.2),
+                              //             spreadRadius: 1,
+                              //             blurRadius: 2,
+                              //             offset: Offset(0, 1),
+                              //           )
+                              //         ]),
+                              //     child: OutlineButton(
+                              //       onPressed: () {},
+                              //       splashColor: primaryColorLight,
+                              //       borderSide: BorderSide(
+                              //         color: primaryColorLight,
+                              //       ),
+                              //       shape: ContinuousRectangleBorder(
+                              //           borderRadius: BorderRadius.circular(5)),
+                              //       child: Text(
+                              //         "Upload Logo",
+                              //         style: TextStyle(
+                              //           fontSize: textSize18.nsp,
+                              //           color: primaryColorLight,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
+                              PrimaryOutlinedButton(
+                                height: primaryButtonHeight,
+                                width: 300.w,
+                                text: "Upload Logo",
                               ),
                               SizedBox(
                                 height: 30.h,
@@ -449,38 +455,44 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               style: postAJobSubHeadingTextStyle
                             ),
                             SizedBox(height: 20.h),
-                            ButtonTheme(
-                              height: 50.h,
-                              minWidth: 300.w,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color:
-                                            primaryColorLight.withOpacity(0.2),
-                                        spreadRadius: 1,
-                                        blurRadius: 2,
-                                        offset: Offset(0, 1),
-                                      )
-                                    ]),
-                                child: OutlineButton(
-                                  onPressed: () {},
-                                  splashColor: primaryColorLight,
-                                  borderSide: BorderSide(
-                                    color: primaryColorLight,
-                                  ),
-                                  shape: ContinuousRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Text(
-                                    "Upload Image",
-                                    style: TextStyle(
-                                      fontSize: textSize18.nsp,
-                                      color: primaryColorLight,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                            // ButtonTheme(
+                            //   height: 50.h,
+                            //   minWidth: 300.w,
+                            //   child: Container(
+                            //     decoration: BoxDecoration(
+                            //         color: Colors.white,
+                            //         boxShadow: [
+                            //           BoxShadow(
+                            //             color:
+                            //                 primaryColorLight.withOpacity(0.2),
+                            //             spreadRadius: 1,
+                            //             blurRadius: 2,
+                            //             offset: Offset(0, 1),
+                            //           )
+                            //         ]),
+                            //     child: OutlineButton(
+                            //       onPressed: () {},
+                            //       splashColor: primaryColorLight,
+                            //       borderSide: BorderSide(
+                            //         color: primaryColorLight,
+                            //       ),
+                            //       shape: ContinuousRectangleBorder(
+                            //           borderRadius: BorderRadius.circular(5)),
+                            //       child: Text(
+                            //         "Upload Image",
+                            //         style: TextStyle(
+                            //           fontSize: textSize18.nsp,
+                            //           color: primaryColorLight,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                            PrimaryOutlinedButton(
+                              height: primaryButtonHeight,
+                              width:300.w,
+                              text: "Upload Image",
+
                             ),
                             SizedBox(
                               height: 30.h,

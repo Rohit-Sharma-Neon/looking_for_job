@@ -50,6 +50,12 @@ class CustomTextFormField extends StatelessWidget {
       child: TextField(
         autofocus: autoFocus,
         decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey[300], width: 0.5),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.grey[300], width: 0.5),
+            ),
             contentPadding: EdgeInsets.only(top: 15.h,left: 50),
             prefixIcon: Container(
               margin: EdgeInsets.only(right: 5.w),
