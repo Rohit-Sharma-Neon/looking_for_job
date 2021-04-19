@@ -3,7 +3,7 @@ import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.
 import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
-import 'file:///E:/FlutterProject/lookingforjob_flutter/lib/ui/main/browsejob_screen/components/browsejob_mobile.dart';
+// import 'file:///E:/FlutterProject/lookingforjob_flutter/lib/ui/main/browsejob_screen/components/browsejob_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
@@ -19,17 +19,19 @@ import 'package:lookingforjob_flutter/ui/main/my_resume/my_resume_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/mycompanies_screen/mycompanies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/myexperience_screen/myexperience_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/onboarding_screen/onboarding_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/splashscreen/splash_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/transaction_screen/transaction_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => BrowseJobScreen(),
+  '/': (context) => SplashScreen(),
   // OnBoardings
   '/signIn1': (context) => LoginPage(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
@@ -57,6 +59,11 @@ var customRoutes = <String, WidgetBuilder>{
   '/my_resume_screen': (context) => MyResumeScreen(),
   '/add_new_resume': (context) => AddNewResume(),
   '/feedback': (context) => FeedbackScreen(),
+  '/onboarding_screen': (context) => OnboardingScreen(),
+  '/splash_screen': (context) => SplashScreen(),
+
+
+
 
   //job seeker Screens
   '/favoritejob_screen': (context) => FavoriteJobScreen(),

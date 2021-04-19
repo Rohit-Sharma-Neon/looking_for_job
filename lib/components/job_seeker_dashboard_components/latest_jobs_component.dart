@@ -38,16 +38,7 @@ Widget latestJobsComponent(){
                   ),
                   Expanded(
                     flex: 2,
-                    // child: OutlineButton(
-                    //   borderSide: BorderSide(
-                    //     color: Colors.blue,
-                    //   ),
-                    //   onPressed: () {},
-                    //   child: Text(
-                    //     "Full Time",
-                    //     style: TextStyle(color: Colors.blue),
-                    //   ),
-                    // ),
+
                     child: PrimaryOutlinedButton(
                       height:40.h ,
                       width:100.w ,

@@ -54,28 +54,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     webHeader(_sliderMenuContainerStateKey),
-                    // Text(
-                    //   "Post a Job",
-                    //   style: TextStyle(fontSize: 35.nsp),
-                    // ),
-                    // SizedBox(height: 10),
-                    // RichText(
-                    //   text: TextSpan(
-                    //     children: [
-                    //       TextSpan(
-                    //           text: "Home",
-                    //           style:
-                    //           TextStyle(fontSize: 18.nsp, color: Colors.black)),
-                    //       WidgetSpan(
-                    //         child: Icon(Icons.arrow_right_outlined, size: 20),
-                    //       ),
-                    //       TextSpan(
-                    //         text: "Post a Job",
-                    //         style: TextStyle(fontSize: 18.nsp, color: Colors.black),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
+
                     SizedBox(
                       height: 60.h,
                     ),
@@ -445,26 +424,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                       fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(height: 20.h),
-                                // ButtonTheme(
-                                //   height: 50.h,
-                                //   minWidth: 300.w,
-                                //   child: OutlineButton(
-                                //     onPressed: () {},
-                                //     splashColor: primaryColorLight,
-                                //     borderSide: BorderSide(
-                                //       color: primaryColorLight,
-                                //     ),
-                                //     shape: ContinuousRectangleBorder(
-                                //         borderRadius: BorderRadius.circular(5)),
-                                //     child: Text(
-                                //       "Upload Image",
-                                //       style: TextStyle(
-                                //         fontSize: textSize20.nsp,
-                                //         color: primaryColorLight,
-                                //       ),
-                                //     ),
-                                //   ),
-                                // ),
+
                                 PrimaryOutlinedButton(
                                   text:"Upload Image",
                                   height: primaryButtonHeight,

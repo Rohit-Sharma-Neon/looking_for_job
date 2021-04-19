@@ -75,6 +75,8 @@ const String noresultfound = "No result found.";
 const String previous = "Previous";
 const String next = "Next";
 const String file = "File";
+const String onboardingheading="What types of jobs are you looking for?";
+const String onboardingsubheading="Please select at least one interest to proceed, and choose up to three";
 
 
 
