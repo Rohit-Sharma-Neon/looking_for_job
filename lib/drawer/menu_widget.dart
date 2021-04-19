@@ -195,6 +195,24 @@ class MenuWidget extends StatelessWidget {
                   );
                   break;
                 }
+              case 14:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/feedback',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 15:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/contactUsScrren',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
 
             }
           },
@@ -231,5 +249,8 @@ class DrawerList {
     favouriteJobs,
     jobAlert,
     logout,
+    faq,
+    feedBack,
+    contect,
   ];
 }

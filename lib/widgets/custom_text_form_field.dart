@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttericon/font_awesome_icons.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final String hintText, fontWeight;
