@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/expiredjobs_screen/expiredjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/mycompanies_screen/mycompanies_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/transaction_screen/transaction_screen.dart';
+import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 class DashBoardNavigationButton extends StatelessWidget {
   @override
@@ -30,8 +42,7 @@ class DashBoardNavigationButton extends StatelessWidget {
             color: Colors.white,
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 30.w, vertical: 10.h),
+                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,20 +60,39 @@ class DashBoardNavigationButton extends StatelessWidget {
                     Text(
                       myAccount,
                       style: TextStyle(
-                          color: Color(0xFF0691CE),
-                          fontSize: textSize16.sp),
+                          color: Color(0xFF0691CE), fontSize: textSize16.sp),
                     ),
                     CustomListTile(
-                      leadingIcon: Icons.dashboard,
-                      title: dashboard,
-                    ),
+                        leadingIcon: Icons.dashboard,
+                        title: dashboard,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DashBoardScreen()),
+                          );
+                        }),
                     CustomListTile(
                       leadingIcon: Icons.person_pin_circle_rounded,
                       title: profilePublicView,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProfilePublicView()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.card_membership,
                       title: membership,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MembershipPlanScreen()),
+                          );
+                        }
                     ),
                     SizedBox(
                       height: 20.h,
@@ -70,57 +100,118 @@ class DashBoardNavigationButton extends StatelessWidget {
                     Text(
                       myJobs,
                       style: TextStyle(
-                          color: Color(0xFF0691CE),
-                          fontSize: textSize16.sp),
+                          color: Color(0xFF0691CE), fontSize: textSize16.sp),
                     ),
                     CustomListTile(
                       leadingIcon: Icons.roofing,
                       title: myCompanies,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyCompaniesScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.shopping_bag_outlined,
                       title: myJobs,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyJobsScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.access_time,
                       title: pendingJobs,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PendingJobScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.tv_off_rounded,
                       title: hiddenJobs,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HiddenJobScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.error,
                       title: expiredJobs,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ExpiredJobsScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.assistant_direction,
                       title: resubmittedJobs,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ResubmitJobsScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.favorite,
                       title: favoriteUsers,
                       trailingIcon: Icons.attractions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FavoriteUserScreen()),
+                          );
+                        }
                     ),
                     Text(
                       account,
                       style: TextStyle(
-                          color: Color(0xFF0691CE),
-                          fontSize: textSize16.sp),
+                          color: Color(0xFF0691CE), fontSize: textSize16.sp),
                     ),
                     CustomListTile(
                       leadingIcon: Icons.receipt,
                       title: transactions,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TransactionScreen()),
+                          );
+                        }
                     ),
                     CustomListTile(
                       leadingIcon: Icons.logout,
                       title: logout,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        }
                     ),
                   ],
                 ),
@@ -158,11 +249,13 @@ class DashBoardNavigationButton extends StatelessWidget {
 class CustomListTile extends StatelessWidget {
   final IconData leadingIcon, trailingIcon;
   final String title;
-  final onTap;
-
+  final Function onTap;
 
   const CustomListTile(
-      {@required this.leadingIcon, @required this.title, this.trailingIcon, this.onTap});
+      {@required this.leadingIcon,
+      @required this.title,
+      this.trailingIcon,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {

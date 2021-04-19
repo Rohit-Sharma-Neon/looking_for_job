@@ -186,15 +186,7 @@ class MenuWidget extends StatelessWidget {
                   );
                   break;
                 }
-              case 13:
-                {
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    '/postajob_screen',
-                        (Route<dynamic> route) => false,
-                  );
-                  break;
-                }
+
               case 14:
                 {
                   Navigator.pushNamedAndRemoveUntil(
@@ -209,6 +201,15 @@ class MenuWidget extends StatelessWidget {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
                     '/contactUsScrren',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
+              case 16:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/postajob_screen',
                         (Route<dynamic> route) => false,
                   );
                   break;
