@@ -388,8 +388,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: scaffoldHorizontalPadding + 10),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: scaffoldHorizontalPadding+10.w),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
