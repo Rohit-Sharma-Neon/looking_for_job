@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../../main.dart';
-import '../colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../colors.dart';
 
 enum AppTheme {
   LightTheme,
@@ -28,13 +27,13 @@ final appThemeData = {
     ),
 
     /// TEXT THEME
-    textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+    /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
       headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingSmall),
       headline2: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingMedium),
       headline3: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingBig),
-    ),
-    /*textTheme: TextTheme(
-      bodyText1: TextStyles._primaryTSL,
+    ),*/
+    textTheme: TextTheme(
+      bodyText1: TextStyles._headingTSL,
       headline1: TextStyles._headingTSL,
       subtitle1: TextStyles._hintOrLabelTSL,
       caption: TextStyles._subtilelTSL,
@@ -45,7 +44,7 @@ final appThemeData = {
       headline4: TextStyles._subscriptionTSL,
       headline5: TextStyles._subscription1TSL,
       headline6: TextStyles._bottomRadioTSL,
-    ),*/
+    ),
     // fontFamily: "Oswald",
 
     /// APP BAR THEME
@@ -87,16 +86,16 @@ final appThemeData = {
     ),
 
     /// TEXT THEME
-    textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
+    /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
       headline1: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingSmall),
       headline2: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingMedium),
       headline3: GoogleFonts.nunito(textStyle: TextStyles._primaryHeadingBig),
-    ),
+    ),*/
     /*textTheme: GoogleFonts.openSansTextTheme(textTheme).copyWith(
       bodyText1:
           GoogleFonts.concertOne(textStyle: TextStyles._primaryHeadingSmall),
     ),*/
-    /*TextTheme(
+    textTheme: TextTheme(
       bodyText1: TextStyles._primaryTSD,
       headline1: TextStyles._headingTSD,
       subtitle1: TextStyles._hintOrLabelTSD,
@@ -108,7 +107,7 @@ final appThemeData = {
       headline4: TextStyles._subscriptionTSD,
       headline5: TextStyles._subscription1TSD,
       headline6: TextStyles._bottomRadioTSD,
-    ),*/
+    ),
     // fontFamily: "Oswald",
 
     /// SCAFFOLD BACKGROUND COLOR
@@ -149,51 +148,51 @@ final appThemeData = {
 class TextStyles {
   /// Text Styles For Light Theme
   static final TextStyle _primaryHeadingSmall = TextStyle(
-      fontSize: 24.nsp, fontWeight: FontWeight.bold, color: Colors.black);
+      fontSize: 24.sp, fontWeight: FontWeight.bold, color: Colors.black);
   static final TextStyle _primaryHeadingMedium = TextStyle(
-      fontSize: 28.nsp, fontWeight: FontWeight.bold, color: Colors.black);
+      fontSize: 28.sp, fontWeight: FontWeight.bold, color: Colors.black);
   static final TextStyle _primaryHeadingBig = TextStyle(
-      fontSize: 32.nsp, fontWeight: FontWeight.bold, color: Colors.black);
+      fontSize: 32.sp, fontWeight: FontWeight.bold, color: Colors.black);
   static final TextStyle _bottomNavigationBarTSL = TextStyle(fontSize: 14.nsp);
   static final TextStyle _hintOrLabelTSL =
-      TextStyle(fontSize: 14.nsp, color: Colors.grey);
+      TextStyle(fontSize: 14.sp, color: Colors.grey);
   static final TextStyle _subtilelTSL =
-      TextStyle(fontSize: 12.nsp, color: Colors.black);
+      TextStyle(fontSize: 12.sp, color: Colors.black);
   static final TextStyle _textFormFieldTSL = TextStyle(fontSize: 14.nsp);
   static final TextStyle _headingTSL = TextStyle(
-      fontSize: 14.nsp, fontWeight: FontWeight.w300, color: Colors.black);
+      fontSize: 14.sp, fontWeight: FontWeight.w300, color: Colors.black);
   static final TextStyle _stickyHeadersTSL = TextStyle(
-      fontSize: 16.nsp, fontWeight: FontWeight.w400, color: textColor);
+      fontSize: 16.sp, fontWeight: FontWeight.w400, color: textColor);
   static final TextStyle _galleryTitleTSL = TextStyle(
-      fontSize: 16.nsp, fontWeight: FontWeight.bold, color: Color(0xFF207F9E));
+      fontSize: 16.sp, fontWeight: FontWeight.bold, color: Color(0xFF207F9E));
   static final TextStyle _subscriptionTSL = TextStyle(
-      fontSize: 18.nsp, fontWeight: FontWeight.bold, color: Colors.black);
+      fontSize: 18.sp, fontWeight: FontWeight.bold, color: Colors.black);
   static final TextStyle _subscription1TSL = TextStyle(
-      fontSize: 18.nsp, fontWeight: FontWeight.bold, color: Color(0xFFEBA505));
+      fontSize: 18.sp, fontWeight: FontWeight.bold, color: Color(0xFFEBA505));
   static final TextStyle _bottomRadioTSL = TextStyle(
-      fontSize: 14.nsp, fontWeight: FontWeight.w500, color: Color(0xFF286472));
+      fontSize: 14.sp, fontWeight: FontWeight.w500, color: Color(0xFF286472));
 
   /// Text Styles For Dark Theme
   static final TextStyle _primaryTSD =
-      TextStyle(fontSize: 14.nsp, color: Colors.white);
+      TextStyle(fontSize: 14.sp, color: Colors.white);
   static final TextStyle _bottomNavigationBarTSD =
-      TextStyle(fontSize: 14.nsp, color: Colors.white);
+      TextStyle(fontSize: 14.sp, color: Colors.white);
   static final TextStyle _hintOrLabelTSD =
-      TextStyle(fontSize: 14.nsp, color: Colors.grey);
+      TextStyle(fontSize: 14.sp, color: Colors.grey);
   static final TextStyle _subtilelTSD =
-      TextStyle(fontSize: 12.nsp, color: Colors.white);
+      TextStyle(fontSize: 12.sp, color: Colors.white);
   static final TextStyle _textFormFieldTSD =
-      TextStyle(fontSize: 14.nsp, color: Colors.white);
+      TextStyle(fontSize: 14.sp, color: Colors.white);
   static final TextStyle _headingTSD = TextStyle(
-      fontSize: 14.nsp, fontWeight: FontWeight.w300, color: Colors.white);
+      fontSize: 14.sp, fontWeight: FontWeight.w300, color: Colors.white);
   static final TextStyle _stickyHeadersTSD = TextStyle(
-      fontSize: 16.nsp, fontWeight: FontWeight.w400, color: textColorDark);
+      fontSize: 16.sp, fontWeight: FontWeight.w400, color: textColorDark);
   static final TextStyle _galleryTitleTSD = TextStyle(
-      fontSize: 16.nsp, fontWeight: FontWeight.bold, color: Colors.white);
+      fontSize: 16.sp, fontWeight: FontWeight.bold, color: Colors.white);
   static final TextStyle _subscriptionTSD = TextStyle(
-      fontSize: 18.nsp, fontWeight: FontWeight.bold, color: Colors.white);
+      fontSize: 18.sp, fontWeight: FontWeight.bold, color: Colors.white);
   static final TextStyle _subscription1TSD = TextStyle(
-      fontSize: 18.nsp, fontWeight: FontWeight.bold, color: Color(0xFFEBA505));
+      fontSize: 18.sp, fontWeight: FontWeight.bold, color: Color(0xFFEBA505));
   static final TextStyle _bottomRadioTSD = TextStyle(
-      fontSize: 14.nsp, fontWeight: FontWeight.w500, color: Color(0xFFEBA505));
+      fontSize: 14.sp, fontWeight: FontWeight.w500, color: Color(0xFFEBA505));
 }

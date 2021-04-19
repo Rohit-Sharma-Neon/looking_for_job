@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/screenutil_init.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'constants/routes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'constants/theme/theme_bloc.dart';
-import 'constants/theme/theme_state.dart';
 import 'constants/theme/theme_state.dart';
 
 void main() {
@@ -19,7 +17,6 @@ class MyApp extends StatelessWidget {
     textTheme = Theme.of(context).textTheme;
     return ScreenUtilInit(
       designSize: Size(360, 690),
-      allowFontScaling: false,
       builder: () {
         return BlocProvider(
           create: (context) => ThemeBloc(ThemeState()),

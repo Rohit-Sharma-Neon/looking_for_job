@@ -9,7 +9,6 @@ import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
 import '../../../drawer/menu_widget.dart';
 
-
 class PostJobMobileComponent extends StatefulWidget {
   @override
   PostJobMobileComponentState createState() => PostJobMobileComponentState();
@@ -17,7 +16,7 @@ class PostJobMobileComponent extends StatefulWidget {
 
 class PostJobMobileComponentState extends State<PostJobMobileComponent> {
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
 
   String _dropDownValue;
   String _jobTypeValue;
@@ -47,8 +46,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
             ),
             sliderMain: SingleChildScrollView(
               child: Padding(
-                padding:
-                EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding.w),
+                padding: EdgeInsets.symmetric(
+                    horizontal: scaffoldHorizontalPadding.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -89,7 +88,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 0.5,
                               blurRadius: 1,
-                              offset: Offset(0, 2), // changes position of shadow
+                              offset:
+                                  Offset(0, 2), // changes position of shadow
                             ),
                           ],
                           borderRadius: BorderRadius.circular(5)),
@@ -101,19 +101,25 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: scaffoldHorizontalPadding + 10.w),
                             child: RichText(
-                                text: TextSpan(children: [
+                              text: TextSpan(
+                                children: [
                                   WidgetSpan(
                                       child: Icon(
-                                        Icons.blur_linear_outlined,
-                                        size: 30.h,
-                                        color: primaryColorLight,
-                                      )),
+                                    Icons.blur_linear_outlined,
+                                    size: 30.h,
+                                    color: primaryColorLight,
+                                  )),
                                   TextSpan(
-                                      text: "     Company Information",
-                                      style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: Colors.black))
-                                ])),
+                                    text: "     Company Information",
+                                    style: TextStyle(
+                                      fontSize: textSize20.nsp,
+                                      color: Colors.black,
+                                      fontFamilyFallback: <String>['Nunito'],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                           Divider(
                             color: Colors.grey[350],
@@ -148,13 +154,15 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                       height: 50.h,
                                       width: 300.w,
                                       decoration: BoxDecoration(
-                                          border:
-                                          Border.all(color: Colors.grey[350]),
-                                          borderRadius: BorderRadius.circular(5),
+                                          border: Border.all(
+                                              color: Colors.grey[350]),
+                                          borderRadius:
+                                              BorderRadius.circular(5),
                                           color: Colors.white,
                                           boxShadow: [
                                             BoxShadow(
-                                              color: Colors.grey.withOpacity(0.3),
+                                              color:
+                                                  Colors.grey.withOpacity(0.3),
                                               spreadRadius: 0.5,
                                               blurRadius: 1,
                                               offset: Offset(0,
@@ -166,15 +174,15 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           isDense: false,
                                           hint: _dropDownValue == null
                                               ? Text(
-                                            '     Select Company',
-                                            style: TextStyle(
-                                                fontSize: textSize18.nsp),
-                                          )
+                                                  '     Select Company',
+                                                  style: TextStyle(
+                                                      fontSize: textSize18.nsp),
+                                                )
                                               : Text(
-                                            _dropDownValue,
-                                            style: TextStyle(
-                                                color: Colors.black),
-                                          ),
+                                                  _dropDownValue,
+                                                  style: TextStyle(
+                                                      color: Colors.black),
+                                                ),
                                           isExpanded: true,
                                           iconSize: 30.0,
                                           style: TextStyle(color: Colors.black),
@@ -182,7 +190,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                             '[+] New Company',
                                             "[+] New Company"
                                           ].map(
-                                                (val) {
+                                            (val) {
                                               return DropdownMenuItem<String>(
                                                 value: val,
                                                 child: Text(val),
@@ -191,7 +199,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           ).toList(),
                                           onChanged: (val) {
                                             setState(
-                                                  () {
+                                              () {
                                                 _dropDownValue = val;
                                               },
                                             );
@@ -262,7 +270,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         color: primaryColorLight,
                                       ),
                                       shape: ContinuousRectangleBorder(
-                                          borderRadius: BorderRadius.circular(5)),
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
                                       child: Text(
                                         "Upload Logo",
                                         style: TextStyle(
@@ -326,7 +335,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 0.5,
                               blurRadius: 1,
-                              offset: Offset(0, 2), // changes position of shadow
+                              offset:
+                                  Offset(0, 2), // changes position of shadow
                             ),
                           ],
                           borderRadius: BorderRadius.circular(5)),
@@ -340,18 +350,18 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             padding: EdgeInsets.only(left: 25.w),
                             child: RichText(
                                 text: TextSpan(children: [
-                                  WidgetSpan(
-                                      child: Icon(
-                                        Icons.badge,
-                                        size: 30.h,
-                                        color: primaryColorLight,
-                                      )),
-                                  TextSpan(
-                                      text: "   Job Detail",
-                                      style: TextStyle(
-                                          fontSize: textSize20.nsp,
-                                          color: Colors.black))
-                                ])),
+                              WidgetSpan(
+                                  child: Icon(
+                                Icons.badge,
+                                size: 30.h,
+                                color: primaryColorLight,
+                              )),
+                              TextSpan(
+                                  text: "   Job Detail",
+                                  style: TextStyle(
+                                      fontSize: textSize20.nsp,
+                                      color: Colors.black))
+                            ])),
                           ),
                           SizedBox(
                             height: 20.h,
@@ -377,12 +387,13 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                 print('Pressed');
                               },
                               style: (ButtonStyle(
-                                  backgroundColor: MaterialStateProperty.all<Color>(
-                                      Color(0xff198EDC)))),
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Color(0xff198EDC)))),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
+                            padding: EdgeInsets.symmetric(
                                 horizontal: scaffoldHorizontalPadding + 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -426,8 +437,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
                                       autofocus: false,
-                                      decoration:
-                                      InputDecoration(border: InputBorder.none),
+                                      decoration: InputDecoration(
+                                          border: InputBorder.none),
                                     ),
                                   ),
                                 ),
@@ -517,7 +528,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     height: 50.h,
                                     width: 300.w,
                                     decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[350]),
+                                        border:
+                                            Border.all(color: Colors.grey[350]),
                                         borderRadius: BorderRadius.circular(5),
                                         color: Colors.white,
                                         boxShadow: [
@@ -525,8 +537,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                             color: Colors.grey.withOpacity(0.3),
                                             spreadRadius: 0.5,
                                             blurRadius: 1,
-                                            offset: Offset(
-                                                0, 2), // changes position of shadow
+                                            offset: Offset(0,
+                                                2), // changes position of shadow
                                           ),
                                         ]),
                                     child: DropdownButtonHideUnderline(
@@ -534,15 +546,15 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         isDense: false,
                                         hint: _jobTypeValue == null
                                             ? Text(
-                                          '    Full Time',
-                                          style: TextStyle(
-                                              fontSize: textSize18.nsp),
-                                        )
+                                                '    Full Time',
+                                                style: TextStyle(
+                                                    fontSize: textSize18.nsp),
+                                              )
                                             : Text(
-                                          _jobTypeValue,
-                                          style:
-                                          TextStyle(color: Colors.black),
-                                        ),
+                                                _jobTypeValue,
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
                                         isExpanded: true,
                                         iconSize: 30.0,
                                         style: TextStyle(color: Colors.black),
@@ -555,7 +567,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           " Freelancer",
                                           " Remotely",
                                         ].map(
-                                              (val) {
+                                          (val) {
                                             return DropdownMenuItem<String>(
                                               value: val,
                                               child: Text(val),
@@ -564,7 +576,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         ).toList(),
                                         onChanged: (val) {
                                           setState(
-                                                () {
+                                            () {
                                               _jobTypeValue = val;
                                             },
                                           );
@@ -649,7 +661,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     height: 50.h,
                                     width: 300.w,
                                     decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[350]),
+                                        border:
+                                            Border.all(color: Colors.grey[350]),
                                         borderRadius: BorderRadius.circular(5),
                                         color: Colors.white,
                                         boxShadow: [
@@ -657,8 +670,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                             color: Colors.grey.withOpacity(0.3),
                                             spreadRadius: 0.5,
                                             blurRadius: 1,
-                                            offset: Offset(
-                                                0, 2), // changes position of shadow
+                                            offset: Offset(0,
+                                                2), // changes position of shadow
                                           ),
                                         ]),
                                     child: DropdownButtonHideUnderline(
@@ -666,15 +679,15 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         isDense: false,
                                         hint: _perHourValue == null
                                             ? Text(
-                                          '    Per Hour',
-                                          style: TextStyle(
-                                              fontSize: textSize18.nsp),
-                                        )
+                                                '    Per Hour',
+                                                style: TextStyle(
+                                                    fontSize: textSize18.nsp),
+                                              )
                                             : Text(
-                                          _perHourValue,
-                                          style:
-                                          TextStyle(color: Colors.black),
-                                        ),
+                                                _perHourValue,
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
                                         isExpanded: true,
                                         iconSize: 30.0,
                                         style: TextStyle(color: Colors.black),
@@ -685,7 +698,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           " per month",
                                           " per year",
                                         ].map(
-                                              (val) {
+                                          (val) {
                                             return DropdownMenuItem<String>(
                                               value: val,
                                               child: Text(val),
@@ -694,7 +707,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         ).toList(),
                                         onChanged: (val) {
                                           setState(
-                                                () {
+                                            () {
                                               _perHourValue = val;
                                             },
                                           );
@@ -708,7 +721,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   scale: 1.2,
                                   child: CheckboxListTile(
                                     controlAffinity:
-                                    ListTileControlAffinity.leading,
+                                        ListTileControlAffinity.leading,
                                     title: Text('Negotiable'),
                                     value: _checkboxListTile,
                                     onChanged: (value) {
@@ -734,7 +747,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   height: 50.h,
                                   width: 300.w,
                                   decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.grey[350]),
+                                      border:
+                                          Border.all(color: Colors.grey[350]),
                                       borderRadius: BorderRadius.circular(5),
                                       color: Colors.white,
                                       boxShadow: [
@@ -742,8 +756,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           color: Colors.grey.withOpacity(0.3),
                                           spreadRadius: 0.5,
                                           blurRadius: 1,
-                                          offset: Offset(
-                                              0, 2), // changes position of shadow
+                                          offset: Offset(0,
+                                              2), // changes position of shadow
                                         ),
                                       ]),
                                   child: Row(
@@ -778,7 +792,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   scale: 1.2,
                                   child: CheckboxListTile(
                                     controlAffinity:
-                                    ListTileControlAffinity.leading,
+                                        ListTileControlAffinity.leading,
                                     title: Text('Hide for users'),
                                     value: _hideCheckBox,
                                     onChanged: (value) {
@@ -812,7 +826,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     height: 50.h,
                                     width: 300.w,
                                     decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[350]),
+                                        border:
+                                            Border.all(color: Colors.grey[350]),
                                         borderRadius: BorderRadius.circular(5),
                                         color: Colors.white,
                                         boxShadow: [
@@ -820,8 +835,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                             color: Colors.grey.withOpacity(0.3),
                                             spreadRadius: 0.5,
                                             blurRadius: 1,
-                                            offset: Offset(
-                                                0, 2), // changes position of shadow
+                                            offset: Offset(0,
+                                                2), // changes position of shadow
                                           ),
                                         ]),
                                     child: DropdownButtonHideUnderline(
@@ -829,15 +844,15 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         isDense: false,
                                         hint: _cityValue == null
                                             ? Text(
-                                          '    Select City',
-                                          style: TextStyle(
-                                              fontSize: textSize18.nsp),
-                                        )
+                                                '    Select City',
+                                                style: TextStyle(
+                                                    fontSize: textSize18.nsp),
+                                              )
                                             : Text(
-                                          _cityValue,
-                                          style:
-                                          TextStyle(color: Colors.black),
-                                        ),
+                                                _cityValue,
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                              ),
                                         isExpanded: true,
                                         iconSize: 30.0,
                                         style: TextStyle(color: Colors.black),
@@ -850,7 +865,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                           " Delhi",
                                           " U.P",
                                         ].map(
-                                              (val) {
+                                          (val) {
                                             return DropdownMenuItem<String>(
                                               value: val,
                                               child: Text(val),
@@ -859,7 +874,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         ).toList(),
                                         onChanged: (val) {
                                           setState(
-                                                () {
+                                            () {
                                               _cityValue = val;
                                             },
                                           );
@@ -947,8 +962,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
                                       autofocus: false,
-                                      decoration:
-                                      InputDecoration(border: InputBorder.none),
+                                      decoration: InputDecoration(
+                                          border: InputBorder.none),
                                     ),
                                   ),
                                 ),
@@ -968,7 +983,9 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 40.h,),
+                    SizedBox(
+                      height: 40.h,
+                    ),
                     ElevatedButton.icon(
                       icon: Icon(
                         Icons.add,
@@ -983,10 +1000,12 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                         print('Pressed');
                       },
                       style: (ButtonStyle(
-                          backgroundColor:
-                          MaterialStateProperty.all<Color>(Color(0xff198EDC)))),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xff198EDC)))),
                     ),
-                    SizedBox(height: 40.h,)
+                    SizedBox(
+                      height: 40.h,
+                    )
                   ],
                 ),
               ),

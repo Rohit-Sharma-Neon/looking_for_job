@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
@@ -8,28 +9,26 @@ class MyButton extends StatelessWidget {
   final double width;
   final double height;
   final void Function() onPressed;
-  // final Color color;
 
-  const MyButton({Key key, this.text, this.width, this.height, this.onPressed,  })
-      : super(key: key);
+  const MyButton({@required this.text, this.width, this.height, this.onPressed});
+  // final Color color;
 
   @override
   Widget build(BuildContext context) {
-    return ButtonTheme(
-      height: height.h,
-      minWidth: width.w,
-      child: RaisedButton(
-        onPressed: onPressed,
-        color: primaryColorLight,
-        // onPressed: () {
-        //   print('Pressed');
-        // },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
+    return ConstrainedBox(
+      constraints: BoxConstraints.tightFor(width: width, height: height),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: primaryColorLight,
+          onPrimary: primaryColorLight,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(cornersRadiusLowest),
+          ),
         ),
+        onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(color: Colors.white, fontSize: textSize16.nsp),
+          style: TextStyle(color: Colors.white, fontSize: textSize16.sp),
         ),
       ),
     );

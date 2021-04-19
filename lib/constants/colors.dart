@@ -6,9 +6,9 @@ Color themeColor = const Color(0xFF286472);
 Color textColor  = const Color(0xFF207F9E);
 Color primaryColorLight = const Color(0xFF1492E5);//1492E5
 Color primaryTextColorLightTheme = const Color(0xFF333333);
-Color lightPrimaryColor = const Color(0xFFffffff);
+
 Color stickBg  = const Color(0xFFf2f2f2);
-Color lightSecondaryColor = Colors.deepOrangeAccent;
+Color lightSecondaryColor = const Color(0xff424242);
 Color primaryDarkColor = Color(0xFF2A2A2A);
 
 Color bgScaffoldColor = Color(0xFFF8F8F8);

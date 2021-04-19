@@ -197,7 +197,6 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 //   ),
                 // ),
                 MyButton(
-                  text: "Submit",
                   width: 100.w,
                   height: 50.h,
                   // color: primaryColorLight,

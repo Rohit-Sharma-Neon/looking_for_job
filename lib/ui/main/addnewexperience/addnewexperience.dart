@@ -10,7 +10,6 @@ import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
 import '../../../drawer/menu_widget.dart';
 
-
 class AddNewExperience extends StatefulWidget {
   @override
   _AddNewExperienceState createState() => _AddNewExperienceState();
@@ -20,7 +19,7 @@ class _AddNewExperienceState extends State<AddNewExperience> {
   int selectedRadio;
 
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
   String radioItem = '';
   String _cityValue;
   bool _fullTime = false;
@@ -178,589 +177,584 @@ class _AddNewExperienceState extends State<AddNewExperience> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: Color(0xFFFFFFFF),
-            body: SliderMenuContainer(
-                drawerIconColor: Colors.transparent,
-                drawerIconSize: 0,
-                appBarColor: bgScaffoldColor,
-                appBarHeight: 0,
-                key: _sliderMenuContainerStateKey,
-                sliderMenuOpenSize: 280,
-                title: Text(
-                  title,
-                  style:
-                  TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
-                ),
-                sliderMenu: MenuWidget(
-                  drawerKey: _sliderMenuContainerStateKey,
-                ),
-                sliderMain: SingleChildScrollView(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Scaffold(
+        backgroundColor: Color(0xFFFFFFFF),
+        body: SliderMenuContainer(
+          drawerIconColor: Colors.transparent,
+          drawerIconSize: 0,
+          appBarColor: bgScaffoldColor,
+          appBarHeight: 0,
+          key: _sliderMenuContainerStateKey,
+          sliderMenuOpenSize: 280,
+          title: Text(
+            title,
+            style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+          ),
+          sliderMenu: MenuWidget(
+            drawerKey: _sliderMenuContainerStateKey,
+          ),
+          sliderMain: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                webHeader(_sliderMenuContainerStateKey),
+                SizedBox(height: 15.h),
+                InkWell(
+                  onTap: () {
+                    if (isDashboardNavigationOpen) {
+                      closeDashboardNavigationMenu();
+                    } else {
+                      openDashboardNavigationMenu();
+                    }
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(12.h),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: scaffoldHorizontalPadding.w),
+                    width: double.infinity,
+                    key: _key,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF333333),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text.rich(
+                      TextSpan(
                         children: [
-                          webHeader(_sliderMenuContainerStateKey),
-                          SizedBox(height: 15.h),
-                          InkWell(
-                            onTap: () {
-                              if (isDashboardNavigationOpen) {
-                                closeDashboardNavigationMenu();
-                              } else {
-                                openDashboardNavigationMenu();
-                              }
-                            },
-                            child: Container(
-                              padding: EdgeInsets.all(12.h),
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: scaffoldHorizontalPadding.w),
-                              width: double.infinity,
-                              key: _key,
-                              decoration: BoxDecoration(
-                                color: Color(0xFF333333),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: Text.rich(
-                                TextSpan(
-                                  children: [
-                                    WidgetSpan(
-                                        alignment: PlaceholderAlignment.baseline,
-                                        baseline: TextBaseline.alphabetic,
-                                        child: Image(
-                                          height: 15,
-                                          width: 20.w,
-                                          image:
-                                          AssetImage('assets/images/menu.png'),
-                                        )),
-                                    WidgetSpan(child: SizedBox(width: 15.w)),
-                                    TextSpan(
-                                      style: TextStyle(
-                                          color: Color(0xFFFFFFFF),
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 16.nsp),
-                                      text: dashboardNavigation,
-                                    ),
-                                  ],
+                          WidgetSpan(
+                              alignment: PlaceholderAlignment.baseline,
+                              baseline: TextBaseline.alphabetic,
+                              child: Image(
+                                height: 15,
+                                width: 20.w,
+                                image: AssetImage('assets/images/menu.png'),
+                              )),
+                          WidgetSpan(child: SizedBox(width: 15.w)),
+                          TextSpan(
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16.nsp),
+                            text: dashboardNavigation,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 25),
+                Container(
+                  height: 60.h,
+                  width: 330.w,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[350]),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 0.5,
+                          blurRadius: 1,
+                          offset: Offset(0, 2), // changes position of shadow
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15.w),
+                    height: 200.h,
+                    width: 320.w,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.white,
+                        ),
+                      ],
+                      color: Color(0xFFFFFFFF),
+                    ),
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                        Text.rich(
+                          TextSpan(
+                            children: [
+                              WidgetSpan(
+                                child: Icon(
+                                  Icons.star,
+                                  size: 28.nsp,
+                                  color: Color(0xff198EDC),
                                 ),
                               ),
+                              WidgetSpan(
+                                  child: SizedBox(
+                                width: 10,
+                              )),
+                              TextSpan(
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                ),
+                                text: addNewExperiences,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                      vertical: 10.h, horizontal: scaffoldHorizontalPadding.w),
+                  width: 330.w,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey[350]),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          spreadRadius: 0.5,
+                          blurRadius: 1,
+                          offset: Offset(0, 2), // changes position of shadow
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(0)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: title1,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 45.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
                             ),
                           ),
-
-                          SizedBox(height: 25),
-
-                          Container(
-                            height: 60.h,
-                            width: 330.w,
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey[350]),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 0.5,
-                                    blurRadius: 1,
-                                    offset:
-                                    Offset(0, 2), // changes position of shadow
-                                  ),
-                                ],
-                                borderRadius: BorderRadius.circular(5)),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(horizontal: 15.w),
-                              height: 200.h,
-                              width: 320.w,
-                              decoration: BoxDecoration(
-                                boxShadow: [
-                                  new BoxShadow(
-                                    color: Colors.white,
-                                  ),
-                                ],
-                                color: Color(0xFFFFFFFF),
-                              ),
-                              alignment: Alignment.centerLeft,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20.w,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(
-                                      children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 28.nsp,
-                                            color: Color(0xff198EDC),
-                                          ),
-                                        ),
-                                        WidgetSpan(
-                                            child: SizedBox(
-                                              width: 10,
-                                            )),
-                                        TextSpan(
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                          text: addNewExperiences,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
+                        ),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: company,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 45.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
                             ),
                           ),
+                        ),
 
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 10.h,
-                                horizontal: scaffoldHorizontalPadding.w),
-                            width: 330.w,
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey[350]),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 0.5,
-                                    blurRadius: 1,
-                                    offset:
-                                    Offset(0, 2), // changes position of shadow
-                                  ),
-                                ],
-                                borderRadius: BorderRadius.circular(0)),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 20),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 20.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: title1,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 45.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: company,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 45.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: city,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 45.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: company,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 45.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: description,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 85.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: startDate,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 45.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: endDate,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                      TextSpan(
-                                          text: "*",
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-                                  Container(
-                                    height: 45.h,
-                                    width: 350.w,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey[300]),
-                                        borderRadius: BorderRadius.circular(5),
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.1),
-                                            spreadRadius: 0.5,
-                                            blurRadius: 1,
-                                            // changes position of shadow
-                                          ),
-                                        ]),
-                                    child: Padding(
-                                      padding: EdgeInsets.only(left: 15.w),
-                                      child: TextField(
-                                        autofocus: false,
-                                        decoration: InputDecoration(
-                                            border: InputBorder.none),
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  Text.rich(
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: currentlyWorking,
-                                          style: TextStyle(
-                                            fontSize: textSize16,
-                                            color: Color(0xFF333333),
-                                            fontWeight: FontWeight.w600,
-                                          )),
-
-                                    ]),
-                                  ),
-                                  SizedBox(
-                                    height: 10.h,
-                                  ),
-
-                                  Row(
-                                    children: [
-                                      Radio(
-                                        value: 1,
-                                        groupValue: selectedRadio,
-                                        activeColor: Colors.blue,
-                                        onChanged: (val) {
-                                          print("Radio $val");
-                                          setSelectedRadio(val);
-                                        },
-                                      ),
-                                      Text(yes),
-
-                                      Radio(
-                                        value: 2,
-                                        groupValue: selectedRadio,
-                                        activeColor: Colors.blue,
-                                        onChanged: (val) {
-                                          print("Radio $val");
-                                          setSelectedRadio(val);
-                                        },
-                                      ),
-                                      Text(no),
-                                    ],
-                                  ),
-
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                  // ButtonTheme(
-                                  //   height: 50,
-                                  //   child: RaisedButton(
-                                  //     color: Color(0xff198EDC),
-                                  //     onPressed: () {
-                                  //       print('Pressed');
-                                  //     },
-                                  //     shape: RoundedRectangleBorder(
-                                  //       borderRadius: BorderRadius.circular(5.0),
-                                  //     ),
-                                  //     child: Text(
-                                  //        save,
-                                  //       style: TextStyle(
-                                  //         fontSize: textSize16,
-                                  //         color: Color(0xFFFFFFFF),
-                                  //         fontWeight: FontWeight.w600,
-                                  //       ),
-                                  //     ),
-                                  //   ),
-                                  // ),
-                                  MyButton(
-                                    height: 50.h,
-                                    width: 100.w,
-                                    text: save,
-                                    onPressed: (){},
-                                  ),
-                                  SizedBox(
-                                    height: 30.h,
-                                  ),
-                                ],
-                              ),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: city,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 45.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
                             ),
                           ),
-                          SizedBox(
-                            height: 100.h,
+                        ),
+
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: company,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 45.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
                           ),
-                        ])))));
+                        ),
+
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: description,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 85.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: startDate,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 45.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: endDate,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                            TextSpan(
+                                text: "*",
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Container(
+                          height: 45.h,
+                          width: 350.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey[300]),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.1),
+                                  spreadRadius: 0.5,
+                                  blurRadius: 1,
+                                  // changes position of shadow
+                                ),
+                              ]),
+                          child: Padding(
+                            padding: EdgeInsets.only(left: 15.w),
+                            child: TextField(
+                              autofocus: false,
+                              decoration:
+                                  InputDecoration(border: InputBorder.none),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: currentlyWorking,
+                                style: TextStyle(
+                                  fontSize: textSize16,
+                                  color: Color(0xFF333333),
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          ]),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+
+                        Row(
+                          children: [
+                            Radio(
+                              value: 1,
+                              groupValue: selectedRadio,
+                              activeColor: Colors.blue,
+                              onChanged: (val) {
+                                print("Radio $val");
+                                setSelectedRadio(val);
+                              },
+                            ),
+                            Text(yes),
+                            Radio(
+                              value: 2,
+                              groupValue: selectedRadio,
+                              activeColor: Colors.blue,
+                              onChanged: (val) {
+                                print("Radio $val");
+                                setSelectedRadio(val);
+                              },
+                            ),
+                            Text(no),
+                          ],
+                        ),
+
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        // ButtonTheme(
+                        //   height: 50,
+                        //   child: RaisedButton(
+                        //     color: Color(0xff198EDC),
+                        //     onPressed: () {
+                        //       print('Pressed');
+                        //     },
+                        //     shape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(5.0),
+                        //     ),
+                        //     child: Text(
+                        //        save,
+                        //       style: TextStyle(
+                        //         fontSize: textSize16,
+                        //         color: Color(0xFFFFFFFF),
+                        //         fontWeight: FontWeight.w600,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                        MyButton(
+                          height: 50.h,
+                          width: 50.w,
+                          text: save,
+                          onPressed: () {},
+                        ),
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 100.h,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      );
   }
 }
 

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:lookingforjob_flutter/constants/sizes.dart';
 
 class ForgotMobileComponent extends StatefulWidget {
   @override
@@ -15,16 +17,20 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
     return Scaffold(
       appBar: !kIsWeb
           ? AppBar(
-              backgroundColor: Theme.of(context).primaryColorLight,
+              backgroundColor: primaryColorLight,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(cornersRadiusLight.r),
+                ),
+              ),
             )
           : null,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: [
             // Spacer(flex: 1),
             Padding(
-              padding:  EdgeInsets.only(top: 80.h),
+              padding: EdgeInsets.only(top: 80.h),
               child: Image.asset(
                 appLogoWithName,
                 height: 50,
@@ -32,7 +38,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
             ),
             // Spacer(flex: 1),
             Padding(
-              padding:  EdgeInsets.only(top: 50.h),
+              padding: EdgeInsets.only(top: 50.h),
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
                 margin: EdgeInsets.symmetric(horizontal: 20),
@@ -84,9 +90,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
                       text: "Request Password",
                       width: double.infinity.w,
                       height: 40.h,
-                      onPressed: (){
-
-                      },
+                      onPressed: () {},
                     )
                   ],
                 ),

@@ -1,7 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
+import 'package:lookingforjob_flutter/constants/sizes.dart';
+import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
@@ -16,24 +20,24 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30.h),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(flex: 1),
+          Spacer(flex: 2),
           Image.asset(
             appLogoWithName,
-            height: 50,
+            height: 50.h,
           ),
-          Spacer(flex: 1),
+          Spacer(flex: 2),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-            margin: EdgeInsets.symmetric(horizontal: 20),
+            margin:
+                EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding.w),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
-                Radius.circular(10),
+                Radius.circular(cornersRadiusLight),
               ),
               boxShadow: [
                 BoxShadow(
@@ -44,96 +48,106 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                 )
               ],
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Welcome Back!",
-                    style: TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold), //Theme.of(context).textTheme.headline1
-                    ),
-                SizedBox(height: 10.h),
-                TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(
-                      Icons.account_circle,
-                    ),
-                    labelText: 'Username / Email Address',
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Welcome Back!",
+                    style: TextStyle(
+                        fontSize: textSize26.sp,
+                        fontWeight: FontWeight
+                            .bold), //Theme.of(context).textTheme.headline1
                   ),
-                ),
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.lock),
-                    labelText: 'Password',
-                  ),
-                ),
-                SizedBox(height: 15.h),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Don't have an account?",
-                        style: TextStyle(
-                          color: Color(0xFF424242),
-                        ),
+                  SizedBox(height: 10.h),
+                  TextField(
+                    decoration: InputDecoration(
+                      icon: Icon(
+                        Icons.account_circle,
                       ),
-                      TextSpan(
-                        text: " Sign Up Now!",
-                        style: TextStyle(
-                          color: Color(0xFF0691CE),
+                      contentPadding: EdgeInsets.only(bottom: 0),
+                      labelText: 'Username / Email Address',
+                      labelStyle: TextStyle(fontSize: textSize16.sp),
+                    ),
+                  ),
+                  SizedBox(height: 10.h),
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.only(bottom: 0),
+                      icon: Icon(Icons.lock),
+                      labelText: 'Password',
+                      labelStyle: TextStyle(fontSize: textSize16.sp),
+                    ),
+                  ),
+                  SizedBox(height: 20.h),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Don't have an account?",
+                          style: TextStyle(
+                              color: lightSecondaryColor,
+                              fontSize: textSize14.sp),
                         ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
+                        TextSpan(
+                          text: " Sign Up Now!",
+                          style: TextStyle(
+                            fontSize: textSize14.sp,
+                            color: primaryColorLight,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      RegisterPage()),
-                              ModalRoute.withName('/'),
-                            );
-                          },
-                      ),
-                    ],
+                                      RegisterPage(),
+                                ),
+                                ModalRoute.withName('/'),
+                              );
+                            },
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(height: 10.h),
-                InkWell(
-                  child: Text(
-                    "Forgot Password?",
-                    style:
-                        TextStyle(color: Color(0xFF0691CE), fontSize: 14.nsp),
+                  SizedBox(height: 10.h),
+                  InkWell(
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(
+                          color: primaryColorLight, fontSize: textSize14.sp),
+                    ),
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => ForgotPassword(),
+                        ),
+                        ModalRoute.withName('/'),
+                      );
+                    },
                   ),
-                  onTap: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => ForgotPassword()),
-                      ModalRoute.withName('/'),
-                    );
-                  },
-                ),
-                SizedBox(height: 15.h),
-                MaterialButton(
-                  height: 40.h,
-                  minWidth: double.infinity,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
+                  SizedBox(height: 15.h),
+                  MyButton(
+                    text: login,
+                    height: primaryButtonHeight,
+                    width: double.infinity,
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                EmployerDashboard()),
+                        ModalRoute.withName('/'),
+                      );
+                    },
                   ),
-                  color: Color(0xFF0691CE),
-                  textColor: Color(0xFFffffff),
-                  child: Text("Login"),
-                  onPressed: () {
-                    Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => EmployerDashboard()),
-                      ModalRoute.withName('/'),
-                    );
-                  },
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-          Spacer(flex: 2),
+          Spacer(flex: 5),
         ],
       ),
     );
