@@ -18,8 +18,6 @@ class EmployerDashboard extends StatefulWidget {
 class _EmployerDashboardState extends State<EmployerDashboard> {
   int selectedRadio;
   String _cityValue;
-  Size buttonSize;
-  Offset buttonPosition;
 
   setSelectedRadio(int val) {
     setState(() {
@@ -1430,105 +1428,6 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class DashBoardNavigationList {
-  final BuildContext context;
-
-  DashBoardNavigationList(this.context);
-
-  static List<Widget> myAccountList = [
-    CustomListTile(
-      leadingIcon: Icons.dashboard,
-      title: dashboard,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.person_pin_circle_rounded,
-      title: profilePublicView,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.card_membership,
-      title: membership,
-    ),
-    SizedBox(
-      height: 20.h,
-    )
-  ];
-  static List<Widget> myJobsList = [
-    CustomListTile(
-      leadingIcon: Icons.roofing,
-      title: myCompanies,
-      trailingIcon: Icons.attractions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.shopping_bag_outlined,
-      title: myJobs,
-      trailingIcon: Icons.attractions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.access_time,
-      title: pendingJobs,
-      trailingIcon: Icons.attractions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.tv_off_rounded,
-      title: hiddenJobs,
-      trailingIcon: Icons.attractions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.error,
-      title: expiredJobs,
-      trailingIcon: Icons.attractions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.assistant_direction,
-      title: resubmittedJobs,
-      trailingIcon: Icons.attractions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.favorite,
-      title: favoriteUsers,
-      trailingIcon: Icons.attractions,
-    ),
-  ];
-  static List<Widget> accountList = [
-    CustomListTile(
-      leadingIcon: Icons.receipt,
-      title: transactions,
-    ),
-    CustomListTile(
-      leadingIcon: Icons.logout,
-      title: logout,
-    ),
-  ];
-}
-
-class CustomListTile extends StatelessWidget {
-  final IconData leadingIcon, trailingIcon;
-  final String title;
-  final onTap;
-
-
-  const CustomListTile(
-      {@required this.leadingIcon, @required this.title, this.trailingIcon, this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      dense: true,
-      contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-      leading: Icon(leadingIcon),
-      onTap: onTap,
-      title: Text(
-        title,
-        style: TextStyle(fontSize: textSize14.sp),
-      ),
-      trailing: Icon(
-        trailingIcon,
-        color: Color(0xff198EDC),
       ),
     );
   }

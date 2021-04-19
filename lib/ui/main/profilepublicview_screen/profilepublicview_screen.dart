@@ -47,7 +47,7 @@ class _ProfilePublicViewState extends State<ProfilePublicView> {
                   padding: EdgeInsets.symmetric(
                       vertical: 15.h, horizontal: scaffoldHorizontalPadding.w),
                   margin: EdgeInsets.only(top: 30.h),
-                  height: 500.h,
+                  height: 600.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0xFFFFFFFF),
