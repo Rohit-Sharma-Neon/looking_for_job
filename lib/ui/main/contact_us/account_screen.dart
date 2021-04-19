@@ -40,11 +40,11 @@ class _AcoountScreenState extends State<AcoountScreen> {
               TextSpan(
                   text: "Name",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
               TextSpan(
                   text: " *",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
             ]),
           ),
           SizedBox(
@@ -99,11 +99,11 @@ class _AcoountScreenState extends State<AcoountScreen> {
               TextSpan(
                   text: " User Name",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
               TextSpan(
                   text: " *",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
             ]),
           ),
           SizedBox(
@@ -158,11 +158,11 @@ class _AcoountScreenState extends State<AcoountScreen> {
               TextSpan(
                   text: "Email Address",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
               TextSpan(
                   text: " *",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
             ]),
           ),
           SizedBox(
@@ -217,11 +217,11 @@ class _AcoountScreenState extends State<AcoountScreen> {
               TextSpan(
                   text: "Phone Number",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
               TextSpan(
                   text: " *",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
             ]),
           ),
           SizedBox(
@@ -274,7 +274,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           Text(
             "Avatar",
             style: TextStyle(
-                fontSize: textSize20.nsp, fontWeight: FontWeight.w500),
+                fontSize: textSize20.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 20.h),
           // ButtonTheme(
@@ -291,7 +291,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           //     child: Text(
           //       "Upload Avatar",
           //       style: TextStyle(
-          //         fontSize: textSize20.nsp,
+          //         fontSize: textSize20.sp,
           //         color: Color(0xff198EDC),
           //       ),
           //     ),
@@ -307,13 +307,13 @@ class _AcoountScreenState extends State<AcoountScreen> {
             height: 20.h,
           ),
           Text("Use 150x150px image for perfect look.",
-              style: TextStyle(fontSize: textSize16.nsp, color: Colors.grey)),
+              style: TextStyle(fontSize: textSize16.sp, color: Colors.grey)),
           SizedBox(
             height: 40.h,
           ),
           Text(
             "Gender",
-            style: TextStyle(fontSize: textSize20.nsp),
+            style: TextStyle(fontSize: textSize20.sp),
           ),
           SizedBox(
             width: 50.w,
@@ -369,11 +369,11 @@ class _AcoountScreenState extends State<AcoountScreen> {
               TextSpan(
                   text: "City",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
               TextSpan(
                   text: " *",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
             ]),
           ),
           SizedBox(
@@ -400,7 +400,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   hint: _cityValue == null
                       ? Text(
                           '    Select City',
-                          style: TextStyle(fontSize: textSize18.nsp),
+                          style: TextStyle(fontSize: textSize18.sp),
                         )
                       : Text(
                           _cityValue,
@@ -442,11 +442,11 @@ class _AcoountScreenState extends State<AcoountScreen> {
               TextSpan(
                   text: "Address",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
               TextSpan(
                   text: " *",
                   style:
-                      TextStyle(fontSize: textSize20.nsp, color: Colors.black)),
+                      TextStyle(fontSize: textSize20.sp, color: Colors.black)),
             ]),
           ),
           SizedBox(height: 20.h),
@@ -463,7 +463,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("About Me", style: TextStyle(fontSize: 20.nsp)),
+          Text("About Me", style: TextStyle(fontSize: 20.sp)),
           SizedBox(height: 20.h),
           TextField(
             autofocus: false,
@@ -478,7 +478,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("Website", style: TextStyle(fontSize: 20.nsp)),
+          Text("Website", style: TextStyle(fontSize: 20.sp)),
           SizedBox(
             height: 20.h,
           ),
@@ -526,7 +526,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("Facebook", style: TextStyle(fontSize: 20.nsp)),
+          Text("Facebook", style: TextStyle(fontSize: 20.sp)),
           SizedBox(
             height: 20.h,
           ),
@@ -575,7 +575,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("Instagram", style: TextStyle(fontSize: 20.nsp)),
+          Text("Instagram", style: TextStyle(fontSize: 20.sp)),
           SizedBox(
             height: 20.h,
           ),
@@ -624,7 +624,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("Twitter", style: TextStyle(fontSize: 20.nsp)),
+          Text("Twitter", style: TextStyle(fontSize: 20.sp)),
           SizedBox(
             height: 20.h,
           ),
@@ -673,7 +673,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("LinkedIn", style: TextStyle(fontSize: 20.nsp)),
+          Text("LinkedIn", style: TextStyle(fontSize: 20.sp)),
           SizedBox(
             height: 20.h,
           ),
@@ -722,7 +722,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
           SizedBox(
             height: 20.h,
           ),
-          Text("YouTube", style: TextStyle(fontSize: 20.nsp)),
+          Text("YouTube", style: TextStyle(fontSize: 20.sp)),
           SizedBox(
             height: 20.h,
           ),
@@ -815,7 +815,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   ),
                   Text(
                     "New Password",
-                    style: TextStyle(fontSize: 20.nsp),
+                    style: TextStyle(fontSize: 20.sp),
                   ),
                   SizedBox(
                     height: 20.h,
@@ -850,7 +850,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   ),
                   Text(
                     " Reapeat New Password",
-                    style: TextStyle(fontSize: 20.nsp),
+                    style: TextStyle(fontSize: 20.sp),
                   ),
                   SizedBox(
                     height: 20.h,
@@ -927,7 +927,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                 children: [
                   Text(
                     "Job Type",
-                    style: TextStyle(fontSize: 26.nsp),
+                    style: TextStyle(fontSize: 26.sp),
                   ),
                   Transform.scale(
                     scale: 1.2,
@@ -1025,7 +1025,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   ),
                   Text(
                     "Salary Type",
-                    style: TextStyle(fontSize: 26.nsp),
+                    style: TextStyle(fontSize: 26.sp),
                   ),
                   Transform.scale(
                     scale: 1.2,
@@ -1084,7 +1084,7 @@ class _AcoountScreenState extends State<AcoountScreen> {
                   ),
                   Text(
                     "Salary",
-                    style: TextStyle(fontSize: 26.nsp),
+                    style: TextStyle(fontSize: 26.sp),
                   ),
                   SizedBox(
                     height: 20.h,

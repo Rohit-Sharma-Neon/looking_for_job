@@ -92,7 +92,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 myJobs,
                                 style: TextStyle(
                                     color: Color(0xFF0691CE),
-                                    fontSize: textSize16.nsp),
+                                    fontSize: textSize16.sp),
                               ),
                               Column(
                                 children: DashBoardNavigationList.myJobsList,
@@ -101,7 +101,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                 account,
                                 style: TextStyle(
                                     color: Color(0xFF0691CE),
-                                    fontSize: textSize16.nsp),
+                                    fontSize: textSize16.sp),
                               ),
                               Column(
                                 children: DashBoardNavigationList.accountList,
@@ -320,7 +320,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                             WidgetSpan(
                               child: Icon(
                                 Icons.person,
-                                size: 28.nsp,
+                                size: 28.sp,
                                 color: Color(0xFF198EDC),
                               ),
                             ),
@@ -1369,7 +1369,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                             WidgetSpan(
                               child: Icon(
                                 Icons.lock,
-                                size: 28.nsp,
+                                size: 28.sp,
                                 color: Color(0xff198EDC),
                               ),
                             ),
@@ -1552,7 +1552,7 @@ class CustomListTile extends StatelessWidget {
       leading: Icon(leadingIcon),
       title: Text(
         title,
-        style: TextStyle(fontSize: textSize14.nsp),
+        style: TextStyle(fontSize: textSize14.sp),
       ),
       trailing: Icon(
         trailingIcon,

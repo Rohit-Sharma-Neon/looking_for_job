@@ -67,7 +67,7 @@ class _FavoriteUserScreenState extends State<FavoriteUserScreen> {
                   Text(
                     myAccount,
                     style: TextStyle(
-                        color: Color(0xFF0691CE), fontSize: textSize16.nsp),
+                        color: Color(0xFF0691CE), fontSize: textSize16.sp),
                   ),
                   Column(
                     children: DashBoardNavigationList.myAccountList,
@@ -75,7 +75,7 @@ class _FavoriteUserScreenState extends State<FavoriteUserScreen> {
                   Text(
                     myJobs,
                     style: TextStyle(
-                        color: Color(0xFF0691CE), fontSize: textSize16.nsp),
+                        color: Color(0xFF0691CE), fontSize: textSize16.sp),
                   ),
                   Column(
                     children: DashBoardNavigationList.myJobsList,
@@ -83,7 +83,7 @@ class _FavoriteUserScreenState extends State<FavoriteUserScreen> {
                   Text(
                     account,
                     style: TextStyle(
-                        color: Color(0xFF0691CE), fontSize: textSize16.nsp),
+                        color: Color(0xFF0691CE), fontSize: textSize16.sp),
                   ),
                   Column(
                     children: DashBoardNavigationList.accountList,
@@ -115,7 +115,7 @@ class _FavoriteUserScreenState extends State<FavoriteUserScreen> {
           sliderMenuOpenSize: 280,
           title: Text(
             "title",
-            style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+            style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w700),
           ),
           sliderMenu: MenuWidget(
             drawerKey: _sliderMenuContainerStateKey,

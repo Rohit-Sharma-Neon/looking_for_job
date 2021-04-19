@@ -30,7 +30,7 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                         text: "Forgot Password?",
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 32.nsp,
+                          fontSize: 32.sp,
                         ),
                       ),
                     ]),
@@ -43,7 +43,7 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                           text: "Home",
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 14.nsp,
+                            fontSize: 14.sp,
                           ),
                         ),
                         WidgetSpan(
@@ -54,7 +54,7 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                           text: "Forgot Password?",
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 14.nsp,
+                            fontSize: 14.sp,
                           ),
                         ),
                       ],
@@ -70,7 +70,7 @@ class _ForgotDesktopComponentState extends State<ForgotDesktopComponent> {
                 children: [
                   Text("Forgot Password?",
                       style: TextStyle(
-                          fontSize: 25.nsp, fontWeight: FontWeight.bold)),
+                          fontSize: 25.sp, fontWeight: FontWeight.bold)),
                   SizedBox(height: 5.h),
                   Padding(
                     padding:
