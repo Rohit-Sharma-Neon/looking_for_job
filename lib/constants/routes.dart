@@ -3,7 +3,6 @@ import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.
 import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
-import 'file:///E:/FlutterProject/lookingforjob_flutter/lib/ui/main/browsejob_screen/components/browsejob_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
@@ -31,7 +30,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_
 var customRoutes = <String, WidgetBuilder>{
   '/': (context) => MyResumeScreen(),
   // OnBoardings
-  '/signIn1': (context) => LoginPage(),
+  '/job_description': (context) => JobDescription(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
 
   '/dashboard_screen': (context) => DashBoardScreen(),
