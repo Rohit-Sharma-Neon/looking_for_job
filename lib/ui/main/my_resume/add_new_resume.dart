@@ -4,6 +4,7 @@ import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 
 class AddNewResume extends StatefulWidget {
   @override
@@ -136,40 +137,46 @@ class _AddNewResumeState extends State<AddNewResume> {
                               style: TextStyle(fontSize: textSize18),
                             ),
                             SizedBox(height: 15.h),
-                            ButtonTheme(
-                              height: 50.h,
-                              minWidth: 300.w,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color:
-                                            primaryColorLight.withOpacity(0.2),
-                                        spreadRadius: 1,
-                                        blurRadius: 2,
-                                        offset: Offset(0, 1),
-                                      )
-                                    ]),
-                                child: OutlineButton(
-                                  onPressed: () {},
-                                  splashColor: primaryColorLight,
-                                  borderSide: BorderSide(
-                                    color: primaryColorLight,
-                                  ),
-                                  shape: ContinuousRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Text(
-                                    "Upload Resume",
-                                    style: TextStyle(
-                                      fontSize: textSize18.nsp,
-                                      color: primaryColorLight,
-                                    ),
-                                  ),
-                                ),
-
-                                )
-                              ),
+                            // ButtonTheme(
+                            //   height: 50.h,
+                            //   minWidth: 300.w,
+                            //   child: Container(
+                            //     decoration: BoxDecoration(
+                            //         color: Colors.white,
+                            //         boxShadow: [
+                            //           BoxShadow(
+                            //             color:
+                            //                 primaryColorLight.withOpacity(0.2),
+                            //             spreadRadius: 1,
+                            //             blurRadius: 2,
+                            //             offset: Offset(0, 1),
+                            //           )
+                            //         ]),
+                            //     child: OutlineButton(
+                            //       onPressed: () {},
+                            //       splashColor: primaryColorLight,
+                            //       borderSide: BorderSide(
+                            //         color: primaryColorLight,
+                            //       ),
+                            //       shape: ContinuousRectangleBorder(
+                            //           borderRadius: BorderRadius.circular(5)),
+                            //       child: Text(
+                            //         "Upload Resume",
+                            //         style: TextStyle(
+                            //           fontSize: textSize18.nsp,
+                            //           color: primaryColorLight,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //
+                            //     )
+                            //   ),
+                            PrimaryOutlinedButton(
+                              onPressed: (){},
+                              height: primaryButtonHeight,
+                              width: 300.w,
+                              text: "Upload Resume",
+                            ),
 
                             SizedBox(height: 20.h),
                             Text(

@@ -226,7 +226,7 @@ class DrawerList {
     pendingJobs,
     membership,
     transactions,
-    myResumes,
+    myresumes,
     appliedJobs,
     favouriteJobs,
     jobAlert,

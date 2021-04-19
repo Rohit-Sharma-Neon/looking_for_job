@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
+import 'package:lookingforjob_flutter/constants/sizes.dart';
 
 class PrimaryOutlinedButton extends StatelessWidget {
   final String text;
@@ -22,7 +23,9 @@ class PrimaryOutlinedButton extends StatelessWidget {
       ),
       child: (OutlinedButton(
         style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.white,
           shadowColor: primaryColorLight,
+          // elevation: 2,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(5))),
           side: BorderSide(
@@ -32,7 +35,7 @@ class PrimaryOutlinedButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: Colors.blue,fontSize: textSize16),
         ),
       )),
     );

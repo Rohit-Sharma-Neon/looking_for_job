@@ -359,7 +359,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                 color: Color(0xFF333333),
                                 fontWeight: FontWeight.w600,
                                 fontSize: textSize18),
-                            text: myResumes,
+                            text: myresumes,
                           ),
                         ],
                       ),

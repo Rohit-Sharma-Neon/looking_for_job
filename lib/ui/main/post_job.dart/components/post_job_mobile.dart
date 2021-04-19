@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/sizes.dart';
@@ -161,8 +162,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                               padding:
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 20),
-                                              child: Text('Select Company',
-                                                  style: dropDownTextStyle),
+                                              child: Text(
+                                                'Select Company',
+                                                style:dropDownTextStyle
+                                              ),
                                             )
                                           : Text(
                                               _dropDownValue,
@@ -241,51 +244,54 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               ),
                               Text(
                                 "Logo",
-                                style: postAJobSubHeadingTextStyle,
+                                style:postAJobSubHeadingTextStyle,
                               ),
                               SizedBox(height: 20.h),
-                              ButtonTheme(
-                                height: 50.h,
-                                minWidth: 300.w,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: primaryColorLight
-                                              .withOpacity(0.2),
-                                          spreadRadius: 1,
-                                          blurRadius: 2,
-                                          offset: Offset(0, 1),
-                                        )
-                                      ]),
-                                  child: OutlineButton(
-                                    onPressed: () {},
-                                    splashColor: primaryColorLight,
-                                    borderSide: BorderSide(
-                                      color: primaryColorLight,
-                                    ),
-                                    shape: ContinuousRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Text(
-                                      "Upload Logo",
-                                      style: TextStyle(
-                                        fontSize: textSize18.nsp,
-                                        color: primaryColorLight,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              // ButtonTheme(
+                              //   height: 50.h,
+                              //   minWidth: 300.w,
+                              //   child: Container(
+                              //     decoration: BoxDecoration(
+                              //         color: Colors.white,
+                              //         boxShadow: [
+                              //           BoxShadow(
+                              //             color: primaryColorLight
+                              //                 .withOpacity(0.2),
+                              //             spreadRadius: 1,
+                              //             blurRadius: 2,
+                              //             offset: Offset(0, 1),
+                              //           )
+                              //         ]),
+                              //     child: OutlineButton(
+                              //       onPressed: () {},
+                              //       splashColor: primaryColorLight,
+                              //       borderSide: BorderSide(
+                              //         color: primaryColorLight,
+                              //       ),
+                              //       shape: ContinuousRectangleBorder(
+                              //           borderRadius: BorderRadius.circular(5)),
+                              //       child: Text(
+                              //         "Upload Logo",
+                              //         style: TextStyle(
+                              //           fontSize: textSize18.nsp,
+                              //           color: primaryColorLight,
+                              //         ),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
+                              PrimaryOutlinedButton(
+                                height: primaryButtonHeight,
+                                width: 300.w,
+                                text: "Upload Logo",
                               ),
                               SizedBox(
                                 height: 30.h,
                               ),
                               Text("Use 200x200px size for better view.",
-                                  style: TextStyle(
-                                      fontSize: textSize16.nsp,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.grey)),
+                                  style:TextStyle(  fontSize: textSize16.nsp,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey)),
                               SizedBox(
                                 height: 50.h,
                               ),
@@ -396,7 +402,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                             horizontal: scaffoldHorizontalPadding + 10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -444,40 +450,49 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               ),
                             ),
                             SizedBox(height: 30.h),
-                            Text("Image", style: postAJobSubHeadingTextStyle),
+                            Text(
+                              "Image",
+                              style: postAJobSubHeadingTextStyle
+                            ),
                             SizedBox(height: 20.h),
-                            ButtonTheme(
-                              height: 50.h,
-                              minWidth: 300.w,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color:
-                                            primaryColorLight.withOpacity(0.2),
-                                        spreadRadius: 1,
-                                        blurRadius: 2,
-                                        offset: Offset(0, 1),
-                                      )
-                                    ]),
-                                child: OutlineButton(
-                                  onPressed: () {},
-                                  splashColor: primaryColorLight,
-                                  borderSide: BorderSide(
-                                    color: primaryColorLight,
-                                  ),
-                                  shape: ContinuousRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5)),
-                                  child: Text(
-                                    "Upload Image",
-                                    style: TextStyle(
-                                      fontSize: textSize18.nsp,
-                                      color: primaryColorLight,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                            // ButtonTheme(
+                            //   height: 50.h,
+                            //   minWidth: 300.w,
+                            //   child: Container(
+                            //     decoration: BoxDecoration(
+                            //         color: Colors.white,
+                            //         boxShadow: [
+                            //           BoxShadow(
+                            //             color:
+                            //                 primaryColorLight.withOpacity(0.2),
+                            //             spreadRadius: 1,
+                            //             blurRadius: 2,
+                            //             offset: Offset(0, 1),
+                            //           )
+                            //         ]),
+                            //     child: OutlineButton(
+                            //       onPressed: () {},
+                            //       splashColor: primaryColorLight,
+                            //       borderSide: BorderSide(
+                            //         color: primaryColorLight,
+                            //       ),
+                            //       shape: ContinuousRectangleBorder(
+                            //           borderRadius: BorderRadius.circular(5)),
+                            //       child: Text(
+                            //         "Upload Image",
+                            //         style: TextStyle(
+                            //           fontSize: textSize18.nsp,
+                            //           color: primaryColorLight,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                            PrimaryOutlinedButton(
+                              height: primaryButtonHeight,
+                              width:300.w,
+                              text: "Upload Image",
+
                             ),
                             SizedBox(
                               height: 30.h,
@@ -556,7 +571,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                               'Full Time',
                                               style: TextStyle(
                                                   fontSize: textSize18.nsp,
-                                                  fontWeight: FontWeight.w400),
+                                                  fontWeight: FontWeight.w400
+                                              ),
                                             ),
                                           )
                                         : Text(
@@ -599,7 +615,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             SizedBox(
                               height: 30.h,
                             ),
-                            Text("Salary", style: postAJobSubHeadingTextStyle),
+                            Text(
+                              "Salary",
+                              style: postAJobSubHeadingTextStyle
+                            ),
                             SizedBox(
                               height: 20.h,
                             ),
@@ -691,8 +710,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                         ? Padding(
                                             padding: const EdgeInsets.symmetric(
                                                 horizontal: 20),
-                                            child: Text('Per Hour',
-                                                style: dropDownTextStyle),
+                                            child: Text(
+                                              'Per Hour',
+                                              style: dropDownTextStyle
+                                            ),
                                           )
                                         : Text(
                                             _perHourValue,
@@ -752,8 +773,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             SizedBox(
                               height: 40.h,
                             ),
-                            Text("Phone Number",
-                                style: postAJobSubHeadingTextStyle),
+                            Text(
+                              "Phone Number",
+                              style: postAJobSubHeadingTextStyle
+                            ),
                             SizedBox(
                               height: 20.h,
                             ),
@@ -879,7 +902,8 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                               'Select City',
                                               style: TextStyle(
                                                   fontSize: textSize18.nsp,
-                                                  fontWeight: FontWeight.w400),
+                                                fontWeight: FontWeight.w400
+                                                 ),
                                             ),
                                           )
                                         : Text(
@@ -921,8 +945,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             SizedBox(
                               height: 30.h,
                             ),
-                            Text("Application Url",
-                                style: postAJobSubHeadingTextStyle),
+                            Text(
+                              "Application Url",
+                              style:postAJobSubHeadingTextStyle
+                            ),
                             SizedBox(
                               height: 20.h,
                             ),
@@ -968,7 +994,10 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             SizedBox(
                               height: 40.h,
                             ),
-                            Text("Tags", style: postAJobSubHeadingTextStyle),
+                            Text(
+                              "Tags",
+                              style: postAJobSubHeadingTextStyle
+                            ),
                             SizedBox(
                               height: 20.h,
                             ),

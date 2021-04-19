@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 
 class AcoountScreen extends StatefulWidget {
   @override
@@ -276,25 +277,31 @@ class _AcoountScreenState extends State<AcoountScreen> {
                 fontSize: textSize20.nsp, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 20.h),
-          ButtonTheme(
-            height: 50.h,
-            minWidth: 350.w,
-            child: OutlineButton(
-              onPressed: () {},
-              splashColor: Color(0xff198EDC),
-              borderSide: BorderSide(
-                color: Color(0xff198EDC),
-              ),
-              shape: ContinuousRectangleBorder(
-                  borderRadius: BorderRadius.circular(5)),
-              child: Text(
-                "Upload Avatar",
-                style: TextStyle(
-                  fontSize: textSize20.nsp,
-                  color: Color(0xff198EDC),
-                ),
-              ),
-            ),
+          // ButtonTheme(
+          //   height: 50.h,
+          //   minWidth: 350.w,
+          //   child: OutlineButton(
+          //     onPressed: () {},
+          //     splashColor: Color(0xff198EDC),
+          //     borderSide: BorderSide(
+          //       color: Color(0xff198EDC),
+          //     ),
+          //     shape: ContinuousRectangleBorder(
+          //         borderRadius: BorderRadius.circular(5)),
+          //     child: Text(
+          //       "Upload Avatar",
+          //       style: TextStyle(
+          //         fontSize: textSize20.nsp,
+          //         color: Color(0xff198EDC),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          PrimaryOutlinedButton(
+            height: primaryButtonHeight = 50.h,
+            width: 350.w,
+            text: "Upload Avatar",
+
           ),
           SizedBox(
             height: 20.h,
