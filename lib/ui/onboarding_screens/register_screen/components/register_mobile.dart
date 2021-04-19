@@ -1,15 +1,12 @@
-// import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
-// import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/ButtonTextStyle.dart';
 import 'package:custom_radio_grouped_button/CustomButtons/CustomRadioButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
-import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
 import 'package:lookingforjob_flutter/widgets/label_check_box.dart';
 
 class RegisterMobileComponent extends StatefulWidget {
@@ -167,7 +164,7 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
                 fontSize: textSize13.sp,
               ),
               SizedBox(height: 20.h),
-              MyButton(
+              PrimaryButton(
                 text: "Register",
                 height: primaryButtonHeight.h,
                 width: double.infinity,

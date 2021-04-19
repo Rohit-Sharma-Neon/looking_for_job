@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/components/galobal_components/web_header.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -427,7 +427,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                             ),
                           )),
                       SizedBox(height: 10.h),
-                      MyButton(
+                      PrimaryButton(
                         text: "Add New Resume",
                         width: 100.w,
                         height: 50.h,
@@ -512,7 +512,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                                 mainAxisSize:
                                                     MainAxisSize.min,
                                                 children: [
-                                                  MyButton(
+                                                  PrimaryButton(
                                                     text: "Download",
                                                     width: 100.w,
                                                     height: 50.h,

@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/button.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
+import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
@@ -129,7 +129,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                     },
                   ),
                   SizedBox(height: 15.h),
-                  MyButton(
+                  PrimaryButton(
                     text: login,
                     height: primaryButtonHeight,
                     width: double.infinity,

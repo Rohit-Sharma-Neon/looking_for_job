@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
-import 'package:lookingforjob_flutter/ui/main/%20my_resume/add_new_resume.dart';
+import 'package:lookingforjob_flutter/ui/main/my_resume/add_new_resume.dart';
 
 class MyResumeScreen extends StatefulWidget {
   @override
@@ -482,7 +482,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Text(
-                                              file,
+                                              "file",
                                               style: TextStyle(
                                                 fontSize: 18.nsp,
                                                 color: Colors.white,
@@ -490,7 +490,7 @@ class _MyResumeScreenState extends State<MyResumeScreen> {
                                             ),
                                             SizedBox(width: 140.w),
                                             Text(
-                                              names,
+                                              name,
                                               style: TextStyle(
                                                 fontSize: 18.nsp,
                                                 color: Colors.white,
