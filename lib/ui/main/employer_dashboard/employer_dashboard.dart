@@ -8,6 +8,7 @@ import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
+import 'package:lookingforjob_flutter/widgets/dashboard_navigation_button.dart';
 
 class EmployerDashboard extends StatefulWidget {
   @override
@@ -39,101 +40,12 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
           child: Column(
             children: [
               SizedBox(height: 15.h),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity, 50.h),
-                  padding: EdgeInsets.all(12.h),
-                  primary: Color(0xFF333333),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5.r),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  showModalBottomSheet(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(cornersRadiusHeavy.r),
-                      ),
-                    ),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    context: context,
-                    builder: (context) => Container(
-                      color: Colors.white,
-                      child: SingleChildScrollView(
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30.w, vertical: 10.h),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10.h,
-                              ),
-                              Text(
-                                myAccount,
-                                style: TextStyle(
-                                    color: Color(0xFF0691CE),
-                                    fontSize: textSize16.sp),
-                              ),
-                              Column(
-                                children: DashBoardNavigationList.myAccountList,
-                              ),
-                              Text(
-                                myJobs,
-                                style: TextStyle(
-                                    color: Color(0xFF0691CE),
-                                    fontSize: textSize16.sp),
-                              ),
-                              Column(
-                                children: DashBoardNavigationList.myJobsList,
-                              ),
-                              Text(
-                                account,
-                                style: TextStyle(
-                                    color: Color(0xFF0691CE),
-                                    fontSize: textSize16.sp),
-                              ),
-                              Column(
-                                children: DashBoardNavigationList.accountList,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      WidgetSpan(
-                          alignment: PlaceholderAlignment.baseline,
-                          baseline: TextBaseline.alphabetic,
-                          child: Image(
-                            height: 15,
-                            width: 20.w,
-                            image: AssetImage('assets/images/menu.png'),
-                          )),
-                      WidgetSpan(child: SizedBox(width: 15.w)),
-                      TextSpan(
-                        style: TextStyle(
-                            color: Color(0xFFFFFFFF),
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16.sp),
-                        text: dashboardNavigation,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              DashBoardNavigationButton(),
               Container(
                 padding: EdgeInsets.symmetric(
                     vertical: 25.h, horizontal: scaffoldHorizontalPadding.w),
-                margin: EdgeInsets.only(top: 30.h),
-                // height: 200.h,
+                margin: EdgeInsets.only(top: 15.h),
+                height: 200.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Color(0xFFFFFFFF),
@@ -273,22 +185,22 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                   ],
                 ),
               ),
-              SizedBox(height: 45),
               Container(
+                margin: EdgeInsets.only(top: 10.h),
                 height: 60.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey[350]),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.3),
-                        spreadRadius: 0.5,
-                        blurRadius: 1,
-                        offset: Offset(0, 2), // changes position of shadow
-                      ),
-                    ],
-                    borderRadius: BorderRadius.circular(5)),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 2,
+                      blurRadius: 2,
+                      offset: Offset(0, 0),
+                    ),
+                  ],
+                ),
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 15.w),
                   height: 200.h,
@@ -395,6 +307,24 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(top: 15.h,left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(8.0),
+                          //             child: Icon(
+                          //               Icons.person_outline,
+                          //               color: Color(0xFFA0A0A0),
+                          //             )),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: Icons.person_outline,
@@ -486,6 +416,21 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: Icons.email_outlined,
+                            // decoration: InputDecoration(
+                            //     contentPadding: EdgeInsets.only(top: 15.h,left: 50),
+                            //     prefixIcon: Container(
+                            //       margin: EdgeInsets.only(right: 5.w),
+                            //       height: 50.h,
+                            //       width: 50.w,
+                            //       color: Color(0xFFF8F8F8),
+                            //       child: Padding(
+                            //           padding: EdgeInsets.all(8.0),
+                            //           child: Icon(
+                            //             Icons.email_outlined,
+                            //             color: Color(0xFFA0A0A0),
+                            //           )),
+                            //     ),
+                            //     border: InputBorder.none),
                           ),
                         ),
                         SizedBox(
@@ -527,6 +472,24 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(top: 15.h,left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(8.0),
+                          //             child: Icon(
+                          //               Icons.phone_outlined,
+                          //               color: Color(0xFFA0A0A0),
+                          //             )),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: Icons.phone_outlined,
@@ -604,6 +567,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
+
                         Row(
                           children: [
                             Radio(
@@ -644,10 +608,46 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                             children: [
                               SizedBox(
                                 width: 50.w,
+                                // child: RadioListTile(
+                                //   groupValue: radioItem,
+                                //   title: Text('Male'),
+                                //   value: 'Item 3',
+                                //   onChanged: (val) {
+                                //     setState(() {
+                                //       radioItem = val;
+                                //     });
+                                //   },
+                                // ),
                               ),
+                              // SizedBox(
+                              //   width: 50.w,
+                              //   child: RadioListTile(
+                              //     groupValue: radioItem,
+                              //     title: Text('Female'),
+                              //     value: 'Item 2',
+                              //     onChanged: (val) {
+                              //       setState(() {
+                              //         radioItem = val;
+                              //       });
+                              //     },
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
+                        // SizedBox(
+                        //   width: 50.w,
+                        //   child: RadioListTile(
+                        //     groupValue: radioItem,
+                        //     title: Text('Other'),
+                        //     value: 'Item 3',
+                        //     onChanged: (val) {
+                        //       setState(() {
+                        //         radioItem = val;
+                        //       });
+                        //     },
+                        //   ),
+                        // ),
                         SizedBox(
                           height: 20.h,
                         ),
@@ -769,6 +769,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                               fontWeight: FontWeight.w600,
                             )),
                         SizedBox(height: 10.h),
+
                         TextField(
                           autofocus: false,
                           maxLines: 10,
@@ -805,6 +806,26 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(
+                          //           top: 15.h, left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(
+                          //             right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(8.0),
+                          //             child: Icon(
+                          //               Icons.insert_link_outlined,
+                          //               color: Color(0xFFA0A0A0),
+                          //             )),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: Icons.insert_link_outlined,
@@ -837,6 +858,24 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(
+                          //           top: 15.h, left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(
+                          //             right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(12.0),
+                          //             child: Icon(FontAwesome.facebook),
+                          //         ),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: FontAwesome.facebook,
@@ -869,10 +908,58 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(
+                          //           top: 15.h, left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(
+                          //             right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(16.0),
+                          //             child: Image.asset(
+                          //               "assets/images/intagram.png",
+                          //               color: Color(0xFFA0A0A0),
+                          //             )
+                          //         ),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: FontAwesome.instagram,
                           ),
+                          // child: Row(
+                          //   children: [
+                          //     Container(
+                          //       height: 50.h,
+                          //       width: 50.w,
+                          //       color: Colors.grey[200],
+                          //       child: Padding(
+                          //           padding: const EdgeInsets.all(16.0),
+                          //           child: Image.asset(
+                          //             "assets/images/intagram.png",
+                          //             color: Color(0xFFA0A0A0),
+                          //             height: 15,
+                          //           )),
+                          //     ),
+                          //     // VerticalDivider(),
+                          //     Expanded(
+                          //       child: Padding(
+                          //         padding: const EdgeInsets.all(10.0),
+                          //         child: TextField(
+                          //           autofocus: false,
+                          //           decoration: InputDecoration(
+                          //               border: InputBorder.none),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                         ),
                         SizedBox(
                           height: 30.h,
@@ -901,6 +988,55 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(
+                          //           top: 15.h, left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(
+                          //             right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(16.0),
+                          //             child: Image.asset(
+                          //               "assets/images/twitter.png",
+                          //               color: Color(0xFFA0A0A0),
+                          //             )
+                          //         ),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
+
+                          // child: Row(
+                          //   children: [
+                          //     Container(
+                          //       height: 45.h,
+                          //       width: 50.w,
+                          //       color: Colors.grey[200],
+                          //       child: Padding(
+                          //           padding: const EdgeInsets.all(16.0),
+                          //           child: Image.asset(
+                          //             "assets/images/twitter.png",
+                          //             color: Color(0xFFA0A0A0),
+                          //             height: 15,
+                          //           )),
+                          //     ),
+                          //     // VerticalDivider(),
+                          //     Expanded(
+                          //       child: Padding(
+                          //         padding: const EdgeInsets.all(10.0),
+                          //         child: TextField(
+                          //           autofocus: false,
+                          //           decoration: InputDecoration(
+                          //               border: InputBorder.none),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: FontAwesome.twitter,
@@ -933,6 +1069,54 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(
+                          //           top: 15.h, left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(
+                          //             right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(16.0),
+                          //             child: Image.asset(
+                          //               "assets/images/linkedin.png",
+                          //               color: Color(0xFFA0A0A0),
+                          //             )
+                          //         ),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
+                          // child: Row(
+                          //   children: [
+                          //     Container(
+                          //       height: 45.h,
+                          //       width: 50.w,
+                          //       color: Colors.grey[200],
+                          //       child: Padding(
+                          //           padding: const EdgeInsets.all(16.0),
+                          //           child: Image.asset(
+                          //             "assets/images/linkedin.png",
+                          //             color: Color(0xFFA0A0A0),
+                          //             height: 20,
+                          //           )),
+                          //     ),
+                          //     // VerticalDivider(),
+                          //     Expanded(
+                          //       child: Padding(
+                          //         padding: const EdgeInsets.all(10.0),
+                          //         child: TextField(
+                          //           autofocus: false,
+                          //           decoration: InputDecoration(
+                          //               border: InputBorder.none),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: FontAwesome.linkedin,
@@ -965,10 +1149,59 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                                   // changes position of shadow
                                 ),
                               ]),
+                          // child: TextField(
+                          //   autofocus: false,
+                          //   decoration: InputDecoration(
+                          //       contentPadding: EdgeInsets.only(
+                          //           top: 15.h, left: 50),
+                          //       prefixIcon: Container(
+                          //         margin: EdgeInsets.only(
+                          //             right: 5.w),
+                          //         height: 50.h,
+                          //         width: 50.w,
+                          //         color: Color(0xFFF8F8F8),
+                          //         child: Padding(
+                          //             padding: EdgeInsets.all(4.0),
+                          //             child: Image.asset(
+                          //               "assets/images/youtubelogo.png",
+                          //               color: Color(0xFFA0A0A0),
+                          //             )
+                          //         ),
+                          //       ),
+                          //       border: InputBorder.none),
+                          // ),
                           child: CustomTextFormField(
                             autoFocus: false,
                             icons: FontAwesome.youtube_play,
                           ),
+                          // child: Row(
+                          //   children: [
+                          //     Container(
+                          //       height: 45.h,
+                          //       width: 50.w,
+                          //       color: Colors.grey[200],
+                          //       child: Padding(
+                          //         padding: const EdgeInsets.all(4.0),
+                          //         child: Image.asset(
+                          //           "assets/images/youtubelogo.png",
+                          //           color: Color(0xFFA0A0A0),
+                          //           height: 30.h,
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     // VerticalDivider(),
+                          //     Expanded(
+                          //       child: Padding(
+                          //         padding: const EdgeInsets.all(10.0),
+                          //         child: TextField(
+                          //           autofocus: false,
+                          //           decoration: InputDecoration(
+                          //               border: InputBorder.none),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
                         ),
                         SizedBox(
                           height: 30.h,
@@ -1202,32 +1435,11 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
   }
 }
 
-class CustomListTile extends StatelessWidget {
-  final IconData leadingIcon, trailingIcon;
-  final String title;
-
-  const CustomListTile(
-      {@required this.leadingIcon, @required this.title, this.trailingIcon});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      dense: true,
-      contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-      leading: Icon(leadingIcon),
-      title: Text(
-        title,
-        style: TextStyle(fontSize: textSize14.sp),
-      ),
-      trailing: Icon(
-        trailingIcon,
-        color: Color(0xff198EDC),
-      ),
-    );
-  }
-}
-
 class DashBoardNavigationList {
+  final BuildContext context;
+
+  DashBoardNavigationList(this.context);
+
   static List<Widget> myAccountList = [
     CustomListTile(
       leadingIcon: Icons.dashboard,
@@ -1292,4 +1504,32 @@ class DashBoardNavigationList {
       title: logout,
     ),
   ];
+}
+
+class CustomListTile extends StatelessWidget {
+  final IconData leadingIcon, trailingIcon;
+  final String title;
+  final onTap;
+
+
+  const CustomListTile(
+      {@required this.leadingIcon, @required this.title, this.trailingIcon, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      dense: true,
+      contentPadding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+      leading: Icon(leadingIcon),
+      onTap: onTap,
+      title: Text(
+        title,
+        style: TextStyle(fontSize: textSize14.sp),
+      ),
+      trailing: Icon(
+        trailingIcon,
+        color: Color(0xff198EDC),
+      ),
+    );
+  }
 }

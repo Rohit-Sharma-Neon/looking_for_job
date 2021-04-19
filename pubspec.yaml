@@ -40,6 +40,7 @@ dependencies:
   google_maps_flutter: ^1.0.3
   location: ^3.0.2
   fluttericon: ^2.0.0
+  like_button: ^2.0.2
 
 
 dev_dependencies:

@@ -8,10 +8,16 @@ class PrimaryButton extends StatelessWidget {
   final double width;
   final double height;
   final void Function() onPressed;
+
   // final Color color;
 
-  const PrimaryButton({Key key, @required this.text, this.width, this.height, this.onPressed,  })
-      : super(key: key);
+  const PrimaryButton({
+    Key key,
+    @required this.text,
+    this.width,
+    this.height,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,7 @@ class PrimaryButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(cornersRadiusLowest),
           ),
         ),
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyle(color: Colors.white, fontSize: textSize16.nsp),
