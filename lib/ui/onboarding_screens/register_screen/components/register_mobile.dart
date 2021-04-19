@@ -33,7 +33,7 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(
-            Radius.circular(cornersRadiusLight),
+            Radius.circular(cornersRadiusLight.r),
           ),
           boxShadow: [
             BoxShadow(
