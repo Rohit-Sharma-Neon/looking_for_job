@@ -35,7 +35,7 @@ class _JobDescriptionState extends State<JobDescription> {
                           TextSpan(
                             text: "iOS Developer (Fresher can apply)",
                             style: TextStyle(
-                              fontSize: 26.nsp,
+                              fontSize: 26.sp,
                               color: Colors.black,
                             ),
                           ),
@@ -52,7 +52,7 @@ class _JobDescriptionState extends State<JobDescription> {
                               text: "Home",
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 18.nsp,
+                                fontSize: 18.sp,
                               ),
                             ),
                             WidgetSpan(
@@ -63,7 +63,7 @@ class _JobDescriptionState extends State<JobDescription> {
                               text: "Information Technology",
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 18.nsp,
+                                fontSize: 18.sp,
                               ),
                             ),
                             WidgetSpan(
@@ -74,7 +74,7 @@ class _JobDescriptionState extends State<JobDescription> {
                               text: "Software Developers, Applications",
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 18.nsp,
+                                fontSize: 18.sp,
                               ),
                             ),
                           ],
@@ -125,7 +125,7 @@ class _JobDescriptionState extends State<JobDescription> {
                         children: [
                           Text("Job Overview",
                               style: TextStyle(
-                                fontSize: 26.nsp,
+                                fontSize: 26.sp,
                                 color: Colors.black,
                               )),
                           SizedBox(height: 10.h),
@@ -144,12 +144,12 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Location",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Colors.black,
                                       )),
                                   Text("Ahemdabad, Gujrat",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Color(0xFF666666),
                                       )),
                                 ],
@@ -172,12 +172,12 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Job Type",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Colors.black,
                                       )),
                                   Text("Full Time",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Color(0xFF666666),
                                       )),
                                 ],
@@ -200,12 +200,12 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Salary",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Colors.black,
                                       )),
                                   Text("12,000 ₹ - 20,000 ₹ Per Month",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Color(0xFF666666),
                                       )),
                                 ],
@@ -227,12 +227,12 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Date Posted",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Colors.black,
                                       )),
                                   Text("9 days ago",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Color(0xFF666666),
                                       )),
                                 ],
@@ -248,7 +248,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Additional Details",
                                       style: TextStyle(
-                                        fontSize: 26.nsp,
+                                        fontSize: 26.sp,
                                         color: Colors.black,
                                       )),
                                 ],
@@ -270,12 +270,12 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Job ID",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Colors.black,
                                       )),
                                   Text("35",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Color(0xFF666666),
                                       )),
                                 ],
@@ -297,12 +297,12 @@ class _JobDescriptionState extends State<JobDescription> {
                                 children: [
                                   Text("Job Views",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Colors.black,
                                       )),
                                   Text("97",
                                       style: TextStyle(
-                                        fontSize: 18.nsp,
+                                        fontSize: 18.sp,
                                         color: Color(0xFF666666),
                                       )),
                                 ],
@@ -316,47 +316,47 @@ class _JobDescriptionState extends State<JobDescription> {
                             children: [
                               Text("Job Description",
                                   style: TextStyle(
-                                    fontSize: 26.nsp,
+                                    fontSize: 26.sp,
                                     color: Colors.black,
                                   )),
                               SizedBox(height: 20.h),
                               Text(
                                   "AP-GROUP is hiring iOS developers with upto 1 years of experience. What do we need? Check below:",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
+                                    fontSize: 18.sp,
                                     color: Color(0xFF666666),
                                   )),
                               SizedBox(height: 20.h),
                               Text(
                                   "- Skills & knowledgeable candidate.\n- Join Immediate bases..",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
+                                    fontSize: 18.sp,
                                     color: Color(0xFF666666),
                                   )),
                               SizedBox(height: 20.h),
                               Text("Why you should choose AP-GROUP?",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
+                                    fontSize: 18.sp,
                                     color: Color(0xFF666666),
                                   )),
                               SizedBox(height: 20.h),
                               Text(
                                   "- 5 Days Working.\n- Big & enterprise projects to work.\n- Increase & develop your skills 100%\n  with advanced technology & concepts.\n- Free work environment, productive and quality.\n- Always mapn  candidates.",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
+                                    fontSize: 18.sp,
                                     color: Color(0xFF666666),
                                   )),
                               SizedBox(height: 20.h),
                               Text(
                                   "To know more share your latest CV on\n the jobs.apgroup@@gmail.com &\n careers@ap-group.in",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
+                                    fontSize: 18.sp,
                                     color: Color(0xFF666666),
                                   )),
                               SizedBox(height: 30.h),
                               Text("Tags",
                                   style: TextStyle(
-                                    fontSize: 26.nsp,
+                                    fontSize: 26.sp,
                                     color: Colors.black,
                                   )),
                               SizedBox(height: 20.h),
@@ -373,7 +373,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                       ),
                                       child: Text(" #iOSDeveloper",
                                           style: TextStyle(
-                                            fontSize: 18.nsp,
+                                            fontSize: 18.sp,
                                             color: Color(0xFF0691CE),
                                           )),
                                     ),
@@ -390,7 +390,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                       ),
                                       child: Text(" #iOSJobs",
                                           style: TextStyle(
-                                            fontSize: 18.nsp,
+                                            fontSize: 18.sp,
                                             color: Color(0xFF0691CE),
                                           )),
                                     ),
@@ -401,13 +401,13 @@ class _JobDescriptionState extends State<JobDescription> {
                               SizedBox(height: 30.h),
                               Text("Location",
                                   style: TextStyle(
-                                    fontSize: 26.nsp,
+                                    fontSize: 26.sp,
                                     color: Colors.black,
                                   )),
                               SizedBox(height: 10.h),
                               Text("Map here...",
                                   style: TextStyle(
-                                    fontSize: 18.nsp,
+                                    fontSize: 18.sp,
                                     color: Colors.black,
                                   )),
 
@@ -438,7 +438,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                   alignment: Alignment.center,
                                   child: Text("Company Details",
                                       style: TextStyle(
-                                        fontSize: 20.nsp,
+                                        fontSize: 20.sp,
                                         color: Colors.black,
                                       )),
                                 ),
@@ -464,7 +464,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                   children: [
                                     Text("AP-GROUP",
                                         style: TextStyle(
-                                          fontSize: 24.nsp,
+                                          fontSize: 24.sp,
                                           color: Colors.black,
                                         )),
                                     SizedBox(height: 10.h),
@@ -495,7 +495,7 @@ class _JobDescriptionState extends State<JobDescription> {
                               SizedBox(height: 30.h),
                               Text("Bookmark or Share",
                                   style: TextStyle(
-                                    fontSize: 26.nsp,
+                                    fontSize: 26.sp,
                                     color: Colors.black,
                                   )),
 
@@ -574,7 +574,7 @@ class _JobDescriptionState extends State<JobDescription> {
 
                               Text("More Info",
                                   style: TextStyle(
-                                    fontSize: 24.nsp,
+                                    fontSize: 24.sp,
                                     color: Colors.black,
                                   )),
 
@@ -590,7 +590,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                       SizedBox(width: 10.w),
                                       Text("More jobs by AP-GROUP",
                                           style: TextStyle(
-                                            fontSize: 16.nsp,
+                                            fontSize: 16.sp,
                                             color: Colors.black,
                                           )),
                                     ],

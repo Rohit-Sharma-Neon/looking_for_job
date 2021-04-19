@@ -66,7 +66,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                   Text(
                     myAccount,
                     style: TextStyle(
-                        color: Color(0xFF0691CE), fontSize: textSize16.nsp),
+                        color: Color(0xFF0691CE), fontSize: textSize16.sp),
                   ),
                   Column(
                     children: DashBoardNavigationList.myAccountList,
@@ -74,7 +74,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                   Text(
                     myJobs,
                     style: TextStyle(
-                        color: Color(0xFF0691CE), fontSize: textSize16.nsp),
+                        color: Color(0xFF0691CE), fontSize: textSize16.sp),
                   ),
                   Column(
                     children: DashBoardNavigationList.myJobsList,
@@ -82,7 +82,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                   Text(
                     account,
                     style: TextStyle(
-                        color: Color(0xFF0691CE), fontSize: textSize16.nsp),
+                        color: Color(0xFF0691CE), fontSize: textSize16.sp),
                   ),
                   Column(
                     children: DashBoardNavigationList.accountList,
@@ -114,7 +114,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
           sliderMenuOpenSize: 280,
           title: Text(
             "title",
-            style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+            style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w700),
           ),
           sliderMenu: MenuWidget(
             drawerKey: _sliderMenuContainerStateKey,
@@ -155,7 +155,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                             style: TextStyle(
                                 color: Color(0xFFFFFFFF),
                                 fontWeight: FontWeight.w600,
-                                fontSize: 18.nsp),
+                                fontSize: 18.sp),
                             text: dashboardNavigation,
                           ),
                         ],
@@ -190,7 +190,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                 //             WidgetSpan(
                 //               child: Icon(
                 //                 Icons.access_time,
-                //                 size: 28.nsp,
+                //                 size: 28.sp,
                 //                 color: Colors.blue,
                 //               ),
                 //             ),
@@ -200,7 +200,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                 //                 )),
                 //             TextSpan(
                 //               style: TextStyle(
-                //                   color: Colors.black, fontSize: 18.nsp),
+                //                   color: Colors.black, fontSize: 18.sp),
                 //               text: "Pending Jobs",
                 //             ),
                 //           ],
@@ -238,7 +238,7 @@ class _HiddenJobScreenState extends State<HiddenJobScreen> {
                 //                             Text(
                 //                               "jobs",
                 //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
+                //                                 fontSize: 18.sp,
                 //                                 color: Colors.white,
                 //                               ),
                 //                             ),
