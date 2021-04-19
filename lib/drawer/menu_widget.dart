@@ -186,7 +186,15 @@ class MenuWidget extends StatelessWidget {
                   );
                   break;
                 }
-
+              case 13:
+                {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/faq_screen',
+                        (Route<dynamic> route) => false,
+                  );
+                  break;
+                }
               case 14:
                 {
                   Navigator.pushNamedAndRemoveUntil(
@@ -253,5 +261,6 @@ class DrawerList {
     faq,
     feedBack,
     contect,
+    postAJob,
   ];
 }

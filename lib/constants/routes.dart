@@ -7,6 +7,7 @@ import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/main/expiredjobs_screen/expiredjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/faq_screen/faq_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
@@ -28,7 +29,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => MyResumeScreen(),
+  '/': (context) => FaqScreen(),
   // OnBoardings
   '/job_description': (context) => JobDescription(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
@@ -45,7 +46,7 @@ var customRoutes = <String, WidgetBuilder>{
   '/favoriteusers_screen': (context) => FavoriteUserScreen(),
   '/transaction_screen': (context) => TransactionScreen(),
   '/postajob_screen': (context) => PostJobMobileComponent(),
-  '/browsejob_screen': (context) => BrowseJobScreen(),
+  '/faq_screen': (context) => FaqScreen(),
 
 
   '/register_page': (context) => RegisterPage(),
@@ -56,6 +57,7 @@ var customRoutes = <String, WidgetBuilder>{
   '/my_resume_screen': (context) => MyResumeScreen(),
   '/add_new_resume': (context) => AddNewResume(),
   '/feedback': (context) => FeedbackScreen(),
+  '/browsejob_screen': (context) => BrowseJobScreen(),
 
   //job seeker Screens
   '/favoritejob_screen': (context) => FavoriteJobScreen(),
