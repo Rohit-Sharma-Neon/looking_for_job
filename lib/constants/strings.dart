@@ -21,7 +21,7 @@ const String jobCategories = "Job Categories";
 const String informationTechnology = "Information Technology";
 const String management = "Management";
 const String architectureAndEngineer = "Architecture and Engineer";
-String dropdownValue="Select Company";
+const String dropdownValue= "Select Company";
 
 // EmployerDashboard
 const String youLastLogged_ = "You last logged in at: 26 Mar 2021";
@@ -41,6 +41,8 @@ const String favoriteUsers = "Favorite Users";
 const String account = "Account";
 const String transactions = "Transactions";
 const String logout = "Logout";
+
+
 
 // ProfilePublicView
 const String title = "title";
@@ -101,4 +103,7 @@ const String nojobsFound = "No jobs found.";
 const String male = "Male";
 const String feMale = "Female";
 const String other = "Other";
+const String faq = "FAQ";
+const String feedBack = "Feedback";
+const String contect = "Contect";
 
