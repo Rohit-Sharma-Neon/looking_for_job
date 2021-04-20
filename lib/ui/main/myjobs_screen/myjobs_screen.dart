@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
@@ -89,8 +90,8 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
               ),
 
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                height: 230.h,
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                // height: 230.h,
                 width: 330.w,
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -203,7 +204,9 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        latestJobsComponent(),
+
                       ],
                     ),
                   ],

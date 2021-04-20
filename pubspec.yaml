@@ -43,6 +43,9 @@ dependencies:
   gender_selection: ^1.0.0
   spring: ^1.0.4
   animations: ^2.0.0
+  custom_splash: ^0.0.2
+  splash_screen_view: ^1.0.3
+  flutter_icons: ^1.1.0
 
 
 dev_dependencies:

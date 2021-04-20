@@ -30,7 +30,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => SplashScreen(),
+  '/': (context) => PendingJobScreen(),
 
   '/login_screen': (context) => LoginPage(),
   '/register_page': (context) => RegisterPage(),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
+import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
@@ -84,8 +85,8 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
               ),
 
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 25.w),
-                height: 250.h,
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                // height: 250.h,
                 width: 330.w,
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -220,7 +221,8 @@ class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        latestJobsComponent(),
                       ],
                     ),
                   ],
