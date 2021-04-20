@@ -82,7 +82,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Color(0xFFFFFFFF),
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(5.r),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
