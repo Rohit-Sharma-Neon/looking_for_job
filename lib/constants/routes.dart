@@ -30,7 +30,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_
 var customRoutes = <String, WidgetBuilder>{
   '/': (context) => BrowseJobScreen(),
   // OnBoardings
-  '/job_description': (context) => JobDescription(),
+  '/companies_screen': (context) => CompaniesScreen(),
   // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
 
   '/dashboard_screen': (context) => DashBoardScreen(),

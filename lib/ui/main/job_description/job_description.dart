@@ -1,10 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:like_button/like_button.dart';
 import 'package:location/location.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
+import 'package:lookingforjob_flutter/ui/main/my_resume/my_resume_screen.dart';
+import 'package:progress_state_button/iconed_button.dart';
+import 'package:progress_state_button/progress_button.dart';
 
 import '../../../constants/primary_button.dart';
 import '../../../constants/sizes.dart';
@@ -18,11 +25,67 @@ class JobDescription extends StatefulWidget {
 }
 
 class _JobDescriptionState extends State<JobDescription> {
+  ButtonState stateTextWithIcon = ButtonState.idle;
+  ButtonState stateTextWithIconMinWidthState = ButtonState.idle;
+
+  Widget buildTextWithIcon() {
+    return ProgressButton.icon(
+      iconedButtons: {
+        ButtonState.idle: IconedButton(
+            text: "Apply Now",
+            icon: Icon(Icons.send, color: Colors.white),
+            color: Colors.deepPurple.shade500),
+        ButtonState.loading:
+            IconedButton(text: "Loading", color: Colors.deepPurple.shade700),
+        ButtonState.success: IconedButton(
+            text: "Success",
+            icon: Icon(
+              Icons.check_circle,
+              color: Colors.white,
+            ),
+            color: Colors.green.shade400),
+        ButtonState.fail: IconedButton(
+            text: "Failed",
+            icon: Icon(Icons.cancel, color: Colors.white),
+            color: Colors.red.shade300),
+      },
+      radius: 0.0,
+      onPressed: onPressedIconWithText,
+      state: stateTextWithIcon,
+    );
+  }
+
+  Widget buildTextWithIconWithMinState() {
+    return ProgressButton.icon(
+      iconedButtons: {
+        ButtonState.idle: IconedButton(
+            text: "Send",
+            icon: Icon(Icons.send, color: Colors.white),
+            color: Colors.deepPurple.shade500),
+        ButtonState.loading:
+            IconedButton(text: "Loading", color: Colors.deepPurple.shade700),
+        ButtonState.fail: IconedButton(
+            text: "Failed",
+            icon: Icon(Icons.cancel, color: Colors.white),
+            color: Colors.red.shade300),
+        ButtonState.success: IconedButton(
+            icon: Icon(
+              Icons.check_circle,
+              color: Colors.white,
+            ),
+            color: Colors.green.shade400)
+      },
+      onPressed: onPressedIconWithMinWidthStateText,
+      state: stateTextWithIconMinWidthState,
+      minWidthStates: [ButtonState.loading, ButtonState.success],
+    );
+  }
+
   GoogleMapController mapController;
   Location _location = Location();
 
   static const LatLng _initialcameraposition =
-  const LatLng(45.521563, -122.677433);
+      const LatLng(45.521563, -122.677433);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -36,14 +99,7 @@ class _JobDescriptionState extends State<JobDescription> {
   }
 
   MapType _currentMapType = MapType.normal;
-  void _onMapTypeButtonPressed() {
-    setState(() {
-      _currentMapType = _currentMapType == MapType.normal
-          ? MapType.satellite
-          : MapType.normal;
-    });
-  }
-  final TextEditingController _typeAheadController = TextEditingController();
+
   BoxShadow _boxShadow() {
     return BoxShadow(
       color: Colors.grey.withOpacity(0.2),
@@ -52,22 +108,18 @@ class _JobDescriptionState extends State<JobDescription> {
       offset: Offset(0, 0),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-      bottomSheet: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
-            primary: primaryColorLight,
-            minimumSize: Size(double.infinity, 40.h)),
-        onPressed: () {},
-        child: Text(
-          "Apply Now",
-          style: TextStyle(fontSize: textSize16.sp),
+      bottomSheet: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(0),
         ),
+        width: double.infinity,
+        child: buildTextWithIcon(),
       ),
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -79,7 +131,10 @@ class _JobDescriptionState extends State<JobDescription> {
               backgroundColor: Colors.teal[50],
               pinned: true,
               snap: false,
-              leading: Icon(Icons.arrow_back_ios_rounded,color: Colors.blue,),
+              leading: Icon(
+                Icons.arrow_back_ios_rounded,
+                color: Colors.blue,
+              ),
               // centerTitle: true,
               // actions: [
               //   Padding(
@@ -137,30 +192,26 @@ class _JobDescriptionState extends State<JobDescription> {
               //   ),
               // ],
               flexibleSpace: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                ),
                 child: FlexibleSpaceBar(
                   centerTitle: true,
-                  title: Text("iOS Developer (Fresher can apply)",
+                  title: Text(
+                    "iOS Developer (Fresher can apply)",
                     style: TextStyle(
-                        fontSize: textSize18.sp,
-                        color: Colors.black,
-                      ),),
-
-                  background: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(appleIcon,height: 70.nsp,),
-                      SizedBox(width: 50),
-                      PrimaryButton(text: "Apply Now",),
-
-
-                    ],
-                  )
-
+                      fontSize: textSize18.sp,
+                      color: Colors.black,
+                    ),
+                  ),
+                  background: Image.asset(
+                    appleIcon,
+                    // height: 70.nsp,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
-
           ];
         },
         body: Stack(
@@ -280,53 +331,56 @@ class _JobDescriptionState extends State<JobDescription> {
                           color: Colors.white,
                           width: 400.w,
                           child: Padding(
-                            padding:
-                            EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15.h, horizontal: 15.w),
                             child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.w),
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                    borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
+                                      borderRadius: BorderRadius.circular(
+                                          cornersRadiusLowest.r),
                                       boxShadow: [_boxShadow()],
                                     ),
                                     child: Column(
                                       children: [
+                                        SizedBox(height: 10),
                                         Text("Job Overview",
                                             style: TextStyle(
-                                              fontSize: 26.sp,
+                                              fontSize: textSize22.sp,
                                               color: Colors.black,
                                             )),
                                         Divider(
                                           color: Colors.grey,
-                                          indent: 50,
-                                          endIndent: 50,
                                         ),
                                         SizedBox(height: 20.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.location_on,
-                                              size: 22,
+                                              size: 20,
                                               color: Color(0xFF0691CE),
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Location",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Colors.black,
                                                     )),
                                                 Text("Ahemdabad, Gujrat",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Color(0xFF666666),
                                                     )),
                                               ],
@@ -335,26 +389,28 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.shop_outlined,
-                                              size: 22,
+                                              size: 20,
                                               color: Color(0xFF0691CE),
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Job Type",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Colors.black,
                                                     )),
                                                 Text("Full Time",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Color(0xFF666666),
                                                     )),
                                               ],
@@ -363,26 +419,29 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.account_balance,
-                                              size: 22,
+                                              size: 20,
                                               color: Color(0xFF0691CE),
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Salary",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Colors.black,
                                                     )),
-                                                Text("12,000 ₹ - 20,000 ₹ Per Month",
+                                                Text(
+                                                    "12,000 ₹ - 20,000 ₹ Per Month",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Color(0xFF666666),
                                                     )),
                                               ],
@@ -391,25 +450,27 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.timer,
-                                              size: 22,
+                                              size: 20,
                                               color: Color(0xFF0691CE),
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Date Posted",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Colors.black,
                                                     )),
                                                 Text("9 days ago",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Color(0xFF666666),
                                                     )),
                                               ],
@@ -420,58 +481,58 @@ class _JobDescriptionState extends State<JobDescription> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 15.h,),
+                                  SizedBox(
+                                    height: 15.h,
+                                  ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.w),
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
+                                      borderRadius: BorderRadius.circular(
+                                          cornersRadiusLowest.r),
                                       boxShadow: [_boxShadow()],
                                     ),
-
                                     child: Column(
                                       children: [
                                         SizedBox(height: 15.h),
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text("Additional Details",
-                                                    style: TextStyle(
-                                                      fontSize: 26.sp,
-                                                      color: Colors.black,
-                                                    )),
-                                              ],
-                                            ),
+                                            Text("Additional Details",
+                                                style: TextStyle(
+                                                  fontSize: textSize22.sp,
+                                                  color: Colors.black,
+                                                )),
                                           ],
                                         ),
                                         Divider(
                                           color: Colors.grey,
-                                          endIndent: 70,
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.assignment_ind,
-                                              size: 22,
+                                              size: 20,
                                               color: Color(0xFF0691CE),
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Job ID",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Colors.black,
                                                     )),
                                                 Text("35",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Color(0xFF666666),
                                                     )),
                                               ],
@@ -480,25 +541,27 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.perm_identity,
-                                              size: 22,
+                                              size: 20,
                                               color: Color(0xFF0691CE),
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Job Views",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Colors.black,
                                                     )),
                                                 Text("97",
                                                     style: TextStyle(
-                                                      fontSize: 18.sp,
+                                                      fontSize: textSize16.sp,
                                                       color: Color(0xFF666666),
                                                     )),
                                               ],
@@ -512,51 +575,57 @@ class _JobDescriptionState extends State<JobDescription> {
                                   SizedBox(height: 20.h),
                                   Column(
                                     mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Text("Job Description",
-                                          style: TextStyle(
-                                            fontSize: 26.sp,
-                                            color: Colors.black,
-                                          )),
+                                      Row(
+                                        children: [
+                                          Text("Job Description",
+                                              style: TextStyle(
+                                                fontSize: 26.sp,
+                                                color: Colors.black,
+                                              )),
+                                          Icon(Icons.description_outlined)
+                                        ],
+                                      ),
                                       SizedBox(height: 20.h),
                                       Text(
-                                          "AP-GROUP is hiring iOS developers with upto 1 years of experience. What do we need? Check below:",
+                                          "# AP-GROUP is hiring iOS developers with upto 1 years of experience. What do we need? Check below:",
                                           style: TextStyle(
-                                            fontSize: 18.sp,
+                                            fontSize: textSize15.sp,
                                             color: Color(0xFF666666),
                                           )),
-                                      SizedBox(height: 20.h),
+                                      SizedBox(height: 15.h),
                                       Text(
                                           "- Skills & knowledgeable candidate.\n- Join Immediate bases..",
                                           style: TextStyle(
-                                            fontSize: textSize18.sp,
+                                            fontSize: textSize15.sp,
                                             color: Color(0xFF666666),
                                           )),
-                                      SizedBox(height: 20.h),
-                                      Text("Why you should choose AP-GROUP?",
+                                      SizedBox(height: 25.h),
+                                      Text("# Why you should choose AP-GROUP?",
                                           style: TextStyle(
-                                            fontSize: 18.sp,
+                                            fontSize: textSize15.sp,
                                             color: Color(0xFF666666),
                                           )),
-                                      SizedBox(height: 20.h),
+                                      SizedBox(height: 15.h),
                                       Text(
                                           "- 5 Days Working.\n- Big & enterprise projects to work.\n- Increase & develop your skills 100%\n  with advanced technology & concepts.\n- Free work environment, productive and quality.\n- Always mapn  candidates.",
                                           style: TextStyle(
-                                            fontSize: 18.sp,
+                                            fontSize: textSize15.sp,
                                             color: Color(0xFF666666),
                                           )),
                                       SizedBox(height: 20.h),
                                       Text(
                                           "To know more share your latest CV on\n the jobs.apgroup@@gmail.com &\n careers@ap-group.in",
                                           style: TextStyle(
-                                            fontSize: 18.sp,
+                                            fontSize: textSize15.sp,
                                             color: Color(0xFF666666),
                                           )),
                                       SizedBox(height: 30.h),
                                       Text("Tags",
                                           style: TextStyle(
-                                            fontSize: 26.sp,
+                                            fontSize: textSize15.sp,
                                             color: Colors.black,
                                           )),
                                       SizedBox(height: 20.h),
@@ -569,7 +638,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                               width: 130.w,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEFF7FD),
-                                                borderRadius: BorderRadius.circular(5),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
                                               ),
                                               child: Text(" #iOSDeveloper",
                                                   style: TextStyle(
@@ -586,7 +656,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                               width: 90.w,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEFF7FD),
-                                                borderRadius: BorderRadius.circular(5),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
                                               ),
                                               child: Text(" #iOSJobs",
                                                   style: TextStyle(
@@ -598,7 +669,9 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ],
                                       ),
                                       SizedBox(height: 8.h),
-                                      Divider(color: Colors.grey,),
+                                      Divider(
+                                        color: Colors.grey,
+                                      ),
                                       SizedBox(height: 20.h),
                                       Row(
                                         children: [
@@ -607,7 +680,9 @@ class _JobDescriptionState extends State<JobDescription> {
                                                 fontSize: 26.sp,
                                                 color: Colors.black,
                                               )),
-                                          SizedBox(width: 10.w,),
+                                          SizedBox(
+                                            width: 10.w,
+                                          ),
                                           Icon(Icons.map)
                                         ],
                                       ),
@@ -615,8 +690,9 @@ class _JobDescriptionState extends State<JobDescription> {
                                       Container(
                                         height: height * 0.6,
                                         width: width,
-                                        decoration:
-                                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
                                         child: GoogleMap(
                                           onMapCreated: _onMapCreated,
                                           initialCameraPosition: CameraPosition(
@@ -680,7 +756,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                           //     bottomRight: Radius.circular(5)),
                                         ),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text("AP-GROUP",
                                                 style: TextStyle(
@@ -691,7 +768,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                             MaterialButton(
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                    BorderRadius.circular(5.0),
                                               ),
                                               color: Color(0xFF0691CE),
                                               textColor: Color(0xFFffffff),
@@ -705,20 +782,21 @@ class _JobDescriptionState extends State<JobDescription> {
                                       SizedBox(height: 30.h),
                                       Text("Bookmark or Share",
                                           style: TextStyle(
-                                            fontSize: 26.sp,
+                                            fontSize: textSize20.sp,
+                                            fontWeight: FontWeight.w600,
                                             color: Colors.black,
                                           )),
 
-                                      SizedBox(height: 10.h),
-
+                                      SizedBox(height: 8.h),
                                       InkWell(
                                         onTap: () {},
                                         child: Container(
                                           width: 200.w,
                                           height: 50.h,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFF414141) ,
-                                            borderRadius: BorderRadius.circular(5),
+                                            color: Color(0xFF414141),
+                                            borderRadius:
+                                            BorderRadius.circular(5),
                                           ),
                                           child: Row(
                                             children: [
@@ -732,8 +810,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                                     ),
                                                   )),
                                               InkWell(
-                                                onTap: (){
-                                                },
+                                                onTap: () {},
                                                 child: Container(
                                                   width: 50.w,
                                                   height: 50.h,
@@ -742,9 +819,36 @@ class _JobDescriptionState extends State<JobDescription> {
                                                     borderRadius:
                                                     BorderRadius.circular(5),
                                                   ),
-                                                  child: Icon(
-                                                    Icons.favorite,
-                                                    color: Colors.white,
+                                                  child: LikeButton(
+                                                    size: 30,
+                                                    circleColor:
+                                                    CircleColor(start: Color(0xff00ddff), end: Color(0xff0099cc)),
+                                                    bubblesColor: BubblesColor(
+                                                      dotPrimaryColor: Color(0xff33b5e5),
+                                                      dotSecondaryColor: Color(0xff0099cc),
+                                                    ),
+                                                    likeBuilder: (bool isLiked) {
+                                                      return Icon(
+                                                        Icons.favorite,
+                                                        color: isLiked ? Colors.deepPurpleAccent : Colors.white,
+                                                        size: 30,
+                                                      );
+                                                    },
+                                                    countBuilder: (int count, bool isLiked, String text) {
+                                                      var color = isLiked ? Colors.deepPurpleAccent : Colors.white;
+                                                      Widget result;
+                                                      if (count == 0) {
+                                                        result = Text(
+                                                          "love",
+                                                          style: TextStyle(color: color),
+                                                        );
+                                                      } else
+                                                        result = Text(
+                                                          text,
+                                                          style: TextStyle(color: color),
+                                                        );
+                                                      return result;
+                                                    },
                                                   ),
                                                 ),
                                               )
@@ -752,8 +856,6 @@ class _JobDescriptionState extends State<JobDescription> {
                                           ),
                                         ),
                                       ),
-
-                                      SizedBox(height: 10.h),
                                       Wrap(
                                         spacing: 2,
                                         children: <Widget>[
@@ -768,8 +870,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             onPressed: () {},
                                           ),
                                           IconButton(
-                                            icon:
-                                            Image.asset(gmaillogos, height: 100.h),
+                                            icon: Image.asset(gmaillogos,
+                                                height: 100.h),
                                             onPressed: () {},
                                           ),
                                           IconButton(
@@ -778,33 +880,35 @@ class _JobDescriptionState extends State<JobDescription> {
                                             onPressed: () {},
                                           ),
                                           IconButton(
-                                            icon:
-                                            Image.asset(twitterlogo, height: 100.h),
+                                            icon: Image.asset(twitterlogo,
+                                                height: 100.h),
                                             onPressed: () {},
                                           ),
                                         ],
                                       ),
-                                      SizedBox(height: 30.h),
+                                      SizedBox(height: 20.h),
 
                                       Text("More Info",
                                           style: TextStyle(
-                                            fontSize: 24.sp,
+                                            fontSize: textSize20.sp,
                                             color: Colors.black,
                                           )),
 
                                       SizedBox(height: 10.h),
 
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Row(
                                             children: [
                                               Icon(Icons.shop_outlined,
-                                                  size: 22, color: Color(0xFF0691CE)),
+                                                  size: 20,
+                                                  color: Color(0xFF0691CE)),
                                               SizedBox(width: 10.w),
                                               Text("More jobs by AP-GROUP",
                                                   style: TextStyle(
-                                                    fontSize: 16.sp,
+                                                    fontSize: textSize16.sp,
                                                     color: Colors.black,
                                                   )),
                                             ],
@@ -812,12 +916,15 @@ class _JobDescriptionState extends State<JobDescription> {
                                           SizedBox(height: 10.h),
                                           Row(
                                             children: [
-                                              Icon(Icons.perm_contact_cal_rounded,
-                                                  size: 22, color: Color(0xFF0691CE)),
+                                              Icon(
+                                                  Icons
+                                                      .perm_contact_cal_rounded,
+                                                  size: 20,
+                                                  color: Color(0xFF0691CE)),
                                               SizedBox(width: 10.w),
                                               Text("More jobs by Akash Panchal",
                                                   style: TextStyle(
-                                                    fontSize: 16.nsp,
+                                                    fontSize: textSize16.sp,
                                                     color: Colors.black,
                                                   )),
                                             ],
@@ -956,8 +1063,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                       // ),
                                     ],
                                   ),
-                                ]
-                            ),
+                                ]),
                           ),
                         ),
                       ],
@@ -969,7 +1075,60 @@ class _JobDescriptionState extends State<JobDescription> {
           ],
         ),
       ),
-
     );
+  }
+
+  void onPressedIconWithText() {
+    switch (stateTextWithIcon) {
+      case ButtonState.idle:
+        stateTextWithIcon = ButtonState.loading;
+        Future.delayed(Duration(seconds: 1), () {
+          setState(() {
+            stateTextWithIcon = Random.secure().nextBool()
+                ? ButtonState.success
+                : ButtonState.fail;
+          });
+        });
+
+        break;
+      case ButtonState.loading:
+        break;
+      case ButtonState.success:
+        stateTextWithIcon = ButtonState.idle;
+        break;
+      case ButtonState.fail:
+        stateTextWithIcon = ButtonState.idle;
+        break;
+    }
+    setState(() {
+      stateTextWithIcon = stateTextWithIcon;
+    });
+  }
+
+  void onPressedIconWithMinWidthStateText() {
+    switch (stateTextWithIcon) {
+      case ButtonState.idle:
+        stateTextWithIconMinWidthState = ButtonState.loading;
+        Future.delayed(Duration(seconds: 1), () {
+          setState(() {
+            stateTextWithIconMinWidthState = Random.secure().nextBool()
+                ? ButtonState.success
+                : ButtonState.fail;
+          });
+        });
+
+        break;
+      case ButtonState.loading:
+        break;
+      case ButtonState.success:
+        stateTextWithIconMinWidthState = ButtonState.idle;
+        break;
+      case ButtonState.fail:
+        stateTextWithIconMinWidthState = ButtonState.idle;
+        break;
+    }
+    setState(() {
+      stateTextWithIconMinWidthState = stateTextWithIconMinWidthState;
+    });
   }
 }

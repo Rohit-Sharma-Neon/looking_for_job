@@ -41,6 +41,7 @@ dependencies:
   location: ^3.0.2
   fluttericon: ^2.0.0
   like_button: ^2.0.2
+  progress_state_button: ^1.0.3
 
 
 dev_dependencies:
