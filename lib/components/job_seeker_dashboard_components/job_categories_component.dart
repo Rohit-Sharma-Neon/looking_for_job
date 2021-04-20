@@ -20,7 +20,7 @@ Widget jobCategoriesComponent() {
 
   return Container(
     color: Color(0xffF9F9F9),
-    padding: EdgeInsets.only(top: 75.h, bottom: 20.h),
+    padding: EdgeInsets.only(top: 50.h, bottom: 20.h),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -36,9 +36,9 @@ Widget jobCategoriesComponent() {
           shrinkWrap: true,
           itemCount: jobsList.length,
           itemBuilder: (
-            BuildContext context,
-            int index,
-          ) {
+              BuildContext context,
+              int index,
+              ) {
             return Column(children: [
               ListTile(
                 contentPadding: EdgeInsets.symmetric(
@@ -58,7 +58,7 @@ Widget jobCategoriesComponent() {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
                 child: Divider(
                   color: Colors.grey[300],
                 ),
@@ -73,3 +73,6 @@ Widget jobCategoriesComponent() {
     ),
   );
 }
+
+
+

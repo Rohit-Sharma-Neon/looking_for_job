@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
+import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 
 import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
@@ -14,6 +16,8 @@ class FaqScreen extends StatefulWidget {
 }
 
 class _FaqScreenState extends State<FaqScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
   GlobalKey<SliderMenuContainerState>();
 
@@ -24,6 +28,13 @@ class _FaqScreenState extends State<FaqScreen> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFF8F8F8),
+        key: _scaffoldKey,
+        appBar: BaseAppBar2(
+          title: 'Dashboard',
+          leadingIcon: Icons.menu,
+          scaffoldKey: _scaffoldKey,
+        ),
+        drawer: BaseDrawer(),
         body: SliderMenuContainer(
           drawerIconColor: Colors.transparent,
           drawerIconSize: 0,
@@ -42,7 +53,6 @@ class _FaqScreenState extends State<FaqScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                webHeader(_sliderMenuContainerStateKey),
                 Container(
                   padding:
                   EdgeInsets.symmetric(vertical: 50.h, horizontal: 20.w),

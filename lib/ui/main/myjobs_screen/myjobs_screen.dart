@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
+import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:lookingforjob_flutter/widgets/dashboard_navigation_button.dart';
 
@@ -13,6 +14,7 @@ class MyJobsScreen extends StatefulWidget {
 }
 
 class _MyJobsScreenState extends State<MyJobsScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   int selectedRadio;
   String _cityValue;
 
@@ -25,7 +27,12 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(),
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
+      ),
       drawer: BaseDrawer(),
       body: SingleChildScrollView(
         child: Padding(
@@ -66,8 +73,7 @@ class _MyJobsScreenState extends State<MyJobsScreen> {
                       children: [
                         WidgetSpan(child: SizedBox(width: 10.w)),
                         WidgetSpan(
-                          child: Icon(
-                            Icons.shopping_bag,
+                          child: Icon(FontAwesome5.shopping_bag,
                             size: 28.nsp,
                             color: Colors.blue,
                           ),

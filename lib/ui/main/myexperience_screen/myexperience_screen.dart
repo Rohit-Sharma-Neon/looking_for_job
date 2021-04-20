@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
+import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 
 import '../../../components/galobal_components/web_header.dart';
 import '../../../constants/colors.dart';
@@ -16,6 +18,7 @@ class MyExperienceScreen extends StatefulWidget {
 }
 
 class _MyExperienceScreenState extends State<MyExperienceScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   List<Icon> icons = [];
 
   GlobalKey _key = LabeledGlobalKey("button_icon");
@@ -104,243 +107,86 @@ class _MyExperienceScreenState extends State<MyExperienceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xFFF8F8F8),
-        body: SliderMenuContainer(
-          drawerIconColor: Colors.transparent,
-          drawerIconSize: 0,
-          appBarColor: bgScaffoldColor,
-          appBarHeight: 0,
-          key: _sliderMenuContainerStateKey,
-          sliderMenuOpenSize: 280,
-          title: Text(
-            "title",
-            style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
-          ),
-          sliderMenu: MenuWidget(
-            drawerKey: _sliderMenuContainerStateKey,
-          ),
-          sliderMain: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                webHeader(_sliderMenuContainerStateKey),
-                SizedBox(height: 15.h),
-                InkWell(
-                  onTap: () {
-                    if (isDashboardNavigationOpen) {
-                      closeDashboardNavigationMenu();
-                    } else {
-                      openDashboardNavigationMenu();
-                    }
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(15.h),
-                    margin: EdgeInsets.symmetric(
-                        horizontal: scaffoldHorizontalPadding.w),
-                    width: double.infinity,
-                    key: _key,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF333333),
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                    child: Text.rich(
-                      TextSpan(
-                        children:[
-                          WidgetSpan(
-                              child: Image(
-                                  height: 15,
-                                  image: AssetImage('assets/images/menu.png'))),
-                          WidgetSpan(child: SizedBox(width: 15.w)),
-                          TextSpan(
-                            style: TextStyle(
-                                color: Color(0xFFFFFFFF),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18.nsp),
-                            text: dashboardNavigation,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                // Container(
-                //   padding: EdgeInsets.all(15.h),
-                //   margin: EdgeInsets.symmetric(
-                //       horizontal: scaffoldHorizontalPadding.w, vertical: 25.h),
-                //   height: 220.h,
-                //   width: 400.w,
-                //   decoration: BoxDecoration(
-                //     color: Color(0xFFFFFFFF),
-                //     borderRadius: BorderRadius.circular(0),
-                //     boxShadow: [
-                //       BoxShadow(
-                //         color: Colors.grey.withOpacity(0.2),
-                //         spreadRadius: 1,
-                //         blurRadius: 1,
-                //         offset: Offset(0, 0),
-                //       )
-                //     ],
-                //   ),
-                //   child: Column(
-                //     crossAxisAlignment: CrossAxisAlignment.start,
-                //     children: [
-                //       RichText(
-                //         text: TextSpan(
-                //           children: [
-                //             WidgetSpan(
-                //               child: Icon(
-                //                 Icons.access_time,
-                //                 size: 28.nsp,
-                //                 color: Colors.blue,
-                //               ),
-                //             ),
-                //             WidgetSpan(
-                //                 child: SizedBox(
-                //                   width: 10,
-                //                 )),
-                //             TextSpan(
-                //               style: TextStyle(
-                //                   color: Colors.black, fontSize: 18.nsp),
-                //               text: "Pending Jobs",
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //       Divider(
-                //         color: Colors.black,
-                //         height: 25.h,
-                //       ),
-                //       SizedBox(height: 10.h),
-                //       Column(
-                //         mainAxisSize: MainAxisSize.min,
-                //         crossAxisAlignment: CrossAxisAlignment.end,
-                //         children: [
-                //           SizedBox(
-                //             height: 100.h,
-                //             child: Scrollbar(
-                //               child: ListView(
-                //                 shrinkWrap: true,
-                //                 scrollDirection: Axis.horizontal,
-                //                 children: [
-                //                   Column(
-                //                     mainAxisSize: MainAxisSize.min,
-                //                     children: [
-                //                       SizedBox(height: 5.h),
-                //                       MaterialButton(
-                //                         height: 50.h,
-                //                         minWidth: 250.w,
-                //                         shape: RoundedRectangleBorder(
-                //                             borderRadius: new BorderRadius.circular(5)),
-                //                         onPressed: () {},
-                //                         child: Row(
-                //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //                           children: [
-                //                             Text(
-                //                               "jobs",
-                //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
-                //                                 color: Colors.white,
-                //                               ),
-                //                             ),
-                //                             SizedBox(width: 180.w),
-                //                             Text(
-                //                               "Status",
-                //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
-                //                                 color: Colors.white,
-                //                               ),
-                //                             ),
-                //                             SizedBox(width: 100.w),
-                //                             Text(
-                //                               "Actions",
-                //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
-                //                                 color: Colors.white,
-                //                               ),
-                //                             ),
-                //                           ],
-                //                         ),
-                //                         color: Colors.blue,
-                //                       ),
-                //                       SizedBox(height: 10.h),
-                //                       Text("No pending jobs found."),
-                //                     ],
-                //                   ),
-                //                 ],
-                //               ),
-                //             ),
-                //           )
-                //         ],
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                SizedBox(height: 20.h),
-                Container(
-                  height: 60.h,
-                  width: 330.w,
+    return Scaffold(
+      backgroundColor: Color(0xFFF8F8F8),
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
+      ),
+      drawer: BaseDrawer(),
+      body: SliderMenuContainer(
+        drawerIconColor: Colors.transparent,
+        drawerIconSize: 0,
+        appBarColor: bgScaffoldColor,
+        appBarHeight: 0,
+        key: _sliderMenuContainerStateKey,
+        sliderMenuOpenSize: 280,
+        title: Text(
+          "title",
+          style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+        ),
+        sliderMenu: MenuWidget(
+          drawerKey: _sliderMenuContainerStateKey,
+        ),
+        sliderMain: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 20.h),
+              InkWell(
+                onTap: () {
+                  if (isDashboardNavigationOpen) {
+                    closeDashboardNavigationMenu();
+                  } else {
+                    openDashboardNavigationMenu();
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(15.h),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: scaffoldHorizontalPadding.w),
+                  width: double.infinity,
+                  key: _key,
                   decoration: BoxDecoration(
-                    color: Color(0xFFEFF7FD),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10)),
+                    color: Color(0xFF333333),
+                    borderRadius: BorderRadius.circular(7),
                   ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w),
-                    height: 200.h,
-                    width: 320.w,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        new BoxShadow(
-                          spreadRadius: 2,
-                          blurRadius: 2,
-                          color: Color(0xFFE4E4E4),
+                  child: Text.rich(
+                    TextSpan(
+                      children:[
+                        WidgetSpan(
+                            child: Image(
+                                height: 15,
+                                image: AssetImage('assets/images/menu.png'))),
+                        WidgetSpan(child: SizedBox(width: 15.w)),
+                        TextSpan(
+                          style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18.nsp),
+                          text: dashboardNavigation,
                         ),
                       ],
-                      color: Color(0xFFFFFFFF),
-                    ),
-                    alignment: Alignment.centerLeft,
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          WidgetSpan(child: SizedBox(width: 10.w)),
-                          WidgetSpan(
-                            child: Icon(
-                              Icons.star,
-                              size: 28.nsp,
-                              color: Colors.blue,
-                            ),
-                          ),
-                          WidgetSpan(
-                              child: SizedBox(
-                                width: 10,
-                              )),
-                          TextSpan(
-                            style: TextStyle(
-                                color: Colors.black, fontSize: 18.nsp),
-                            text: myExperiencess,
-                          ),
-                          WidgetSpan(child: SizedBox(width: 5.w)),
-                          TextSpan(
-                            recognizer: TapGestureRecognizer()..onTap = () {
-                              // Single tapped.
-                            },
-                            style: TextStyle(
-                                color: Colors.blue, fontSize: 18.nsp),
-                            text: addNewExperiences,
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ),
-
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  height: 100.h,
-                  width: 330.w,
+              ),
+              SizedBox(height: 20.h),
+              Container(
+                height: 60.h,
+                width: 330.w,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEFF7FD),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                ),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  height: 200.h,
+                  width: 320.w,
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(
@@ -349,36 +195,85 @@ class _MyExperienceScreenState extends State<MyExperienceScreen> {
                         color: Color(0xFFE4E4E4),
                       ),
                     ],
-                    color: Colors.white,
-                    // borderRadius: BorderRadius.only(
-                    //     bottomLeft: Radius.circular(5),
-                    //     bottomRight: Radius.circular(5)),
+                    color: Color(0xFFFFFFFF),
                   ),
-                  child: Column(
-                    mainAxisAlignment:
-                    MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.0),
-                              spreadRadius: 5,
-                              blurRadius: 3,
-                              offset:
-                              Offset(0, 0), // changes position of shadow
-                            ),
-                          ],
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.white,
+                  alignment: Alignment.centerLeft,
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        WidgetSpan(child: SizedBox(width: 10.w)),
+                        WidgetSpan(
+                          child: Icon(
+                            Icons.star,
+                            size: 24.nsp,
+                            color: Colors.blue,
+                          ),
                         ),
-                      ),
-                      Text(noDataFound)
-                    ],
+                        WidgetSpan(
+                            child: SizedBox(
+                              width: 10,
+                            )),
+                        TextSpan(
+                          style: TextStyle(
+                              color: Colors.black, fontSize: 14.nsp),
+                          text: myExperiencess,
+                        ),
+                        WidgetSpan(child: SizedBox(width: 5.w)),
+                        TextSpan(
+                          recognizer: TapGestureRecognizer()..onTap = () {
+                            // Single tapped.
+                          },
+                          style: TextStyle(
+                              color: Colors.blue, fontSize: 14.nsp),
+                          text: addNewExperiences,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ],
-            ),
+              ),
+
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 25.w),
+                height: 100.h,
+                width: 330.w,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    new BoxShadow(
+                      spreadRadius: 2,
+                      blurRadius: 2,
+                      color: Color(0xFFE4E4E4),
+                    ),
+                  ],
+                  color: Colors.white,
+                  // borderRadius: BorderRadius.only(
+                  //     bottomLeft: Radius.circular(5),
+                  //     bottomRight: Radius.circular(5)),
+                ),
+                child: Column(
+                  mainAxisAlignment:
+                  MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.0),
+                            spreadRadius: 5,
+                            blurRadius: 3,
+                            offset:
+                            Offset(0, 0), // changes position of shadow
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(noDataFound)
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

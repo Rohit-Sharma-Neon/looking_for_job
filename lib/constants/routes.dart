@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.dart';
 import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/main/expiredjobs_screen/expiredjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/faq_screen/faq_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
@@ -30,6 +31,10 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
+  '/': (context) => BrowseJobScreen(),
+  // OnBoardings
+  '/job_description': (context) => JobDescription(),
+  '/loginPage': (context) => LoginPage(),
   '/': (context) => PendingJobScreen(),
 
   '/login_screen': (context) => LoginPage(),
@@ -47,6 +52,7 @@ var customRoutes = <String, WidgetBuilder>{
   '/favoriteusers_screen': (context) => FavoriteUserScreen(),
   '/transaction_screen': (context) => TransactionScreen(),
   '/postajob_screen': (context) => PostJobMobileComponent(),
+  '/faq_screen': (context) => FaqScreen(),
   '/browsejob_screen': (context) => BrowseJobScreen(),
 
   '/register_page': (context) => RegisterPage(),
@@ -66,4 +72,5 @@ var customRoutes = <String, WidgetBuilder>{
   '/addnewexperience_screen': (context) => AddNewExperience(),
   '/appliedjob_screen': (context) => AppliedJobScreen(),
   '/jobalert_screen': (context) => JobAlertScreen(),
+
 };

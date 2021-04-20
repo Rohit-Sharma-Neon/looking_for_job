@@ -181,7 +181,7 @@ class MenuWidget extends StatelessWidget {
                 {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
-                    '/signIn1',
+                    '/loginPage',
                         (Route<dynamic> route) => false,
                   );
                   break;

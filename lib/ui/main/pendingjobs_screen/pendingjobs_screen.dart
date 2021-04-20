@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:lookingforjob_flutter/widgets/dashboard_navigation_button.dart';
 
@@ -15,6 +15,7 @@ class PendingJobScreen extends StatefulWidget {
 }
 
 class _PendingJobScreenState extends State<PendingJobScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   int selectedRadio;
   String _cityValue;
@@ -28,7 +29,12 @@ class _PendingJobScreenState extends State<PendingJobScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(),
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
+      ),
       drawer: BaseDrawer(),
       body: SingleChildScrollView(
         child: Padding(

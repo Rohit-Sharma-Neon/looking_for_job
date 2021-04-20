@@ -2,17 +2,15 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:lookingforjob_flutter/components/galobal_components/web_header.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/bottom_web_banner.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/job_categories_component.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
-import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/custom_text_form_ta.dart';
-import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
-import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
+import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 
 class DashBoardMobileComponent extends StatefulWidget {
   @override
@@ -21,6 +19,8 @@ class DashBoardMobileComponent extends StatefulWidget {
 }
 
 class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   bool isSwitched = false;
   final itemAppTheme = AppTheme.values[0];
 
@@ -31,36 +31,18 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return SliderMenuContainer(
-      drawerIconColor: Colors.transparent,
-      drawerIconSize: 0,
-      appBarColor: bgScaffoldColor,
-      appBarHeight: 0,
-      // appBarColor: Colors.white,
-      key: _sliderMenuContainerStateKey,
-      sliderMenuOpenSize: 280,
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w700),
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
       ),
-      sliderMenu: MenuWidget(
-        drawerKey: _sliderMenuContainerStateKey,
-      ),
-      sliderMain: SingleChildScrollView(
+      drawer: BaseDrawer(),
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            /*Switch(
-                  value: isSwitched,
-                  onChanged: (value) {
-                    isSwitched = value;
-                    isSwitched
-                        ? BlocProvider.of<ThemeBloc>(context)
-                            .dispatch(ThemeChanged(theme: AppTheme.values[1]))
-                        : BlocProvider.of<ThemeBloc>(context)
-                            .dispatch(ThemeChanged(theme: AppTheme.values[0]));
-                  },
-                ),*/
-            webHeader(_sliderMenuContainerStateKey),
             Container(
               color: Colors.grey,
               width: double.infinity,
