@@ -29,11 +29,6 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
       GlobalKey<SliderMenuContainerState>();
 
-  final TextEditingController _typeAheadController = TextEditingController();
-
-  String _category;
-  String _currentSelectedValue;
-
   @override
   Widget build(BuildContext context) {
     return SliderMenuContainer(
@@ -46,7 +41,7 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
       sliderMenuOpenSize: 280,
       title: Text(
         title,
-        style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+        style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w700),
       ),
       sliderMenu: MenuWidget(
         drawerKey: _sliderMenuContainerStateKey,
@@ -76,13 +71,13 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                   Text(
                     findAJob,
                     style: TextStyle(
-                      fontSize: 36.nsp,
+                      fontSize: 36.sp,
                       color: Colors.white,
                     ),
                   ),
                   Text(
                     simpleFastAndEfficient,
-                    style: TextStyle(fontSize: 22.nsp, color: Colors.white),
+                    style: TextStyle(fontSize: 22.sp, color: Colors.white),
                   ),
                   SizedBox(height: 20.h),
                   CustomTextFormTA(
@@ -92,23 +87,6 @@ class _DashBoardMobileComponentState extends State<DashBoardMobileComponent> {
                     hintText: "Location",
                   ),
                   SizedBox(height: 18.h),
-                  // MaterialButton(
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius:
-                  //         BorderRadius.circular(primaryRoundButtonAndTextField),
-                  //   ),
-                  //   minWidth: double.infinity,
-                  //   onPressed: () {},
-                  //   height: 50.h,
-                  //   child: Text(
-                  //     search,
-                  //     style: TextStyle(
-                  //         fontSize: 20.nsp,
-                  //         color: Colors.white,
-                  //         fontWeight: FontWeight.w400),
-                  //   ),
-                  //   color: primaryColorLight,
-                  // ),
                   PrimaryButton(
                     height: 50.h,
                     width:double.infinity,

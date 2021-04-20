@@ -40,6 +40,9 @@ dependencies:
   google_maps_flutter: ^1.0.3
   location: ^3.0.2
   fluttericon: ^2.0.0
+  gender_selection: ^1.0.0
+  spring: ^1.0.4
+  animations: ^2.0.0
   like_button: ^2.0.2
   progress_state_button: ^1.0.3
 

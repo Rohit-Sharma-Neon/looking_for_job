@@ -41,7 +41,10 @@ const String favoriteUsers = "Favorite Users";
 const String account = "Account";
 const String transactions = "Transactions";
 const String logout = "Logout";
-
+const String userName = "User Name";
+const String email = "Email";
+const String phone = "Phone";
+const String dashBoard = "Dashboard";
 
 
 // ProfilePublicView
@@ -75,6 +78,8 @@ const String noresultfound = "No result found.";
 const String previous = "Previous";
 const String next = "Next";
 const String file = "File";
+const String onboardingheading="What types of jobs are you looking for?";
+const String onboardingsubheading="Please select at least one interest to proceed, and choose up to three";
 
 
 
