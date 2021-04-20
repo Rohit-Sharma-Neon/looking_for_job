@@ -47,11 +47,13 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
       key: _scaffoldKey,
       bottomSheet: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
-            primary: primaryColorLight,
-            minimumSize: Size(double.infinity, 40.h)),
-        onPressed: () {},
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
+          ),
+          primary: primaryColorLight,
+          minimumSize: Size(double.infinity, 40.h),
+        ),
+        onPressed: (){},
         child: Text(
           "Save Changes",
           style: TextStyle(fontSize: textSize16.sp),
