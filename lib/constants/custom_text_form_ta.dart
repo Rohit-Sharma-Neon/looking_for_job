@@ -25,7 +25,7 @@ class CustomTextFormTA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 18.h),
+      margin: EdgeInsets.only(top: 15.h),
       alignment: Alignment.center,
       height: 50.h,
       decoration: BoxDecoration(
@@ -42,7 +42,7 @@ class CustomTextFormTA extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.normal, fontSize: 18),
             decoration: InputDecoration(
               isDense: true,
-              contentPadding: EdgeInsets.only(left: 12.w,top: 12.h),
+              contentPadding: EdgeInsets.only(left: 15.w,top: 10.h),
                 border: InputBorder.none,
                 focusedBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,

@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
-import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:lookingforjob_flutter/widgets/dashboard_navigation_button.dart';
-
-import '../../../components/galobal_components/web_header.dart';
-import '../../../constants/colors.dart';
-import '../../../drawer/menu_widget.dart';
 
 
 class FavoriteUserScreen extends StatefulWidget {
@@ -18,6 +12,7 @@ class FavoriteUserScreen extends StatefulWidget {
 }
 
 class _FavoriteUserScreenState extends State<FavoriteUserScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   int selectedRadio;
   String _cityValue;
@@ -31,7 +26,12 @@ class _FavoriteUserScreenState extends State<FavoriteUserScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(),
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
+      ),
       drawer: BaseDrawer(),
       body: SingleChildScrollView(
         child: Padding(

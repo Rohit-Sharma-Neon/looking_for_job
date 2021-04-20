@@ -1,6 +1,8 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,7 +39,9 @@ Widget latestJobsComponent() {
                 return JobDescription();
               },
             ),
-            SizedBox(height: 5.h,)
+            SizedBox(
+              height: 5.h,
+            )
           ],
         ),
       );
@@ -61,14 +65,24 @@ Widget jobCard() {
     ),
     padding: EdgeInsets.all(12.r),
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text("From monsterindia.com",
+            style:
+                TextStyle(color: primaryColorLight, fontSize: textSize12.sp)),
         Row(
           children: [
+            SizedBox(
+              height: 5.h,
+            ),
             Expanded(
               flex: 4,
               child: Text(
-                "Sports Officer cum Warden",
-                style: TextStyle(color: Colors.blue, fontSize: textSize18.sp),
+                "Customer Service Representative",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: textSize18.sp,
+                    fontWeight: FontWeight.w500),
               ),
             ),
             SizedBox(
@@ -76,25 +90,50 @@ Widget jobCard() {
             ),
             Expanded(
               flex: 2,
-              child: PrimaryOutlinedButton(
-                height: 30.h,
-                text: "Full Time",
+              // child: PrimaryOutlinedButton(
+              //   height: 30.h,
+              //   text: "Full Time",
+              // ),
+              child: CircleAvatar(
+
+                radius:30.h ,
+                backgroundColor: Colors.white,
+                child: Image.asset("assets/images/lookingforjob_bg.png",),
+
               ),
             ),
           ],
         ),
-        Row(
-          children: [
-            Icon(Icons.add_location),
-            Text(
-              "Anand International College of Engineering",
-            ),
-          ],
+        Text(
+          "Appitron Solutions",
+          style: TextStyle(
+              color: Colors.black,
+              fontSize: textSize16.sp,
+              fontWeight: FontWeight.w300),
         ),
         Row(
           children: [
-            Icon(Icons.add_location),
-            Text("Jaipur"),
+            // Icon(Icons.location_on,color: Colors.grey[800],),
+            Image.asset("assets/images/placeholder.png",height: 15.h,),
+            SizedBox(
+              width: 7.w,
+            ),
+            Text(
+              "Jaipur",
+              style: TextStyle(fontSize: textSize14.sp, color: Colors.grey[600]),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 5.h,
+        ),
+        Row(
+          children: [
+            Icon(FlutterIcons.rupee_sign_faw5s,color: Colors.grey[800],size: 20.h,),
+            SizedBox(
+              width: 7.w,
+            ),
+            Text("20,000-30,000 permonth",style: TextStyle(fontSize: textSize14.sp, color: Colors.grey[600])),
           ],
         ),
       ],

@@ -111,4 +111,5 @@ const String other = "Other";
 const String faq = "FAQ";
 const String feedBack = "Feedback";
 const String contect = "Contect";
+const String addNewResume = "Add New Resume";
 
