@@ -5,7 +5,7 @@ import 'package:fluttericon/font_awesome_icons.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:lookingforjob_flutter/widgets/dashboard_navigation_button.dart';
 
@@ -15,12 +15,18 @@ class MyCompaniesScreen extends StatefulWidget {
 }
 
 class _MyCompaniesScreenState extends State<MyCompaniesScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   List<Icon> icons = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BaseAppBar(),
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
+      ),
       drawer: BaseDrawer(),
       body: SingleChildScrollView(
         child: Padding(

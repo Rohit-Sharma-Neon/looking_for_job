@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
 import 'package:lookingforjob_flutter/constants/theme/oulined_button.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
+import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 
 import '../../../../constants/colors.dart';
-import '../../../../constants/sizes.dart';
-import '../../../../constants/sizes.dart';
 import '../../../../constants/sizes.dart';
 
 class PostJobMobileComponent extends StatefulWidget {
@@ -15,6 +13,8 @@ class PostJobMobileComponent extends StatefulWidget {
 }
 
 class PostJobMobileComponentState extends State<PostJobMobileComponent> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   String _dropDownValue;
   String _jobTypeValue;
   String _perHourValue;
@@ -26,6 +26,13 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xffF8F8F8),
+        key: _scaffoldKey,
+        appBar: BaseAppBar2(
+          title: 'Dashboard',
+          leadingIcon: Icons.menu,
+          scaffoldKey: _scaffoldKey,
+        ),
+        drawer: BaseDrawer(),
         body: SingleChildScrollView(
           child: Padding(
             padding:
@@ -33,30 +40,6 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /*SizedBox(height: 100.h),
-                Text(
-                  "Post a Job",
-                  style:
-                      TextStyle(fontSize: 35.sp, fontWeight: FontWeight.w500),
-                ),
-                SizedBox(height: 10),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                          text: "Home",
-                          style:
-                              TextStyle(fontSize: 18.sp, color: Colors.black)),
-                      WidgetSpan(
-                        child: Icon(Icons.arrow_right_outlined, size: 20),
-                      ),
-                      TextSpan(
-                        text: "Post a Job",
-                        style: TextStyle(fontSize: 18.sp, color: Colors.black),
-                      ),
-                    ],
-                  ),
-                ),*/
                 SizedBox(
                   height: 60.h,
                 ),
@@ -245,39 +228,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                 style: postAJobSubHeadingTextStyle,
                               ),
                               SizedBox(height: 20.h),
-                              // ButtonTheme(
-                              //   height: 50.h,
-                              //   minWidth: 300.w,
-                              //   child: Container(
-                              //     decoration: BoxDecoration(
-                              //         color: Colors.white,
-                              //         boxShadow: [
-                              //           BoxShadow(
-                              //             color: primaryColorLight
-                              //                 .withOpacity(0.2),
-                              //             spreadRadius: 1,
-                              //             blurRadius: 2,
-                              //             offset: Offset(0, 1),
-                              //           )
-                              //         ]),
-                              //     child: OutlineButton(
-                              //       onPressed: () {},
-                              //       splashColor: primaryColorLight,
-                              //       borderSide: BorderSide(
-                              //         color: primaryColorLight,
-                              //       ),
-                              //       shape: ContinuousRectangleBorder(
-                              //           borderRadius: BorderRadius.circular(5)),
-                              //       child: Text(
-                              //         "Upload Logo",
-                              //         style: TextStyle(
-                              //           fontSize: textSize18.sp,
-                              //           color: primaryColorLight,
-                              //         ),
-                              //       ),
-                              //     ),
-                              //   ),
-                              // ),
+
                               PrimaryOutlinedButton(
                                 height: primaryButtonHeight,
                                 width: 300.w,

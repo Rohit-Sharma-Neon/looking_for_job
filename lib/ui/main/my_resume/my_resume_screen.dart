@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:lookingforjob_flutter/components/galobal_components/web_header.dart';
-import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
-
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
+import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'add_new_resume.dart';
 
 class MyResumeScreen extends StatefulWidget {
@@ -104,506 +102,497 @@ GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
     GlobalKey<SliderMenuContainerState>();
 
 class _MyResumeScreenState extends State<MyResumeScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SliderMenuContainer(
-          drawerIconColor: Colors.transparent,
-          drawerIconSize: 0,
-          appBarColor: bgScaffoldColor,
-          appBarHeight: 0,
-// appBarColor: Colors.white,
-          key: _sliderMenuContainerStateKey,
-          sliderMenuOpenSize: 280,
-          title: Text(
-            "title",
-            style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
-          ),
-          sliderMenu: MenuWidget(
-            drawerKey: _sliderMenuContainerStateKey,
-          ),
-          sliderMain: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                webHeader(_sliderMenuContainerStateKey),
-                SizedBox(height: 15.h),
-                InkWell(
-                  onTap: () {
-                    if (isDashboardNavigationOpen) {
-                      closeDashboardNavigationMenu();
-                    } else {
-                      openDashboardNavigationMenu();
-                    }
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(15.h),
-                    margin: EdgeInsets.symmetric(
-                        horizontal: scaffoldHorizontalPadding.w),
-                    width: double.infinity,
-                    key: _key,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF333333),
-                      borderRadius: BorderRadius.circular(7.r),
-                    ),
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          WidgetSpan(
-                              child: Image(
-                                  height: 15,
-                                  image: AssetImage('assets/images/menu.png'))),
-                          WidgetSpan(child: SizedBox(width: 15.w)),
-                          TextSpan(
-                            style: TextStyle(
-                                color: Color(0xFFFFFFFF),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18.nsp),
-                            text: dashboardNavigation,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                // Container(
-                //   padding: EdgeInsets.all(15.h),
-                //   margin: EdgeInsets.symmetric(
-                //       horizontal: scaffoldHorizontalPadding.w, vertical: 25.h),
-                //   height: 320.h,
-                //   width: 400.w,
-                //   decoration: BoxDecoration(
-                //     color: Color(0xFFFFFFFF),
-                //     borderRadius: BorderRadius.circular(0),
-                //     boxShadow: [
-                //       BoxShadow(
-                //         color: Colors.grey.withOpacity(0.2),
-                //         spreadRadius: 1,
-                //         blurRadius: 1,
-                //         offset: Offset(0, 0),
-                //       )
-                //     ],
-                //   ),
-                //   child: Column(
-                //     crossAxisAlignment: CrossAxisAlignment.start,
-                //     children: [
-                //       RichText(
-                //         text: TextSpan(
-                //           children: [
-                //             WidgetSpan(
-                //               child: Icon(
-                //                 Icons.shopping_bag,
-                //                 size: 28.nsp,
-                //                 color: Colors.blue,
-                //               ),
-                //             ),
-                //             WidgetSpan(
-                //                 child: SizedBox(
-                //                   width: 10,
-                //                 )),
-                //             TextSpan(
-                //               style: TextStyle(
-                //                   color: Colors.black, fontSize: 18.nsp),
-                //               text: "My Jobs",
-                //             ),
-                //           ],
-                //         ),
-                //       ),
-                //       Divider(
-                //         color: Colors.black,
-                //         height: 25.h,
-                //       ),
-                //       SizedBox(height: 10.h),
-                //       Container(
-                //           margin: EdgeInsets.only(bottom: 10.h),
-                //           decoration: BoxDecoration(
-                //             boxShadow: [
-                //               BoxShadow(
-                //                 color: Colors.grey.withOpacity(0.1),
-                //                 spreadRadius: 5,
-                //                 blurRadius: 3,
-                //                 offset:
-                //                 Offset(0, 0), // changes position of shadow
-                //               ),
-                //             ],
-                //             borderRadius: BorderRadius.circular(5),
-                //             color: Colors.white,
-                //           ),
-                //           child: Padding(
-                //             padding: EdgeInsets.all(10.w),
-                //             child: Row(
-                //               children: <Widget>[
-                //                 Expanded(
-                //                   child: TextField(
-                //                     decoration: InputDecoration.collapsed(
-                //                       hintText: ' Search...',
-                //                     ),
-                //                     onChanged: (value) {},
-                //                   ),
-                //                 ),
-                //                 InkWell(
-                //                   child: Icon(Icons.search, color: Colors.grey),
-                //                   onTap: () {},
-                //                 )
-                //               ],
-                //             ),
-                //           )),
-                //       SizedBox(height: 5.h),
-                //       Column(
-                //         mainAxisSize: MainAxisSize.min,
-                //         crossAxisAlignment: CrossAxisAlignment.end,
-                //         children: [
-                //           SizedBox(
-                //             height: 100.h,
-                //             child: Scrollbar(
-                //               child: ListView(
-                //                 shrinkWrap: true,
-                //                 scrollDirection: Axis.horizontal,
-                //                 children: [
-                //                   Column(
-                //                     mainAxisSize: MainAxisSize.min,
-                //                     children: [
-                //                       SizedBox(height: 5.h),
-                //                       MaterialButton(
-                //                         height: 50.h,
-                //                         minWidth: 250.w,
-                //                         shape: RoundedRectangleBorder(
-                //                             borderRadius: new BorderRadius.circular(5)),
-                //                         onPressed: () {},
-                //                         child: Row(
-                //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //                           children: [
-                //                             Text(
-                //                               "jobs",
-                //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
-                //                                 color: Colors.white,
-                //                               ),
-                //                             ),
-                //                             SizedBox(width: 180.w),
-                //                             Text(
-                //                               "Status",
-                //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
-                //                                 color: Colors.white,
-                //                               ),
-                //                             ),
-                //                             SizedBox(width: 100.w),
-                //                             Text(
-                //                               "Actions",
-                //                               style: TextStyle(
-                //                                 fontSize: 18.nsp,
-                //                                 color: Colors.white,
-                //                               ),
-                //                             ),
-                //                           ],
-                //                         ),
-                //                         color: Colors.blue,
-                //                       ),
-                //                       SizedBox(height: 10.h),
-                //                       Text("No active jobs found."),
-                //                     ],
-                //                   ),
-                //                 ],
-                //               ),
-                //             ),
-                //           )
-                //         ],
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                SizedBox(height: 20.h),
-                Container(
-                  height: 60.h,
-                  width: 330.w,
+      backgroundColor: Color(0xffF8F8F8),
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
+      ),
+      drawer: BaseDrawer(),
+      body: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 15.h),
+              InkWell(
+                onTap: () {
+                  if (isDashboardNavigationOpen) {
+                    closeDashboardNavigationMenu();
+                  } else {
+                    openDashboardNavigationMenu();
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(15.h),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: scaffoldHorizontalPadding.w),
+                  width: double.infinity,
+                  key: _key,
                   decoration: BoxDecoration(
-                    color: Color(0xFFEFF7FD),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        topRight: Radius.circular(10)),
+                    color: Color(0xFF333333),
+                    borderRadius: BorderRadius.circular(7.r),
                   ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15.w),
-                    height: 200.h,
-                    width: 320.w,
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        new BoxShadow(
-                          spreadRadius: 2,
-                          blurRadius: 2,
-                          color: Color(0xFFE4E4E4),
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        WidgetSpan(
+                            child: Image(
+                                height: 15,
+                                image: AssetImage('assets/images/menu.png'))),
+                        WidgetSpan(child: SizedBox(width: 15.w)),
+                        TextSpan(
+                          style: TextStyle(
+                              color: Color(0xFFFFFFFF),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18.nsp),
+                          text: dashboardNavigation,
                         ),
                       ],
-                      color: Color(0xFFFFFFFF),
-                    ),
-                    alignment: Alignment.centerLeft,
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          WidgetSpan(child: SizedBox(width: 10.w)),
-                          WidgetSpan(
-                            child: Icon(
-                              Icons.attachment_rounded,
-                              size: 28.sp,
-                              color: Colors.blue,
-                            ),
-                          ),
-                          WidgetSpan(
-                              child: SizedBox(
-                            width: 10,
-                          )),
-                          TextSpan(
-                            style: TextStyle(
-                                color: Color(0xFF333333),
-                                fontWeight: FontWeight.w600,
-                                fontSize: textSize18),
-                            text: myResumes,
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ),
-
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  // height: 230.h,
-                  width: 330.w,
+              ),
+              // Container(
+              //   padding: EdgeInsets.all(15.h),
+              //   margin: EdgeInsets.symmetric(
+              //       horizontal: scaffoldHorizontalPadding.w, vertical: 25.h),
+              //   height: 320.h,
+              //   width: 400.w,
+              //   decoration: BoxDecoration(
+              //     color: Color(0xFFFFFFFF),
+              //     borderRadius: BorderRadius.circular(0),
+              //     boxShadow: [
+              //       BoxShadow(
+              //         color: Colors.grey.withOpacity(0.2),
+              //         spreadRadius: 1,
+              //         blurRadius: 1,
+              //         offset: Offset(0, 0),
+              //       )
+              //     ],
+              //   ),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       RichText(
+              //         text: TextSpan(
+              //           children: [
+              //             WidgetSpan(
+              //               child: Icon(
+              //                 Icons.shopping_bag,
+              //                 size: 28.nsp,
+              //                 color: Colors.blue,
+              //               ),
+              //             ),
+              //             WidgetSpan(
+              //                 child: SizedBox(
+              //                   width: 10,
+              //                 )),
+              //             TextSpan(
+              //               style: TextStyle(
+              //                   color: Colors.black, fontSize: 18.nsp),
+              //               text: "My Jobs",
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //       Divider(
+              //         color: Colors.black,
+              //         height: 25.h,
+              //       ),
+              //       SizedBox(height: 10.h),
+              //       Container(
+              //           margin: EdgeInsets.only(bottom: 10.h),
+              //           decoration: BoxDecoration(
+              //             boxShadow: [
+              //               BoxShadow(
+              //                 color: Colors.grey.withOpacity(0.1),
+              //                 spreadRadius: 5,
+              //                 blurRadius: 3,
+              //                 offset:
+              //                 Offset(0, 0), // changes position of shadow
+              //               ),
+              //             ],
+              //             borderRadius: BorderRadius.circular(5),
+              //             color: Colors.white,
+              //           ),
+              //           child: Padding(
+              //             padding: EdgeInsets.all(10.w),
+              //             child: Row(
+              //               children: <Widget>[
+              //                 Expanded(
+              //                   child: TextField(
+              //                     decoration: InputDecoration.collapsed(
+              //                       hintText: ' Search...',
+              //                     ),
+              //                     onChanged: (value) {},
+              //                   ),
+              //                 ),
+              //                 InkWell(
+              //                   child: Icon(Icons.search, color: Colors.grey),
+              //                   onTap: () {},
+              //                 )
+              //               ],
+              //             ),
+              //           )),
+              //       SizedBox(height: 5.h),
+              //       Column(
+              //         mainAxisSize: MainAxisSize.min,
+              //         crossAxisAlignment: CrossAxisAlignment.end,
+              //         children: [
+              //           SizedBox(
+              //             height: 100.h,
+              //             child: Scrollbar(
+              //               child: ListView(
+              //                 shrinkWrap: true,
+              //                 scrollDirection: Axis.horizontal,
+              //                 children: [
+              //                   Column(
+              //                     mainAxisSize: MainAxisSize.min,
+              //                     children: [
+              //                       SizedBox(height: 5.h),
+              //                       MaterialButton(
+              //                         height: 50.h,
+              //                         minWidth: 250.w,
+              //                         shape: RoundedRectangleBorder(
+              //                             borderRadius: new BorderRadius.circular(5)),
+              //                         onPressed: () {},
+              //                         child: Row(
+              //                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //                           children: [
+              //                             Text(
+              //                               "jobs",
+              //                               style: TextStyle(
+              //                                 fontSize: 18.nsp,
+              //                                 color: Colors.white,
+              //                               ),
+              //                             ),
+              //                             SizedBox(width: 180.w),
+              //                             Text(
+              //                               "Status",
+              //                               style: TextStyle(
+              //                                 fontSize: 18.nsp,
+              //                                 color: Colors.white,
+              //                               ),
+              //                             ),
+              //                             SizedBox(width: 100.w),
+              //                             Text(
+              //                               "Actions",
+              //                               style: TextStyle(
+              //                                 fontSize: 18.nsp,
+              //                                 color: Colors.white,
+              //                               ),
+              //                             ),
+              //                           ],
+              //                         ),
+              //                         color: Colors.blue,
+              //                       ),
+              //                       SizedBox(height: 10.h),
+              //                       Text("No active jobs found."),
+              //                     ],
+              //                   ),
+              //                 ],
+              //               ),
+              //             ),
+              //           )
+              //         ],
+              //       ),
+              //     ],
+              //   ),
+              // ),
+              SizedBox(height: 20.h),
+              Container(
+                height: 60.h,
+                width: 330.w,
+                decoration: BoxDecoration(
+                  color: Color(0xFFEFF7FD),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10)),
+                ),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
+                  height: 200.h,
+                  width: 320.w,
                   decoration: BoxDecoration(
                     boxShadow: [
                       new BoxShadow(
-                        spreadRadius: 1,
-                        blurRadius: 1,
+                        spreadRadius: 2,
+                        blurRadius: 2,
                         color: Color(0xFFE4E4E4),
                       ),
                     ],
-                    color: Colors.white,
-                    // borderRadius: BorderRadius.only(
-                    //     bottomLeft: Radius.circular(5),
-                    //     bottomRight: Radius.circular(5)),
+                    color: Color(0xFFFFFFFF),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      Container(
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.2),
-                                spreadRadius: 0.5,
-                                blurRadius: 0.5,
-                                offset:
-                                    Offset(0, 0), // changes position of shadow
-                              ),
-                            ],
-                            border: Border.all(color: Colors.grey[300]),
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.white,
+                  alignment: Alignment.centerLeft,
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        WidgetSpan(child: SizedBox(width: 10.w)),
+                        WidgetSpan(
+                          child: Icon(
+                            Icons.attachment_rounded,
+                            size: 28.sp,
+                            color: Colors.blue,
                           ),
-                          child: Padding(
-                            padding: EdgeInsets.all(10.w),
-                            child: Row(
-                              children: <Widget>[
-                                Expanded(
-                                  child: TextField(
-                                    decoration: InputDecoration.collapsed(
-                                      hintText: 'Search...',
-                                    ),
-                                    onChanged: (value) {},
-                                  ),
-                                ),
-                                InkWell(
-                                  child: Icon(Icons.search, color: Colors.grey),
-                                  onTap: () {},
-                                )
-                              ],
-                            ),
-                          )),
-                      SizedBox(height: 10.h),
-                      PrimaryButton(
-                        text: "Add New Resume",
-                        width: 100.w,
-                        height: 50.h,
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AddNewResume(),
-                            ),
-                          );
-                        },
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            height: 500.h,
-                            child: Scrollbar(
-                              child: ListView(
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(height: 10.h),
-                                      Container(
-                                        padding: EdgeInsets.only(
-                                            left: 20.w, right: 20.w),
-                                        height: 60.h,
-                                        width: 430.w,
-                                        // minWidth: 250.w,
-                                        // shape: RoundedRectangleBorder(
-                                        //     borderRadius: new BorderRadius.circular(5)),
-                                        // onPressed: () {},
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Text(
-                                              "file",
-                                              style: TextStyle(
-                                                fontSize: 18.nsp,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                            SizedBox(width: 140.w),
-                                            Text(
-                                              "names",
-                                              style: TextStyle(
-                                                fontSize: 18.nsp,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                            SizedBox(width: 80.w),
-                                            Text(
-                                              actions,
-                                              style: TextStyle(
-                                                fontSize: 18.nsp,
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        color: Color(0xFF198EDC),
-                                      ),
-                                      SizedBox(height: 10.h),
-                                      SizedBox(
-                                        height: 400.h,
-                                        width: 450.w,
-                                        child: ListView.builder(
-                                            physics:
-                                                NeverScrollableScrollPhysics(),
-                                            shrinkWrap: true,
-                                            itemCount: 3,
-                                            itemBuilder: (context, index) {
-                                              return Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                mainAxisSize:
-                                                    MainAxisSize.min,
-                                                children: [
-                                                  PrimaryButton(
-                                                    text: "Download",
-                                                    width: 100.w,
-                                                    height: 50.h,
-                                                    // color: primaryColorLight,
-                                                  ),
-                                                  // SizedBox(width: 60.w,),
-                                                  Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 80.w,
-                                                        top: 10.h),
-                                                    child: Text(
-                                                      "Flutter lib",
-                                                      style: TextStyle(
-                                                          fontSize:
-                                                              textSize18,
-                                                          color: Colors
-                                                              .grey[600]),
-                                                    ),
-                                                  ),
-                                                  Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                left: 100.w,
-                                                                top: 5.h),
-                                                        child: Container(
-                                                            height: 30.h,
-                                                            width: 30.w,
-                                                            decoration: BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            5),
-                                                                color: Colors
-                                                                        .grey[
-                                                                    300]),
-                                                            child: Icon(
-                                                              Icons
-                                                                  .app_registration,
-                                                              color: Colors
-                                                                  .grey[800],
-                                                            )),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                left: 100.w,
-                                                                top: 10.h),
-                                                        child: Container(
-                                                            height: 30.h,
-                                                            width: 30.w,
-                                                            decoration: BoxDecoration(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            5),
-                                                                color: Colors
-                                                                        .grey[
-                                                                    300]),
-                                                            child: Icon(
-                                                              Icons.delete,
-                                                              color: Colors
-                                                                  .grey[600],
-                                                            )),
-                                                      ),
-                                                    ],
-                                                  )
-                                                ],
-                                              );
-                                            }),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
+                        ),
+                        WidgetSpan(
+                            child: SizedBox(
+                          width: 10,
+                        )),
+                        TextSpan(
+                          style: TextStyle(
+                              color: Color(0xFF333333),
+                              fontWeight: FontWeight.w600,
+                              fontSize: textSize18),
+                          text: myResumes,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ],
-            ),
+              ),
+
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 25.w),
+                // height: 230.h,
+                width: 330.w,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    new BoxShadow(
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                      color: Color(0xFFE4E4E4),
+                    ),
+                  ],
+                  color: Colors.white,
+                  // borderRadius: BorderRadius.only(
+                  //     bottomLeft: Radius.circular(5),
+                  //     bottomRight: Radius.circular(5)),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 0.5,
+                              blurRadius: 0.5,
+                              offset:
+                                  Offset(0, 0), // changes position of shadow
+                            ),
+                          ],
+                          border: Border.all(color: Colors.grey[300]),
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(10.w),
+                          child: Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: TextField(
+                                  decoration: InputDecoration.collapsed(
+                                    hintText: 'Search...',
+                                  ),
+                                  onChanged: (value) {},
+                                ),
+                              ),
+                              InkWell(
+                                child: Icon(Icons.search, color: Colors.grey),
+                                onTap: () {},
+                              )
+                            ],
+                          ),
+                        )),
+                    SizedBox(height: 10.h),
+                    PrimaryButton(
+                      text: "Add New Resume",
+                      width: 100.w,
+                      height: 50.h,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AddNewResume(),
+                          ),
+                        );
+                      },
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          height: 500.h,
+                          child: Scrollbar(
+                            child: ListView(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    SizedBox(height: 10.h),
+                                    Container(
+                                      padding: EdgeInsets.only(
+                                          left: 20.w, right: 20.w),
+                                      height: 60.h,
+                                      width: 430.w,
+                                      // minWidth: 250.w,
+                                      // shape: RoundedRectangleBorder(
+                                      //     borderRadius: new BorderRadius.circular(5)),
+                                      // onPressed: () {},
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            "file",
+                                            style: TextStyle(
+                                              fontSize: 18.nsp,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          SizedBox(width: 140.w),
+                                          Text(
+                                            "names",
+                                            style: TextStyle(
+                                              fontSize: 18.nsp,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          SizedBox(width: 80.w),
+                                          Text(
+                                            actions,
+                                            style: TextStyle(
+                                              fontSize: 18.nsp,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      color: Color(0xFF198EDC),
+                                    ),
+                                    SizedBox(height: 10.h),
+                                    SizedBox(
+                                      height: 400.h,
+                                      width: 450.w,
+                                      child: ListView.builder(
+                                          physics:
+                                              NeverScrollableScrollPhysics(),
+                                          shrinkWrap: true,
+                                          itemCount: 3,
+                                          itemBuilder: (context, index) {
+                                            return Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              mainAxisSize:
+                                                  MainAxisSize.min,
+                                              children: [
+                                                PrimaryButton(
+                                                  text: "Download",
+                                                  width: 100.w,
+                                                  height: 50.h,
+                                                  // color: primaryColorLight,
+                                                ),
+                                                // SizedBox(width: 60.w,),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 80.w,
+                                                      top: 10.h),
+                                                  child: Text(
+                                                    "Flutter lib",
+                                                    style: TextStyle(
+                                                        fontSize:
+                                                            textSize18,
+                                                        color: Colors
+                                                            .grey[600]),
+                                                  ),
+                                                ),
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.only(
+                                                              left: 100.w,
+                                                              top: 5.h),
+                                                      child: Container(
+                                                          height: 30.h,
+                                                          width: 30.w,
+                                                          decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5),
+                                                              color: Colors
+                                                                      .grey[
+                                                                  300]),
+                                                          child: Icon(
+                                                            Icons
+                                                                .app_registration,
+                                                            color: Colors
+                                                                .grey[800],
+                                                          )),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsets.only(
+                                                              left: 100.w,
+                                                              top: 10.h),
+                                                      child: Container(
+                                                          height: 30.h,
+                                                          width: 30.w,
+                                                          decoration: BoxDecoration(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5),
+                                                              color: Colors
+                                                                      .grey[
+                                                                  300]),
+                                                          child: Icon(
+                                                            Icons.delete,
+                                                            color: Colors
+                                                                .grey[600],
+                                                          )),
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            );
+                                          }),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-      ),
     );
   }
 }

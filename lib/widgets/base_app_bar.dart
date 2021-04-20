@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
 
 import 'custom_drop_down.dart';
 

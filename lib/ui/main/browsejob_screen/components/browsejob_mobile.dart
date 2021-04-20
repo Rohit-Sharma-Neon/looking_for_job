@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:lookingforjob_flutter/components/galobal_components/web_header.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/bottom_web_banner.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/job_categories_component.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
@@ -12,8 +11,8 @@ import 'package:lookingforjob_flutter/constants/custom_text_form_ta.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
-import 'package:lookingforjob_flutter/drawer/menu_widget.dart';
-
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
+import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 
 class BrowseJobMobile extends StatefulWidget {
   @override
@@ -21,58 +20,49 @@ class BrowseJobMobile extends StatefulWidget {
 }
 
 class _BrowseJobMobileState extends State<BrowseJobMobile> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   bool isSwitched = false;
   final itemAppTheme = AppTheme.values[0];
 
   String title = "";
 
   GlobalKey<SliderMenuContainerState> _sliderMenuContainerStateKey =
-  GlobalKey<SliderMenuContainerState>();
+      GlobalKey<SliderMenuContainerState>();
 
   final TextEditingController _typeAheadController = TextEditingController();
 
   String _category;
   String _currentSelectedValue;
 
+  BoxShadow _boxShadow() {
+    return BoxShadow(
+      color: Colors.grey.withOpacity(0.2),
+      spreadRadius: 2,
+      blurRadius: 2,
+      offset: Offset(0, 0),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SliderMenuContainer(
-      drawerIconColor: Colors.transparent,
-      drawerIconSize: 0,
-      appBarColor: bgScaffoldColor,
-      appBarHeight: 0,
-      // appBarColor: Colors.white,
-      key: _sliderMenuContainerStateKey,
-      sliderMenuOpenSize: 280,
-      title: Text(
-        title,
-        style: TextStyle(fontSize: 22.nsp, fontWeight: FontWeight.w700),
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      key: _scaffoldKey,
+      appBar: BaseAppBar2(
+        title: 'Dashboard',
+        leadingIcon: Icons.menu,
+        scaffoldKey: _scaffoldKey,
       ),
-      sliderMenu: MenuWidget(
-        drawerKey: _sliderMenuContainerStateKey,
-      ),
-      sliderMain: SingleChildScrollView(
+      drawer: BaseDrawer(),
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            /*Switch(
-                  value: isSwitched,
-                  onChanged: (value) {
-                    isSwitched = value;
-                    isSwitched
-                        ? BlocProvider.of<ThemeBloc>(context)
-                            .dispatch(ThemeChanged(theme: AppTheme.values[1]))
-                        : BlocProvider.of<ThemeBloc>(context)
-                            .dispatch(ThemeChanged(theme: AppTheme.values[0]));
-                  },
-                ),*/
-            webHeader(_sliderMenuContainerStateKey),
             Container(
               color: Colors.grey,
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
               child: Column(
                 children: [
-                  SizedBox(height: 20.h),
                   Text(
                     findAJob,
                     style: TextStyle(
@@ -92,34 +82,16 @@ class _BrowseJobMobileState extends State<BrowseJobMobile> {
                     hintText: "Location",
                   ),
                   SizedBox(height: 18.h),
-                  // MaterialButton(
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius:
-                  //     BorderRadius.circular(primaryRoundButtonAndTextField),
-                  //   ),
-                  //   minWidth: double.infinity,
-                  //   onPressed: () {},
-                  //   height: 50.h,
-                  //   child: Text(
-                  //     search,
-                  //     style: TextStyle(
-                  //         fontSize: 20.nsp,
-                  //         color: Colors.white,
-                  //         fontWeight: FontWeight.w400),
-                  //   ),
-                  //   color: primaryColorLight,
-                  // ),
                   PrimaryButton(
                     text: search,
                     height: 50.h,
                     width: double.infinity,
-                    onPressed: (){},
+                    onPressed: () {},
                   ),
-                  SizedBox(height: 50.h),
+                  SizedBox(height: 35.h),
                 ],
               ),
             ),
-
             jobCategoriesComponent(),
             latestJobsComponent(),
             kIsWeb ? bottomWebBanner() : Container(),
