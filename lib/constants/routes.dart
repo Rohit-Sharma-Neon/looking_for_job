@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.dart';
 import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
-// import 'file:///E:/FlutterProject/lookingforjob_flutter/lib/ui/main/browsejob_screen/components/browsejob_mobile.dart';
-import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
+import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/main/expiredjobs_screen/expiredjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
@@ -32,9 +31,9 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_
 
 var customRoutes = <String, WidgetBuilder>{
   '/': (context) => SplashScreen(),
-  // OnBoardings
-  '/signIn1': (context) => LoginPage(),
-  // '/login_dialogbox': (context) => LoginDialogBox()'/register_page': (context) => RegisterPage(),
+
+  '/login_screen': (context) => LoginPage(),
+  '/register_page': (context) => RegisterPage(),
 
   '/dashboard_screen': (context) => DashBoardScreen(),
   '/profilepublicview_screen': (context) => ProfilePublicView(),
@@ -50,7 +49,6 @@ var customRoutes = <String, WidgetBuilder>{
   '/postajob_screen': (context) => PostJobMobileComponent(),
   '/browsejob_screen': (context) => BrowseJobScreen(),
 
-
   '/register_page': (context) => RegisterPage(),
   '/forgot_password': (context) => ForgotPassword(),
   '/job_description': (context) => JobDescription(),
@@ -62,14 +60,10 @@ var customRoutes = <String, WidgetBuilder>{
   '/onboarding_screen': (context) => OnboardingScreen(),
   '/splash_screen': (context) => SplashScreen(),
 
-
-
-
   //job seeker Screens
   '/favoritejob_screen': (context) => FavoriteJobScreen(),
   '/myexperience_screen': (context) => MyExperienceScreen(),
   '/addnewexperience_screen': (context) => AddNewExperience(),
   '/appliedjob_screen': (context) => AppliedJobScreen(),
   '/jobalert_screen': (context) => JobAlertScreen(),
-
 };

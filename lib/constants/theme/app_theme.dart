@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +14,17 @@ enum AppTheme {
 
 final appThemeData = {
   AppTheme.LightTheme: ThemeData(
+    pageTransitionsTheme: PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: SharedAxisPageTransitionsBuilder(
+          transitionType: SharedAxisTransitionType.horizontal,
+        ),
+        TargetPlatform.iOS: SharedAxisPageTransitionsBuilder(
+          transitionType: SharedAxisTransitionType.horizontal,
+        ),
+      },
+    ),
+
     brightness: Brightness.light,
     primaryColorLight: primaryColorLight,
     accentColor: primaryColorLight,

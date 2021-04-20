@@ -20,7 +20,7 @@ class DashBoardNavigationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        minimumSize: Size(double.infinity, 50.h),
+        minimumSize: Size(double.infinity, 40.h),
         padding: EdgeInsets.all(12.h),
         primary: Color(0xFF333333),
         shape: RoundedRectangleBorder(

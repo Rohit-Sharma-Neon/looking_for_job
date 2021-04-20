@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
+import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 
 class ForgotMobileComponent extends StatefulWidget {
   @override
@@ -16,13 +18,8 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: !kIsWeb
-          ? AppBar(
-              backgroundColor: primaryColorLight,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(cornersRadiusLight.r),
-                ),
-              ),
+          ? BaseAppBar2(
+              title: 'Forgot Password',
             )
           : null,
       body: SingleChildScrollView(

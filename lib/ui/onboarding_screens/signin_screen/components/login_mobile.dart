@@ -9,6 +9,7 @@ import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
+import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
 
 class LoginMobileComponent extends StatefulWidget {
   @override
@@ -31,9 +32,13 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
           ),
           Spacer(flex: 2),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-            margin:
-                EdgeInsets.symmetric(horizontal: scaffoldHorizontalPadding.w),
+            padding: EdgeInsets.symmetric(
+              horizontal: 20.w,
+              vertical: 20.h,
+            ),
+            margin: EdgeInsets.symmetric(
+              horizontal: scaffoldHorizontalPadding.w,
+            ),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
@@ -59,26 +64,15 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                         fontWeight: FontWeight
                             .bold), //Theme.of(context).textTheme.headline1
                   ),
-                  SizedBox(height: 10.h),
-                  TextField(
-                    decoration: InputDecoration(
-                      icon: Icon(
-                        Icons.account_circle,
-                      ),
-                      contentPadding: EdgeInsets.only(bottom: 0),
-                      labelText: 'Username / Email Address',
-                      labelStyle: TextStyle(fontSize: textSize16.sp),
-                    ),
+                  CustomTextFormField(
+                    labelText: "Username / Email Address",
+                    topMargin: 10.h,
+                    icons: Icons.account_circle,
                   ),
-                  SizedBox(height: 10.h),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.only(bottom: 0),
-                      icon: Icon(Icons.lock),
-                      labelText: 'Password',
-                      labelStyle: TextStyle(fontSize: textSize16.sp),
-                    ),
+                  CustomTextFormField(
+                    labelText: "Password",
+                    topMargin: 10.h,
+                    icons: Icons.lock,
                   ),
                   SizedBox(height: 20.h),
                   RichText(

@@ -22,7 +22,7 @@ class _JobDescriptionState extends State<JobDescription> {
   Location _location = Location();
 
   static const LatLng _initialcameraposition =
-  const LatLng(45.521563, -122.677433);
+      const LatLng(45.521563, -122.677433);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -36,6 +36,7 @@ class _JobDescriptionState extends State<JobDescription> {
   }
 
   MapType _currentMapType = MapType.normal;
+
   void _onMapTypeButtonPressed() {
     setState(() {
       _currentMapType = _currentMapType == MapType.normal
@@ -43,7 +44,9 @@ class _JobDescriptionState extends State<JobDescription> {
           : MapType.normal;
     });
   }
+
   final TextEditingController _typeAheadController = TextEditingController();
+
   BoxShadow _boxShadow() {
     return BoxShadow(
       color: Colors.grey.withOpacity(0.2),
@@ -52,6 +55,7 @@ class _JobDescriptionState extends State<JobDescription> {
       offset: Offset(0, 0),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -59,10 +63,12 @@ class _JobDescriptionState extends State<JobDescription> {
     return Scaffold(
       bottomSheet: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
-            primary: primaryColorLight,
-            minimumSize: Size(double.infinity, 40.h)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(0),
+          ),
+          primary: primaryColorLight,
+          minimumSize: Size(double.infinity, 40.h),
+        ),
         onPressed: () {},
         child: Text(
           "Apply Now",
@@ -79,88 +85,41 @@ class _JobDescriptionState extends State<JobDescription> {
               backgroundColor: Colors.teal[50],
               pinned: true,
               snap: false,
-              leading: Icon(Icons.arrow_back_ios_rounded,color: Colors.blue,),
-              // centerTitle: true,
-              // actions: [
-              //   Padding(
-              //     padding: EdgeInsets.symmetric(horizontal: 2.w),
-              //     child: RichText(
-              //       text: TextSpan(children: [
-              //         TextSpan(
-              //           text: "iOS Developer\n(Fresher can apply)",
-              //           style: TextStyle(
-              //             fontSize: 20.sp,
-              //             color: Colors.black,
-              //           ),
-              //         ),
-              //       ]),
-              //     ),
-              //   ),
-              //   SizedBox(height: 10.h),
-              //   Padding(
-              //     padding: EdgeInsets.symmetric(horizontal: 5.w),
-              //     child: RichText(
-              //       text: TextSpan(
-              //         children: [
-              //           TextSpan(
-              //             text: "Home",
-              //             style: TextStyle(
-              //               color: Colors.black,
-              //               fontSize: 18.sp,
-              //             ),
-              //           ),
-              //           WidgetSpan(
-              //             alignment: PlaceholderAlignment.middle,
-              //             child: Icon(Icons.arrow_right_outlined),
-              //           ),
-              //           TextSpan(
-              //             text: "Information Technology",
-              //             style: TextStyle(
-              //               color: Colors.black,
-              //               fontSize: 18.sp,
-              //             ),
-              //           ),
-              //           WidgetSpan(
-              //             alignment: PlaceholderAlignment.middle,
-              //             child: Icon(Icons.arrow_right_outlined),
-              //           ),
-              //           TextSpan(
-              //             text: "Software Developers, Applications",
-              //             style: TextStyle(
-              //               color: Colors.black,
-              //               fontSize: 18.sp,
-              //             ),
-              //           ),
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // ],
+              leading: InkWell(
+                child: Icon(
+                  Icons.arrow_back_rounded,
+                  color: Colors.blue,
+                ),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
               flexibleSpace: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: FlexibleSpaceBar(
-                  centerTitle: true,
-                  title: Text("iOS Developer (Fresher can apply)",
-                    style: TextStyle(
+                    centerTitle: true,
+                    title: Text(
+                      "iOS Developer (Fresher can apply)",
+                      style: TextStyle(
                         fontSize: textSize18.sp,
                         color: Colors.black,
-                      ),),
-
-                  background: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(appleIcon,height: 70.nsp,),
-                      SizedBox(width: 50),
-                      PrimaryButton(text: "Apply Now",),
-
-
-                    ],
-                  )
-
-                ),
+                      ),
+                    ),
+                    background: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          appleIcon,
+                          height: 70.nsp,
+                        ),
+                        SizedBox(width: 50),
+                        PrimaryButton(
+                          text: "Apply Now",
+                        ),
+                      ],
+                    )),
               ),
             ),
-
           ];
         },
         body: Stack(
@@ -280,17 +239,19 @@ class _JobDescriptionState extends State<JobDescription> {
                           color: Colors.white,
                           width: 400.w,
                           child: Padding(
-                            padding:
-                            EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15.h, horizontal: 15.w),
                             child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.w),
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                    borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
+                                      borderRadius: BorderRadius.circular(
+                                          cornersRadiusLowest.r),
                                       boxShadow: [_boxShadow()],
                                     ),
                                     child: Column(
@@ -307,7 +268,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 20.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.location_on,
@@ -317,7 +279,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             SizedBox(width: 10.w),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Location",
                                                     style: TextStyle(
@@ -335,7 +298,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.shop_outlined,
@@ -345,7 +309,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             SizedBox(width: 10.w),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Job Type",
                                                     style: TextStyle(
@@ -363,7 +328,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.account_balance,
@@ -373,14 +339,16 @@ class _JobDescriptionState extends State<JobDescription> {
                                             SizedBox(width: 10.w),
                                             Column(
                                               mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Salary",
                                                     style: TextStyle(
                                                       fontSize: 18.sp,
                                                       color: Colors.black,
                                                     )),
-                                                Text("12,000 ₹ - 20,000 ₹ Per Month",
+                                                Text(
+                                                    "12,000 ₹ - 20,000 ₹ Per Month",
                                                     style: TextStyle(
                                                       fontSize: 18.sp,
                                                       color: Color(0xFF666666),
@@ -391,7 +359,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.timer,
@@ -400,7 +369,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Date Posted",
                                                     style: TextStyle(
@@ -420,23 +390,28 @@ class _JobDescriptionState extends State<JobDescription> {
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 15.h,),
+                                  SizedBox(
+                                    height: 15.h,
+                                  ),
                                   Container(
-                                    padding: EdgeInsets.symmetric(horizontal: 10.w),
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10.w),
                                     decoration: BoxDecoration(
                                       color: Colors.white,
-                                      borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
+                                      borderRadius: BorderRadius.circular(
+                                          cornersRadiusLowest.r),
                                       boxShadow: [_boxShadow()],
                                     ),
-
                                     child: Column(
                                       children: [
                                         SizedBox(height: 15.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Additional Details",
                                                     style: TextStyle(
@@ -453,7 +428,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.assignment_ind,
@@ -462,7 +438,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Job ID",
                                                     style: TextStyle(
@@ -480,7 +457,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ),
                                         SizedBox(height: 10.h),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Icon(
                                               Icons.perm_identity,
@@ -489,7 +467,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             ),
                                             SizedBox(width: 10.w),
                                             Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Text("Job Views",
                                                     style: TextStyle(
@@ -512,7 +491,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                   SizedBox(height: 20.h),
                                   Column(
                                     mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text("Job Description",
                                           style: TextStyle(
@@ -569,7 +549,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                               width: 130.w,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEFF7FD),
-                                                borderRadius: BorderRadius.circular(5),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
                                               ),
                                               child: Text(" #iOSDeveloper",
                                                   style: TextStyle(
@@ -586,7 +567,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                               width: 90.w,
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEFF7FD),
-                                                borderRadius: BorderRadius.circular(5),
+                                                borderRadius:
+                                                    BorderRadius.circular(5),
                                               ),
                                               child: Text(" #iOSJobs",
                                                   style: TextStyle(
@@ -598,7 +580,9 @@ class _JobDescriptionState extends State<JobDescription> {
                                         ],
                                       ),
                                       SizedBox(height: 8.h),
-                                      Divider(color: Colors.grey,),
+                                      Divider(
+                                        color: Colors.grey,
+                                      ),
                                       SizedBox(height: 20.h),
                                       Row(
                                         children: [
@@ -607,7 +591,9 @@ class _JobDescriptionState extends State<JobDescription> {
                                                 fontSize: 26.sp,
                                                 color: Colors.black,
                                               )),
-                                          SizedBox(width: 10.w,),
+                                          SizedBox(
+                                            width: 10.w,
+                                          ),
                                           Icon(Icons.map)
                                         ],
                                       ),
@@ -615,8 +601,9 @@ class _JobDescriptionState extends State<JobDescription> {
                                       Container(
                                         height: height * 0.6,
                                         width: width,
-                                        decoration:
-                                        BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(20)),
                                         child: GoogleMap(
                                           onMapCreated: _onMapCreated,
                                           initialCameraPosition: CameraPosition(
@@ -680,7 +667,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                           //     bottomRight: Radius.circular(5)),
                                         ),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text("AP-GROUP",
                                                 style: TextStyle(
@@ -691,7 +679,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                             MaterialButton(
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
-                                                BorderRadius.circular(5.0),
+                                                    BorderRadius.circular(5.0),
                                               ),
                                               color: Color(0xFF0691CE),
                                               textColor: Color(0xFFffffff),
@@ -717,30 +705,31 @@ class _JobDescriptionState extends State<JobDescription> {
                                           width: 200.w,
                                           height: 50.h,
                                           decoration: BoxDecoration(
-                                            color: Color(0xFF414141) ,
-                                            borderRadius: BorderRadius.circular(5),
+                                            color: Color(0xFF414141),
+                                            borderRadius:
+                                                BorderRadius.circular(5),
                                           ),
                                           child: Row(
                                             children: [
                                               Expanded(
                                                   child: Align(
-                                                    child: Text(
-                                                      "Save this job",
-                                                      style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 16),
-                                                    ),
-                                                  )),
+                                                child: Text(
+                                                  "Save this job",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 16),
+                                                ),
+                                              )),
                                               InkWell(
-                                                onTap: (){
-                                                },
+                                                onTap: () {},
                                                 child: Container(
                                                   width: 50.w,
                                                   height: 50.h,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xFF4A4A4A),
                                                     borderRadius:
-                                                    BorderRadius.circular(5),
+                                                        BorderRadius.circular(
+                                                            5),
                                                   ),
                                                   child: Icon(
                                                     Icons.favorite,
@@ -768,8 +757,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             onPressed: () {},
                                           ),
                                           IconButton(
-                                            icon:
-                                            Image.asset(gmaillogos, height: 100.h),
+                                            icon: Image.asset(gmaillogos,
+                                                height: 100.h),
                                             onPressed: () {},
                                           ),
                                           IconButton(
@@ -778,8 +767,8 @@ class _JobDescriptionState extends State<JobDescription> {
                                             onPressed: () {},
                                           ),
                                           IconButton(
-                                            icon:
-                                            Image.asset(twitterlogo, height: 100.h),
+                                            icon: Image.asset(twitterlogo,
+                                                height: 100.h),
                                             onPressed: () {},
                                           ),
                                         ],
@@ -795,12 +784,14 @@ class _JobDescriptionState extends State<JobDescription> {
                                       SizedBox(height: 10.h),
 
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Row(
                                             children: [
                                               Icon(Icons.shop_outlined,
-                                                  size: 22, color: Color(0xFF0691CE)),
+                                                  size: 22,
+                                                  color: Color(0xFF0691CE)),
                                               SizedBox(width: 10.w),
                                               Text("More jobs by AP-GROUP",
                                                   style: TextStyle(
@@ -812,8 +803,11 @@ class _JobDescriptionState extends State<JobDescription> {
                                           SizedBox(height: 10.h),
                                           Row(
                                             children: [
-                                              Icon(Icons.perm_contact_cal_rounded,
-                                                  size: 22, color: Color(0xFF0691CE)),
+                                              Icon(
+                                                  Icons
+                                                      .perm_contact_cal_rounded,
+                                                  size: 22,
+                                                  color: Color(0xFF0691CE)),
                                               SizedBox(width: 10.w),
                                               Text("More jobs by Akash Panchal",
                                                   style: TextStyle(
@@ -956,8 +950,7 @@ class _JobDescriptionState extends State<JobDescription> {
                                       // ),
                                     ],
                                   ),
-                                ]
-                            ),
+                                ]),
                           ),
                         ),
                       ],
@@ -969,7 +962,6 @@ class _JobDescriptionState extends State<JobDescription> {
           ],
         ),
       ),
-
     );
   }
 }

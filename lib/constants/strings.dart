@@ -41,7 +41,10 @@ const String favoriteUsers = "Favorite Users";
 const String account = "Account";
 const String transactions = "Transactions";
 const String logout = "Logout";
-
+const String userName = "User Name";
+const String email = "Email";
+const String phone = "Phone";
+const String dashBoard = "Dashboard";
 
 
 // ProfilePublicView
