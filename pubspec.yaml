@@ -49,11 +49,22 @@ dependencies:
   like_button: ^2.0.2
   progress_state_button: ^1.0.3
   flutter_rating_bar: ^4.0.0
+  flutter_launcher_icons: ^0.9.0
+  cupertino_stepper: ^0.2.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: ""
+  image_path_android: "assets/images/lookingforjob_bg.png"
+  image_path_ios: "assets/images/lookingforjob_bg.png"
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

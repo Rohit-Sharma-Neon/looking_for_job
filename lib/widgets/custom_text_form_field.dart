@@ -8,8 +8,13 @@ class CustomTextFormField extends StatelessWidget {
   final bool autoFocus;
   final IconData icons;
   final double topMargin;
+  final String keyBoardType;
+  final TextInputType textInputType;
+
 
   CustomTextFormField({
+    this.keyBoardType,
+    this.textInputType,
     this.icons,
     this.labelText = "",
     this.bgColor,
@@ -39,8 +44,10 @@ class CustomTextFormField extends StatelessWidget {
             ),
           ]),
       child: TextFormField(
+        // keyboardType: textInputType,
         textInputAction: TextInputAction.next,
         autofocus: autoFocus,
+        keyboardType: textInputType,
         style: TextStyle(fontSize: textSize16.sp),
         decoration: InputDecoration(
           labelText: labelText,
@@ -56,6 +63,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
           ),
         ),
+
       ),
     );
   }

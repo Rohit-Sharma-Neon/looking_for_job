@@ -22,6 +22,7 @@ import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/onboarding_screen/onboarding_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/postajob/post_job_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/splashscreen/splash_screen.dart';
@@ -31,11 +32,10 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => BrowseJobScreen(),
+  '/': (context) => StepperPage(),
   // OnBoardings
   '/job_description': (context) => JobDescription(),
   '/loginPage': (context) => LoginPage(),
-  '/': (context) => PendingJobScreen(),
 
   '/login_screen': (context) => LoginPage(),
   '/register_page': (context) => RegisterPage(),
@@ -73,5 +73,6 @@ var customRoutes = <String, WidgetBuilder>{
   '/addnewexperience_screen': (context) => AddNewExperience(),
   '/appliedjob_screen': (context) => AppliedJobScreen(),
   '/jobalert_screen': (context) => JobAlertScreen(),
+  '/stepper_page': (context) => StepperPage(),
 
 };

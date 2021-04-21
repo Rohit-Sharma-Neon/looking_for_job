@@ -81,13 +81,14 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                             padding: EdgeInsets.symmetric(
                                 horizontal: scaffoldHorizontalPadding + 10.w),
                             child: RichText(
-                                text: TextSpan(children: [
+                                text: TextSpan(
+                                    children: [
                                   WidgetSpan(
                                       child: Icon(
                                         Icons.blur_linear_outlined,
                                         size: 30.h,
                                         color: primaryColorLight,
-                                      )),
+                                      ),),
                                   TextSpan(
                                       text: "     Company Information",
                                       style: TextStyle(
@@ -115,7 +116,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                               fontSize: textSize20.nsp,
                                               color: Colors.black)),
                                       TextSpan(
-                                          text: " *",
+                                          text: "*",
                                           style: TextStyle(
                                               fontSize: textSize20.nsp,
                                               color: Colors.black)),
@@ -575,7 +576,6 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
-                                        autofocus: true,
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "Min",
@@ -606,7 +606,6 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
-                                        autofocus: true,
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "Max",
