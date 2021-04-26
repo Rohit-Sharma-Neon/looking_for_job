@@ -13,6 +13,7 @@ import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_scree
 import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/kunal/subcategories.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/my_resume/add_new_resume.dart';
 import 'package:lookingforjob_flutter/ui/main/my_resume/my_resume_screen.dart';
@@ -33,7 +34,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => ProfileSeekerScreen(),
+  '/': (context) => SubCategoriesScreen(),
 
   // Sprint 1
   '/profile_seeker_screen': (context) => ProfileSeekerScreen(),
@@ -70,6 +71,7 @@ var customRoutes = <String, WidgetBuilder>{
   '/add_new_resume': (context) => AddNewResume(),
   '/feedback': (context) => FeedbackScreen(),
   '/onboarding_screen': (context) => OnboardingScreen(),
+  '/subcategories': (context) => SubCategoriesScreen(),
   '/splash_screen': (context) => SplashScreen(),
 
   //job seeker Screens
