@@ -10,7 +10,6 @@ import 'package:lookingforjob_flutter/ui/main/faq_screen/faq_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
@@ -22,7 +21,6 @@ import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/onboarding_screen/onboarding_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
-import 'package:lookingforjob_flutter/ui/main/postajob/post_job_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
@@ -33,18 +31,13 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => ProfileSeekerScreen(),
-
-  // Sprint 1
-  '/profile_seeker_screen': (context) => ProfileSeekerScreen(),
-  '/home_screen': (context) => HomeScreen(),
-
+  '/': (context) => RegisterPage(),
+  // OnBoardings
   '/job_description': (context) => JobDescription(),
   '/loginPage': (context) => LoginPage(),
-  '/pendingJobScreen': (context) => PendingJobScreen(),
-  '/login_screen': (context) => LoginPage(),
   '/register_page': (context) => RegisterPage(),
-  '/companies_screen': (context) => CompaniesScreen(),
+  '/forgot_password': (context) => ForgotPassword(),
+  '/splash_screen': (context) => SplashScreen(),
 
   '/dashboard_screen': (context) => DashBoardScreen(),
   '/profilepublicview_screen': (context) => ProfilePublicView(),
@@ -62,15 +55,13 @@ var customRoutes = <String, WidgetBuilder>{
   '/browsejob_screen': (context) => BrowseJobScreen(),
 
   '/register_page': (context) => RegisterPage(),
-  '/forgot_password': (context) => ForgotPassword(),
   '/job_description': (context) => JobDescription(),
-  // '/employer_dahboard': (context) => EmployerDashboard(),
+  '/employer_dahboard': (context) => ProfileSeekerScreen(),
   '/companies_screen': (context) => CompaniesScreen(),
   '/my_resume_screen': (context) => MyResumeScreen(),
   '/add_new_resume': (context) => AddNewResume(),
   '/feedback': (context) => FeedbackScreen(),
   '/onboarding_screen': (context) => OnboardingScreen(),
-  '/splash_screen': (context) => SplashScreen(),
 
   //job seeker Screens
   '/favoritejob_screen': (context) => FavoriteJobScreen(),
@@ -78,6 +69,4 @@ var customRoutes = <String, WidgetBuilder>{
   '/addnewexperience_screen': (context) => AddNewExperience(),
   '/appliedjob_screen': (context) => AppliedJobScreen(),
   '/jobalert_screen': (context) => JobAlertScreen(),
-  '/stepper_page': (context) => StepperPage(),
-
 };

@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
+import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 import 'package:lookingforjob_flutter/widgets/base_app_bar.dart';
 import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 
@@ -17,87 +19,100 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: !kIsWeb
-          ? BaseAppBar2(
-              title: 'Forgot Password',
-              leadingIcon: Icons.arrow_back_rounded,
-            )
-          : null,
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Spacer(flex: 1),
-            Padding(
-              padding: EdgeInsets.only(top: 80.h),
-              child: Image.asset(
-                appLogoWithName,
-                height: 50,
-              ),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 170.h),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(signinbg),
+              fit: BoxFit.cover,
             ),
-            // Spacer(flex: 1),
-            Padding(
-              padding: EdgeInsets.only(top: 50.h),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-                margin: EdgeInsets.symmetric(horizontal: 20.w),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(0, 3),
-                    )
-                  ],
+          ),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  forgotpassword,
+                  height: 240.h,
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                          fontSize: 25.nsp, fontWeight: FontWeight.bold),
-                      //TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 10.h),
-                    TextField(
-                      decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.account_circle,
+                Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                      fontSize: 25.nsp, fontWeight: FontWeight.bold),
+                  //TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold),
+                ),
+
+                Container(
+                  height: 50.h,
+                  margin: EdgeInsets.symmetric(vertical: 10.h),
+                  decoration: BoxDecoration(
+                      color: Color(0xFF461584),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: Color(0xFF7939CB))),
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: TextField(
+                        style: TextStyle(color: Colors.white),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Email',
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontStyle: FontStyle.normal,
+                          ),
                         ),
-                        labelText: 'Email Address',
                       ),
                     ),
-                    SizedBox(height: 15.h),
-                    // MaterialButton(
-                    //   height: 40.h,
-                    //   minWidth: double.infinity,
-                    //   shape: RoundedRectangleBorder(
-                    //     borderRadius: BorderRadius.circular(5.0),
-                    //   ),
-                    //   color: Color(0xFF0691CE),
-                    //   textColor: Color(0xFFffffff),
-                    //   child: Text("Request Password"),
-                    //   onPressed: () {},
-                    // ),
-                    PrimaryButton(
-                      text: "Request Password",
-                      width: double.infinity.w,
-                      height: 40.h,
-                      onPressed: () {},
-                    )
-                  ],
+                  ),
                 ),
-              ),
+
+                Container(
+                  height: 50.h,
+                  margin: EdgeInsets.symmetric(vertical: 10.h),
+                  decoration: BoxDecoration(
+                    color: Color(0xFF1492E5),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => ProfileSeekerScreen()),
+                        ModalRoute.withName('/'),
+                      );
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFFE5D2FF), Color(0xffFFFFFF)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(16.0)),
+                      child: Container(
+                        constraints:
+                        BoxConstraints(maxWidth: 400.w, minHeight: 50.h),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "FORGET PASSWORD",
+                          textAlign: TextAlign.center,
+                          style:
+                          TextStyle(color: Color(0xff36195C), fontSize: textSize16, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            // Spacer(flex: 2),
-          ],
-        ),
-      ),
+          )
+      )
     );
   }
 }

@@ -14,17 +14,19 @@ class _SplashScreenState extends State<SplashScreen>
   AnimationController _controller;
   Animation<double> _animation;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
     Timer(
-      Duration(milliseconds: 5000),
-          () => Navigator.pushReplacement(
+      Duration(seconds: 5),
+      () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => LoginPage(),
         ),
       ),
     );
+
     _controller = AnimationController(
         duration: const Duration(milliseconds: 4800), vsync: this, value: 0.4);
     _animation =
@@ -38,23 +40,18 @@ class _SplashScreenState extends State<SplashScreen>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              stops: [0.01, 1.0, 0.1],
-              colors: [Colors.blue[200], Colors.white, Colors.greenAccent])),
+      color: Colors.white,
       child: ScaleTransition(
           scale: _animation,
           alignment: Alignment.center,
           child: Center(
             child: Image.asset(
-              "assets/images/lookingforjob_bg.png",
-              height: 200.h,
-              // color: facebookColor,
+              "assets/images/lookingforjob.png",
+              height: 120.h,
             ),
           )),
     );

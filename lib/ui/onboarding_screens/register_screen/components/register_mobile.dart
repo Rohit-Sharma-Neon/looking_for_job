@@ -4,8 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 import 'package:lookingforjob_flutter/widgets/label_check_box.dart';
 
@@ -20,162 +22,370 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
   bool _rememberMeFlag = false, checkedValue = false;
   bool isEmployer = false;
 
+  bool _obscureText = true;
+
+  bool isSignupScreen = true;
+
+  String _password;
+
+  // Toggles the password show status
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        height: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-        margin: EdgeInsets.symmetric(
-          horizontal: scaffoldHorizontalPadding.w,
-          vertical: scaffoldHorizontalPadding.h,
-        ),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(
-            Radius.circular(cornersRadiusLight.r),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 80.h),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(signinbg),
+              fit: BoxFit.cover,
+            ),
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3),
-            )
-          ],
-        ),
-        child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "Let's create your account!",
-                style: TextStyle(
-                    fontSize: textSize26.sp, fontWeight: FontWeight.bold),
+              Row(
+                children: [
+                  Image.asset(
+                    lookingjoblogo,
+                    height: 160.h,
+                    width: 100.w,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text('LOOKING FOR', style: TextStyle(fontWeight: FontWeight.bold, fontSize: textSize24, color: Color(0xFF1492E5)),),
+                          Text(' JOB', style: TextStyle(fontWeight: FontWeight.bold, fontSize: textSize24, color: Color(0xFF19E39E)),),
+                        ],
+                      ),
+                      Text('YOUR ONLY SOURCE FOR YOUR DREAM JOB', style: TextStyle(fontWeight: FontWeight.bold, fontSize: textSize10, color: Color(0xFFE5D2FF)),),
+                    ],
+                  )
+                ],
               ),
+
+
               SizedBox(height: 30.h),
-              CustomRadioButton(
-                defaultSelected: "Job Seeker",
-                width: 140.w,
-                height: 40.h,
-                elevation: 0,
-                absoluteZeroSpacing: true,
-                unSelectedBorderColor: Colors.transparent,
-                unSelectedColor: Theme.of(context).canvasColor,
-                buttonLables: [
-                  'Job Seeker',
-                  'Employer',
-                ],
-                buttonValues: [
-                  'Job Seeker',
-                  'Employer',
-                ],
-                buttonTextStyle: ButtonTextStyle(
-                  selectedColor: Colors.white,
-                  unSelectedColor: Colors.black,
-                  textStyle: TextStyle(fontSize: textSize16.sp),
-                ),
-                radioButtonValue: (value) {
-                  if (value == "Employer") {
-                    isEmployer = true;
-                  } else {
-                    isEmployer = false;
-                  }
-                },
-                selectedColor: Theme.of(context).primaryColor,
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.account_circle,
-                  ),
-                  labelText: 'Full Name',
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  icon: Icon(
-                    Icons.account_circle,
-                  ),
-                  labelText: 'Username',
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  icon: Icon(Icons.email),
-                  labelText: 'Email Address',
-                ),
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  icon: Icon(Icons.lock),
-                  labelText: 'Password',
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Already have an account?",
-                      style: TextStyle(
-                        color: Color(0xFF424242),
-                        fontSize: textSize14.sp,
-                      ),
+              // Row(
+              //   crossAxisAlignment: CrossAxisAlignment.center,
+              //   children: <Widget>[
+              //     GestureDetector(
+              //       onTap: () => setState(() => _value = 0),
+              //       child: Container(
+              //         alignment: Alignment.center,
+              //         height: 50.h,
+              //         width: 135.w,
+              //         decoration: BoxDecoration(
+              //           color: _value == 0 ? Color(0xFF1492E5) : Colors.transparent,
+              //           borderRadius: BorderRadius.circular(10),
+              //         ),
+              //
+              //         child: Text("Employer",style: TextStyle(fontWeight: FontWeight.bold)),
+              //       ),
+              //     ),
+              //     SizedBox(width: 4),
+              //     GestureDetector(
+              //       onTap: () => setState(() => _value = 1),
+              //       child: Container(
+              //         alignment: Alignment.center,
+              //         height: 50.h,
+              //         width: 135.w,
+              //         decoration: BoxDecoration(
+              //           color: _value == 1 ? Color(0xFF1492E5) : Colors.transparent,
+              //           borderRadius: BorderRadius.circular(10),
+              //         ),
+              //         child: Text("Job Seeker", style: TextStyle(fontWeight: FontWeight.bold)),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+
+              // CustomRadioButton(
+              //   defaultSelected: "Job Seeker",
+              //   width: 140.w,
+              //   height: 40.h,
+              //
+              //   elevation: 0,
+              //   absoluteZeroSpacing: true,
+              //   unSelectedBorderColor: Colors.transparent,
+              //   unSelectedColor: Theme.of(context).canvasColor,
+              //   buttonLables: [
+              //     'Job Seeker',
+              //     'Employer',
+              //   ],
+              //   buttonValues: [
+              //     'Job Seeker',
+              //     'Employer',
+              //   ],
+              //   buttonTextStyle: ButtonTextStyle(
+              //     selectedColor: Colors.white,
+              //     unSelectedColor: Colors.black,
+              //     textStyle: TextStyle(fontSize: textSize16.sp),
+              //   ),
+              //   radioButtonValue: (value) {
+              //     if (value == "Employer") {
+              //       isEmployer = true;
+              //     } else {
+              //       isEmployer = false;
+              //     }
+              //   },
+              //   selectedColor: Theme.of(context).primaryColor,
+              // ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        isSignupScreen = false;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Text(
+                          'SIGN UP',
+                          style: TextStyle(
+                              fontSize: 16.nsp,
+                              fontWeight: FontWeight.bold,
+                              color:  !isSignupScreen? Color(0xFF8456BF): Color(0xFFFFFFFF)),
+                        ),
+                        if(!isSignupScreen)
+                          Container(
+                            margin: EdgeInsets.only(top: 5.h),
+                            height: 2,
+                            width: 55,
+                            color: Color(0xFF1492E5),
+                          ),
+                      ],
                     ),
-                    TextSpan(
-                      text: " Log In!",
-                      style: TextStyle(
-                        fontSize: 15.sp,
-                        color: Color(0xFF0691CE),
-                      ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (BuildContext context) => LoginPage()),
-                            ModalRoute.withName('/'),
-                          );
-                        },
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        isSignupScreen = true;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Text(
+                          'LOGIN',
+                          style: TextStyle(
+                              fontSize: 16.nsp,
+                              fontWeight: FontWeight.bold,
+                              color: isSignupScreen? Color(0xFFFFFFFF) : Color(0xFF8456BF)),
+                        ),
+                        if(isSignupScreen)
+                          Container(
+                            margin: EdgeInsets.only(top: 5.h),
+                            height: 2,
+                            width: 55,
+                            color: Color(0xFF1492E5),
+                          ),
+                      ],
                     ),
-                  ],
-                ),
+                  )
+                ],
               ),
-              SizedBox(
+
+              Container(
                 height: 50.h,
+                margin: EdgeInsets.symmetric(vertical: 10.h),
+                decoration: BoxDecoration(
+                    color: Color(0xFF461584),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Color(0xFF7939CB))),
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Name',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              LabeledCheckbox(
-                label:
-                    "By clicking on “Register” button you are agree to ourTerms & Condition",
-                value: checkedValue,
-                onTap: (newValue) {
-                  setState(() {
-                    checkedValue = newValue;
-                  });
-                },
-                gap: 0,
-                fontSize: textSize13.sp,
+              Container(
+                height: 50.h,
+                margin: EdgeInsets.symmetric(vertical: 10.h),
+                decoration: BoxDecoration(
+                    color: Color(0xFF461584),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Color(0xFF7939CB))),
+                child: Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Email',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ),
-              SizedBox(height: 20.h),
-              PrimaryButton(
-                text: "Register",
-                height: primaryButtonHeight.h,
-                width: double.infinity,
-                onPressed: () {
-                  isEmployer
-                      ? Navigator.pushNamedAndRemoveUntil(
-                          context, '/employer_dahboard', (route) => false)
-                      : Navigator.pushNamedAndRemoveUntil(
-                          context, '/dashboard_screen', (route) => false);
-                },
-              )
+              Container(
+                height: 50.h,
+                margin: EdgeInsets.symmetric(vertical: 10.h),
+                decoration: BoxDecoration(
+                    color: Color(0xFF461584),
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: Color(0xFF7939CB))),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.h, bottom: 3.h, left: 20.w),
+                        child: TextFormField(
+                          style: TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Password',
+                              hintStyle: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.normal,
+                              ),
+                              suffixIcon: FlatButton(
+                                onPressed: _toggle,
+                                child: new Text(_obscureText ? "Show" : "Hide", style: TextStyle(color: Color(0xFF1492E5))))
+                          ),
+                          validator: (val) =>
+                              val.length < 6 ? 'Password too short.' : null,
+                          onSaved: (val) => _password = val,
+                          obscureText: _obscureText,
+                          keyboardType: TextInputType.name,
+                          textInputAction: TextInputAction.done,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text(
+                'By top Sign Up button you accept terms and privacy this app',
+                style: TextStyle(color: Colors.white70),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Container(
+                height: 50.h,
+                margin: EdgeInsets.symmetric(vertical: 10.h),
+                decoration: BoxDecoration(
+                  color: Color(0xFF1492E5),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              ProfileSeekerScreen()),
+                      ModalRoute.withName('/'),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFE5D2FF), Color(0xffFFFFFF)],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(16.0)),
+                    child: Container(
+                      constraints:
+                          BoxConstraints(maxWidth: 400.w, minHeight: 50.h),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Create My Account",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color(0xff36195C),
+                            fontSize: textSize16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              // Container(
+              //             //   height: 40.h,
+              //             //   margin: EdgeInsets.all(10),
+              //             //   child: RaisedButton(
+              //             //     onPressed: () {
+              //             //       isEmployer
+              //             //               ? Navigator.pushNamedAndRemoveUntil(
+              //             //                   context, '/employer_dahboard', (route) => false)
+              //             //               : Navigator.pushNamedAndRemoveUntil(
+              //             //                   context, '/dashboard_screen', (route) => false);
+              //             //     },
+              //             //     shape: RoundedRectangleBorder(
+              //             //         borderRadius: BorderRadius.circular(80.0)),
+              //             //     padding: EdgeInsets.all(0.0),
+              //             //     child: Ink(
+              //             //       decoration: BoxDecoration(
+              //             //           gradient: LinearGradient(
+              //             //             colors: [Color(0xFF1492E5), Color(0xff64B6FF)],
+              //             //             begin: Alignment.centerLeft,
+              //             //             end: Alignment.centerRight,
+              //             //           ),
+              //             //           borderRadius: BorderRadius.circular(30.0)),
+              //             //       child: Container(
+              //             //         constraints:
+              //             //         BoxConstraints(maxWidth: 150.w, minHeight: 50.0),
+              //             //         alignment: Alignment.center,
+              //             //         child: Text(
+              //             //           "CREATE",
+              //             //           textAlign: TextAlign.center,
+              //             //           style: TextStyle(color: Colors.white, fontSize: textSize16),
+              //             //         ),
+              //             //       ),
+              //             //     ),
+              //             //   ),
+              //             // ),
+              // PrimaryButton(
+              //   text: "Register",
+              //   height: primaryButtonHeight.h,
+              //   width: double.infinity,
+              //   onPressed: () {
+              //     isEmployer
+              //         ? Navigator.pushNamedAndRemoveUntil(
+              //             context, '/employer_dahboard', (route) => false)
+              //         : Navigator.pushNamedAndRemoveUntil(
+              //             context, '/dashboard_screen', (route) => false);
+              //   },
+              // ),
             ],
           ),
         ),
@@ -183,3 +393,5 @@ class _RegisterMobileComponentState extends State<RegisterMobileComponent> {
     );
   }
 }
+
+
