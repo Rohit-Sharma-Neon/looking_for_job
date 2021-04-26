@@ -394,7 +394,6 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                               child: Padding(
                                 padding: EdgeInsets.only(left: 15.w),
                                 child: TextField(
-                                  autofocus: false,
                                   decoration:
                                       InputDecoration(border: InputBorder.none),
                                 ),

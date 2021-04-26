@@ -10,9 +10,11 @@ class CustomTextFormField extends StatelessWidget {
   final double topMargin;
   final String keyBoardType;
   final TextInputType textInputType;
+  final Widget suffixIcon;
 
 
   CustomTextFormField({
+    this.suffixIcon,
     this.keyBoardType,
     this.textInputType,
     this.icons,
@@ -48,7 +50,7 @@ class CustomTextFormField extends StatelessWidget {
         textInputAction: TextInputAction.next,
         autofocus: autoFocus,
         keyboardType: textInputType,
-        style: TextStyle(fontSize: textSize16.sp),
+        style: TextStyle(fontSize: textSize15.sp),
         decoration: InputDecoration(
           labelText: labelText,
           labelStyle: TextStyle(fontSize: textSize14.sp),
@@ -57,9 +59,9 @@ class CustomTextFormField extends StatelessWidget {
           contentPadding: EdgeInsets.only(top: 0.h, left: 0),
           prefixIcon: Padding(
             padding: EdgeInsets.all(8.r),
-            child: Icon(
-              icons,
-              color: Color(0xFFA0A0A0),
+            child: Icon(icons,
+              color: Colors.black,
+              size: 20,
             ),
           ),
         ),

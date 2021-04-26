@@ -14,6 +14,8 @@ const String menu = "assets/images/menu.png";
 const String appleIcon = "assets/images/appleIcon.png";
 const String blackmenu = "assets/images/blackmenu.png";
 const String profilePlaceholder = "assets/images/profilePlaceholder.jpg";
+const String administratorIcon = "assets/images/administrator.png";
+
 const String mobilelogin = "assets/images/mobilelogin.png";
 const String mobileloginrafiki = "assets/images/mobileloginrafiki.png";
 const String mobileloginrafikii = "assets/images/mobileloginrafikii.png";
