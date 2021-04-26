@@ -5,12 +5,12 @@ import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.
 import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
 import 'package:lookingforjob_flutter/ui/main/expiredjobs_screen/expiredjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/faq_screen/faq_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
@@ -22,6 +22,8 @@ import 'package:lookingforjob_flutter/ui/main/myjobs_screen/myjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/onboarding_screen/onboarding_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/postajob/post_job_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/splashscreen/splash_screen.dart';
@@ -62,7 +64,7 @@ var customRoutes = <String, WidgetBuilder>{
   '/register_page': (context) => RegisterPage(),
   '/forgot_password': (context) => ForgotPassword(),
   '/job_description': (context) => JobDescription(),
-  '/employer_dahboard': (context) => EmployerDashboard(),
+  // '/employer_dahboard': (context) => EmployerDashboard(),
   '/companies_screen': (context) => CompaniesScreen(),
   '/my_resume_screen': (context) => MyResumeScreen(),
   '/add_new_resume': (context) => AddNewResume(),

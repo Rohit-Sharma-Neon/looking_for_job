@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:cupertino_stepper/cupertino_stepper.dart';
+// import 'package:cupertino_stepper/cupertino_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
@@ -36,15 +36,14 @@ class _StepperPageState extends State<StepperPage> {
       drawer: BaseDrawer(),
       backgroundColor: Colors.white,
       body: CupertinoPageScaffold(
-
         child: SafeArea(
           child: OrientationBuilder(
             builder: (BuildContext context, Orientation orientation) {
               switch (orientation) {
                 case Orientation.portrait:
-                  return _buildStepper(StepperType.vertical);
+                 // return _buildStepper(StepperType.vertical);
                 case Orientation.landscape:
-                  return _buildStepper(StepperType.horizontal);
+                 // return _buildStepper(StepperType.horizontal);
                 default:
                   throw UnimplementedError(orientation.toString());
               }
@@ -55,7 +54,7 @@ class _StepperPageState extends State<StepperPage> {
     );
   }
 
-  CupertinoStepper _buildStepper(StepperType type) {
+ /* CupertinoStepper _buildStepper(StepperType type) {
     final canCancel = currentStep > 0;
     final canContinue = currentStep < 3;
     return CupertinoStepper(
@@ -83,7 +82,7 @@ class _StepperPageState extends State<StepperPage> {
         )
       ],
     );
-  }
+  }*/
 
   Step _buildStep({
     Widget title,
