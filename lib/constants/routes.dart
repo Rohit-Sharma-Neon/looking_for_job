@@ -69,7 +69,7 @@ var customRoutes = <String, WidgetBuilder>{
   '/add_new_resume': (context) => AddNewResume(),
   '/feedback': (context) => FeedbackScreen(),
   '/onboarding_screen': (context) => OnboardingScreen(),
-  '/subcategories': (context) => SubCategoriesScreen(),
+  // '/subcategories': (context) => SubCategoriesScreen(),
   '/splash_screen': (context) => SplashScreen(),
 
   //job seeker Screens

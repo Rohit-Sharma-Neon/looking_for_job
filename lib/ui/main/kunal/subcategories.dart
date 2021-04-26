@@ -1,4 +1,5 @@
 import 'package:animations/animations.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/components/job_seeker_dashboard_components/latest_jobs_component.dart';
@@ -369,7 +370,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                 children: [
                                   // ignore: deprecated_member_use
                                   RaisedButton(
-                                   shape: RoundedRectangleBorder(side: BorderSide(color: Colors.white)),
+                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r),side: BorderSide(color: Colors.grey[600],)),
                                     color: _hasBeenPressed
                                         ? Colors.blue
                                     : Colors.white,
