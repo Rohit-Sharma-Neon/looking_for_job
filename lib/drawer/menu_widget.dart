@@ -247,7 +247,7 @@ class DrawerList {
   static List<String> drawerData = [
     browseJobs,
     companies,
-    dashboard,
+    profile,
     myCompanies,
     myJobs,
     pendingJobs,

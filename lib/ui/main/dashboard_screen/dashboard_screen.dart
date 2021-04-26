@@ -12,20 +12,18 @@ class DashBoardScreen extends StatefulWidget {
 class _DashBoardScreenState extends State<DashBoardScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Responsive(
-          /// Mobile :-
-          mobile: DashBoardMobileComponent(),
-          /// Tablet :-
-          tablet: Container(
-            height: double.infinity,
-            color: Colors.red,
-          ),
-
-          /// Desktop :-
-          desktop: DashBoardDesktopComponent(),
+    return Scaffold(
+      body: Responsive(
+        /// Mobile :-
+        mobile: DashBoardMobileComponent(),
+        /// Tablet :-
+        tablet: Container(
+          height: double.infinity,
+          color: Colors.red,
         ),
+
+        /// Desktop :-
+        desktop: DashBoardDesktopComponent(),
       ),
     );
   }

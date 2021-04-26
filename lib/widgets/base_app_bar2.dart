@@ -10,9 +10,10 @@ class BaseAppBar2 extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final IconData leadingIcon;
   final GlobalKey<ScaffoldState> scaffoldKey;
+  final Color backgroundColor;
 
   const BaseAppBar2(
-      {Key key, @required this.title, this.leadingIcon, this.scaffoldKey})
+      {Key key, @required this.title, this.leadingIcon, this.scaffoldKey, this.backgroundColor})
       : super(key: key);
 
   @override

@@ -27,21 +27,20 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
+  cupertino_icons: ^1.0.2
   flutter_bloc: ^7.0.0
   flutter_screenutil: ^5.0.0
-  equatable: ^0.4.0
-  shared_preferences: ^0.5.12+4
-  country_code_picker: ^1.7.0
-  flutter_slider_drawer: ^1.2.1
-  flutter_typeahead: ^2.0.0
+  equatable: ^2.0.0
+  shared_preferences: ^2.0.5
+  country_code_picker: ^2.0.1
+  flutter_typeahead: ^3.1.1
   custom_radio_grouped_button: ^1.0.6+1
-  google_fonts: ^1.1.2
-  google_maps_flutter: ^1.0.3
-  location: ^3.0.2
+  google_fonts: ^2.0.0
+  google_maps_flutter: ^2.0.3
+  location: ^4.1.1
+  flutter_slider_drawer: ^2.0.0
   fluttericon: ^2.0.0
   gender_selection: ^1.0.0
-  spring: ^1.0.4
   animations: ^2.0.0
   custom_splash: ^0.0.2
   splash_screen_view: ^1.0.3
@@ -49,6 +48,14 @@ dependencies:
   like_button: ^2.0.2
   progress_state_button: ^1.0.3
   flutter_rating_bar: ^4.0.0
+  curved_navigation_bar: ^0.3.7
+  timeline_tile: ^2.0.0
+  filter_list: ^0.0.8 # For Chips to select
+  custom_navigation_bar: ^0.8.1 # Bottom navigation
+  carousel_slider: ^3.0.0 # For banner
+  image_picker: ^0.7.4
+  fa_stepper: ^0.0.2
+  syncfusion_flutter_sliders: ^19.1.57-beta # range slider
 
 
 dev_dependencies:

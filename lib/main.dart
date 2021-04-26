@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       designSize: Size(360, 690),
       builder: () {
         return BlocProvider(
-          create: (context) => ThemeBloc(ThemeState()),
+          create: (context) => ThemeBloc(
+            ThemeState(),
+          ),
           child: BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
               return MaterialApp(

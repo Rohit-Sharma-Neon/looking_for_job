@@ -311,7 +311,7 @@ class DashBoardNavigationList {
   static List<Widget> myAccountList = [
     CustomListTile(
       leadingIcon: Icons.dashboard,
-      title: dashboard,
+      title: profile,
     ),
     CustomListTile(
       leadingIcon: Icons.person_pin_circle_rounded,

@@ -11,26 +11,17 @@ import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/widgets/base_app_bar2.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
-import 'package:lookingforjob_flutter/widgets/dashboard_navigation_button.dart';
 
-class EmployerDashboard extends StatefulWidget {
+class ProfileEmployerScreen extends StatefulWidget {
   @override
-  _EmployerDashboardState createState() => _EmployerDashboardState();
+  _ProfileEmployerScreenState createState() => _ProfileEmployerScreenState();
 }
 
-class _EmployerDashboardState extends State<EmployerDashboard> {
+class _ProfileEmployerScreenState extends State<ProfileEmployerScreen> {
   int selectedRadio;
   String _cityValue;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
-
-  setSelectedRadio(int val) {
-    setState(
-      () {
-        selectedRadio = val;
-      },
-    );
-  }
 
   BoxShadow _boxShadow() {
     return BoxShadow(
@@ -53,7 +44,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
           primary: primaryColorLight,
           minimumSize: Size(double.infinity, 40.h),
         ),
-        onPressed: (){},
+        onPressed: () {},
         child: Text(
           "Save Changes",
           style: TextStyle(fontSize: textSize16.sp),
@@ -73,7 +64,7 @@ class _EmployerDashboardState extends State<EmployerDashboard> {
           child: Column(
             children: [
               SizedBox(height: 15.h),
-              DashBoardNavigationButton(),
+              // DashBoardNavigationButton(),
               Container(
                 padding: EdgeInsets.symmetric(
                     vertical: 25.h, horizontal: scaffoldHorizontalPadding.w),
@@ -630,7 +621,7 @@ class DashBoardNavigationList {
   static List<Widget> myAccountList = [
     CustomListTile(
       leadingIcon: Icons.dashboard,
-      title: dashboard,
+      title: profile,
     ),
     CustomListTile(
       leadingIcon: Icons.person_pin_circle_rounded,

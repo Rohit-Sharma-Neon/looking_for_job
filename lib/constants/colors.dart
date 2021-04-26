@@ -23,6 +23,7 @@ Color blue = const Color(0xFF0691CE);
 
 // Navigation 3 Colors
 Color navigation3Color = const Color(0xFF00BFF3);
+Color iconColorLight = Colors.grey;
 
 
 //

@@ -64,7 +64,7 @@ class DashBoardNavigationButton extends StatelessWidget {
                     ),
                     CustomListTile(
                         leadingIcon: Icons.dashboard,
-                        title: dashboard,
+                        title: profile,
                         onTap: () {
                           Navigator.push(
                             context,

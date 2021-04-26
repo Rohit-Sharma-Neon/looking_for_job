@@ -38,11 +38,11 @@ double cornersRadiusHeavy = 20;
 
 /// Post A Job Constants
 TextStyle postAJobSubHeadingTextStyle = TextStyle(
-  fontSize: 18.nsp,
+  fontSize: 18.sp,
   color: primaryTextColorLightTheme,
 );
 TextStyle dropDownTextStyle = TextStyle(
-  fontSize: 18.nsp,
+  fontSize: 18.sp,
   color: Colors.grey[600],
 );
 

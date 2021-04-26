@@ -1,6 +1,4 @@
 // drawer strings
-import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
-
 const String menu = "Menu";
 const String browseJobs = "Browse Jobs";
 const String companies = "Companies";
@@ -23,6 +21,8 @@ const String management = "Management";
 const String architectureAndEngineer = "Architecture and Engineer";
 const String dropdownValue= "Select Company";
 
+const String loremIpsum = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
 // EmployerDashboard
 const String youLastLogged_ = "You last logged in at: 26 Mar 2021";
 const String timming0603 = "06:03";
@@ -30,7 +30,7 @@ const String num0 = "0";
 const String free = "Free";
 const String jobs = "jobs";
 const String membership = "Membership";
-const String dashboard = "Dashboard";
+const String profile = "Profile";
 const String profilePublicView = "Profile Public View";
 const String myCompanies = "My Companies";
 const String pendingJobs = "Pending Jobs";

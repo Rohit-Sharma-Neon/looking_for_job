@@ -6,7 +6,7 @@ import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
-import 'package:lookingforjob_flutter/ui/main/employer_dashboard/employer_dashboard.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/profile_employer_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
@@ -131,8 +131,9 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                EmployerDashboard()),
+                          builder: (BuildContext context) =>
+                              ProfileEmployerScreen(),
+                        ),
                         ModalRoute.withName('/'),
                       );
                     },

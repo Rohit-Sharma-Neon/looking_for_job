@@ -575,7 +575,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
-                                        autofocus: true,
+                                        autofocus: false,
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "Min",
@@ -606,7 +606,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
-                                        autofocus: true,
+                                        autofocus: false,
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "Max",
@@ -870,7 +870,7 @@ class PostJobMobileComponentState extends State<PostJobMobileComponent> {
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 15.w),
                                     child: TextField(
-                                        autofocus: true,
+                                        autofocus: false,
                                         decoration: InputDecoration(
                                           border: InputBorder.none,
                                           hintText: "http://",

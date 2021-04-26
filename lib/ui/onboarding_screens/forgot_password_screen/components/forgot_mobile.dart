@@ -20,6 +20,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
       appBar: !kIsWeb
           ? BaseAppBar2(
               title: 'Forgot Password',
+              leadingIcon: Icons.arrow_back_rounded,
             )
           : null,
       body: SingleChildScrollView(
@@ -38,7 +39,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
               padding: EdgeInsets.only(top: 50.h),
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
-                margin: EdgeInsets.symmetric(horizontal: 20),
+                margin: EdgeInsets.symmetric(horizontal: 20.w),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(
