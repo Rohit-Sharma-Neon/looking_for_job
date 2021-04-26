@@ -133,28 +133,28 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                                   ),
                                 ),
                                 SizedBox(height: 5.h),
-                          Row(
-                            children: [
-                              RatingBar.builder(
-                                initialRating: 4,
-                                minRating: 1,
-                                direction: Axis.horizontal,itemSize: 12,
-                                allowHalfRating: true,
-                                itemCount: 5,
+                                   Row(
+                                  children: [
+                                      RatingBar.builder(
+                                        initialRating: 4,
+                                      minRating: 1,
+                                      direction: Axis.horizontal,itemSize: 12,
+                                      allowHalfRating: true,
+                                      itemCount: 5,
 
-                                itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-                                itemBuilder: (context, _) => Icon(
-                                  Icons.star,
-                                  color: Colors.amber,
-                                ),
-                                onRatingUpdate: (rating) {
-                                  print(rating);
-                                },
-                              ),
-                              SizedBox(width: 8,),
-                              Text ("325 Google reviews",style: TextStyle(color: Colors.blue[700],fontWeight: FontWeight.w600),)
-                            ],
-                          ),
+                                      itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                                      itemBuilder: (context, _) => Icon(
+                                        Icons.star,
+                                        color: Colors.amber,
+                                      ),
+                                      onRatingUpdate: (rating) {
+                                        print(rating);
+                                      },
+                                    ),
+                                      SizedBox(width: 8,),
+                                      Text ("325 Google reviews",style: TextStyle(color: Colors.blue[700],fontWeight: FontWeight.w600),)
+                              ],
+                            ),
                                 SizedBox(height: 5.h),
                                 Align(alignment : Alignment.centerLeft,child: Text("Software Company In Jaipur,Rajasthan")),
                               ],
