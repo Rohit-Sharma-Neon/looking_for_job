@@ -13,7 +13,6 @@ import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_scree
 import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/kunal/subcategories.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/my_resume/add_new_resume.dart';
 import 'package:lookingforjob_flutter/ui/main/my_resume/my_resume_screen.dart';
@@ -34,7 +33,7 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/regi
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => SubCategoriesScreen(),
+  '/': (context) => ProfileSeekerScreen(),
 
   // Sprint 1
   '/profile_seeker_screen': (context) => ProfileSeekerScreen(),
@@ -63,9 +62,8 @@ var customRoutes = <String, WidgetBuilder>{
   '/browsejob_screen': (context) => BrowseJobScreen(),
 
   '/register_page': (context) => RegisterPage(),
-  '/forgot_password': (context) => ForgotPassword(),
   '/job_description': (context) => JobDescription(),
-  // '/employer_dahboard': (context) => EmployerDashboard(),
+  '/employer_dahboard': (context) => ProfileSeekerScreen(),
   '/companies_screen': (context) => CompaniesScreen(),
   '/my_resume_screen': (context) => MyResumeScreen(),
   '/add_new_resume': (context) => AddNewResume(),
