@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.dart';
 import 'package:lookingforjob_flutter/ui/main/ankit/application_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/ankit/user_type_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/browsejob_screen/components/browsejob_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
@@ -13,6 +11,7 @@ import 'package:lookingforjob_flutter/ui/main/faq_screen/faq_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoritejobscreen/favoritejobscreen.dart';
 import 'package:lookingforjob_flutter/ui/main/favoriteusers_screen/favoriteusers_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
@@ -31,7 +30,6 @@ import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepu
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/splashscreen/splash_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/transaction_screen/transaction_screen.dart';
-import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/components/forgot_mobile.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/components/login_mobile.dart';
@@ -41,7 +39,21 @@ var customRoutes = <String, WidgetBuilder>{
   '/': (context) => ApplicationScreen(),
   // OnBoardings
   '/job_description': (context) => JobDescription(),
+  '/': (context) => SplashScreen(),
+
+  // Sprint 1
+  '/splash_screen': (context) => SplashScreen(),
   '/loginPage': (context) => LoginPage(),
+  '/profile_seeker_screen': (context) => ProfileSeekerScreen(),
+  '/home_screen': (context) => HomeScreen(),
+  '/forgotScreen': (context) => ForgotMobileComponent(),
+
+  // Sprint 2
+  // Sprint 3
+  // Sprint 4
+
+
+  '/job_description': (context) => JobDescription(),
   '/pendingJobScreen': (context) => PendingJobScreen(),
   '/login_screen': (context) => LoginPage(),
   '/register_page': (context) => RegisterPage(),
@@ -70,9 +82,9 @@ var customRoutes = <String, WidgetBuilder>{
   '/my_resume_screen': (context) => MyResumeScreen(),
   '/add_new_resume': (context) => AddNewResume(),
   '/feedback': (context) => FeedbackScreen(),
-  '/onboarding_screen': (context) => OnboardingScreen(),
+  '/onboarding_screen': (context) => JobTypeScreen(),
   // '/subcategories': (context) => SubCategoriesScreen(),
-  '/splash_screen': (context) => SplashScreen(),
+
 
   //job seeker Screens
   '/favoritejob_screen': (context) => FavoriteJobScreen(),

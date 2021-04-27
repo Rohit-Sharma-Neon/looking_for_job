@@ -4,6 +4,7 @@ import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/theme/app_theme.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,31 +45,59 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               CarouselSlider(
                 items: [
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    margin: EdgeInsets.all(6.r),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(8.r),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileSeekerScreen()),
+                      );
+                    },
+                    child: Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      margin: EdgeInsets.all(6.r),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
                     ),
                   ),
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    margin: EdgeInsets.all(6.r),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(8.r),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProfileSeekerScreen()),
+                      );
+                    },
+                    child: Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      margin: EdgeInsets.all(6.r),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
                     ),
                   ),
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(8.0),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfileSeekerScreen(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      margin: EdgeInsets.all(6.r),
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(8.r),
+                      ),
                     ),
                   ),
                 ],
