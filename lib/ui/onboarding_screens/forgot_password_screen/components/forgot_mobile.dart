@@ -33,12 +33,13 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
               children: [
                 Image.asset(
                   forgotpassword,
-                  height: 240.h,
+                  height: 220.h,
                 ),
                 Text(
                   "Forgot Password?",
                   style: TextStyle(
-                      fontSize: 25.nsp, fontWeight: FontWeight.bold),
+                    color: Colors.white,
+                      fontSize: textSize20, fontWeight: FontWeight.w600),
                   //TextStyle(fontSize: 25.nsp, fontWeight: FontWeight.bold),
                 ),
 

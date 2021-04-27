@@ -58,7 +58,7 @@ class _BrowseJobMobileState extends State<BrowseJobMobile> {
         child: Column(
           children: [
             Container(
-              color: Colors.grey,
+              color: Colors.teal[200],
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 25.h),
               child: Column(
@@ -66,15 +66,16 @@ class _BrowseJobMobileState extends State<BrowseJobMobile> {
                   Text(
                     findAJob,
                     style: TextStyle(
-                      fontSize: 36.nsp,
+                      fontWeight: FontWeight.w600,
+                      fontSize: textSize28,
                       color: Colors.white,
                     ),
                   ),
                   Text(
                     simpleFastAndEfficient,
-                    style: TextStyle(fontSize: 22.nsp, color: Colors.white),
+                    style: TextStyle(  fontSize: textSize20, color: Colors.white),
                   ),
-                  SizedBox(height: 20.h),
+                  SizedBox(height: 15.h),
                   CustomTextFormTA(
                     hintText: "Job title",
                   ),
@@ -88,7 +89,7 @@ class _BrowseJobMobileState extends State<BrowseJobMobile> {
                     width: double.infinity,
                     onPressed: () {},
                   ),
-                  SizedBox(height: 35.h),
+                  SizedBox(height: 20.h),
                 ],
               ),
             ),

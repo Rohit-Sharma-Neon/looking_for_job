@@ -20,16 +20,17 @@ Widget jobCategoriesComponent() {
 
   return Container(
     color: Color(0xffF9F9F9),
-    padding: EdgeInsets.only(top: 50.h, bottom: 20.h),
+    padding: EdgeInsets.only(top: 25.h, bottom: 18.h),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Text(
           jobCategories,
-          style: TextStyle(fontSize: 24.nsp),
+          style: TextStyle(fontSize:textSize22),
         ),
+        Divider(color: Colors.black,indent: 20,endIndent: 20,),
         SizedBox(
-          height: 25.h,
+          height: 20.h,
         ),
         ListView.builder(
           physics: NeverScrollableScrollPhysics(),

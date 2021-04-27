@@ -43,15 +43,15 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 50.h),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(signinbg),
-                fit: BoxFit.cover,
-              ),
+        body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 50.h),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(signinbg),
+              fit: BoxFit.cover,
             ),
+          ),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -76,10 +76,11 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                     )
                   ],
                 ),
-                SizedBox(height: 18.h,),
+                SizedBox(height: 15.h,),
                 SizedBox(
-                  height: 50,
+                  height: 80,
                   child: AppBar(
+                    elevation: 0,
                     backgroundColor: Color(0xffEFEFEF),
                     bottom: TabBar(
                       unselectedLabelColor: Colors.grey,
@@ -92,7 +93,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                       ),
                       tabs: [
                         Tab(
-                          text: "Login",
+                          text: "Sign in",
                         ),
                         Tab(
                           text: "Register",
@@ -105,6 +106,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                 SizedBox(
                   height: 400,
                   child: TabBarView(
+                    physics: NeverScrollableScrollPhysics(),
                     children: [
                       // first tab bar view widget
                       /// Login screen
@@ -112,7 +114,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                         children: [
                           Container(
                             height: 50.h,
-                            margin: EdgeInsets.only(top: 30),
+                            margin: EdgeInsets.only(top: 28),
                             decoration: BoxDecoration(
                                 color: Color(0xFF461584),
                                 borderRadius: BorderRadius.circular(16),
@@ -137,7 +139,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           ),
                           Container(
                             height: 52.h,
-                            margin: EdgeInsets.symmetric(vertical: 2.h),
+                            margin: EdgeInsets.symmetric(vertical: 10.h),
                             decoration: BoxDecoration(
                                 color: Color(0xFF461584),
                                 borderRadius: BorderRadius.circular(16),
@@ -174,15 +176,49 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               ),
                             ),
                           ),
-                          ElevatedButton(
-                            child: Text('SIGN IN'),
-                            style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.blue,
-                              primary: Colors.white,
+                          Container(
+                            height: 50.h,
+                            margin: EdgeInsets.symmetric(vertical: 10.h),
+                            decoration: BoxDecoration(
+                              color: Color(0xFF1492E5),
+                              borderRadius: BorderRadius.circular(16),
                             ),
-                            onPressed: () {
-                              print('Pressed');
-                            },
+                            child: RaisedButton(
+                              onPressed: () {
+                                Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          ProfileSeekerScreen()),
+                                  ModalRoute.withName('/'),
+                                );
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0)),
+                              padding: EdgeInsets.all(0.0),
+                              child: Ink(
+                                decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      colors: [Color(0xFFE5D2FF), Color(0xffFFFFFF)],
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0)),
+                                child: Container(
+                                  constraints:
+                                  BoxConstraints(maxWidth: 400.w, minHeight: 50.h),
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    "SIGN IN",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xff36195C),
+                                        fontSize: textSize14,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -215,7 +251,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 25.h),
+                          SizedBox(height: 15.h),
                           RichText(
                             text: TextSpan(
                               children: [
@@ -235,7 +271,8 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 color: Color(0xFFB67DFF),
                                 padding: EdgeInsets.only(
                                     left: 50, right: 50, top: 15, bottom: 15),
-                                shape: StadiumBorder(),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
                                 onPressed: () {},
                                 child: Icon(FontAwesome.google, color: Colors.white),
                               ),
@@ -243,7 +280,8 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 color: Color(0xFFB67DFF),
                                 padding: EdgeInsets.only(
                                     left: 50, right: 50, top: 15, bottom: 15),
-                                shape: StadiumBorder(),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
                                 onPressed: () {},
                                 child: Icon(FontAwesome.facebook, color: Colors.white),
                               )
@@ -256,7 +294,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                       Column(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 30),
+                            margin: EdgeInsets.only(top: 28),
                             height: 50.h,
                             decoration: BoxDecoration(
                                 color: Color(0xFF461584),

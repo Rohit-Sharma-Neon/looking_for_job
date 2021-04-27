@@ -10,7 +10,7 @@ import 'package:lookingforjob_flutter/ui/main/job_description/job_description.da
 
 Widget latestJobsComponent() {
   return ListView.builder(
-    padding: EdgeInsets.symmetric(horizontal: 10.w),
+    padding: EdgeInsets.only(top: 2,bottom: 10,left: 5,right: 5),
     itemCount: 5,
     physics: NeverScrollableScrollPhysics(),
     shrinkWrap: true,
@@ -21,6 +21,7 @@ Widget latestJobsComponent() {
         },
         child: Column(
           children: [
+            SizedBox(height: 2),
             OpenContainer(
               transitionType: ContainerTransitionType.fade,
               transitionDuration: const Duration(milliseconds: 600),
@@ -39,9 +40,6 @@ Widget latestJobsComponent() {
                 return JobDescription();
               },
             ),
-            SizedBox(
-              height: 5.h,
-            )
           ],
         ),
       );
@@ -53,7 +51,7 @@ Widget jobCard() {
   BoxShadow _boxShadow() {
     return BoxShadow(
       color: Colors.grey.withOpacity(0.3),
-      spreadRadius: 3,
+      spreadRadius: 2,
       blurRadius: 3,
       offset: Offset(0, -10),
     );
@@ -74,16 +72,28 @@ Widget jobCard() {
             ),
             Expanded(
               flex: 4,
-              child: Text(
-                "Flutter Devloper",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: textSize18.sp,
-                    fontWeight: FontWeight.w500),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Flutter Devloper",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: textSize18.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "C-scheme AppiTron Solutions pvt ltd.",
+                    style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: textSize13.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
               ),
             ),
             SizedBox(
-              width: 10.w,
+              width: 50.w,
             ),
             Expanded(
               flex: 2,
@@ -95,33 +105,37 @@ Widget jobCard() {
                 ),
               ),
             ),
+            Icon(
+              Icons.more_vert,
+              color: Colors.black,
+            ),
           ],
         ),
         Row(
           children: [
             Icon(
               Icons.location_on_outlined,
-              color: Colors.grey[600],
+              color: Colors.grey[800],
               size: 20.h,
             ),
             SizedBox(
               width: 7.w,
             ),
             Text(
-              "Jaipur",
+              "Jaipur, Rajasthan",
               style:
                   TextStyle(fontSize: textSize14.sp, color: Colors.grey[600]),
             ),
           ],
         ),
         SizedBox(
-          height: 5.h,
+          height: 4.h,
         ),
         Row(
           children: [
             Icon(
               Icons.attach_money_rounded,
-              color: Colors.grey[600],
+              color: Colors.grey[800],
               size: 20.h,
             ),
             SizedBox(
@@ -132,6 +146,27 @@ Widget jobCard() {
                     fontSize: textSize14.sp, color: Colors.grey[600])),
           ],
         ),
+        SizedBox(
+          height: 4.h,
+        ),
+        Row(
+          children: [
+            Icon(
+              Icons.person_add_alt_1,
+              color: Colors.grey[800],
+              size: 20.h,
+            ),
+            SizedBox(
+              width: 7.w,
+            ),
+            Text(
+              "Hiring multiple candidates",
+              style:
+              TextStyle(fontSize: textSize14.sp, color: Colors.grey[600]),
+            ),
+          ],
+        ),
+
       ],
     ),
   );

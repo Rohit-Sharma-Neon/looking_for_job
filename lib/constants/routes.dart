@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lookingforjob_flutter/ui/main/addnewexperience/addnewexperience.dart';
+import 'package:lookingforjob_flutter/ui/main/ankit/application_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/ankit/user_type_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/appliedjob_screen/appliedjob_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/browsejob_screen/browsejob_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/browsejob_screen/components/browsejob_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/contact_us/feedback.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/dashboard_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/companies_screen/companies_screen.dart';
@@ -28,12 +31,14 @@ import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepu
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/splashscreen/splash_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/transaction_screen/transaction_screen.dart';
+import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/components/forgot_mobile.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
+import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/components/login_mobile.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_page.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => SplashScreen(),
+  '/': (context) => ApplicationScreen(),
   // OnBoardings
   '/job_description': (context) => JobDescription(),
   '/loginPage': (context) => LoginPage(),
