@@ -9,7 +9,10 @@ import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/primary_button.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/ui/main/dashboard_screen/components/dashboard_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/jaspreet/login_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
+import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/components/forgot_mobile.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/register_screen/register_page.dart';
 import 'package:lookingforjob_flutter/widgets/custom_text_form_field.dart';
@@ -44,7 +47,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
       length: 2,
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 50.h),
+          padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 60.h),
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(signinbg),
@@ -76,7 +79,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                     )
                   ],
                 ),
-                SizedBox(height: 15.h,),
+
                 SizedBox(
                   height: 80,
                   child: AppBar(
@@ -114,7 +117,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                         children: [
                           Container(
                             height: 50.h,
-                            margin: EdgeInsets.only(top: 28),
+                            margin: EdgeInsets.only(top: 25),
                             decoration: BoxDecoration(
                                 color: Color(0xFF461584),
                                 borderRadius: BorderRadius.circular(16),
@@ -139,7 +142,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           ),
                           Container(
                             height: 52.h,
-                            margin: EdgeInsets.symmetric(vertical: 10.h),
+                            margin: EdgeInsets.symmetric(vertical: 5.h),
                             decoration: BoxDecoration(
                                 color: Color(0xFF461584),
                                 borderRadius: BorderRadius.circular(16),
@@ -178,7 +181,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           ),
                           Container(
                             height: 50.h,
-                            margin: EdgeInsets.symmetric(vertical: 10.h),
+                            margin: EdgeInsets.symmetric(vertical: 8.h),
                             decoration: BoxDecoration(
                               color: Color(0xFF1492E5),
                               borderRadius: BorderRadius.circular(16),
@@ -189,7 +192,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          ProfileSeekerScreen()),
+                                          DashBoardMobileComponent()),
                                   ModalRoute.withName('/'),
                                 );
                               },
@@ -243,7 +246,10 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 }),
                               ),
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
+                                      ForgotMobileComponent()));
+                                },
                                 child: Text(
                                   "Forgot password",
                                   style: TextStyle(color: Colors.white70),
@@ -251,42 +257,42 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               ),
                             ],
                           ),
-                          SizedBox(height: 15.h),
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Or sign in with",
-                                  style: TextStyle(
-                                      color: Colors.white70, fontSize: textSize14.sp),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 15.h),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              RaisedButton(
-                                color: Color(0xFFB67DFF),
-                                padding: EdgeInsets.only(
-                                    left: 50, right: 50, top: 15, bottom: 15),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20)),
-                                onPressed: () {},
-                                child: Icon(FontAwesome.google, color: Colors.white),
-                              ),
-                              RaisedButton(
-                                color: Color(0xFFB67DFF),
-                                padding: EdgeInsets.only(
-                                    left: 50, right: 50, top: 15, bottom: 15),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20)),
-                                onPressed: () {},
-                                child: Icon(FontAwesome.facebook, color: Colors.white),
-                              )
-                            ],
-                          )
+                          SizedBox(height: 10.h),
+                          // RichText(
+                          //   text: TextSpan(
+                          //     children: [
+                          //       TextSpan(
+                          //         text: "Or sign in with",
+                          //         style: TextStyle(
+                          //             color: Colors.white70, fontSize: textSize14.sp),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                          SizedBox(height: 12.h),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          //   children: [
+                          //     RaisedButton(
+                          //       color: Color(0xFFB67DFF),
+                          //       padding: EdgeInsets.only(
+                          //           left: 50, right: 50, top: 15, bottom: 15),
+                          //       shape: RoundedRectangleBorder(
+                          //           borderRadius: BorderRadius.circular(20)),
+                          //       onPressed: () {},
+                          //       child: Icon(FontAwesome.google, color: Colors.white),
+                          //     ),
+                          //     RaisedButton(
+                          //       color: Color(0xFFB67DFF),
+                          //       padding: EdgeInsets.only(
+                          //           left: 50, right: 50, top: 15, bottom: 15),
+                          //       shape: RoundedRectangleBorder(
+                          //           borderRadius: BorderRadius.circular(20)),
+                          //       onPressed: () {},
+                          //       child: Icon(FontAwesome.facebook, color: Colors.white),
+                          //     )
+                          //   ],
+                          // )
                         ],
                       ),
 

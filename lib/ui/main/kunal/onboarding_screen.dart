@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/ui/main/ankit/user_type_screen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   @override
@@ -98,6 +99,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         highlightColor: primaryColorLight,
                         splashColor: primaryColorLight,
                         onTap: () {
+                          Navigator.push(context,  MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  UserTypeScreen()),);
                           print("pressed");
                         },
                         child: Center(
