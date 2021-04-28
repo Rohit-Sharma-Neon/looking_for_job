@@ -11,6 +11,7 @@ import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/components/dashboard_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/jaspreet/login_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/kunal/onboarding_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/components/forgot_mobile.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/forgot_password_screen.dart';
@@ -411,7 +412,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (BuildContext context) =>
-                                          ProfileSeekerScreen()),
+                                          OnBoardingScreen()),
                                   ModalRoute.withName('/'),
                                 );
                               },
