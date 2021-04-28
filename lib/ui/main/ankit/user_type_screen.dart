@@ -3,6 +3,7 @@ import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/components/dashboard_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 
 
 class UserTypeScreen extends StatefulWidget {
@@ -69,7 +70,7 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
               onTap: (){
                 Navigator.push(context,  MaterialPageRoute(
                     builder: (BuildContext context) =>
-                        DashBoardMobileComponent()),);
+                        HomeScreen()),);
               },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
