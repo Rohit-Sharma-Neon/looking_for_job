@@ -49,7 +49,7 @@ dependencies:
   flutter_rating_bar: ^4.0.0
   flutter_launcher_icons: ^0.9.0
   cupertino_stepper: ^0.2.0
-
+  device_preview: ^0.7.1
   flutter_timeline: ^0.1.1+13
   im_stepper: ^0.1.3
 

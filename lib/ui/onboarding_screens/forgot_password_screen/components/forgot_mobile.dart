@@ -104,7 +104,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
                           "FORGET PASSWORD",
                           textAlign: TextAlign.center,
                           style:
-                          TextStyle(color: Color(0xff36195C), fontSize: textSize16, fontWeight: FontWeight.bold),
+                          TextStyle(color: Color(0xff36195C), fontSize: textSize14, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
