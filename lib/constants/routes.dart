@@ -14,7 +14,6 @@ import 'package:lookingforjob_flutter/ui/main/hiddenjobs_screen/hiddenjobs_scree
 import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/jobalert_screen/jobalert_screen.dart';
-import 'package:lookingforjob_flutter/ui/main/kunal/subcategories.dart';
 import 'package:lookingforjob_flutter/ui/main/membershipplan_screen/membershipplan_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/my_resume/add_new_resume.dart';
 import 'package:lookingforjob_flutter/ui/main/my_resume/my_resume_screen.dart';
@@ -42,14 +41,15 @@ import 'package:lookingforjob_flutter/ui/onboarding_screens/signin_screen/login_
 var customRoutes = <String, WidgetBuilder>{
 
   // OnBoardings
-  '/': (context) => EmployerProfileScreen(),
+  '/job_description': (context) => JobDescription(),
+  '/': (context) => LoginMobileComponent(),
+
   // Sprint 1
   '/splash_screen': (context) => SplashScreen(),
   '/loginPage': (context) => LoginPage(),
   '/profile_seeker_screen': (context) => ProfileSeekerScreen(),
   '/home_screen': (context) => HomeScreen(),
   '/forgotScreen': (context) => ForgotMobileComponent(),
-  '/subCategoriesScreen': (context) => SubCategoriesScreen(),
 
   // Sprint 2
   // Sprint 3

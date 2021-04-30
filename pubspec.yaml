@@ -60,7 +60,6 @@ dependencies:
   carousel_slider: ^3.0.0 # For banner
   image_picker: ^0.7.4
   fa_stepper: ^0.0.2
-#  file_picker: ^3.0.1
   syncfusion_flutter_sliders: ^19.1.57-beta # range slider
 
 dev_dependencies:

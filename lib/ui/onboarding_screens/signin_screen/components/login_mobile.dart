@@ -110,7 +110,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                   ),
                   SizedBox(height: 35.h),
                   SizedBox(
-                    height: 70.h,
+                    height: 80.h,
                     child: AppBar(
                       elevation: 0,
                       backgroundColor: Colors.transparent,
@@ -151,97 +151,71 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                         /// Login screen
                         Column(
                           children: [
-                            Container(
-                              height: 55.h,
-                              margin: EdgeInsets.only(top: 21.h),
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF461584),
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Color(0xFF7939CB))),
-                              child: Center(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: TextFormField(
-                                    style: TextStyle(color: Colors.white),
-                                    decoration: InputDecoration(
+                            SizedBox(height: 15.h),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                isDense: true,
+                                fillColor: Color(0xFF461584),
+                                filled: true,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                ),
 
-                                      border: InputBorder.none,
-                                      hintText: 'Email',
-                                      hintStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal,
-                                      ),
-                                    ),
-                                    validator: (val) =>
-                                        val.isEmpty || !val.contains("@")
-                                            ? "Please enter your email"
-                                            : null,
-
-                                    // onSaved: (val) => _password = val,
-                                    // obscureText: _obscureText,
-                                    keyboardType: TextInputType.emailAddress,
-                                    textInputAction: TextInputAction.done,
+                                hintText: 'Email',
+                                hintStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
+                                ),
+                              ),
+                              validator: (val) =>
+                                  val.isEmpty || !val.contains("@")
+                                      ? "Please enter your email"
+                                      : null,
+                              keyboardType: TextInputType.emailAddress,
+                              textInputAction: TextInputAction.done,
+                            ),
+                            SizedBox(height: 8.h),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                  isDense: true,
+                                  fillColor: Color(0xFF461584),
+                                  filled: true,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(15.0),),
                                   ),
+                                hintText: 'Password',
+                                hintStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
                                 ),
+                                suffixIcon: FlatButton(
+                                            padding: EdgeInsets.only(left: 20),
+                                            onPressed: _toggle,
+                                            child:  Text(
+                                                _obscureText
+                                                    ? "Show"
+                                                    : "Hide",
+                                                style: TextStyle(
+                                                  color: Color(
+                                                        0xFF1492E5))))),
+                                    validator: (value) {
+                                      if (value.isEmpty) {
+                                        return "Please enter your password";
+                                      } else if (value.length < 6) {
+                                        return "Please enter valid password";
+                                      } else {
+                                        return null;
+                                      }
+                                    },
+                              onSaved: (val) => _password = val,
+                                obscureText: _obscureText,
+                                keyboardType: TextInputType.name,
+                                textInputAction: TextInputAction.done,
                               ),
-                            ),
-                            Container(
-                              height: 55.h,
-                              margin: EdgeInsets.only(top: 6.h),
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF461584),
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Color(0xFF7939CB))),
-                              child: Center(
-                                child: Column(
-                                 mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                      EdgeInsets.symmetric(horizontal: 20.w),
-                                      child:TextFormField(
-                                        style: TextStyle(color: Colors.white),
-                                        decoration: InputDecoration(
-                                          border: InputBorder.none,
-                                          hintText: 'Password',
-                                          hintStyle: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w400,
-                                            fontStyle: FontStyle.normal,
-                                          ),
-                                          suffixIcon: FlatButton(
-                                                      padding: EdgeInsets.only(left: 50),
-                                                      onPressed: _toggle,
-                                                      child:  Text(
-                                                          _obscureText
-                                                              ? "Show"
-                                                              : "Hide",
-                                                          style: TextStyle(
-                                                            color: Color(
-                                                                  0xFF1492E5))))),
-                                              validator: (value) {
-                                                if (value.isEmpty) {
-                                                  return "Please enter your password";
-                                                } else if (value.length < 6) {
-                                                  return "Please enter valid password";
-                                                } else {
-                                                  return null;
-                                                }
-                                              },
-                                        onSaved: (val) => _password = val,
-                                          obscureText: _obscureText,
-                                          keyboardType: TextInputType.name,
-                                          textInputAction: TextInputAction.done,
-                                        ),
-                                      ),
-
-
-                                  ],
-                                ),
-                              ),
-                            ),
                             Container(
                               height: 50.h,
                               margin: EdgeInsets.only(top: 30.h),
@@ -252,17 +226,14 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               child: RaisedButton(
                                 onPressed: () {
                                   if (_formKey.currentState.validate()) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(
-                                            content: Text('Processing Data')));
-                                  }
+
                                   Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
                                         builder: (BuildContext context) =>
                                             DashBoardMobileComponent()),
                                     ModalRoute.withName('/'),
-                                  );
+                                  ); }
                                 },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16.0)),
@@ -385,136 +356,102 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                         /// Register screen
                         Column(
                           children: [
-                            Container(
-                              margin: EdgeInsets.only(top: 28),
-                              height: 55.h,
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF461584),
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Color(0xFF7939CB))),
-                              child: Center(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: TextFormField(
-                                    style: TextStyle(color: Colors.white),
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: 'Name',
-                                      hintStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal,
-                                      ),
-                                    ),
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return "Please enter your name";
-                                      } else if (value.length < 6) {
-                                        return "Please enter valid name";
-                                      } else {
-                                        return null;
-                                      }
-                                    },
-
-                                    // onSaved: (val) => _password = val,
-                                    // obscureText: _obscureText,
-                                    keyboardType: TextInputType.name,
-                                    textInputAction: TextInputAction.done,
-                                  ),
+                            SizedBox(height: 15.h),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                isDense: true,
+                                fillColor: Color(0xFF461584),
+                                filled: true,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                ),
+                                hintText: 'Name',
+                                hintStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
                                 ),
                               ),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return "Please enter your name";
+                                } else if (value.length < 6) {
+                                  return "Please enter valid name";
+                                } else {
+                                  return null;
+                                }
+                              },
+
+                              // onSaved: (val) => _password = val,
+                              // obscureText: _obscureText,
+                              keyboardType: TextInputType.name,
+                              textInputAction: TextInputAction.done,
                             ),
-                            Container(
-                              height: 55.h,
-                              margin: EdgeInsets.only(top: 5),
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF461584),
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Color(0xFF7939CB))),
-                              child: Center(
-                                child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: TextFormField(
-                                    style: TextStyle(color: Colors.white),
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: 'Email',
-                                      hintStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.normal,
-                                      ),
-                                    ),
-                                    validator: (val) =>
-                                    val.isEmpty || !val.contains("@")
-                                        ? "Please enter your email"
-                                        : null,
+                            SizedBox(height: 8.h),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                isDense: true,
+                                fillColor: Color(0xFF461584),
+                                filled: true,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                ),
 
-                                    // onSaved: (val) => _password = val,
-                                    // obscureText: _obscureText,
-                                    keyboardType: TextInputType.emailAddress,
-                                    textInputAction: TextInputAction.done,
-                                  ),
+                                hintText: 'Email',
+                                hintStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontStyle: FontStyle.normal,
                                 ),
                               ),
+                              validator: (val) =>
+                              val.isEmpty || !val.contains("@")
+                                  ? "Please enter your email"
+                                  : null,
+                              keyboardType: TextInputType.emailAddress,
+                              textInputAction: TextInputAction.done,
                             ),
-                            Container(
-                              height: 55.h,
-                              margin: EdgeInsets.only(top: 6.h),
-                              decoration: BoxDecoration(
-                                  color: Color(0xFF461584),
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(color: Color(0xFF7939CB))),
-                              child: Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                      EdgeInsets.symmetric(horizontal: 20.w),
-                                      child:TextFormField(
-                                        style: TextStyle(color: Colors.white),
-                                        decoration: InputDecoration(
-
-                                            border: InputBorder.none,
-                                            hintText: 'Password',
-                                            hintStyle: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w400,
-                                              fontStyle: FontStyle.normal,
-                                            ),
-                                            suffixIcon: FlatButton(
-                                                padding: EdgeInsets.only(left: 50),
-                                                onPressed: _toggle,
-                                                child: new Text(
-                                                    _obscureText
-                                                        ? "Show"
-                                                        : "Hide",
-                                                    style: TextStyle(
-                                                        color: Color(
-                                                            0xFF1492E5))))),
-                                        validator: (value) {
-                                          if (value.isEmpty) {
-                                            return "Please enter your password";
-                                          } else if (value.length < 6) {
-                                            return "Please enter valid password";
-                                          } else {
-                                            return null;
-                                          }
-                                        },
-                                        onSaved: (val) => _password = val,
-                                        obscureText: _obscureText,
-                                        keyboardType: TextInputType.name,
-                                        textInputAction: TextInputAction.done,
-                                      ),
-                                    ),
-
-
-                                  ],
-                                ),
-                              ),
+                            SizedBox(height: 8.h),
+                            TextFormField(
+                              style: TextStyle(color: Colors.white),
+                              decoration: InputDecoration(
+                                  isDense: true,
+                                  fillColor: Color(0xFF461584),
+                                  filled: true,
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                  ),
+                                  hintText: 'Password',
+                                  hintStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                  suffixIcon: FlatButton(
+                                      padding: EdgeInsets.only(left: 20),
+                                      onPressed: _toggle,
+                                      child:  Text(
+                                          _obscureText
+                                              ? "Show"
+                                              : "Hide",
+                                          style: TextStyle(
+                                              color: Color(
+                                                  0xFF1492E5))))),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return "Please enter your password";
+                                } else if (value.length < 6) {
+                                  return "Please enter valid password";
+                                } else {
+                                  return null;
+                                }
+                              },
+                              onSaved: (val) => _password = val,
+                              obscureText: _obscureText,
+                              keyboardType: TextInputType.name,
+                              textInputAction: TextInputAction.done,
                             ),
                             SizedBox(
                               height: 20.h,
@@ -534,13 +471,14 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               ),
                               child: RaisedButton(
                                 onPressed: () {
+                                  if (_formKey.currentState.validate()){
                                   Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
                                         builder: (BuildContext context) =>
                                             OnBoardingScreen()),
                                     ModalRoute.withName('/'),
-                                  );
+                                  );}
                                 },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16.0)),

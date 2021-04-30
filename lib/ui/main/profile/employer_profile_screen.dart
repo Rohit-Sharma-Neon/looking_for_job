@@ -622,7 +622,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                             ),
                             SizedBox(height: 2.h),
                             Text(
-                              "3 Candidates applied.",
+                              "6 Candidates applied.",
                               style: TextStyle(
                                 color: Colors.black38,
                                 fontSize: textSize14.sp,
@@ -631,18 +631,18 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                             ),
                             SizedBox(height: 2.h),
                             SizedBox(
-                              height: 100,
+                              height: 150,
                               child: GridView.builder(
                                 padding: EdgeInsets.symmetric(vertical: 10.h),
-                                itemCount: 4,
+                                itemCount: 6,
                                 physics: NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
                                 gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 4,
-                                  childAspectRatio: 3.h,
-                                  crossAxisSpacing: 9.w,
-                                  mainAxisSpacing: 10.h,
+                                  childAspectRatio: 1.h,
+                                  crossAxisSpacing: 1.w,
+                                  mainAxisSpacing: 5.h,
                                 ),
                                 itemBuilder: (BuildContext context, int index) {
                                   return Column(
@@ -670,12 +670,13 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                                               fit: BoxFit.fill),
                                         ),
                                       ),
-                                      Text("Rohit"),
+                                      Text("Ankit"),
                                     ],
                                   );
                                 },
                               ),
                             ),
+
                           ],
                         ),
                       ),
@@ -711,7 +712,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                             ),
                             SizedBox(height: 2.h),
                             Text(
-                              "3 Candidates applied.",
+                              "5 Candidates applied.",
                               style: TextStyle(
                                 color: Colors.black38,
                                 fontSize: textSize14.sp,
@@ -720,18 +721,51 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                             ),
                             SizedBox(height: 2.h),
                             SizedBox(
-                              height: 100,
-                              child: ListView.builder(
-                                  itemCount: entries.length,
-                                  itemBuilder: (BuildContext context, int index) {
-                                    return Container(
-                                      height: 30,
-                                      color: Colors.blue[colorCodes[index]],
-                                      child: Center(child: Text('Candidates ${entries[index]}')),
-                                    );
-                                  }
+                              height: 150,
+                              child: GridView.builder(
+                                padding: EdgeInsets.symmetric(vertical: 10.h),
+                                itemCount: 5,
+                                physics: NeverScrollableScrollPhysics(),
+                                shrinkWrap: true,
+                                gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 4,
+                                  childAspectRatio: 1.h,
+                                  crossAxisSpacing: 1.w,
+                                  mainAxisSpacing: 5.h,
+                                ),
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Container(
+                                        width: 40.r,
+                                        height: 40.r,
+                                        decoration: BoxDecoration(
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: primaryColorLight.withOpacity(0.5),
+                                                blurRadius: 6.0,
+                                                offset: Offset(0, 0),
+                                                spreadRadius: 3),
+                                            BoxShadow(
+                                                color: primaryColorLight,
+                                                blurRadius: 0.0,
+                                                offset: Offset(0, 0),
+                                                spreadRadius: 2)
+                                          ],
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: AssetImage(dummy_profile2),
+                                              fit: BoxFit.fill),
+                                        ),
+                                      ),
+                                      Text("Rohit"),
+                                    ],
+                                  );
+                                },
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
