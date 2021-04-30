@@ -34,12 +34,12 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Form(
         key: _formKey,
         child: Scaffold(
           body: Container(
-            padding: EdgeInsets.only(left: 20,right: 20,bottom: 20,top: 20),
+            padding: EdgeInsets.only(left: 20,right: 20,top: 20),
             // padding: EdgeInsets.symmetric(vertical: 80,horizontal: 28),
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -48,6 +48,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
               ),
             ),
             child: SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -74,7 +75,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           width: 80.w,
                         ),
                       ),
-                      SizedBox(width: 5.w),
+
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -107,25 +108,26 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                       )
                     ],
                   ),
+                  SizedBox(height: 35.h),
                   SizedBox(
-                    height: 60.h,
+                    height: 70.h,
                     child: AppBar(
                       elevation: 0,
                       backgroundColor: Colors.transparent,
-
-                      bottom: TabBar(
+                       bottom: TabBar(
                         indicator: BoxDecoration(
                             color: Colors.transparent, borderRadius: BorderRadius.circular(20)
                         ),
                         indicatorWeight: 1,
                         indicatorSize: TabBarIndicatorSize.label,
                         indicatorColor: Colors.transparent,
-                        unselectedLabelColor: Colors.grey,
+                        unselectedLabelColor: Colors.deepPurple[400],
                         labelColor: Colors.white,
                         unselectedLabelStyle: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                         labelStyle: TextStyle(
+                          fontSize: textSize18,
                           fontWeight: FontWeight.bold,
                         ),
                         tabs: [
@@ -135,6 +137,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           Tab(
                             text: "Register",
                           ),
+                         SizedBox(),
                         ],
                       ),
                     ),
@@ -201,7 +204,6 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                       child:TextFormField(
                                         style: TextStyle(color: Colors.white),
                                         decoration: InputDecoration(
-
                                           border: InputBorder.none,
                                           hintText: 'Password',
                                           hintStyle: TextStyle(
@@ -210,13 +212,14 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                             fontStyle: FontStyle.normal,
                                           ),
                                           suffixIcon: FlatButton(
+                                                      padding: EdgeInsets.only(left: 50),
                                                       onPressed: _toggle,
-                                                      child: new Text(
+                                                      child:  Text(
                                                           _obscureText
                                                               ? "Show"
                                                               : "Hide",
                                                           style: TextStyle(
-                                                              color: Color(
+                                                            color: Color(
                                                                   0xFF1492E5))))),
                                               validator: (value) {
                                                 if (value.isEmpty) {
@@ -483,6 +486,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                               fontStyle: FontStyle.normal,
                                             ),
                                             suffixIcon: FlatButton(
+                                                padding: EdgeInsets.only(left: 50),
                                                 onPressed: _toggle,
                                                 child: new Text(
                                                     _obscureText
@@ -576,7 +580,8 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               ),
                             )
                           ],
-                        )
+                        ),
+                        Container(),
                       ],
                     ),
                   ),

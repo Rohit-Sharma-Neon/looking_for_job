@@ -190,31 +190,46 @@ class Choice {
 const List<Choice> choices = const <Choice>[
   const Choice(
       title: 'Information Technology',
-      image: "assets/images/informationlogo.png"),
-  const Choice(title: 'Management', image: "assets/images/management1.png"),
+      image: "assets/images/itlogo.png"),
+  const Choice(
+      title: 'Management',
+      image: "assets/images/managementlogo.png"),
   const Choice(
       title: 'Archictecture & Engineer',
-      image: "assets/images/engineering.png"),
-  const Choice(title: 'Agriculture', image: "assets/images/tractor1.png"),
+      image: "assets/images/carpenter.png"),
   const Choice(
-      title: 'Banking and Finance', image: "assets/images/bankbuilding.png"),
-  const Choice(title: 'law', image: "assets/images/law1.png"),
+      title: 'Agriculture',
+      image: "assets/images/agriculture.png"),
+  const Choice(
+      title: 'Banking and Finance',
+      image: "assets/images/customerservice.png"),
+  const Choice(title: 'law',
+      image: "assets/images/law.png"),
   const Choice(
       title: 'Leisure Sports and Tourism',
-      image: "assets/images/touristfemale.png"),
+      image: "assets/images/tourism.jpg"),
   const Choice(
-      title: 'Advertising and PR', image: "assets/images/webadvertising.png"),
-  const Choice(title: 'Accounting', image: "assets/images/positivedynamic.png"),
+      title: 'Advertising and PR',
+      image: "assets/images/advertisment.png"),
+  const Choice(title: 'Accounting',
+      image: "assets/images/account.png"),
   const Choice(
-      title: 'Education and Training', image: "assets/images/university.png"),
-  const Choice(title: 'Graphic Design', image: "assets/images/picture.png"),
+      title: 'Education and Training',
+      image: "assets/images/education.png"),
+  const Choice(title: 'Graphic Design',
+      image: "assets/images/graphicDesign.jpg"),
   const Choice(
-      title: 'Health and Hospital', image: "assets/images/hospital.png"),
+      title: 'Health and Hospital',
+      image: "assets/images/hospital.jpg"),
   const Choice(
-      title: 'Restaurant and Food', image: "assets/images/restaurant.png"),
+      title: 'Restaurant and Food',
+      image: "assets/images/resturant.png"),
   const Choice(
-      title: 'Security and Safety', image: "assets/images/privacy.png"),
-  const Choice(title: 'Real Estate', image: "assets/images/sellproperty.png"),
+      title: 'Security and Safety',
+      image: "assets/images/security.png"),
+  const Choice(
+      title: 'Real Estate',
+      image: "assets/images/state.png"),
 ];
 
 class SelectCard extends StatelessWidget {
@@ -246,9 +261,11 @@ class SelectCard extends StatelessWidget {
               SizedBox(
                 height: 35.h,
               ),
-              Image.asset(
-                choice.image,
-                height: 40.h,
+              Center(
+                child: Image.asset(
+                  choice.image,
+                  height: 50.h,
+                ),
               ),
               SizedBox(
                 height: 10.h,

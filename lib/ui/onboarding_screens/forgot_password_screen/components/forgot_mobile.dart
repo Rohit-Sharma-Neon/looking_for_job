@@ -20,6 +20,7 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 170.h),
           decoration: BoxDecoration(

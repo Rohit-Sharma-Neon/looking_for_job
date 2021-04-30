@@ -16,21 +16,74 @@ class _UserTypeScreenState extends State<UserTypeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(top: 90,left: 20,right: 20),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(signinbg),
+            fit: BoxFit.cover,
+          ),
+        ),
+        padding: EdgeInsets.only(top: 50,left: 20,right: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-              child: Container(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      color: Color(0xFF5B4DBC),
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26,
+                          blurRadius: 10.0,
+                          spreadRadius: 1.0,
+                        ),
+                      ]),
                   child: Image.asset(
-                appLogoWithName,
-                height: 80,
-              )),
+                    lookingjoblogo,
+                    height: 140.h,
+                    width: 80.w,
+                  ),
+                ),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'LOOKING FOR',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: textSize20,
+                              color: Color(0xFF1492E5)),
+                        ),
+                        Text(
+                          ' JOB',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: textSize20,
+                              color: Color(0xFF19E39E)),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'YOUR ONLY SOURCE FOR YOUR DREAM JOB',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: textSize8,
+                          color: Color(0xFFE5D2FF)),
+                    ),
+                  ],
+                )
+              ],
             ),
             SizedBox(height: 55.h),
-            Text("Who are you?",style: TextStyle(fontWeight: FontWeight.w600,fontSize: textSize26),),
+            Text("Who are you?",style: TextStyle(fontWeight: FontWeight.w600,fontSize: textSize26,color: Colors.white),),
             SizedBox(height: 10.h),
-            Text("Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor",style: TextStyle(fontSize: textSize14),),
+            Text("Lorem ipsum dolor sit amet, consectetur\nadipiscing elit, sed do eiusmod tempor",style: TextStyle(fontSize: textSize14,color: Colors.white),),
             SizedBox(height: 20.h),
             InkWell(
               onTap: (){
