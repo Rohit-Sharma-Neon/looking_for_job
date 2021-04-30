@@ -8,10 +8,7 @@ import 'constants/theme/theme_state.dart';
 import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp( DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => MyApp(), // Wrap your app
-  ),);
+  runApp(MyApp());
 }
 
 TextTheme textTheme;
@@ -30,8 +27,8 @@ class MyApp extends StatelessWidget {
           child: BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
               return MaterialApp(
-                locale: DevicePreview.locale(context), // Add the locale here
-                builder: DevicePreview.appBuilder,
+                // locale: DevicePreview.locale(context), // Add the locale here
+                // builder: DevicePreview.appBuilder,
                 debugShowCheckedModeBanner: false,
                 title: 'Looking for job',
                 initialRoute: '/',

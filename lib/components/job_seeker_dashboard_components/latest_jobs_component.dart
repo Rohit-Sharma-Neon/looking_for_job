@@ -61,15 +61,13 @@ Widget jobCard() {
     decoration: BoxDecoration(
       color: Colors.white,
     ),
-    padding: EdgeInsets.all(12.r),
+    padding: EdgeInsets.symmetric(vertical: 5.h,horizontal: 12.w),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 5.h,
-            ),
             Expanded(
               flex: 4,
               child: Column(
@@ -79,14 +77,14 @@ Widget jobCard() {
                     "Flutter Devloper",
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: textSize18.sp,
+                        fontSize: textSize16.sp,
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    "C-scheme AppiTron Solutions pvt ltd.",
+                    "AppiTron Solutions pvt ltd.",
                     style: TextStyle(
                         color: Colors.grey[600],
-                        fontSize: textSize13.sp,
+                        fontSize: textSize12.sp,
                         fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -102,6 +100,7 @@ Widget jobCard() {
                 backgroundColor: Colors.white,
                 child: Image.asset(
                   "assets/images/lookingforjob_bg.png",
+                  height: 40.h,
                 ),
               ),
             ),
@@ -116,7 +115,7 @@ Widget jobCard() {
             Icon(
               Icons.location_on_outlined,
               color: Colors.grey[800],
-              size: 20.h,
+              size: 15.h,
             ),
             SizedBox(
               width: 7.w,
@@ -124,7 +123,7 @@ Widget jobCard() {
             Text(
               "Jaipur, Rajasthan",
               style:
-                  TextStyle(fontSize: textSize14.sp, color: Colors.grey[600]),
+                  TextStyle(fontSize: textSize12.sp, color: Colors.grey[600]),
             ),
           ],
         ),
@@ -136,14 +135,14 @@ Widget jobCard() {
             Icon(
               Icons.attach_money_rounded,
               color: Colors.grey[800],
-              size: 20.h,
+              size: 15.h,
             ),
             SizedBox(
               width: 7.w,
             ),
             Text("20,000-30,000 permonth",
                 style: TextStyle(
-                    fontSize: textSize14.sp, color: Colors.grey[600])),
+                    fontSize: textSize12.sp, color: Colors.grey[600])),
           ],
         ),
         SizedBox(
@@ -154,7 +153,7 @@ Widget jobCard() {
             Icon(
               Icons.person_add_alt_1,
               color: Colors.grey[800],
-              size: 20.h,
+              size: 15.h,
             ),
             SizedBox(
               width: 7.w,
@@ -162,11 +161,10 @@ Widget jobCard() {
             Text(
               "Hiring multiple candidates",
               style:
-              TextStyle(fontSize: textSize14.sp, color: Colors.grey[600]),
+              TextStyle(fontSize: textSize12.sp, color: Colors.grey[600]),
             ),
           ],
         ),
-
       ],
     ),
   );

@@ -30,58 +30,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 onboardingsubheading,
                 style: TextStyle(fontSize: textSize16),
               ),
-              // SizedBox(
-              //   height: 20.h,
-              // ),
-              // Wrap(
-              //   direction: Axis.horizontal,
-              //   alignment: WrapAlignment.start,
-              //   runAlignment: WrapAlignment.start,
-              //
-              //   // runAlignment: WrapAlignment.spaceEvenly,
-              //   // crossAxisAlignment: WrapCrossAlignment.center,
-              //   // clipBehavior: Clip.antiAlias,
-              //   spacing: 20,
-              //   runSpacing: 20,
-              //   children: [
-              //     JobTypeBox(
-              //       icon: ("assets/images/designlogo.png"),
-              //       text: "Design",
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/cookinglogo.png"),
-              //       text: "Cooking",
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/managementlogo.png"),
-              //       text: ("Management"),
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/driver.png"),
-              //       text: ("Driving"),
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/carpenter.png"),
-              //       text: ("Manual work"),
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/itlogo.png"),
-              //       text: ("IT Department"),
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/marketanalysis.png"),
-              //       text: "Research ",
-              //     ),
-              //     JobTypeBox(
-              //       icon: ("assets/images/customerservice.png"),
-              //       text: ("BPO"),
-              //     ),
-              //     JobTypeBox(
-              //       icon: ('assets/images/administrator.png'),
-              //       text: "Administrative",
-              //     )
-              //   ],
-              // ),
               SingleChildScrollView(
                 child: GridView.count(
                   controller: new ScrollController(keepScrollOffset: false),
