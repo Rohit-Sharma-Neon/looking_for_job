@@ -25,6 +25,7 @@ import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_scr
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/postajob/post_job_category.dart';
 import 'package:lookingforjob_flutter/ui/main/postajob/post_job_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/profile_employer_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/resubmitjobs_screen/resubmitjobs_screen.dart';
@@ -40,7 +41,7 @@ var customRoutes = <String, WidgetBuilder>{
 
   // OnBoardings
   '/job_description': (context) => JobDescription(),
-  '/': (context) => SplashScreen(),
+  '/': (context) => ProfileSeekerScreen(),
 
   // Sprint 1
   '/splash_screen': (context) => SplashScreen(),

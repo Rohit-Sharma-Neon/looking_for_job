@@ -239,9 +239,6 @@ class SelectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      // color: Colors.white,
-      // shadowColor: Colors.grey,
-      // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       child: Container(
         height: 150.h,
         width: 150.w,
