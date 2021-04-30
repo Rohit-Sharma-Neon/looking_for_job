@@ -25,6 +25,7 @@ import 'package:lookingforjob_flutter/ui/main/pendingjobs_screen/pendingjobs_scr
 import 'package:lookingforjob_flutter/ui/main/post_job.dart/components/post_job_mobile.dart';
 import 'package:lookingforjob_flutter/ui/main/postajob/post_job_category.dart';
 import 'package:lookingforjob_flutter/ui/main/postajob/post_job_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/employer_profile_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_employer_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profilepublicview_screen/profilepublicview_screen.dart';

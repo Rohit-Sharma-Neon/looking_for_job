@@ -29,7 +29,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
       context,
       borderRadius: cornersRadiusLight.r,
       applyButtonTextStyle:
-      TextStyle(fontSize: textSize16.sp, color: Colors.white),
+          TextStyle(fontSize: textSize16.sp, color: Colors.white),
       hidecloseIcon: false,
       listData: userList,
       selectedListData: selectedUserList,
@@ -47,7 +47,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
             element.name.toLowerCase().contains(text.toLowerCase()))) {
           return list
               .where((element) =>
-              element.name.toLowerCase().contains(text.toLowerCase()))
+                  element.name.toLowerCase().contains(text.toLowerCase()))
               .toList();
         }
         return null;
@@ -155,7 +155,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
               children: [
                 Container(
                   padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
@@ -246,7 +246,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 15.h),
                   padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
@@ -287,7 +287,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 15.h),
                   padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
@@ -319,7 +319,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                       SizedBox(height: 15.h),
                       TimelineTile(
                         afterLineStyle:
-                        LineStyle(thickness: 1.5.w, color: Colors.grey),
+                            LineStyle(thickness: 1.5.w, color: Colors.grey),
                         alignment: TimelineAlign.start,
                         indicatorStyle: IndicatorStyle(
                           color: primaryColorLight,
@@ -438,9 +438,9 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                       TimelineTile(
                         isLast: true,
                         afterLineStyle:
-                        LineStyle(thickness: 1.5.w, color: Colors.grey),
+                            LineStyle(thickness: 1.5.w, color: Colors.grey),
                         beforeLineStyle:
-                        LineStyle(thickness: 1.5.w, color: Colors.grey),
+                            LineStyle(thickness: 1.5.w, color: Colors.grey),
                         alignment: TimelineAlign.start,
                         indicatorStyle: IndicatorStyle(
                           color: primaryColorLight,
@@ -453,7 +453,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                           ),
                         ),
                         lineXY: 0.3,
-                        endChild:Column(
+                        endChild: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(height: 15),
@@ -562,7 +562,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 15.h),
                   padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
@@ -594,7 +594,7 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                       SizedBox(height: 15.h),
                       TimelineTile(
                         afterLineStyle:
-                        LineStyle(thickness: 1.5.w, color: Colors.grey),
+                            LineStyle(thickness: 1.5.w, color: Colors.grey),
                         alignment: TimelineAlign.start,
                         indicatorStyle: IndicatorStyle(
                           color: Colors.yellow.shade700,
@@ -633,16 +633,17 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                             SizedBox(
                               height: 100,
                               child: ListView.builder(
-
+                                  physics: NeverScrollableScrollPhysics(),
                                   itemCount: entries.length,
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return Container(
                                       height: 30,
                                       color: Colors.blue[colorCodes[index]],
-                                      child: Center(child: Text(' ${entries[index]}')),
+                                      child: Center(
+                                          child: Text(' ${entries[index]}')),
                                     );
-                                  }
-                              ),
+                                  }),
                             )
                           ],
                         ),
@@ -650,9 +651,9 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                       TimelineTile(
                         isLast: true,
                         afterLineStyle:
-                        LineStyle(thickness: 1.5.w, color: Colors.grey),
+                            LineStyle(thickness: 1.5.w, color: Colors.grey),
                         beforeLineStyle:
-                        LineStyle(thickness: 1.5.w, color: Colors.grey),
+                            LineStyle(thickness: 1.5.w, color: Colors.grey),
                         alignment: TimelineAlign.start,
                         indicatorStyle: IndicatorStyle(
                           color: Colors.yellow.shade700,
@@ -690,15 +691,18 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                             SizedBox(
                               height: 100,
                               child: ListView.builder(
+                                physics: NeverScrollableScrollPhysics(),
                                   itemCount: entries.length,
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return Container(
                                       height: 30,
                                       color: Colors.blue[colorCodes[index]],
-                                      child: Center(child: Text('Candidates ${entries[index]}')),
+                                      child: Center(
+                                          child: Text(
+                                              'Candidates ${entries[index]}')),
                                     );
-                                  }
-                              ),
+                                  }),
                             )
                           ],
                         ),
@@ -706,222 +710,222 @@ class _EmployerProfileScreenState extends State<EmployerProfileScreen> {
                     ],
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 15.h),
-                  padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
-                  ),
-                  width: double.infinity,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Languages",
-                            style: TextStyle(
-                              color: primaryTextColorLightTheme,
-                              fontWeight: FontWeight.w700,
-                              fontSize: textSize16.sp,
-                            ),
-                          ),
-                          Icon(
-                            Icons.add_circle_outlined,
-                            color: iconColorLight,
-                            size: 20.h,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        "English ($languageExpereince)",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: textSize14.sp,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Slider(
-                              value: primaryLanguageValue,
-                              min: 0,
-                              max: 100,
-                              label: '$primaryLanguageValue',
-                              onChanged: (value) {
-                                setState(
-                                      () {
-                                    primaryLanguageValue = value;
-                                    if (value <= 40) {
-                                      languageExpereince = "Beginner";
-                                    } else if(value <= 80){
-                                      languageExpereince = "Intermediate";
-                                    } else {
-                                      languageExpereince = "Advanced";
-                                    }
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.close_rounded,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "English (Advanced)",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: textSize14.sp,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Slider(
-                              value: secondaryLanguageValue,
-                              min: 0,
-                              max: 100,
-                              label: '$secondaryLanguageValue',
-                              onChanged: (value) {
-                                setState(
-                                      () {
-                                    secondaryLanguageValue = value;
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.close_rounded,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 15.h),
-                  padding:
-                  EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
-                  ),
-                  width: double.infinity,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Skills",
-                            style: TextStyle(
-                              color: primaryTextColorLightTheme,
-                              fontWeight: FontWeight.w700,
-                              fontSize: textSize16.sp,
-                            ),
-                          ),
-                          Icon(
-                            Icons.add_circle_outlined,
-                            color: iconColorLight,
-                            size: 20.h,
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 15.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "General Skills",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: textSize14.sp,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          InkWell(
-                            onTap: _openFilterDialog,
-                            child: Icon(
-                              Icons.edit_rounded,
-                              color: iconColorLight,
-                            ),
-                          ),
-                        ],
-                      ),
-                      selectedUserList == null || selectedUserList.length == 0
-                          ? Text(
-                        'Selected skills will appear here',
-                        style: TextStyle(color: Colors.grey.shade400),
-                      )
-                          : GridView.builder(
-                        padding: EdgeInsets.symmetric(vertical: 10.h),
-                        itemCount: selectedUserList.length,
-                        physics: NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        gridDelegate:
-                        SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          childAspectRatio: 3.h,
-                          crossAxisSpacing: 9.w,
-                          mainAxisSpacing: 10.h,
-                        ),
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.w, vertical: 3.h),
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(100.r),
-                            ),
-                            child: Text(
-                              selectedUserList[index].name,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                color: Colors.grey,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                      SizedBox(height: 15.h),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Technical skills",
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: textSize14.sp,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          InkWell(
-                            onTap: _openFilterDialog,
-                            child: Icon(
-                              Icons.edit_rounded,
-                              color: iconColorLight,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                // Container(
+                //   margin: EdgeInsets.only(top: 15.h),
+                //   padding:
+                //       EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                //   decoration: BoxDecoration(
+                //     color: Colors.white,
+                //     borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
+                //   ),
+                //   width: double.infinity,
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Text(
+                //             "Languages",
+                //             style: TextStyle(
+                //               color: primaryTextColorLightTheme,
+                //               fontWeight: FontWeight.w700,
+                //               fontSize: textSize16.sp,
+                //             ),
+                //           ),
+                //           Icon(
+                //             Icons.add_circle_outlined,
+                //             color: iconColorLight,
+                //             size: 20.h,
+                //           ),
+                //         ],
+                //       ),
+                //       SizedBox(height: 10.h),
+                //       Text(
+                //         "English ($languageExpereince)",
+                //         style: TextStyle(
+                //             color: Colors.grey,
+                //             fontSize: textSize14.sp,
+                //             fontWeight: FontWeight.w600),
+                //       ),
+                //       Row(
+                //         children: [
+                //           Expanded(
+                //             child: Slider(
+                //               value: primaryLanguageValue,
+                //               min: 0,
+                //               max: 100,
+                //               label: '$primaryLanguageValue',
+                //               onChanged: (value) {
+                //                 setState(
+                //                   () {
+                //                     primaryLanguageValue = value;
+                //                     if (value <= 40) {
+                //                       languageExpereince = "Beginner";
+                //                     } else if (value <= 80) {
+                //                       languageExpereince = "Intermediate";
+                //                     } else {
+                //                       languageExpereince = "Advanced";
+                //                     }
+                //                   },
+                //                 );
+                //               },
+                //             ),
+                //           ),
+                //           InkWell(
+                //             onTap: () {},
+                //             child: Icon(
+                //               Icons.close_rounded,
+                //               color: Colors.grey,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //       Text(
+                //         "English (Advanced)",
+                //         style: TextStyle(
+                //             color: Colors.grey,
+                //             fontSize: textSize14.sp,
+                //             fontWeight: FontWeight.w600),
+                //       ),
+                //       Row(
+                //         children: [
+                //           Expanded(
+                //             child: Slider(
+                //               value: secondaryLanguageValue,
+                //               min: 0,
+                //               max: 100,
+                //               label: '$secondaryLanguageValue',
+                //               onChanged: (value) {
+                //                 setState(
+                //                   () {
+                //                     secondaryLanguageValue = value;
+                //                   },
+                //                 );
+                //               },
+                //             ),
+                //           ),
+                //           InkWell(
+                //             onTap: () {},
+                //             child: Icon(
+                //               Icons.close_rounded,
+                //               color: Colors.grey,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                // Container(
+                //   margin: EdgeInsets.only(top: 15.h),
+                //   padding:
+                //       EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+                //   decoration: BoxDecoration(
+                //     color: Colors.white,
+                //     borderRadius: BorderRadius.circular(cornersRadiusLowest.r),
+                //   ),
+                //   width: double.infinity,
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Text(
+                //             "Skills",
+                //             style: TextStyle(
+                //               color: primaryTextColorLightTheme,
+                //               fontWeight: FontWeight.w700,
+                //               fontSize: textSize16.sp,
+                //             ),
+                //           ),
+                //           Icon(
+                //             Icons.add_circle_outlined,
+                //             color: iconColorLight,
+                //             size: 20.h,
+                //           ),
+                //         ],
+                //       ),
+                //       SizedBox(height: 15.h),
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Text(
+                //             "General Skills",
+                //             style: TextStyle(
+                //                 color: Colors.grey,
+                //                 fontSize: textSize14.sp,
+                //                 fontWeight: FontWeight.w600),
+                //           ),
+                //           InkWell(
+                //             onTap: _openFilterDialog,
+                //             child: Icon(
+                //               Icons.edit_rounded,
+                //               color: iconColorLight,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //       selectedUserList == null || selectedUserList.length == 0
+                //           ? Text(
+                //               'Selected skills will appear here',
+                //               style: TextStyle(color: Colors.grey.shade400),
+                //             )
+                //           : GridView.builder(
+                //               padding: EdgeInsets.symmetric(vertical: 10.h),
+                //               itemCount: selectedUserList.length,
+                //               physics: NeverScrollableScrollPhysics(),
+                //               shrinkWrap: true,
+                //               gridDelegate:
+                //                   SliverGridDelegateWithFixedCrossAxisCount(
+                //                 crossAxisCount: 3,
+                //                 childAspectRatio: 3.h,
+                //                 crossAxisSpacing: 9.w,
+                //                 mainAxisSpacing: 10.h,
+                //               ),
+                //               itemBuilder: (BuildContext context, int index) {
+                //                 return Container(
+                //                   alignment: Alignment.center,
+                //                   padding: EdgeInsets.symmetric(
+                //                       horizontal: 10.w, vertical: 3.h),
+                //                   decoration: BoxDecoration(
+                //                     color: Colors.grey.shade200,
+                //                     borderRadius: BorderRadius.circular(100.r),
+                //                   ),
+                //                   child: Text(
+                //                     selectedUserList[index].name,
+                //                     style: TextStyle(
+                //                       fontWeight: FontWeight.w800,
+                //                       color: Colors.grey,
+                //                     ),
+                //                   ),
+                //                 );
+                //               },
+                //             ),
+                //       SizedBox(height: 15.h),
+                //       Row(
+                //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //         children: [
+                //           Text(
+                //             "Technical skills",
+                //             style: TextStyle(
+                //                 color: Colors.grey,
+                //                 fontSize: textSize14.sp,
+                //                 fontWeight: FontWeight.w600),
+                //           ),
+                //           InkWell(
+                //             onTap: _openFilterDialog,
+                //             child: Icon(
+                //               Icons.edit_rounded,
+                //               color: iconColorLight,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 SizedBox(height: 10.h),
                 ElevatedButton(
                   onPressed: () {},

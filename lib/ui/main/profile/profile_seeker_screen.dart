@@ -7,6 +7,7 @@ import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/constants/strings.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/employer_profile_screen.dart';
 import 'package:lookingforjob_flutter/widgets/base_drawer.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -849,7 +850,7 @@ class _ProfileSeekerScreenState extends State<ProfileSeekerScreen> {
                                     primaryLanguageValue = value;
                                     if (value <= 40) {
                                       languageExpereince = "Beginner";
-                                    } else if(value <= 80){
+                                    } else if (value <= 80) {
                                       languageExpereince = "Intermediate";
                                     } else {
                                       languageExpereince = "Advanced";
@@ -1015,7 +1016,12 @@ class _ProfileSeekerScreenState extends State<ProfileSeekerScreen> {
                 ),
                 SizedBox(height: 10.h),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => EmployerProfileScreen()));
+                  },
                   style: ElevatedButton.styleFrom(
                     shape: StadiumBorder(),
                     padding: EdgeInsets.symmetric(
