@@ -5,7 +5,9 @@ import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/image_helper.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/ui/main/dashboard_screen/components/dashboard_mobile.dart';
+import 'package:lookingforjob_flutter/ui/main/home_screen/home_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/kunal/onboarding_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/profile/chip_example.dart';
 import 'package:lookingforjob_flutter/ui/onboarding_screens/forgot_password_screen/components/forgot_mobile.dart';
 
 class LoginMobileComponent extends StatefulWidget {
@@ -17,15 +19,15 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
   final _formKey = GlobalKey<FormState>();
   bool _obscureText = true;
 
-  bool isSignupScreen = true;
-
   String _password;
 
   // Toggles the password show status
   void _toggle() {
-    setState(() {
-      _obscureText = !_obscureText;
-    });
+    setState(
+      () {
+        _obscureText = !_obscureText;
+      },
+    );
   }
 
   bool _rememberMeFlag = false;
@@ -39,7 +41,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
         key: _formKey,
         child: Scaffold(
           body: Container(
-            padding: EdgeInsets.only(left: 20,right: 20,top: 20),
+            padding: EdgeInsets.only(left: 20, right: 20, top: 20),
             // padding: EdgeInsets.symmetric(vertical: 80,horizontal: 28),
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -52,7 +54,6 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,7 +76,6 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           width: 80.w,
                         ),
                       ),
-
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -114,10 +114,10 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                     child: AppBar(
                       elevation: 0,
                       backgroundColor: Colors.transparent,
-                       bottom: TabBar(
+                      bottom: TabBar(
                         indicator: BoxDecoration(
-                            color: Colors.transparent, borderRadius: BorderRadius.circular(20)
-                        ),
+                            color: Colors.transparent,
+                            borderRadius: BorderRadius.circular(20)),
                         indicatorWeight: 1,
                         indicatorSize: TabBarIndicatorSize.label,
                         indicatorColor: Colors.transparent,
@@ -137,7 +137,7 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                           Tab(
                             text: "Register",
                           ),
-                         SizedBox(),
+                          SizedBox(),
                         ],
                       ),
                     ),
@@ -159,9 +159,10 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 fillColor: Color(0xFF461584),
                                 filled: true,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15.0),
+                                  ),
                                 ),
-
                                 hintText: 'Email',
                                 hintStyle: TextStyle(
                                   color: Colors.white,
@@ -184,38 +185,37 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                   fillColor: Color(0xFF461584),
                                   filled: true,
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(15.0),
+                                    ),
                                   ),
-                                hintText: 'Password',
-                                hintStyle: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontStyle: FontStyle.normal,
-                                ),
-                                suffixIcon: FlatButton(
-                                            padding: EdgeInsets.only(left: 20),
-                                            onPressed: _toggle,
-                                            child:  Text(
-                                                _obscureText
-                                                    ? "Show"
-                                                    : "Hide",
-                                                style: TextStyle(
-                                                  color: Color(
-                                                        0xFF1492E5))))),
-                                    validator: (value) {
-                                      if (value.isEmpty) {
-                                        return "Please enter your password";
-                                      } else if (value.length < 6) {
-                                        return "Please enter valid password";
-                                      } else {
-                                        return null;
-                                      }
-                                    },
+                                  hintText: 'Password',
+                                  hintStyle: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                  suffixIcon: FlatButton(
+                                      padding: EdgeInsets.only(left: 20),
+                                      onPressed: _toggle,
+                                      child: Text(
+                                          _obscureText ? "Show" : "Hide",
+                                          style: TextStyle(
+                                              color: Color(0xFF1492E5))))),
+                              validator: (value) {
+                                if (value.isEmpty) {
+                                  return "Please enter your password";
+                                } else if (value.length < 6) {
+                                  return "Please enter valid password";
+                                } else {
+                                  return null;
+                                }
+                              },
                               onSaved: (val) => _password = val,
-                                obscureText: _obscureText,
-                                keyboardType: TextInputType.name,
-                                textInputAction: TextInputAction.done,
-                              ),
+                              obscureText: _obscureText,
+                              keyboardType: TextInputType.name,
+                              textInputAction: TextInputAction.done,
+                            ),
                             Container(
                               height: 50.h,
                               margin: EdgeInsets.only(top: 30.h),
@@ -226,33 +226,36 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               child: RaisedButton(
                                 onPressed: () {
                                   if (_formKey.currentState.validate()) {
-
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
+                                    Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
                                         builder: (BuildContext context) =>
-                                            DashBoardMobileComponent()),
-                                    ModalRoute.withName('/'),
-                                  ); }
+                                            HomeScreen(),
+                                      ),
+                                      ModalRoute.withName('/'),
+                                    );
+                                  }
                                 },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16.0)),
                                 padding: EdgeInsets.all(0.0),
                                 child: Ink(
                                   decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xFFE5D2FF),
-                                          Color(0xffFFFFFF)
-                                        ],
-                                        begin: Alignment.centerLeft,
-                                        end: Alignment.centerRight,
-                                      ),
-                                      borderRadius:
-                                          BorderRadius.circular(16.0)),
+                                    gradient: LinearGradient(
+                                      colors: [
+                                        Color(0xFFE5D2FF),
+                                        Color(0xffFFFFFF)
+                                      ],
+                                      begin: Alignment.centerLeft,
+                                      end: Alignment.centerRight,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
                                   child: Container(
                                     constraints: BoxConstraints(
-                                        maxWidth: 400.w, minHeight: 50.h),
+                                      maxWidth: 400.w,
+                                      minHeight: 50.h,
+                                    ),
                                     alignment: Alignment.center,
                                     child: Text(
                                       "SIGN IN",
@@ -281,7 +284,8 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                         ),
                                         data: ThemeData(
                                           primarySwatch: Colors.blue,
-                                          unselectedWidgetColor: Colors.white, // Your color
+                                          unselectedWidgetColor:
+                                              Colors.white, // Your color
                                         ),
                                       ),
                                       // Checkbox(
@@ -364,7 +368,9 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 fillColor: Color(0xFF461584),
                                 filled: true,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15.0),
+                                  ),
                                 ),
                                 hintText: 'Name',
                                 hintStyle: TextStyle(
@@ -396,9 +402,10 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 fillColor: Color(0xFF461584),
                                 filled: true,
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(15.0),
+                                  ),
                                 ),
-
                                 hintText: 'Email',
                                 hintStyle: TextStyle(
                                   color: Colors.white,
@@ -407,9 +414,9 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                 ),
                               ),
                               validator: (val) =>
-                              val.isEmpty || !val.contains("@")
-                                  ? "Please enter your email"
-                                  : null,
+                                  val.isEmpty || !val.contains("@")
+                                      ? "Please enter your email"
+                                      : null,
                               keyboardType: TextInputType.emailAddress,
                               textInputAction: TextInputAction.done,
                             ),
@@ -421,7 +428,9 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                   fillColor: Color(0xFF461584),
                                   filled: true,
                                   border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(15.0),),
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(15.0),
+                                    ),
                                   ),
                                   hintText: 'Password',
                                   hintStyle: TextStyle(
@@ -432,13 +441,10 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                                   suffixIcon: FlatButton(
                                       padding: EdgeInsets.only(left: 20),
                                       onPressed: _toggle,
-                                      child:  Text(
-                                          _obscureText
-                                              ? "Show"
-                                              : "Hide",
+                                      child: Text(
+                                          _obscureText ? "Show" : "Hide",
                                           style: TextStyle(
-                                              color: Color(
-                                                  0xFF1492E5))))),
+                                              color: Color(0xFF1492E5))))),
                               validator: (value) {
                                 if (value.isEmpty) {
                                   return "Please enter your password";
@@ -471,14 +477,15 @@ class _LoginMobileComponentState extends State<LoginMobileComponent> {
                               ),
                               child: RaisedButton(
                                 onPressed: () {
-                                  if (_formKey.currentState.validate()){
-                                  Navigator.pushAndRemoveUntil(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                            OnBoardingScreen()),
-                                    ModalRoute.withName('/'),
-                                  );}
+                                  if (_formKey.currentState.validate()) {
+                                    Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              OnBoardingScreen()),
+                                      ModalRoute.withName('/'),
+                                    );
+                                  }
                                 },
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(16.0)),

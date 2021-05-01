@@ -7,6 +7,7 @@ import 'package:lookingforjob_flutter/constants/colors.dart';
 import 'package:lookingforjob_flutter/constants/sizes.dart';
 import 'package:lookingforjob_flutter/ui/main/job_description/job_description.dart';
 import 'package:lookingforjob_flutter/ui/main/kunal/onboarding_screen.dart';
+import 'package:lookingforjob_flutter/ui/main/kunal/subcategories.dart';
 import 'package:lookingforjob_flutter/ui/main/postajob/post_job_screen.dart';
 import 'package:lookingforjob_flutter/ui/main/profile/profile_seeker_screen.dart';
 
@@ -40,6 +41,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       appBar: AppBar(
+        // leading: InkWell(
+        //   child: Icon(
+        //     Icons.arrow_back_rounded,
+        //     color: iconColorLight,
+        //   ),
+        // ),
+        leading: Container(),
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: Text(
@@ -225,9 +233,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SubCategoriesScreen(),
+                        ),
+                      );
+                    },
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 2.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                       child: Text(
                         "More",
                         style: TextStyle(
@@ -300,9 +316,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SubCategoriesScreen(),
+                        ),
+                      );
+                    },
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 2.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
                       child: Text(
                         "More",
                         style: TextStyle(

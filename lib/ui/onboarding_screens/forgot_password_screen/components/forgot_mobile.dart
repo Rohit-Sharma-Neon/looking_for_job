@@ -69,7 +69,6 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
                     ),
                   ),
                 ),
-
                 Container(
                   height: 50.h,
                   margin: EdgeInsets.symmetric(vertical: 10.h),
@@ -79,12 +78,12 @@ class _ForgotMobileComponentState extends State<ForgotMobileComponent> {
                   ),
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => ProfileSeekerScreen()),
-                        ModalRoute.withName('/'),
-                      );
+                      // Navigator.pushAndRemoveUntil(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (BuildContext context) => ProfileSeekerScreen()),
+                      //   ModalRoute.withName('/'),
+                      // );
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0)),

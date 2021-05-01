@@ -18,7 +18,6 @@ String _perHourValue;
 bool _hasBeenPressed = false;
 // bool _textColor = false;
 
-
 SfRangeValues _values = SfRangeValues(30.0, 110.0);
 
 class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
@@ -29,12 +28,10 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
       appBar: AppBar(
         title: new Text('Category Name'),
         actions: [
-          // action button
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {},
           ),
-
           IconButton(
             icon: Icon(
               Icons.filter_list,
@@ -48,9 +45,11 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                 barrierColor: Colors.grey[600],
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.r),
+                    topRight: Radius.circular(10.r),
+                  ),
+                ),
                 builder: (BuildContext context) {
                   return Container(
                     child: Column(
@@ -87,7 +86,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                   width: 310.w,
                                   decoration: BoxDecoration(
                                       border:
-                                      Border.all(color: Colors.grey[350]),
+                                          Border.all(color: Colors.grey[350]),
                                       borderRadius: BorderRadius.circular(10.r),
                                       color: Colors.white,
                                       boxShadow: [
@@ -104,40 +103,40 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                       isDense: false,
                                       hint: _perHourValue == null
                                           ? Padding(
-                                        padding:
-                                        const EdgeInsets.all(8.0),
-                                        child: Text.rich(
-                                          TextSpan(
-                                            children: [
-                                              WidgetSpan(
-                                                child: Icon(
-                                                  Icons
-                                                      .shopping_bag_outlined,
-                                                  size: 24.sp,
-                                                  color: Colors.black,
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text.rich(
+                                                TextSpan(
+                                                  children: [
+                                                    WidgetSpan(
+                                                      child: Icon(
+                                                        Icons
+                                                            .shopping_bag_outlined,
+                                                        size: 24.sp,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                    WidgetSpan(
+                                                        child: SizedBox(
+                                                      width: 10.w,
+                                                    )),
+                                                    TextSpan(
+                                                      style: TextStyle(
+                                                        color:
+                                                            Color(0xFF333333),
+                                                        fontSize: textSize16.sp,
+                                                      ),
+                                                      text: "Graphic & Design",
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
-                                              WidgetSpan(
-                                                  child: SizedBox(
-                                                    width: 10.w,
-                                                  )),
-                                              TextSpan(
-                                                style: TextStyle(
-                                                  color:
-                                                  Color(0xFF333333),
-                                                  fontSize: textSize16.sp,
-                                                ),
-                                                text: "Graphic & Design",
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )
+                                            )
                                           : Text(
-                                        _perHourValue,
-                                        style: TextStyle(
-                                            color: Colors.black),
-                                      ),
+                                              _perHourValue,
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            ),
                                       isExpanded: true,
                                       iconSize: 30.0,
                                       style: TextStyle(color: Colors.black),
@@ -151,7 +150,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                         " Motion Graphic Design",
                                         " Stationer Design",
                                       ].map(
-                                            (val) {
+                                        (val) {
                                           return DropdownMenuItem<String>(
                                             value: val,
                                             child: Text(val),
@@ -160,7 +159,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                       ).toList(),
                                       onChanged: (val) {
                                         setState(
-                                              () {
+                                          () {
                                             _perHourValue = val;
                                           },
                                         );
@@ -184,7 +183,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                   width: 310.w,
                                   decoration: BoxDecoration(
                                       border:
-                                      Border.all(color: Colors.grey[350]),
+                                          Border.all(color: Colors.grey[350]),
                                       borderRadius: BorderRadius.circular(10.r),
                                       color: Colors.white,
                                       boxShadow: [
@@ -201,40 +200,40 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                       isDense: false,
                                       hint: _perHourValue == null
                                           ? Padding(
-                                        padding:
-                                        const EdgeInsets.all(8.0),
-                                        child: Text.rich(
-                                          TextSpan(
-                                            children: [
-                                              WidgetSpan(
-                                                child: Icon(
-                                                  Icons
-                                                      .shopping_bag_outlined,
-                                                  size: 24.sp,
-                                                  color: Colors.black,
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text.rich(
+                                                TextSpan(
+                                                  children: [
+                                                    WidgetSpan(
+                                                      child: Icon(
+                                                        Icons
+                                                            .shopping_bag_outlined,
+                                                        size: 24.sp,
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                    WidgetSpan(
+                                                        child: SizedBox(
+                                                      width: 10.w,
+                                                    )),
+                                                    TextSpan(
+                                                      style: TextStyle(
+                                                        color:
+                                                            Color(0xFF333333),
+                                                        fontSize: textSize16.sp,
+                                                      ),
+                                                      text: "UI/UX Design",
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
-                                              WidgetSpan(
-                                                  child: SizedBox(
-                                                    width: 10.w,
-                                                  )),
-                                              TextSpan(
-                                                style: TextStyle(
-                                                  color:
-                                                  Color(0xFF333333),
-                                                  fontSize: textSize16.sp,
-                                                ),
-                                                text: "UI/UX Design",
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )
+                                            )
                                           : Text(
-                                        _perHourValue,
-                                        style: TextStyle(
-                                            color: Colors.black),
-                                      ),
+                                              _perHourValue,
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            ),
                                       isExpanded: true,
                                       iconSize: 30.0,
                                       style: TextStyle(color: Colors.black),
@@ -248,7 +247,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                         " Motion Graphic Design",
                                         " Stationer Design",
                                       ].map(
-                                            (val) {
+                                        (val) {
                                           return DropdownMenuItem<String>(
                                             value: val,
                                             child: Text(val),
@@ -257,7 +256,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                       ).toList(),
                                       onChanged: (val) {
                                         setState(
-                                              () {
+                                          () {
                                             _perHourValue = val;
                                           },
                                         );
@@ -306,8 +305,8 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                         ),
                                         WidgetSpan(
                                             child: SizedBox(
-                                              width: 10.w,
-                                            )),
+                                          width: 10.w,
+                                        )),
                                         TextSpan(
                                           style: TextStyle(
                                             color: Color(0xFF333333),
@@ -370,30 +369,33 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                                 children: [
                                   // ignore: deprecated_member_use
                                   RaisedButton(
-                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r),side: BorderSide(color: Colors.grey[600],)),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10.r),
+                                        side: BorderSide(
+                                          color: Colors.grey[600],
+                                        )),
                                     color: _hasBeenPressed
                                         ? Colors.blue
-                                    : Colors.white,
-                                    onPressed: ()
-                                    {
+                                        : Colors.white,
+                                    onPressed: () {
                                       setState(() {
-                                        _hasBeenPressed =
-                                        !_hasBeenPressed;
+                                        _hasBeenPressed = !_hasBeenPressed;
                                         // _textColor=!_textColor;
                                       });
                                     },
                                     child: Text(
-                                    "Fulltime",
-                                    // style: TextStyle(color: _textColor? Colors.black:Colors.white),
-                                  ),)
+                                      "Fulltime",
+                                      // style: TextStyle(color: _textColor? Colors.black:Colors.white),
+                                    ),
+                                  )
                                 ],
                               )
                             ],
-                          ),)
-                      ]
-                      ,
-                    )
-                    ,
+                          ),
+                        )
+                      ],
+                    ),
                   );
                 },
               );
@@ -402,7 +404,9 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
         ],
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: SingleChildScrollView(
@@ -511,16 +515,16 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                         isDense: false,
                         hint: _dropDownValue == null
                             ? Text(
-                          'Newest',
-                          style: TextStyle(
-                              fontSize: textSize16.sp,
-                              color: primaryColorLight,
-                              fontWeight: FontWeight.w600),
-                        )
+                                'Newest',
+                                style: TextStyle(
+                                    fontSize: textSize16.sp,
+                                    color: primaryColorLight,
+                                    fontWeight: FontWeight.w600),
+                              )
                             : Text(
-                          _dropDownValue,
-                          style: TextStyle(color: primaryColorLight),
-                        ),
+                                _dropDownValue,
+                                style: TextStyle(color: primaryColorLight),
+                              ),
                         isExpanded: true,
                         iconSize: 30.0,
                         iconEnabledColor: primaryColorLight,
@@ -528,7 +532,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                             color: primaryColorLight,
                             fontWeight: FontWeight.w600),
                         items: ['[+] New Company', "[+] New Company"].map(
-                              (val) {
+                          (val) {
                             return DropdownMenuItem<String>(
                               value: val,
                               child: Text(val),
@@ -537,7 +541,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                         ).toList(),
                         onChanged: (val) {
                           setState(
-                                () {
+                            () {
                               _dropDownValue = val;
                             },
                           );
@@ -571,7 +575,7 @@ class _SubCategoriesScreenState extends State<SubCategoriesScreen> {
                             OpenContainer(
                               transitionType: ContainerTransitionType.fade,
                               transitionDuration:
-                              const Duration(milliseconds: 600),
+                                  const Duration(milliseconds: 600),
                               closedBuilder: (context, action) {
                                 return jobCard();
                               },
